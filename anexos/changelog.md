@@ -1,75 +1,30 @@
-# 🟣 PULL REQUEST – Actividad Obligatoria N.º 1 – Diseño Orientado a Objetos
+# Changelog
+
+Este archivo se actualiza con cada Pull Request para registrar avances y correcciones.
 
 ---
 
-## 📌 Datos del Estudiante
+## [Unreleased]
 
-- **Nombre y Apellido:** Sebastian Viel
-- **Número de Matrícula:** 156880
-- **Carrera:** Tecnicatura Universitaria en Programación de Sistemas  
-- **Materia:** Diseño Orientado a Objetos  
-- **Profesor:** Lic. Matías Velasquez  
-- **Cuatrimestre/Año:** 2º Cuatrimestre / 2025  
-- **Rol asignado para esta entrega:** Modelador de Casos de Uso 
+### Added
 
----
+-[feature/]
 
-## 📂 Rama de trabajo
-
-- **Nombre de la rama:** `feature/modelador-casos-uso-update-use-case-1`  
+### Changed
+-[feature/]
 
 ---
 
-## 📝 Descripción del trabajo realizado
+#[Release Actividad Obligatoria N°1] - 2025-xx-xx
 
-Identifique actores y casos de uso y los documenté. Luego los agregue a la introduccion.md y cree Issues para cada caso en GitHub.com
-
----
-
-## 🔗 Archivos modificados / agregados
-
-- `anexos/introduccion.md` 
-- `README.md`  
-- `anexos/anexos.md`  
-_`pull_request_template.md`
+Aquí se listaran todas las Pull Requests que entraron en esta release.
+Actualmente están en la sección [Unreleased] porque sólo están en la rama `develop`.
 
 ---
 
-## 🔗 Issues vinculados
+## Cómo usar este archvio
 
-- Closes ### Creación de Proyecto
-- Closes ### Actualizar Estado de la Etapa
-- Closes ### Agregar Observaciones
-- Closes ### Consultar Estadísticas
-- Closes ### Consultar Proyectos Activos 
-- Related to ## Casos de uso
-
----
-
-## ✅ Checklist
-
-- [ ] Trabajé sobre una rama `feature/modelador-casos-uso-update-use-case-1` creada a partir de `develop`
-- [ ] Realicé commits claros y explicativos
-- [ ] La PR está vinculada a al menos un Issue
-- [ ] Completé mi sección asignada según el rol
-- [ ] El changelog será actualizado tras aprobación
-- [ ] Solicité revisión del compañero con el rol de Coordinador
-
----
-
-## 🧠 Comentarios adicionales
-
-_(Opcional – Dejar aclaraciones, dificultades encontradas, o sugerencias)_
-
----
-
-## 🧾 Enlace a la consigna
-
-[📄 Consigna Actividad Obligatoria N.º 1 - GitHub](https://github.com/TuUsuario/SistemaProductoraVideos/blob/main/anexos/introduccion.md)
-
----
-
-## ⚠ IMPORTANTE
-
-🚫 Sin esta Pull Request **no se justifica participación individual**.  
-✅ Recordá actualizar el archivo `changelog.md` con el resumen de esta PR una vez aprobada.
+- Para cada PR, simplemente agregar una línea breve en la sección correspondiente a su cambio (Added, Changed, Fixed).
+- No es necesario escribir párrados, sólo una frase corta + link a PR y responsable con rol.
+- Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
+- Mantener el orden y formato para facilitar el seguimiento.
