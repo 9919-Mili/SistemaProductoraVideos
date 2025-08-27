@@ -17,9 +17,9 @@ Breve descripción del proyecto:
 Milagros Magali Araujo|148197|@9919-Mili|Programación en Sistemas
 Ignacio Valentino Calefato|156427|@igvcalefato|Técnicatura en Programación
 Facundo Daniel Gonzalez|155748||
-Sebastian Viel|156880||
+Sebastian Viel|156880|@Zikoloogo|Técnicatura en Programación en Sistemas
 
 ### Diagramas y Diseños
 ---
 
-- [Anexos]https://github.com/9919-Mili/SistemaProductoraVideos/blob/c45d6178524dfe0610c1008c205a7a55381f605a/anexos/anexos.md)
+- [Anexos](./anexos/anexos.md)
