@@ -8,10 +8,10 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
--[feature/]
+-[feature/modelador-casos-uso-update-use-case-1]
 
 ### Changed
--[feature/]
+-[feature/modelador-casos-uso-update-use-case-1feature/]
 
 ---
 
