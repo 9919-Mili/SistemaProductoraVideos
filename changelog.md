@@ -8,10 +8,12 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
--[feature/modelador-casos-uso-update-use-case-1]
+- [feature/doc-coord-repo-update-md]  Estructura inicial para los archivos, README.md y anexos.md  
+ PR: [#15](https://github.com/9919-Mili/SistemaProductoraVideos/pull/15) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
 ### Changed
--[feature/modelador-casos-uso-update-use-case-1feature/]
+-[feature/modelador-casos-uso-update-use-case-1] Modifique introduccion.md  
+ PR: [#18](https://github.com/9919-Mili/SistemaProductoraVideos/pull/18) - @Zikoloogo ( Modelador de Casos de Uso )
 
 ---
 
