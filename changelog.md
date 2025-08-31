@@ -8,7 +8,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
-- [feature/doc-coord-repo-update-md]  Estructura inicial para los archivos, README.md y anexos.md
+- [feature/doc-coord-repo-update-md]  Estructura inicial para los archivos, README.md, introduccion.md y anexos.md
  PR: [#] (link) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
 ### Changed
