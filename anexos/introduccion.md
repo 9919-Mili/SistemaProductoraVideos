@@ -1,16 +1,32 @@
+# Anexo - Introducción al Diseño Orientado a Objetos
+
 ## Descripción del paradigma orientado a objetos:
+El paradigma orientado a objetos se trata de un enfoque para el diseño de programas que se concentra en como el usuario percibe las cosas o eventos en un sistema alrededor de los objetos. Su importancia radica en que permite a los usuarios el visualizar el comportamiento de un programa en "objetos" sencillamente identificables con sus relativos del mundo real, en lugar del enfoque clasico de tareas.
 
 ## Los cuatro fundamentos de POO:
 
+### Abstracción
+La abstracción consiste en identificar y modelar las características esenciales de un objeto, ignorando los detalles irrelevantes para representar entidades del mundo real mediante clases u objetos, enfocándose solo en los atributos y comportamientos necesarios para facilitar la comprensión, reutilización y mantenimiento por parte del usuario.
+
+### Herencia
+La herencia es un mecanismo que permite crear nuevas clases que hereden los atributos y métodos de clases existentes, lo que facilita la reutilización de código y la organización jerárquica de las clases.
+
+### Polimorfismo
+El polimorfismo es la capacidad de los objetos de diferentes clases relacionadas por herencia de responder a la misma operación o método de distintas formas. Esto permite que diferentes tipos de objetos, compartan clases de manera flexible sin atarse ciertos atributos o comportamientos que estan definidos en un clase.
+
+### Encapsulación
+La encapsulación es el principio que consiste en ocultar las características de una clase u objeto, y exponer solo lo necesario a procesos externos que interactuen con sus datos. Esto protege los datos y el funcionamiento interno del objeto, permitiendo que solo se acceda o modifique mediante métodos específicos.
+
+
 ## Requisistos iniciales del sistema
 
-### **Requisitos funcionales**
+### Requisitos funcionales
 1 - El sistema permitira crear nuevas etapas de los proyectos, de ser necesario.  
 2 - Notificara por mail o wpp cualquier tipo de modificacion, retraso, pendientes, o si esta listo el proyecto.  
 3 - Generara estadisticas mensuales de demoras o cantidad de proyectos, las filtrara por cliente.  
 4 - Tendra que tener un tablero de uso interno, en el que se pueda visualizar los proyectos de cada cliente, cantidad, y por quien estan elaborados.
 
-### **Requisitos no funcionales**
+### Requisitos no funcionales
 1 - El sistema debe funcionar de forma correcta, y notificar a la brevedad cualquiero cambio.   
 2 - El sistema debe poder abrirse en cuaquier tipo de dispositivo.  
 3 - Al sistema solo tendran acceso las personas encargadas de trabajar en los proyectos.   
