@@ -13,7 +13,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Changed
 -[feature/modelador-casos-uso-update-use-case-1] Modifique introduccion.md  
- PR: [#18](https://github.com/9919-Mili/SistemaProductoraVideos/pull/18) - @Zikoloogo ( Modelador de Casos de Uso )
+ PR: [#18](https://github.com/9919-Mili/SistemaProductoraVideos/pull/18) - @Zikoloogo ( Modelador de Casos de Uso 
 
 ---
 
