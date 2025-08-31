@@ -8,8 +8,8 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
-- [feature/doc-coord-repo-update-md]  Estructura inicial para los archivos, README.md y anexos.md
- PR: [#] (link) - @igvcalefato (Documentador y Coordinador de Repositorio)
+- [feature/doc-coord-repo-update-md]  Estructura inicial para los archivos, README.md y anexos.md  
+ PR: [#15] (https://github.com/9919-Mili/SistemaProductoraVideos/pull/15/files) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
 ### Changed
 -[feature/]
