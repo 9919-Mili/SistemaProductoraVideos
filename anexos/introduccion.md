@@ -5,6 +5,16 @@ El paradigma orientado a objetos se trata de un enfoque para el diseño de progr
 
 ## Los cuatro fundamentos de POO:
 
+<<<<<<< HEAD
+### Abstracción
+
+### Herencia
+
+### Polimorfismo
+
+### Encapsulación
+
+=======
 ### Abstracción
 La abstracción consiste en identificar y modelar las características esenciales de un objeto, ignorando los detalles irrelevantes para representar entidades del mundo real mediante clases u objetos, enfocándose solo en los atributos y comportamientos necesarios para facilitar la comprensión, reutilización y mantenimiento por parte del usuario.
 
@@ -18,21 +28,36 @@ El polimorfismo es la capacidad de los objetos de diferentes clases relacionadas
 La encapsulación es el principio que consiste en ocultar las características de una clase u objeto, y exponer solo lo necesario a procesos externos que interactuen con sus datos. Esto protege los datos y el funcionamiento interno del objeto, permitiendo que solo se acceda o modifique mediante métodos específicos.
 
 
+>>>>>>> 5373de06309dab124f0ce75050992b6772335e43
 ## Requisistos iniciales del sistema
 
+<<<<<<< HEAD
+### Requisitos funcionales
+=======
 ### Requisitos funcionales
 1 - El sistema permitira crear nuevas etapas de los proyectos, de ser necesario.  
 2 - Notificara por mail o wpp cualquier tipo de modificacion, retraso, pendientes, o si esta listo el proyecto.  
 3 - Generara estadisticas mensuales de demoras o cantidad de proyectos, las filtrara por cliente.  
 4 - Tendra que tener un tablero de uso interno, en el que se pueda visualizar los proyectos de cada cliente, cantidad, y por quien estan elaborados.
+>>>>>>> 5373de06309dab124f0ce75050992b6772335e43
 
+<<<<<<< HEAD
+=======
 ### Requisitos no funcionales
 1 - El sistema debe funcionar de forma correcta, y notificar a la brevedad cualquiero cambio.   
 2 - El sistema debe poder abrirse en cuaquier tipo de dispositivo.  
 3 - Al sistema solo tendran acceso las personas encargadas de trabajar en los proyectos.   
 4 - El sistema debera funcionar las 24hs. 
+>>>>>>> 5373de06309dab124f0ce75050992b6772335e43
+
+### Requisitos no funcionales
+
 
 ## Casos de uso:
+<<<<<<< HEAD
+
+
+=======
 
 ### Creación de Proyecto
 **Actor(es):** Productora General / Laura González  
@@ -109,3 +134,4 @@ La encapsulación es el principio que consiste en ocultar las características d
 7. El usuario puede añadir observaciones desde este módulo.  
 **Precondiciones:** El usuario debe estar autenticado y existir proyectos en curso.  
 **Postcondiciones:** El usuario obtiene la lista de proyectos activos con información actualizada.  
+>>>>>>> 5373de06309dab124f0ce75050992b6772335e43

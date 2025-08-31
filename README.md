@@ -14,7 +14,7 @@ Se entregaran los requisitos funcionales y no funcionales, actores, casos de uso
 ---
 **Nombre y Apellido** | **Matrícula** | **Usuario de Github**|**Carrera**
 :-|:-|:-|:-
-Milagros Magali Araujo|148197|@9919-Mili|Programación en Sistemas
+Milagros Magali Araujo|148197|@9919-Mili|Técnicatura en Programación en Sistemas
 Ignacio Valentino Calefato|156427|@igvcalefato|Técnicatura en Programación
 Sebastian Viel|156880|@Zikoloogo|Técnicatura en Programación en Sistemas
 
