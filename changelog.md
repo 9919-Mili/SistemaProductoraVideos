@@ -37,4 +37,3 @@ Actualmente están en la sección [Unreleased] porque sólo están en la rama `d
 - No es necesario escribir párrados, sólo una frase corta + link a PR y responsable con rol.
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 - Mantener el orden y formato para facilitar el seguimiento.
-

@@ -10,7 +10,7 @@
 
 ### Polimorfismo
 
-###Encapsulación
+### Encapsulación
 
 ## Requisistos iniciales del sistema
 
