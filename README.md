@@ -20,5 +20,4 @@ Sebastian Viel|156880|@Zikoloogo|Técnicatura en Programación en Sistemas
 
 ### Diagramas y Diseños
 ---
-
 - [Anexos](/anexos/anexos.md)

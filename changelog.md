@@ -15,9 +15,13 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
  PR: [#19](https://github.com/9919-Mili/SistemaProductoraVideos/pull/19) - @Zikoloogo (Diseñador de clases iniciales)
 
 ### Changed
--[feature/modelador-casos-uso-update-use-case-1] Modifique introduccion.md  
- PR: [#18](https://github.com/9919-Mili/SistemaProductoraVideos/pull/18) - @Zikoloogo ( Modelador de Casos de Uso 
 
+- [feature/modelador-casos-uso-update-use-case-1] Modifique introduccion.md  
+ PR: [#18](https://github.com/9919-Mili/SistemaProductoraVideos/pull/18) - @Zikoloogo (Modelador de Casos de Uso) 
+
+- [feature/modelador-casos-uso-update-use-case-1] Modifique introduccion.md  
+ PR: [#20](https://github.com/9919-Mili/SistemaProductoraVideos/pull/20) - @9919-Mili (Analista de Requerimientos)
+  
 ---
 
 #[Release Actividad Obligatoria N°1] - 2025-xx-xx
