@@ -20,7 +20,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
  PR: [#18](https://github.com/9919-Mili/SistemaProductoraVideos/pull/18) - @Zikoloogo (Modelador de Casos de Uso) 
 
 - [feature/modelador-casos-uso-update-use-case-1] Modifique introduccion.md  
- PR: [#](link) - @9919-Mili (Analista de Requerimientos)
+ PR: [#20](https://github.com/9919-Mili/SistemaProductoraVideos/pull/20) - @9919-Mili (Analista de Requerimientos)
   
 ---
 
@@ -37,3 +37,4 @@ Actualmente están en la sección [Unreleased] porque sólo están en la rama `d
 - No es necesario escribir párrados, sólo una frase corta + link a PR y responsable con rol.
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 - Mantener el orden y formato para facilitar el seguimiento.
+
