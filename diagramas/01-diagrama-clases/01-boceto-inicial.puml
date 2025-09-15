@@ -1,4 +1,4 @@
-@startuml diagrama
+@startuml 01-boceto-inicial
 
 class Proyecto {
   - nombre: String
@@ -15,14 +15,29 @@ class Etapa {
   - nombre: String
   - estado: String
   - responsableEtapa: Usuario
-  - observaciones: List<Observacion>
+  - comentarios: List<Comentario>
+  - adjuntos: List<Adjunto>
   + actualizarEstado()
 }
 
-class Observacion {
+class Comentario {
   - texto: String
   - fecha: Date
-  + agregarObservacion()
+  - autor: Usuario
+  + agregarComentario()
+}
+
+class Adjunto {
+  - url: String
+  - descripcion: String
+  + vincularRecurso()
+}
+
+class Notificacion {
+  - mensaje: String
+  - fechaEnvio: Date
+  - tipo: String
+  + enviar()
 }
 
 class Estadistica {
@@ -45,12 +60,15 @@ class Sistema {
   + accesoAutenticado()
 }
 
-Usuario --> Sistema
-Usuario --> Observacion
-Usuario -----> Proyecto
-Usuario -----> Etapa
-Proyecto -----> Etapa
-Sistema -----> Estadistica
-Observacion --> Etapa
+Proyecto --> Etapa
+Etapa --> Comentario
+Etapa --> Adjunto
+Proyecto --> Usuario : responsableGeneral
+Etapa --> Usuario : responsableEtapa
+Usuario --> Comentario : autor
+Sistema --> Proyecto
+Sistema --> Usuario
+Sistema --> Estadistica
+Sistema --> Notificacion
 
 @enduml
