@@ -17,6 +17,15 @@ El polimorfismo es la capacidad de los objetos de diferentes clases relacionadas
 ### Encapsulación
 La encapsulación es el principio que consiste en ocultar las características de una clase u objeto, y exponer solo lo necesario a procesos externos que interactuen con sus datos. Esto protege los datos y el funcionamiento interno del objeto, permitiendo que solo se acceda o modifique mediante métodos específicos.
 
+### Diagrama de ejemplos
+
+![diagrama-fundamentos-POO](.github/diagrama-fundamentos-POO.png)   
+Este diagrama asocia los fundamentos de POO con algunos archivos y características de Git que se trabajaron durante el proyecto, entre los ejemplos esta:   
+- La abstracción: se puede ver en este archivo de "introduccion" por los casos de uso, que abstraen y explicitan las caracteristicas principales de cada caso de uso. Tambien siendo aplicable al diagrama boceto de diagrama de clase y el archivo "01-boceto-inicial.puml" que aplica de manera aun mas directa la abstraccion sobre las clases de un sistema.   
+- El polimorfismo: aplicado sobre las ramas, el contenido de la rama develop se transmite a release, pero durante el Pull Request se aplican todos los cambios y correciones que necesite la rama release para como ultimo puesto de *espera* antes de llegar a la rama "master".   
+- La herencia: se ve que al final de "introduccion" toma el archivo "01-boceto-inicial.png" para incorporarlo a su texto y ahorrar el redactado de un codigo diagrama modelado en el propio archivo. Pero principalmente en las Ramas de Git que heredan los archivos, modificaciones y arreglos que aporten a la preparacion de los archivos, siendo el centro la rama "develop" que hereda de las ramas de "feature/..." para luego transmitirlo a las releases.   
+- Encapsulación: aplica a las ramas, cada una posee su propio contenido y para la interacción entre si se necesita de Pull Request que transmita el contenido de una rama a otra, e incluso existen las ramas protegidas como "master que incluyen mas restricciones para la interaccion entre ramas.
+
 ## Requisistos iniciales del sistema
 
 ### Requisitos funcionales
@@ -108,4 +117,10 @@ La encapsulación es el principio que consiste en ocultar las características d
 6. El sistema muestra estado, responsables y cumplimiento.  
 7. El usuario puede añadir observaciones desde este módulo.  
 **Precondiciones:** El usuario debe estar autenticado y existir proyectos en curso.  
-**Postcondiciones:** El usuario obtiene la lista de proyectos activos con información actualizada.  
+**Postcondiciones:** El usuario obtiene la lista de proyectos activos con información actualizada.
+
+### Boceto inicial del diseño de clases
+---
+[Diagrama 01 - Boceto Inicial](/diagramas/01-diagrama-clases/01-boceto-inicial.png)   
+
+![diagrama-boceto-01](/diagramas/01-diagrama-clases/01-boceto-inicial.png)
