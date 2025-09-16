@@ -19,7 +19,7 @@ La encapsulación es el principio que consiste en ocultar las características d
 
 ### Diagrama de ejemplos
 
-![diagrama-fundamentos-POO](.github/diagrama-fundamentos-POO.png)   
+![diagrama-fundamentos-POO](/.github/diagrama-fundamentos-POO.png)   
 Este diagrama asocia los fundamentos de POO con algunos archivos y características de Git que se trabajaron durante el proyecto, entre los ejemplos esta:   
 - La abstracción: se puede ver en este archivo de "introduccion" por los casos de uso, que abstraen y explicitan las caracteristicas principales de cada caso de uso. Tambien siendo aplicable al diagrama boceto de diagrama de clase y el archivo "01-boceto-inicial.puml" que aplica de manera aun mas directa la abstraccion sobre las clases de un sistema.   
 - El polimorfismo: aplicado sobre las ramas, el contenido de la rama develop se transmite a release, pero durante el Pull Request se aplican todos los cambios y correciones que necesite la rama release para como ultimo puesto de *espera* antes de llegar a la rama "master".   
