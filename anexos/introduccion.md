@@ -39,7 +39,7 @@ Este diagrama asocia los fundamentos de POO con algunos archivos y característi
 2. Un nuevo usuario, sin entrenamiento formal previo, debe ser capaz de realizar las acciones básicas de carga y actualización de un proyecto (nombre, etapas, responsable, estado) en menos de 5 minutos, utilizando una interfaz simple e intuitiva. 
 3. Las principales vistas del sistema, como el "tablero de control" o el "panel general" de proyectos, deben cargar completamente en menos de 3 segundos bajo una carga de 20 proyectos activos y 10 usuarios concurrentes. Esto es fundamental para que el equipo pueda ver en qué estado está cada uno de un vistazo y para evitar la pérdida de tiempo. 
 4.  El sistema debe garantizar que el 100% de la información ingresada (proyectos, etapas, enlaces, comentarios, etc.) se mantenga persistente y sea recuperable en todo momento tras cualquier recarga de la página o reinicio del sistema
-5. El sistema debe ser capaz de soportar la gestión simultánea de al menos 50 proyectos activos y 20 usuarios concurrentes sin que el tiempo de respuesta de las acciones clave exceda los 5 segundos
+5. El sistema debe ser capaz de soportar la gestión simultánea de al menos 50 proyectos activos y 20 usuarios concurrentes sin que el tiempo de respuesta de las acciones clave exceda los 5 segundos.
 
 ## Casos de uso:
 
