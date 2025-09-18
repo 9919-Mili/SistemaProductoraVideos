@@ -1,0 +1,74 @@
+@startuml 01-boceto-inicial
+
+class Proyecto {
+  - nombre: String
+  - tipo: String
+  - fechaInicio: Date
+  - fechaFin: Date
+  - responsableGeneral: Usuario
+  - etapas: List<Etapa>
+  + crearProyecto()
+  + consultarProyectosActivos()
+}
+
+class Etapa {
+  - nombre: String
+  - estado: String
+  - responsableEtapa: Usuario
+  - comentarios: List<Comentario>
+  - adjuntos: List<Adjunto>
+  + actualizarEstado()
+}
+
+class Comentario {
+  - texto: String
+  - fecha: Date
+  - autor: Usuario
+  + agregarComentario()
+}
+
+class Adjunto {
+  - url: String
+  - descripcion: String
+  + vincularRecurso()
+}
+
+class Notificacion {
+  - mensaje: String
+  - fechaEnvio: Date
+  - tipo: String
+  + enviar()
+}
+
+class Estadistica {
+  - tipo: String
+  - rangoFechas: Date[]
+  + consultarEstadisticas()
+}
+
+class Usuario {
+  - nombre: String
+  - rol: String
+  + autenticar()
+}
+
+class Sistema {
+  + gestionarProyectos()
+  + gestionarUsuarios()
+  + generarReportes()
+  + notificarUsuarios()
+  + accesoAutenticado()
+}
+
+Proyecto --> Etapa
+Etapa --> Comentario
+Etapa --> Adjunto
+Proyecto --> Usuario : responsableGeneral
+Etapa --> Usuario : responsableEtapa
+Usuario --> Comentario : autor
+Sistema --> Proyecto
+Sistema --> Usuario
+Sistema --> Estadistica
+Sistema --> Notificacion
+
+@enduml
