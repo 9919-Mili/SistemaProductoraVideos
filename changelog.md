@@ -4,6 +4,10 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ---
 
+## [Unreleased]
+
+---
+
 ## [Release Actividad Obligatoria N°1] - 2025-09-17
 
 ### Added
@@ -25,6 +29,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/modelador-casos-uso-update-use-case-1] Modifique introduccion.md  
  PR: [#21](https://github.com/9919-Mili/SistemaProductoraVideos/pull/21) - @igvcalefato (Documentador y Coordinador de Repositorio)
  
+---
 ## Cómo usar este archivo
 
 - Para cada PR, simplemente agregar una línea breve en la sección correspondiente a su cambio (Added, Changed, Fixed).
