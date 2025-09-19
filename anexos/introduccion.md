@@ -17,21 +17,28 @@ El polimorfismo es la capacidad de los objetos de diferentes clases relacionadas
 ### Encapsulación
 La encapsulación es el principio que consiste en ocultar las características de una clase u objeto, y exponer solo lo necesario a procesos externos que interactuen con sus datos. Esto protege los datos y el funcionamiento interno del objeto, permitiendo que solo se acceda o modifique mediante métodos específicos.
 
+### Ejemplos
+
+- La abstracción: se abstrajeron los archivos audio, imagen y pdf que dieron los clientes para extraer lo mas esencial tanto de los requisitos del proyecto, las clases de uso y principalmente en el diagrama "01-boceto-inicial" de clases, con cada una que se les definieron atributos y métodos.   
+- El polimorfismo: se podría aplicar a subclases de la clase Estadistica, entre estas pueden variar para clasificar subclases que correspondan a distintos tipos de datos como "tipo: int" para una estadistica númerica de cantidad de proyectos o "tipo: String" para los tipos de cliente.   
+- La herencia: se puede usar la clase Adjunto como ejemplo, esta puede contener subclases referentes a archivos de cada pagina como Vimeo o Drive, estas clases heredarian atributos como "url" y el método de "vincularRecurso()".
+- Encapsulación: la clase Etapa que esta directamente relacionada con las clases Usuario, Adjunto y Comentario no es modificada directamente cuando se utiliza cualquier método de esas otras clases, como "agregarComentario()", sino que esta encapsulada para que solo sea modificada una vez se utiliza el método "actualizarEstado()".
+
 ## Requisistos iniciales del sistema
 
 ### Requisitos funcionales
-1. Gestión de Proyectos, Tareas y Etapas Personalizables:  El sistema permitira crear nuevas etapas de los proyectos, de ser necesario.
-2. Sistema de Notificaciones Automatizadas Multicanal: Notificara por mail o wpp cualquier tipo de modificacion, retraso, pendientes, o si esta listo el proyecto.
-3. Tablero Resumen y Estadísticas Avanzadas: Generara estadisticas mensuales de demoras o cantidad de proyectos, las filtrara por cliente. Tendra que tener un tablero de uso interno, en el que se pueda visualizar los proyectos de cada cliente, cantidad, y por quien estan elaborados.
-4. Seguimiento Detallado y Asignación de Responsabilidades: Debe ofrecer una forma clara de saber en qué etapa se encuentra un proyecto y quién es el responsable de cada tarea o etapa específica. El sistema debe permitir asignar tareas a una sola persona o a varias en paralelo
-5. Gestión de Datos de Clientes y Priorización de Tareas: Debe facilitar el almacenamiento de los datos de contacto de los clientes en un mismo lugar. Además, las tareas deben poder tener un nivel de prioridad (alta, media, baja) para ayudar a decidir cuál resolver primero en caso de superposiciones.
+1. El sistema debe mostrar el estado actual de al menos 20 proyectos activos simultáneamente en un panel de control general o tablero, actualizando la información en un máximo de 5 segundos tras cualquier cambio de estado. Esto permitirá ver "en qué estado está cada uno de un vistazo" y "el estado de todos los proyectos y etapas".
+2.  El sistema debe enviar notificaciones automáticas por correo electrónico y WhatsApp en menos de 60 segundos cuando una etapa se completa o cuando se asigna una nueva tarea o responsable. Esto esponde a la necesidad de "avisar automáticamente por mail o WhatsApp cuando se completa una etapa o cuando se asigna una nueva tarea" y que "el sistema avise automáticamente a quien sigue".   
+3. El sistema debe permitir adjuntar y almacenar hasta 10 enlaces externos (como a carpetas de Drive o videos de Vimeo/Bimio) por cada etapa de un proyecto, garantizando su persistencia y acceso rápido en todo momento. La intención es "poder registrar esos enlaces dentro del sistema para tener todo en un solo lugar" y "subir links a Drive, Vimeo u otras plataformas para no perderlos   
+4. El sistema debe generar reportes mensuales de al menos 3 tipos de estadísticas (ej., proyectos entregados, tiempo promedio por etapa, proyectos por tipo), con la capacidad de filtrar estos datos por cliente y por tipo de proyecto (publicidad, videoclip, institucional), y con un tiempo de respuesta de la consulta no superior a 10 segundos
+5. El sistema debe permitir a un usuario con permisos de administrador definir y añadir hasta 5 nuevas etapas personalizadas por proyecto en un tiempo máximo de 30 segundos, adaptándose a las necesidades específicas y variantes de cada tipo de proyecto. Para poder crear nuevas etapas si hace falta y la flexibilidad para agregar o quitar etapas según el tipo de proyecto.   
 
 ### Requisitos no funcionales
-1. Usabilidad y facilidad de uso: El sistema debe funcionar de forma correcta, y notificar a la brevedad cualquiero cambio. 
-2. Accesibilidad Web y multi-dispositivo: El sistema debe poder abrirse en cuaquier tipo de dispositivo.
-3. Integración con herramientas de comunicación existentes: El sistema debe tener la capacidad de integrarse con plataformas de comunicación como el correo electrónico y WhatsApp para el envío eficiente y preferido de notificaciones al equipo
-4. Flexibilidad en la configuración de proyectos: El sistema debe ser lo suficientemente flexible para permitir la creación, modificación y eliminación de etapas según el tipo de proyecto y las necesidades específicas de la productora
-5. Capacidad de alerta proactiva: El sistema debe poder alertar proactivamente si una etapa o un proyecto se va a retrasar respecto a la fecha estimada de entrega.
+1. El sistema debe ser completamente accesible y funcional vía web desde cualquier navegador moderno en dispositivos de escritorio y móviles, asegurando que el 99% de sus funcionalidades estén disponibles y sean usables en ambas plataformas
+2. Un nuevo usuario, sin entrenamiento formal previo, debe ser capaz de realizar las acciones básicas de carga y actualización de un proyecto (nombre, etapas, responsable, estado) en menos de 5 minutos, utilizando una interfaz simple e intuitiva. 
+3. Las principales vistas del sistema, como el "tablero de control" o el "panel general" de proyectos, deben cargar completamente en menos de 3 segundos bajo una carga de 20 proyectos activos y 10 usuarios concurrentes. Esto es fundamental para que el equipo pueda ver en qué estado está cada uno de un vistazo y para evitar la pérdida de tiempo. 
+4.  El sistema debe garantizar que el 100% de la información ingresada (proyectos, etapas, enlaces, comentarios, etc.) se mantenga persistente y sea recuperable en todo momento tras cualquier recarga de la página o reinicio del sistema
+5. El sistema debe ser capaz de soportar la gestión simultánea de al menos 50 proyectos activos y 20 usuarios concurrentes sin que el tiempo de respuesta de las acciones clave exceda los 5 segundos.
 
 ## Casos de uso:
 
@@ -109,4 +116,10 @@ La encapsulación es el principio que consiste en ocultar las características d
 6. El sistema muestra estado, responsables y cumplimiento.  
 7. El usuario puede añadir observaciones desde este módulo.  
 **Precondiciones:** El usuario debe estar autenticado y existir proyectos en curso.  
-**Postcondiciones:** El usuario obtiene la lista de proyectos activos con información actualizada.  
+**Postcondiciones:** El usuario obtiene la lista de proyectos activos con información actualizada.
+
+### Boceto inicial del diseño de clases
+---
+[Diagrama 01 - Boceto Inicial](/diagramas/01-diagrama-clases/01-boceto-inicial.png)   
+
+![diagrama-boceto-01](/diagramas/01-diagrama-clases/01-boceto-inicial.png)
