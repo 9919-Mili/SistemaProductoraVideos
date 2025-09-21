@@ -31,4 +31,5 @@
 | **Reunir requerimentos:** | Requisito Funcional 1 (Visualización de proyectos y etapas)-2 (Notificaciones automáticas)-3 (Agregado de adjuntos)-5 (Gestión de etapas) |
 | **Aspectos sobresalientes:** | ¿se pueden editar o eliminar observaciones? ¿quién recibe las notificaciones? ¿se pueden adjuntar archivos? |
 | **Prioridad:** | Baja |
+
 | **Riesgo:** | Bajo |
