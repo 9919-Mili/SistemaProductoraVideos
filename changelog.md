@@ -9,7 +9,8 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ### Added
 - [feature/espec-escenarios-casos-uso-add-escenario-1]  Agregado de Carpetas, Indice y Escenarios de Casos de Uso. Agregado de Templates para PR de release y feature.
  PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvcalefato (Especialista en Escenarios de Casos de Uso y Documentador y Coordinador de Repositorio)
-[feature/diseniador-tarjetas-crc-add-tarjeta-clase-1]  Agregue tarjetas, cree carpeta y archivos. 
+
+- [feature/diseniador-tarjetas-crc-add-tarjeta-clase-1]  Agregue tarjetas, cree carpeta y archivos. 
  PR: [#35](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @99-Mili (Diseñador de tarjetas CRC)
 
 
@@ -47,5 +48,6 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - No es necesario escribir párrados, sólo una frase corta + link a PR y responsable con rol.
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 - Mantener el orden y formato para facilitar el seguimiento.
+
 
 
