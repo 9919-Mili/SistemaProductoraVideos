@@ -8,8 +8,20 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
-- [feature/modelador-diag-casos-uso-update-use-case-1]  Cree Diagramas de Casos de Uso, el indice y los exporte como PNG
+- [feature/espec-escenarios-casos-uso-add-escenario-1]  Agregado de Carpetas, Indice y Escenarios de Casos de Uso. Agregado de Templates para PR de release y feature.   
+ PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvcalefato (Especialista en Escenarios de Casos de Uso y Documentador y Coordinador de Repositorio)
+
+- [feature/diseniador-tarjetas-crc-add-tarjeta-clase-1]  Agregue tarjetas, cree carpeta y archivos.   
+ PR: [#35](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @99-Mili (Diseñador de tarjetas CRC)
+
+- [feature/modelador-diag-casos-uso-update-use-case-1]  Cree Diagramas de Casos de Uso, el indice y los exporte como PNG   
  PR: [#36](https://github.com/9919-Mili/SistemaProductoraVideos/pull/36) - @zikoloogo (Moderador de Diagramas de Casos de Uso)
+
+### Changed
+
+- [feature/espec-escenarios-casos-uso-add-escenario-1]  Modifique README.md   
+PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvcalefato (Documentador y Coordinador de Repositorio)
+
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2025-09-17
@@ -17,7 +29,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ### Added
 
 - [feature/doc-coord-repo-update-md]  Estructura inicial para los archivos, README.md y anexos.md  
- PR: [#15](https://github.com/9919-Mili/SistemaProductoraVideos/pull/15/files) - @igvcalefato (Documentador y Coordinador de Repositorio)
+ PR: [#15](https://github.com/9919-Mili/SistemaProductoraVideos/pull/15) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
  - [feature/diseñador-clases-add-boceto-inicial]  Agregue un boceto y el diseño de clases en puml  
  PR: [#19](https://github.com/9919-Mili/SistemaProductoraVideos/pull/19) - @Zikoloogo (Diseñador de clases iniciales)
@@ -40,3 +52,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - No es necesario escribir párrados, sólo una frase corta + link a PR y responsable con rol.
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 - Mantener el orden y formato para facilitar el seguimiento.
+
+
+
+

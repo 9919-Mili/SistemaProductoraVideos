@@ -21,3 +21,5 @@ Sebastian Viel|156880|@Zikoloogo|Técnicatura en Programación en Sistemas
 ### Diagramas y Diseños
 ---
 - [Anexos](/anexos/anexos.md)
+- [Diagramas UML](/diagramas/digramasUML.md)
+- [Herramientas Agile](/herramientas-agile/herramientas_agile.md)
