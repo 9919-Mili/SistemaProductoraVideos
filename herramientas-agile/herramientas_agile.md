@@ -1,10 +1,6 @@
-|  |  |  |  |
-|---|---|---|---|
-| **Nombre de la Clase:** | Etapa | | |
-| **Superclase:** | N/A | | |
-| **Subclase:** | N/A | | |
-| **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-| Registrar su estado actual (ej. pendiente, en curso, lista) y el Usuario responsable específico | Proyecto | Represento un paso concreto y secuencial (grabación, edición, revisión, publicación) dentro de un Proyecto, y soy responsable de saber quién me está trabajando y cuándo debo terminar | Nombre |
-| | | | |
-| | | | |
-| | | | |
+# Tarjetas CRC 
+- [Tarjeta CRC 1 - Clase - Sistema- ](/herramientas-agile/tarjetas-crc/01-tarjeta-crc-sistema-clase1.md)
+- [Tarjeta CRC 2 - Clase - Proyecto- ](/herramientas-agile/tarjetas-crc/02-tarjeta-crc-proyecto-clase2.md)
+- [Tarjeta CRC 3 - Clase - Etapa- ](/herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa-clase3.md)
+- [Tarjeta CRC 4- Clase - Usuario- ](/herramientas-agile/tarjetas-crc/04-tarjeta-crc-usuario-clase4.md)
+- [Tarjeta CRC 5 - Clase - Notificacion-](/herramientas-agile/tarjetas-crc/05-tarjeta-crc-notificacion-clase5.md)
