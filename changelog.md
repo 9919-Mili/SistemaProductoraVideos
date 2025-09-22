@@ -6,6 +6,10 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ## [Unreleased]
 
+### Added
+
+- [feature/modelador-diag-casos-uso-update-use-case-1]  Cree Diagramas de Casos de Uso, el indice y los exporte como PNG
+ PR: [#36](https://github.com/9919-Mili/SistemaProductoraVideos/pull/36) - @zikoloogo (Moderador de Diagramas de Casos de Uso)
 ---
 
 ## [Release Actividad Obligatoria N°1] - 2025-09-17
