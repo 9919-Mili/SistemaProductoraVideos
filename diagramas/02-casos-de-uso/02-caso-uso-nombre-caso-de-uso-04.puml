@@ -1,0 +1,22 @@
+@startuml consultar_estadisticas
+left to right direction
+actor "Productora General" as PG
+actor "Responsable de la Etapa" as RE
+
+rectangle "Sistema" {
+  usecase "Consultar estadísticas" as CU1
+  usecase "Procesar datos" as CU2
+  usecase "Generar reportes" as CU3
+  usecase "Visualizar datos" as CU4
+}
+
+PG --> CU1
+RE --> CU1
+
+CU1 ..> CU2 : <<include>>
+CU2 ..> CU3 : <<include>> 
+CU3 ..> CU4
+
+PG ..> CU4 : <<extend>>
+RE ..> CU4 : <<extend>>
+@enduml

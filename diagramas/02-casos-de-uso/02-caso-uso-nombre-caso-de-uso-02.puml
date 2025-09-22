@@ -1,0 +1,16 @@
+@startuml Actualizar_estado_etapa
+left to right direction
+actor "Responsable de la Etapa" as Responsable
+
+rectangle "Sistema" {
+  usecase "Actualizar estado de la etapa" as CU1
+  usecase "Guardar actualización" as CU2
+  usecase "Enviar notificación" as CU3
+}
+
+Responsable --> CU1
+CU1 --> CU2 : <<include>>
+CU2 ..> CU3 : <<include>>
+
+
+@enduml
