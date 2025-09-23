@@ -7,16 +7,20 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ## [Unreleased]
 
 ### Added
+
 - [feature/espec-escenarios-casos-uso-add-escenario-1]  Agregado de Carpetas, Indice y Escenarios de Casos de Uso. Agregado de Templates para PR de release y feature.   
  PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvcalefato (Especialista en Escenarios de Casos de Uso y Documentador y Coordinador de Repositorio)
 
 - [feature/diseniador-tarjetas-crc-add-tarjeta-clase-1]  Agregue tarjetas, cree carpeta y archivos.   
  PR: [#35](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @99-Mili (Diseñador de tarjetas CRC)
 
+- [feature/modelador-diag-casos-uso-update-use-case-1]  Cree Diagramas de Casos de Uso, el indice y los exporte como PNG   
+ PR: [#36](https://github.com/9919-Mili/SistemaProductoraVideos/pull/36) - @zikoloogo (Moderador de Diagramas de Casos de Uso)
 
 ### Changed
-- [feature/espec-escenarios-casos-uso-add-escenario-1]  Modifique README.md  
- PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvcalefato (Documentador y Coordinador de Repositorio)
+
+- [feature/espec-escenarios-casos-uso-add-escenario-1]  Modifique README.md   
+PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
 ---
 

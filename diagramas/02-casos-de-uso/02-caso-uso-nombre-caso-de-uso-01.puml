@@ -1,0 +1,20 @@
+@startuml creacion_de_proyecto
+left to right direction
+actor "Productora General\n(Laura González)" as PG
+
+rectangle "Sistema" {
+  usecase "Crear Proyecto" as UC1
+  usecase "Guardar Información" as UC2
+  usecase "Validar Información" as UC3
+  usecase "Confirmar Creación" as UC4
+  usecase "Validad y Guardar Información" as UC5
+
+  
+}
+
+PG --> UC1
+UC1 --> UC2 : <<include>>
+UC2 --> UC3
+UC3 --> UC4
+UC4 ..> UC5 : <<include>>
+@enduml

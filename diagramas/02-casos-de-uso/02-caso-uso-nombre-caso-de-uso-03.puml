@@ -1,0 +1,19 @@
+@startuml agregar_observaciones
+left to right direction
+actor "Productora General" as PG
+actor "Responsable de la Etapa" as RE
+actor "Asistente de Producción" as AP
+
+rectangle "Sistema" {
+  usecase "Agregar observaciones" as CU1
+  usecase "Validación y Confirmación de la observación" as CU2
+  usecase "Enviar notificación" as CU3
+}
+
+PG --> CU1
+RE --> CU1
+AP --> CU1
+
+CU1 --> CU2 : <<include>>
+CU2 ..> CU3 : <<include>>
+@enduml
