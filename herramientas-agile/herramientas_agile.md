@@ -1,3 +1,4 @@
 # Herramientas Agile
-- [Tarjeta CRC](/herramientas-agile/tarjeta-crc/tarjetas-crc.md)
+- [Tarjeta CRC](/herramientas-agile/tarjetas-crc/tarjetas-crc.md)
+
 
