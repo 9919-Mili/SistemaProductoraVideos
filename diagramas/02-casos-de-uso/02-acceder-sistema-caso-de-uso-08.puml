@@ -1,0 +1,20 @@
+@startuml
+actor "Productora General" as PG
+actor "Responsable de Etapa" as RE
+actor "Asistente de Producción" as AP
+rectangle Sistema {
+  usecase "Acceder al Sistema desde Navegador Web" as UC8
+  usecase "Validar Credenciales" as UC8a
+}
+PG --> UC8
+RE --> UC8
+AP --> UC8
+UC8 --> UC8a : <<include>>
+
+note right of UC8
+Precondiciones:
+- Usuario con credenciales válidas
+Postcondiciones:
+- Acceso a funciones según rol
+end note
+@enduml

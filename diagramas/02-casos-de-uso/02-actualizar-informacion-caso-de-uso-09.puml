@@ -1,0 +1,17 @@
+@startuml
+actor "Productora General" as PG
+actor "Responsable de Etapa" as RE
+rectangle Sistema {
+  usecase "Registrar y Editar Información del Proyecto" as UC9
+}
+PG --> UC9
+RE --> UC9
+
+note right of UC9
+Precondiciones:
+- Proyecto existente
+Postcondiciones:
+- Información del proyecto actualizada en tablero y reportes
+end note
+
+@enduml

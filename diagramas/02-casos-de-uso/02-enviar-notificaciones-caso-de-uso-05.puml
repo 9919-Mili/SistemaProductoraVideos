@@ -1,0 +1,19 @@
+@startuml
+rectangle "Sistema de Gestión de Proyectos" {
+  usecase "Enviar Notificaciones Automáticas" as UC5
+  usecase "Notificar por Correo" as UC5a
+  usecase "Notificar por WhatsApp" as UC5b
+}
+
+UC5 --> UC5a : <<include>>
+UC5 --> UC5b : <<include>>
+
+note right of UC5
+Precondiciones:
+- Usuarios registrados con datos de contacto
+- Ocurre un evento relevante (creación de proyecto, asignación, finalización de etapa)
+Postcondiciones:
+- Responsables reciben notificación en <60 seg
+- Se registra historial de notificación
+end note
+@enduml
