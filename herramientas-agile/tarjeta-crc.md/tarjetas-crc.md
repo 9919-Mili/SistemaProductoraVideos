@@ -7,3 +7,5 @@
 - [Tarjeta CRC 6 - Clase - Estadistica](/herramientas-agile/tarjetas-crc/06-tarjeta-crc-estadistica.md)
 - [Tarjeta CRC 7 - Clase - Adjunto](/herramientas-agile/tarjetas-crc/07-tarjeta-crc-adjunto.md)
 - [Tarjeta CRC 8 - Clase - Comentario](/herramientas-agile/tarjetas-crc/08-tarjeta-crc-comentario.md)
+- [Tarjeta CRC 9 - Clase - Persona](/herramientas-agile/tarjetas-crc/08-tarjeta-crc-persona.md)
+- [Tarjeta CRC 10 - Clase - Cliente](/herramientas-agile/tarjeta-crc/10-tarjeta-crc-cliente.md)
