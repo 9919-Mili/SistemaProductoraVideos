@@ -1,10 +1,10 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Adjunto | | |
-| **Superclase:** | N/A| | |
+| **Superclase:** | Archivo | | |
 | **Subclase:** | N/A| | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-|Gestionar proyectos| Proyecto| Soy el contenedor central que facilita la organización y el seguimiento de todos los elementos (proyectos, personas, notificaciones, datos)  | N/A |
-|Gestionar usuarios| Usuario| |N/A |
-|Notificar Usuarios| Notificacion | Asegurar que la información quede guardada| N/A |
-|Acceder y consultar a las Estadisticas| Estadisticas| |N/A |
+| Vincular recursos | Etapa | archivo o documento que complementa y enriquece la información de proyectos y etapas. Guardo evidencias, referencias y materiales importantes que el equipo necesita consultar | datos de proyectos |
+|Gestionar usuarios| Usuario| archivo o documento que complementa y enriquece la información de proyectos y etapas. Guardo evidencias, referencias y materiales importantes que el equipo necesita consultar | datos usuario |
+| Url de etapa | Etapa | archivo o documento que complementa y enriquece la información de proyectos y etapas. Guardo evidencias, referencias y materiales importantes que el equipo necesita consultar | datos archivo |
+|
