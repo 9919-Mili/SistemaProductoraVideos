@@ -1,8 +1,8 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Proyecto | | |
-| **Superclase:** |N/A | |
-| **Subclase:** | Proyecto| | |
+| **Superclase:** | Sistema | |
+| **Subclase:** | N/A | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | crear proyecto | Proyecto | Soy la unidad principal de trabajo de Vizion Estudio, que genera nuestros trabajos, Coordino tareas, recursos y equipos para lograr objetivos específicos | nombre, tipo  |  
 | consultar proyecto activo | Usuario | Soy la unidad principal de trabajo de Vizion Estudio, que genera nuestros trabajos, Coordino tareas, recursos y equipos para lograr objetivos específicos | nombre, tipo, responsable general |
