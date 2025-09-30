@@ -1,10 +1,11 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Sistema | | |
-| **Superclase:** | Aplicacion | | |
+| **Superclase:** | N/A | | |
 | **Subclase:** | N/A| | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-|gestionar proyectos| Proyecto| Soy el contenedor central que facilita la organización y el seguimiento de todos los elementos (proyectos, personas, notificaciones, datos)  | Controlador general del sistema |
-|gestionar usuarios| Usuario| Manejo identidades, permisos y sesiones de forma segura | Controlador general del sistema |
-|notificar Usuarios| Notificacion | Asegurar que la información quede guardada y sea notificada| Controlador general del sistema |
-|generar reportes| Reportes | Acceder y consultar las Estadisticas| Controlador general del sistema |
+|gestionar proyectos| Proyecto| Coordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan  | Lista de proyecto, Lista de usuarios |
+|gestionar usuarios| Usuario| Coordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan |
+|notificar Usuarios| Notificacion | Coordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan| Lista de proyecto, Lista de usuarios |
+|generar reportes| Reportes | Coordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan | Lista de proyecto, Lista de usuarios 
+|acceso auteticado| Usuario |  MCoordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan | Lista de proyecto, Lista de usuarios
