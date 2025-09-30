@@ -4,9 +4,6 @@
 | **Superclase:** | Persona | | |
 | **Subclase:** | Cliente | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-| Autenticar  | Sistema | Soy la persona (miembro del equipo o cliente) que ejecuta o supervisa las tareas, y necesito recibir información oportuna para no perder tiempo ni generar retrabajo | Nombre |
-| Responsable del proyecto | Proyecto | Soy la persona (miembro del equipo o cliente) que ejecuta o supervisa las tareas, y necesito recibir información oportuna para no perder tiempo ni generar retrabajo | Rol asignado |
-| Responsable de etapa | Etapa | Soy la persona (miembro del equipo o cliente) que ejecuta o supervisa las tareas, y necesito recibir información oportuna para no perder tiempo ni generar retrabajo |Etapa asignada |
-| | | | |
-| | | | |
-| | | | |
+| Autenticarse  | Sistema | Soy un actor dentro del sistema. Puedo ser responsable de proyectos y etapas, hacer comentarios y recibir notificaciones sobre actividades relevantes | Nombre |
+| Acceder a proyectos asignados| Proyecto | oy un actor dentro del sistema. Puedo ser responsable de proyectos y etapas, hacer comentarios y recibir notificaciones sobre actividades relevantes | Rol |
+| Recibir notificaciones | Sistema | oy un actor dentro del sistema. Puedo ser responsable de proyectos y etapas, hacer comentarios y recibir notificaciones sobre actividades relevantes| Rol |

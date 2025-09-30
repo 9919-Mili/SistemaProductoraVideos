@@ -1,12 +1,8 @@
 |  |  |  |  |
 |---|---|---|---|
-| **Nombre de la Clase:** | Usuario | | |
-| **Superclase:** | Persona | | |
+| **Nombre de la Clase:** | Persona | | |
+| **Superclase:** | | | |
 | **Subclase:** | Cliente | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-| Autenticar  | Sistema | Soy la persona (miembro del equipo o cliente) que ejecuta o supervisa las tareas, y necesito recibir información oportuna para no perder tiempo ni generar retrabajo | Nombre |
-| Responsable del proyecto | Proyecto | Soy la persona (miembro del equipo o cliente) que ejecuta o supervisa las tareas, y necesito recibir información oportuna para no perder tiempo ni generar retrabajo | Rol asignado |
-| Responsable de etapa | Etapa | Soy la persona (miembro del equipo o cliente) que ejecuta o supervisa las tareas, y necesito recibir información oportuna para no perder tiempo ni generar retrabajo |Etapa asignada |
-| | | | |
-| | | | |
-| | | | |
+| Validar datos  | Sistema | Soy la representación base de cualquier persona en el sistema. Guardo la información común que todos necesitan: nombre, contacto y datos básicos. Mis subclases añadirán comportamientos específicos según su rol | Nombre, telefono, correo |
+| Brindar informacion | Proyecto | Soy la representación base de cualquier persona en el sistema. Guardo la información común que todos necesitan: nombre, contacto y datos básicos. Mis subclases añadirán comportamientos específicos según su rol | Rol asignado, nombre, telefono, correo |
