@@ -1,0 +1,72 @@
+@startuml consultar_estadisticas
+left to right direction
+
+actor "Productora General" as PG
+actor "Responsable de Etapa" as RE
+actor "Cliente" as CLI
+actor "Sistema" as SYS
+
+rectangle "Consultar Estadísticas" {
+  
+    usecase "Consultar Estadísticas" as UC1
+    usecase "Acceder a Módulo Estadísticas" as UC1a
+    usecase "Seleccionar Tipo de Reporte" as UC1b
+    
+    usecase "Definir Filtros" as UC2
+    usecase "Seleccionar Rango de Fechas" as UC2a
+    usecase "Seleccionar Tipo de Proyecto" as UC2b
+    usecase "Seleccionar Estado" as UC2c
+    usecase "Seleccionar Cliente" as UC2d
+    usecase "Seleccionar Responsable" as UC2e
+    
+    usecase "Aplicar Filtros" as UC3
+    
+    usecase "Validar Permisos de Visualización" as UC4
+    
+    usecase "Generar Reporte" as UC5
+    
+    usecase "Visualizar Resultados" as UC6
+    usecase "Ver Gráficos" as UC6a
+    usecase "Ver Tabla de Datos" as UC6b
+    
+    usecase "Descargar Reporte" as UC7
+    usecase "Seleccionar Formato" as UC7a
+    usecase "Generar Archivo" as UC7b
+    
+    usecase "Enviar Reporte al Cliente" as UC8
+}
+
+PG --> UC1
+RE --> UC1
+
+UC1 ..> UC1a : <<include>>
+UC1 ..> UC1b : <<include>>
+
+UC1 ..> UC2 : <<include>>
+UC2 ..> UC2a : <<extend>>
+UC2 ..> UC2b : <<extend>>
+UC2 ..> UC2c : <<extend>>
+UC2 ..> UC2d : <<extend>>
+UC2 ..> UC2e : <<extend>>
+
+UC2 ..> UC3 : <<include>>
+
+UC3 ..> UC4 : <<include>>
+UC4 --> SYS
+
+UC3 ..> UC5 : <<include>>
+UC5 --> SYS
+
+UC5 ..> UC6 : <<include>>
+UC6 ..> UC6a : <<include>>
+UC6 ..> UC6b : <<include>>
+
+UC6 ..> UC7 : <<extend>>
+UC7 ..> UC7a : <<include>>
+UC7 ..> UC7b : <<include>>
+UC7 --> SYS
+
+UC6 ..> UC8 : <<extend>>
+UC8 --> CLI
+
+@enduml

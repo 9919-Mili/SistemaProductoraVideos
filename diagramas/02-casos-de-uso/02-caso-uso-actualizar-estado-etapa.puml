@@ -1,0 +1,34 @@
+@startuml creacion_de_proyecto
+left to right direction
+actor "Productora General" as PG
+actor "Responsable de Etapa" as RE
+actor "Cliente" as CLI
+actor "Sistema" as SYS
+
+rectangle "Gestión de Proyectos" {
+  
+    usecase "Crear Proyecto" as UC1
+    usecase "Definir Tipo de Proyecto" as UC1b
+    usecase "Asociar Cliente" as UC1c
+    usecase "Definir Etapas" as UC1d
+    usecase "Nombrar Responsables de Etapas" as UC1e
+    usecase "Ingresar Fechas (Inicio/Fin)" as UC1f
+    usecase "Agregar Observaciones Iniciales" as UC1g
+    usecase "Validar Información del Proyecto" as UC2
+    usecase "Enviar Notificaciones" as UC3
+}
+
+PG --> UC1
+UC1 ..> UC1b : <<include>>
+UC1 ..> UC1c : <<include>>
+UC1 ..> UC1d : <<include>>
+UC1 ..> UC1e : <<include>>
+UC1 ..> UC1f : <<include>>
+UC1 ..> UC1g : <<extend>>
+UC1 ..> UC2 : <<extend>>
+UC2 --> SYS
+UC2 ..> UC3 : <<extend>>
+UC3 --> RE
+UC3 --> CLI
+
+@enduml

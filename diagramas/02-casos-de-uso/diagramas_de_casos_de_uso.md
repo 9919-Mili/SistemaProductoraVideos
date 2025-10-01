@@ -1,0 +1,10 @@
+# Diagramas de Casos de Uso
+- [Caso de Uso 1 - Creación de Proyecto](/diagramas/02-casos-de-uso/02-creacion-de-proyecto-caso-de-uso-01.png)
+- [Caso de Uso 2 - Definir y Configurar Etapas](/diagramas/02-casos-de-uso/02-definir-y-configurar-etapas-caso-de-uso-02.png)
+- [Caso de Uso 3 - Adjuntar Enlaces Externos](/diagramas/02-casos-de-uso/02-adjuntar-enlaces-externos-caso-de-uso-03.png)
+- [Caso de Uso 4 - Visualizar Tablero de Proyectos y Etapas](/diagramas/02-casos-de-uso/02-visualizar-tablero-caso-de-uso-04.png)
+- [Caso de Uso 5 - Enviar Notificaciones Automáticas](/diagramas/02-casos-de-uso/02-enviar-notificaciones-caso-de-uso-05.png)
+- [Caso de Uso 6 - Generar Reportes Estadísticos](/diagramas/02-casos-de-uso/02-generar-reportes-caso-de-uso-06.png)
+- [Caso de Uso 7 - Gestionar Usuarios y Roles](/diagramas/02-casos-de-uso/02-gestionar-usuarios-caso-de-uso-07.png)
+- [Caso de Uso 8 - Acceder al Sistema desde la Web](/diagramas/02-casos-de-uso/02-acceder-sistema-caso-de-uso-08.png)
+- [Caso de Uso 9 - Actualizar Información del Proyecto](/diagramas/02-casos-de-uso/02-actualizar-informacion-caso-de-uso-09.png)

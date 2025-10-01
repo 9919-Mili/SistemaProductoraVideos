@@ -1,0 +1,52 @@
+@startuml Actualizar_estado_etapa
+left to right direction
+actor "Responsable de Etapa" as RE
+actor "Siguiente Responsable" as RE_SIG
+actor "Productora General" as PG
+actor "Cliente" as CLI
+actor "Sistema" as SYS
+
+rectangle "Actualizar Estado de Etapa" {
+  
+    usecase "Actualizar Estado de Etapa" as UC1
+    usecase "Seleccionar Proyecto" as UC1a
+    usecase "Seleccionar Etapa Asignada" as UC1b
+    usecase "Elegir Nuevo Estado" as UC1c
+    usecase "Agregar Comentario" as UC1d
+    
+    usecase "Validar Cambio de Estado" as UC2
+    usecase "Verificar Permisos" as UC2a
+    usecase "Validar Transición de Estado" as UC2b
+    usecase "Verificar Requisitos del Estado" as UC2c
+    
+    usecase "Confirmar Actualización" as UC3
+    
+    usecase "Enviar Notificaciones" as UC4
+    usecase "Identificar Siguiente Responsable" as UC4a
+    usecase "Notificar Siguiente Etapa" as UC4b
+}
+
+RE --> UC1
+
+UC1 ..> UC1a : <<include>>
+UC1 ..> UC1b : <<include>>
+UC1 ..> UC1c : <<include>>
+UC1 ..> UC1d : <<extend>>
+
+UC1 ..> UC2 : <<include>>
+UC2 ..> UC2a : <<include>>
+UC2 ..> UC2b : <<include>>
+UC2 ..> UC2c : <<extend>>
+UC2 --> SYS
+
+UC1 ..> UC3 : <<include>>
+
+UC3 ..> UC4 : <<extend>>
+UC4 --> PG
+UC4 --> CLI
+
+UC4 ..> UC4a : <<extend>>
+UC4a ..> UC4b : <<extend>>
+UC4b --> RE_SIG
+
+@enduml
