@@ -4,6 +4,6 @@
 | **Superclase:** | Persona | | |
 | **Subclase:** | Cliente | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-| Autenticarse  | Sistema | Soy un actor dentro del sistema. Puedo ser responsable de proyectos y etapas, hacer comentarios y recibir notificaciones sobre actividades relevantes | Nombre |
-| Acceder a proyectos asignados| Proyecto | oy un actor dentro del sistema. Puedo ser responsable de proyectos y etapas, hacer comentarios y recibir notificaciones sobre actividades relevantes | Rol |
-| Recibir notificaciones | Sistema | oy un actor dentro del sistema. Puedo ser responsable de proyectos y etapas, hacer comentarios y recibir notificaciones sobre actividades relevantes| Rol |
+| Autenticarse  | Sistema | Tengo que demostrar quien soy | Nombre, rol |
+| Acceder a proyectos asignados| Proyecto | Tengo que tener el permiso y la capacidad de ver y gestionar las tareas | Lista de proyectos |
+| Recibir notificaciones | Sistema | Tengo que ser informado sobre un evento o modificacion | notificaciones |

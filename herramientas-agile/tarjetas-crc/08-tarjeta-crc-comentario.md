@@ -5,4 +5,4 @@
 | **Subclase:** | N/A| | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | Agregar comentario | Usuario| Soy una anotación temporal. Registro quién dijo qué y cuándo, proporcionando un historial de comunicación sobre las etapas | texto |
-| Registrar cambios| Usuario| Soy una anotación temporal. Registro quién dijo qué y cuándo, proporcionando un historial de comunicación sobre las etapas | texto, fecha, autor |
+| Registrar cambios| Usuario| Registros las modificaciones | autor |

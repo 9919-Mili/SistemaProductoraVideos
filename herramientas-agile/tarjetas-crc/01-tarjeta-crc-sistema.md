@@ -4,8 +4,8 @@
 | **Superclase:** | N/A | | |
 | **Subclase:** | N/A| | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
-|gestionar proyectos| Proyecto| Coordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan  | Lista de proyecto, Lista de usuarios |
-|gestionar usuarios| Usuario| Coordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan | lista de usuarios |
-|notificar Usuarios| Notificacion | Coordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan| Lista de proyecto, Lista de usuarios |
-|generar reportes| Reportes | Coordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan | Lista de proyecto, Lista de usuarios|
-|acceso auteticado| Usuario |  Coordino todos los proyectos y usuarios, asegurándome de que la información fluya correctamente y que todos los componentes trabajen en armonía. Mantengo el control general y genero reportes cuando se necesitan | Lista de proyecto, Lista de usuarios |
+|gestionar proyectos| Proyecto| Gestiono todos los proyectos, asegurándome el estado de cada uno | Lista de proyecto |
+|gestionar usuarios| Usuario| Tengo que saber quien esta a cargo de cada proyecto y su disponibilidad | lista de usuarios |
+|notificar Usuarios| Notificacion | Notifico al usuario cualquier novedad |Lista de usuarios |
+|generar reportes| Reportes | Plasmo la informacion del usuario en un reporte | Lista de proyecto |
+|acceso auteticado| Usuario | Tengo que verificar la identidad del usuario antes de permitirle acceso a los datos  | Lista de usuarios |
