@@ -1,0 +1,57 @@
+@startuml agregar_observaciones
+left to right direction
+
+actor "Productora General" as PG
+actor "Responsable de Etapa" as RE
+actor "Asistente de Producción" as AP
+actor "Cliente" as CLI
+actor "Sistema" as SYS
+
+rectangle "Agregar Observaciones" {
+  
+    usecase "Agregar Observación" as UC1
+    usecase "Seleccionar Proyecto" as UC1a
+    usecase "Seleccionar Etapa" as UC1b
+    usecase "Elegir Tipo de Observación" as UC1c
+    usecase "Escribir Comentario" as UC1d
+    usecase "Adjuntar Archivos" as UC1e
+    usecase "Mencionar Usuarios" as UC1f
+    
+    usecase "Validar Permisos" as UC2
+    usecase "Verificar Rol del Usuario" as UC2a
+    usecase "Verificar Tipo Permitido" as UC2b
+    usecase "Verificar Alcance Permitido" as UC2c
+    
+    usecase "Confirmar Observación" as UC3
+    
+    usecase "Enviar Notificaciones" as UC4
+    usecase "Determinar Destinatarios" as UC4a
+}
+
+PG --> UC1
+RE --> UC1
+AP --> UC1
+
+UC1 ..> UC1a : <<include>>
+UC1 ..> UC1b : <<extend>>
+UC1 ..> UC1c : <<include>>
+UC1 ..> UC1d : <<include>>
+UC1 ..> UC1e : <<extend>>
+UC1 ..> UC1f : <<extend>>
+
+UC1 ..> UC2 : <<include>>
+UC2 ..> UC2a : <<include>>
+UC2 ..> UC2b : <<include>>
+UC2 ..> UC2c : <<include>>
+UC2 --> SYS
+
+UC1 ..> UC3 : <<include>>
+
+UC3 ..> UC4 : <<extend>>
+UC4 ..> UC4a : <<include>>
+UC4 --> PG
+UC4 --> RE
+UC4 --> AP
+UC4 --> CLI
+
+@enduml

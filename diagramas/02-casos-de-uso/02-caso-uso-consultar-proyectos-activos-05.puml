@@ -1,0 +1,69 @@
+@startuml consultar_proyectos_activos
+left to right direction
+
+actor "Productora General" as PG
+actor "Responsable de Etapa" as RE
+actor "Asistente de Producción" as AP
+actor "Sistema" as SYS
+
+rectangle "Consultar Proyectos Activos" {
+  
+    usecase "Consultar Proyectos Activos" as UC1
+    usecase "Acceder a Módulo Proyectos Activos" as UC1a
+    usecase "Listar Proyectos Activos" as UC1b
+    
+    usecase "Aplicar Filtros" as UC2
+    usecase "Filtrar por Responsable" as UC2a
+    usecase "Filtrar por Etapa" as UC2b
+    usecase "Filtrar por Estado" as UC2c
+    usecase "Filtrar por Cliente" as UC2d
+    usecase "Buscar por Nombre" as UC2e
+    
+    usecase "Seleccionar Proyecto" as UC3
+    
+    usecase "Validar Permisos de Visualización" as UC4
+    
+    usecase "Mostrar Detalles del Proyecto" as UC5
+    usecase "Ver Información General" as UC5a
+    usecase "Ver Estado de Etapas" as UC5b
+    usecase "Ver Responsables" as UC5c
+    usecase "Ver Observaciones" as UC5e
+    
+    usecase "Agregar Observación" as UC6
+    usecase "Actualizar Estado de Etapa" as UC7
+    usecase "Descargar Archivos" as UC8
+    usecase "Ver Historial" as UC9
+}
+
+PG --> UC1
+RE --> UC1
+AP --> UC1
+
+UC1 ..> UC1a : <<include>>
+UC1 ..> UC1b : <<include>>
+
+UC1 ..> UC2 : <<extend>>
+UC2 ..> UC2a : <<extend>>
+UC2 ..> UC2b : <<extend>>
+UC2 ..> UC2c : <<extend>>
+UC2 ..> UC2d : <<extend>>
+UC2 ..> UC2e : <<extend>>
+
+UC1 ..> UC3 : <<include>>
+
+UC3 ..> UC4 : <<include>>
+UC4 --> SYS
+
+UC3 ..> UC5 : <<include>>
+UC5 ..> UC5a : <<include>>
+UC5 ..> UC5b : <<include>>
+UC5 ..> UC5c : <<include>>
+UC5 ..> UC5e : <<include>>
+UC5 --> SYS
+
+UC5 ..> UC6 : <<extend>>
+UC5 ..> UC7 : <<extend>>
+UC5 ..> UC8 : <<extend>>
+UC5 ..> UC9 : <<extend>>
+
+@enduml
