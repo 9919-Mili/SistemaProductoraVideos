@@ -17,6 +17,9 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
  - [feature/esp-isp-add-anexo-isp]  Agregado de diagramas y explicación del principio OCP   
  PR: [#63](https://github.com/9919-Mili/SistemaProductoraVideos/pull/63) - @igvcalefato (Especialista en Principios de Extensión (OCP + LSP))
 
+- [feature/esp-srp-add-anexo-srp]  Agregado de diagramas y explicación DIP   
+ PR: [#64](https://github.com/9919-Mili/SistemaProductoraVideos/pull/64) - @igvcalefato (Especialista en Inversión de Dependencias (DIP))
+
 ### Changed
 
 ---
