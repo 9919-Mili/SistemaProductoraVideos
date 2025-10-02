@@ -8,6 +8,9 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
+- [feature/esp-isp-add-anexo-isp]  Agregado de diagramas y explicación del principio ISP
+ PR: [#58](https://github.com/9919-Mili/SistemaProductoraVideos/pull/58) - @99-Mili (Especialista en Segregación de Interfaces (ISP))
+
 ### Changed
 
 ---
