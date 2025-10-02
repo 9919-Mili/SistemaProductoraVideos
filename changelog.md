@@ -7,6 +7,8 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ## [Unreleased]
 
 ### Added
+- [feature/espec-escenarios-casos-uso-add-escenario-1]  Agregado de diagramas y explicación SRP y actualizado de README.md   
+ PR: [#59](https://github.com/9919-Mili/SistemaProductoraVideos/pull/59) - @zikoloogo (Documentador y Coordinador de Repositorio + SRP)
 
 ### Changed
 
@@ -60,6 +62,7 @@ PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvca
 - No es necesario escribir párrados, sólo una frase corta + link a PR y responsable con rol.
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 - Mantener el orden y formato para facilitar el seguimiento.
+
 
 
 
