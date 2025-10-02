@@ -25,6 +25,8 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 - [feature/modelador-diag-casos-uso-update-use-case-1]  Cree Diagramas de Casos de Uso, el indice y los exporte como PNG   
  PR: [#36](https://github.com/9919-Mili/SistemaProductoraVideos/pull/36) - @zikoloogo (Moderador de Diagramas de Casos de Uso)
 
+- [feature/esp-extension-lsp-add-anexo-lsp] Cree un diagrama UML y  documente los principios LSP
+
 ### Changed
 
 - [feature/espec-escenarios-casos-uso-add-escenario-1]  Modifique README.md   
