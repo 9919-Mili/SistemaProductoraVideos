@@ -8,7 +8,7 @@
 ----
 Este repositorio tiene el objetivo de aplicar el diseño orientado a objetos sobre el sistema de una pequeña productora audiovisual para digitalizar la gestión de sus proyectos de video.  
 
-Se entregaran los requisitos funcionales y no funcionales, tarjetas CRC, actores, casos de uso con sus repesticos diagramas, escenarios de los casos de uso y posibles clases del sistema acorde a la información del cliente.
+Se entregaran los requisitos funcionales y no funcionales, tarjetas CRC, actores, casos de uso con sus respectivos diagramas, escenarios de los casos de uso y posibles clases del sistema, asi como mejoras a las mismas mediante la aplicación de los principios SOLID, acorde a la información proporcionada por el cliente.
 
 ### Integrantes:
 ---
