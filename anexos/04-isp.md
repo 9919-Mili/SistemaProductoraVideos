@@ -15,4 +15,7 @@ Explicación del Principio ISP
 El Principio de Segregación de Interfaces establece que ningún cliente debería verse obligado a depender de métodos que no utiliza. En lugar de tener interfaces grandes y monolíticas, es preferible tener múltiples interfaces específicas y cohesivas.
 
 Estructura de Clases
+[(../diagramas/01-diagrama-clases/01-solid-04-isp.puml)](../diagramas/01-diagrama-clases/01-solid-04-isp.puml)
+
+Justifacion tecnica
 
