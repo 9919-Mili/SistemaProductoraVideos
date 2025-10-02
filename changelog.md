@@ -10,9 +10,12 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 - [feature/esp-srp-add-anexo-srp]  Agregado de diagramas y explicación SRP y actualizado de README.md   
  PR: [#59](https://github.com/9919-Mili/SistemaProductoraVideos/pull/59) - @zikoloogo (Documentador y Coordinador de Repositorio + SRP)
-
-- [feature/esp-isp-add-anexo-isp]  Agregado de diagramas y explicación del principio ISP
+ 
+- [feature/esp-isp-add-anexo-isp]  Agregado de diagramas y explicación del principio ISP   
  PR: [#58](https://github.com/9919-Mili/SistemaProductoraVideos/pull/58) - @99-Mili (Especialista en Segregación de Interfaces (ISP))
+
+ - [feature/esp-isp-add-anexo-isp]  Agregado de diagramas y explicación del principio OCP   
+ PR: [#63](https://github.com/9919-Mili/SistemaProductoraVideos/pull/63) - @igvcalefato (Especialista en Principios de Extensión (OCP + LSP))
 
 ### Changed
 
