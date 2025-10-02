@@ -1,0 +1,52 @@
+@startuml
+
+interface IObtenerActor <<interface>>{
+  + obtenerActor()
+}
+
+class Usuario implements IObtenerActor {
+  + obtenerActor()
+}
+
+class Proyecto {
+  - nombre: String
+  - tipo: String
+  - fechaInicio: Date
+  - fechaFin: Date
+  - responsableGeneral: IObtenerActor
+  - etapas: List<Etapa>
+  + crearProyecto()
+  + consultarProyectosActivos()
+  + actualizarResponsableGeneral()
+}
+
+class Etapa {
+  - nombre: String
+  - estado: String
+  - responsableEtapa: IObtenerActor
+  - comentarios: List<Comentario>
+  - adjuntos: List<Adjunto>
+  + actualizarResponsableEtapa()
+  + actualizarEstado()
+}
+
+class Comentario {
+  - texto: String
+  - fecha: Date
+  - autor: IObtenerActor
+  + actualizarAutor()
+  + agregarComentario()
+}
+
+class Usuario {
+  - nombre: String
+  - rol: String
+}
+
+Proyecto -down-> IObtenerActor : responsableGeneral
+Proyecto -down-> Etapa
+Etapa -down-> IObtenerActor : responsableEtapa
+Etapa --> Comentario
+Comentario -right-> IObtenerActor : autor
+
+@enduml
