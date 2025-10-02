@@ -1,0 +1,62 @@
+@startuml 01-solid-05-dip
+title DIP — Abstracciones para clase Etapa
+
+interface IExtractorNombre <<interface>> {
+  + obtenerNombre()
+}
+
+interface IAgregarObjeto <<interface>> {
+  + agregarObjeto()
+}
+
+class Etapa {
+  - nombre: String
+  - estado: String
+  - responsableEtapa: IExtractorNombre
+  - comentarios: List<IAgregarObjeto>
+  - adjuntos: List<IAgregarObjeto>
+  + agregarAdjunto()
+  + agregarComentario()
+  + actualizarResponsable()
+  + actualizarEstado()
+}
+
+class Usuario  {
+  - nombre: String
+  - rol: String
+}
+class Comentario  {
+  - texto: String
+  - fecha: Date
+  - autor: IExtractorNombre
+  + agregarComentario()
+  + actualizarAutor()
+}
+
+class Adjunto  {
+  - url: String
+  - descripcion: String
+  + agregarAdjunto()
+}
+
+class Comentario implements IAgregarObjeto {
+  + agregarObjeto()
+}
+
+class Adjunto implements IAgregarObjeto {
+  + agregarObjeto()
+}
+
+class Usuario implements IAgregarObjeto {
+  + agregarObjeto()
+}
+
+class Usuario implements IExtractorNombre {
+  + obtenerNombre()
+}
+
+Etapa --> IAgregarObjeto : comentarios y adjuntos
+Etapa --> IExtractorNombre : responsableEtapa
+Comentario --> IExtractorNombre : autor
+
+@enduml
