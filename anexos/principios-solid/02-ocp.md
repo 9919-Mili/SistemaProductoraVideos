@@ -1,4 +1,4 @@
-# Principio de Responsabilidad Única (SRP)
+# Principio Abierto/Cerrado (OCP)
 
 ## Proposito y Tipo del Principio Solid
 
