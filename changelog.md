@@ -8,6 +8,20 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
+- [feature/esp-srp-add-anexo-srp]  Agregado de diagramas y explicación SRP y actualizado de README.md   
+ PR: [#59](https://github.com/9919-Mili/SistemaProductoraVideos/pull/59) - @zikoloogo (Documentador y Coordinador de Repositorio + SRP)
+ 
+- [feature/esp-isp-add-anexo-isp]  Agregado de diagramas y explicación del principio ISP   
+ PR: [#58](https://github.com/9919-Mili/SistemaProductoraVideos/pull/58) - @99-Mili (Especialista en Segregación de Interfaces (ISP))
+
+ - [feature/esp-extension-ocp-add-anexo-ocp]  Agregado de diagramas y explicación del principio OCP   
+ PR: [#63](https://github.com/9919-Mili/SistemaProductoraVideos/pull/63) - @igvcalefato (Especialista en Principios de Extensión (OCP + LSP))
+
+ - [feature/esp-extension-lsp-add-anexo-lsp]  Agregado de diagramas y explicación del principio LSP   
+ PR: [#62](https://github.com/9919-Mili/SistemaProductoraVideos/pull/62) - @zikoloogo (Especialista en Principios de Extensión (OCP + LSP))
+
+ - [feature/feature/esp-dip-add-anexo-dip]  Agregado de diagramas y explicación DIP   
+ PR: [#64](https://github.com/9919-Mili/SistemaProductoraVideos/pull/64) - @igvcalefato (Especialista en Inversión de Dependencias (DIP))
 ### Changed
 
 ---
@@ -62,6 +76,7 @@ PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvca
 - No es necesario escribir párrados, sólo una frase corta + link a PR y responsable con rol.
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 - Mantener el orden y formato para facilitar el seguimiento.
+
 
 
 
