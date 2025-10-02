@@ -7,6 +7,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ## [Unreleased]
 
 ### Added
+
 - [feature/esp-srp-add-anexo-srp]  Agregado de diagramas y explicación SRP y actualizado de README.md   
  PR: [#59](https://github.com/9919-Mili/SistemaProductoraVideos/pull/59) - @zikoloogo (Documentador y Coordinador de Repositorio + SRP)
 

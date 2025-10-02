@@ -1,0 +1,170 @@
+@startuml 01-solid-01-srp
+
+title Aplicación del Principio de Responsabilidad Única (SRP)
+
+package "Refactorización 1: Clase Sistema" {
+  
+  class "Sistema (ANTES)" as SistemaAntes <<violación SRP>> {
+    + gestionarProyectos()
+    + gestionarUsuarios()
+    + generarReportes()
+    + notificarUsuarios()
+    + accesoAutenticado()
+  }
+  
+  note right of SistemaAntes
+    Clase "God Object"
+    5 responsabilidades
+    5 razones para cambiar
+  end note
+  
+  class GestorProyectos {
+    + crearProyecto()
+    + actualizarProyecto()
+    + eliminarProyecto()
+  }
+  
+  class GestorUsuarios {
+    + crearUsuario()
+    + actualizarUsuario()
+    + asignarRol()
+  }
+  
+  class GeneradorReportes {
+    + generarReporteProyectos()
+    + generarEstadisticas()
+  }
+  
+  class ServicioNotificaciones {
+    + notificarPorEmail()
+    + notificarPorWhatsApp()
+  }
+  
+  class ServicioAutenticacion {
+    + autenticar()
+    + validarPermisos()
+  }
+  
+  SistemaAntes .down.> GestorProyectos : <<refactorizado a>>
+  SistemaAntes .down.> GestorUsuarios : <<refactorizado a>>
+  SistemaAntes .down.> GeneradorReportes : <<refactorizado a>>
+  SistemaAntes .down.> ServicioNotificaciones : <<refactorizado a>>
+  SistemaAntes .down.> ServicioAutenticacion : <<refactorizado a>>
+}
+
+package "Refactorización 2: Clase Proyecto" {
+  
+  class "Proyecto (ANTES)" as ProyectoAntes <<violación SRP>> {
+    - nombre: String
+    - tipo: String
+    - fechaInicio: Date
+    - fechaFin: Date
+    + crearProyecto()
+    + consultarProyectosActivos()
+  }
+  
+  note right of ProyectoAntes
+    Mezcla modelo de dominio
+    con acceso a datos
+    2 razones para cambiar
+  end note
+  
+  class Proyecto {
+    - nombre: String
+    - tipo: String
+    - fechaInicio: Date
+    - fechaFin: Date
+    - responsableGeneral: Usuario
+    - etapas: List<Etapa>
+    + validarFechas()
+    + agregarEtapa()
+    + calcularProgreso()
+  }
+  
+  class RepositorioProyectos {
+    + guardar(proyecto: Proyecto)
+    + actualizar(proyecto: Proyecto)
+    + consultarProyectosActivos(): List<Proyecto>
+    + buscarPorId(id: int): Proyecto
+  }
+  
+  ProyectoAntes .down.> Proyecto : <<refactorizado a>>
+  ProyectoAntes .down.> RepositorioProyectos : <<refactorizado a>>
+  
+  RepositorioProyectos --> Proyecto : gestiona
+}
+
+package "Refactorización 3: Clase Etapa" {
+  
+  class "Etapa (ANTES)" as EtapaAntes <<violación SRP>> {
+    - nombre: String
+    - estado: String
+    - comentarios: List<Comentario>
+    - adjuntos: List<Adjunto>
+    + actualizarEstado()
+  }
+  
+  note right of EtapaAntes
+    Gestiona su estado
+    + comentarios + adjuntos
+    3 responsabilidades
+  end note
+  
+  class Etapa {
+    - nombre: String
+    - estado: String
+    - fechaInicio: Date
+    - fechaFin: Date
+    - responsableEtapa: Usuario
+    + actualizarEstado()
+    + validarTransicion()
+    + calcularProgreso()
+  }
+  
+  class GestorComentarios {
+    - comentarios: List<Comentario>
+    + agregarComentario(comentario: Comentario)
+    + eliminarComentario(id: int)
+    + buscarComentarios(): List<Comentario>
+  }
+  
+  class GestorAdjuntos {
+    - adjuntos: List<Adjunto>
+    + agregarAdjunto(adjunto: Adjunto)
+    + eliminarAdjunto(id: int)
+    + descargarAdjunto(id: int)
+    + validarFormato(archivo: File)
+  }
+  
+  class Comentario {
+    - texto: String
+    - fecha: Date
+    - autor: Usuario
+  }
+  
+  class Adjunto {
+    - url: String
+    - descripcion: String
+    - tamano: int
+  }
+  
+  EtapaAntes .down.> Etapa : <<refactorizado a>>
+  EtapaAntes .down.> GestorComentarios : <<refactorizado a>>
+  EtapaAntes .down.> GestorAdjuntos : <<refactorizado a>>
+  
+  Etapa *-- GestorComentarios : compone
+  Etapa *-- GestorAdjuntos : compone
+  GestorComentarios --> Comentario : gestiona
+  GestorAdjuntos --> Adjunto : gestiona
+}
+
+note bottom
+  **Principio de Responsabilidad Única (SRP)**
+  Cada clase refactorizada tiene UNA única razón para cambiar:
+  - Separación de concerns
+  - Alta cohesión
+  - Bajo acoplamiento
+  - Facilita mantenimiento y testing
+end note
+
+@enduml
