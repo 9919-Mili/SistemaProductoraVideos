@@ -1,0 +1,172 @@
+@startuml 01-solid-03-lsp
+
+title Aplicación del Principio de Sustitución de Liskov (LSP)
+
+package "Jerarquía 1: Sistema de Notificaciones" {
+  
+  abstract class Notificacion {
+    # mensaje: String
+    # destinatario: Usuario
+    # fechaEnvio: Date
+    + enviar(): void
+    # {abstract} validarDisponibilidad(): boolean
+    # {abstract} realizarEnvio(): void
+    # registrarEnvio(): void
+  }
+  
+  class NotificacionEmail extends Notificacion {
+    - servidorSMTP: String
+    - puerto: int
+    # validarDisponibilidad(): boolean
+    # realizarEnvio(): void
+  }
+  
+  class NotificacionWhatsApp extends Notificacion {
+    - apiKey: String
+    - numeroWhatsApp: String
+    # validarDisponibilidad(): boolean
+    # realizarEnvio(): void
+  }
+  
+  class NotificacionSMS extends Notificacion {
+    - gateway: String
+    - numeroTelefono: String
+    # validarDisponibilidad(): boolean
+    # realizarEnvio(): void
+  }
+  
+  note right of Notificacion
+    **Cumple LSP:**
+    - Todas las subclases respetan el contrato
+    - enviar() funciona para todas
+    - No lanzan excepciones inesperadas
+    - Polimorfismo seguro
+  end note
+}
+
+package "Jerarquía 2: Usuarios por Rol" {
+  
+  abstract class Usuario {
+    # nombre: String
+    # email: String
+    # password: String
+    # rol: String
+    + autenticar(): boolean
+    + {abstract} puedeCrearProyecto(): boolean
+    + {abstract} puedeActualizarEtapa(etapa: Etapa): boolean
+    + consultarProyectos(): List<Proyecto>
+  }
+  
+  class ProductoraGeneral extends Usuario {
+    - departamento: String
+    + puedeCrearProyecto(): boolean
+    + puedeActualizarEtapa(etapa: Etapa): boolean
+    + generarReportes(): void
+    + asignarResponsables(): void
+  }
+  
+  class ResponsableEtapa extends Usuario {
+    - etapasAsignadas: List<Etapa>
+    + puedeCrearProyecto(): boolean
+    + puedeActualizarEtapa(etapa: Etapa): boolean
+    + completarEtapa(etapa: Etapa): void
+    + cargarEntregables(): void
+  }
+  
+  class Cliente extends Usuario {
+    - empresa: String
+    - proyectosContratados: List<Proyecto>
+    + puedeCrearProyecto(): boolean
+    + puedeActualizarEtapa(etapa: Etapa): boolean
+    + consultarEstadoProyecto(): void
+    + descargarEntregables(): void
+  }
+  
+  note right of Usuario
+    **Cumple LSP:**
+    - Métodos de permisos retornan boolean
+    - No rechazan operaciones con excepciones
+    - Lógica consulta permisos antes de actuar
+    - Sustituibilidad garantizada
+  end note
+}
+
+package "Jerarquía 3: Proyectos por Tipo" {
+  
+  class Proyecto {
+    # nombre: String
+    # fechaInicio: Date
+    # fechaFin: Date
+    # responsableGeneral: Usuario
+    # etapas: List<Etapa>
+    # estado: String
+    + calcularCosto(): double
+    + validarEtapas(): boolean
+    + agregarEtapa(etapa: Etapa): void
+    + calcularProgreso(): int
+  }
+  
+  class ProyectoComercial extends Proyecto {
+    - clienteCorporativo: String
+    - presupuestoPublicitario: double
+    - tarifaComercial: double
+    + calcularCosto(): double
+    + aplicarDescuentoVolumen(): double
+  }
+  
+  class ProyectoDocumental extends Proyecto {
+    - tematica: String
+    - duracionEstimada: int
+    - equipoProduccion: List<String>
+    + calcularCosto(): double
+    + estimarTiempoProduccion(): int
+  }
+  
+  class ProyectoInstitucional extends Proyecto {
+    - institucion: String
+    - proposito: String
+    - descuentoEducativo: double
+    + calcularCosto(): double
+    + validarRequisitoInstitucional(): boolean
+  }
+  
+  note right of Proyecto
+    **Cumple LSP:**
+    - Todas las subclases calculan costo
+    - Método siempre retorna valor válido
+    - Precondiciones consistentes
+    - No requiere validación de tipo
+  end note
+}
+
+package "Relaciones" {
+  class Etapa {
+    - nombre: String
+    - estado: String
+  }
+  
+  Usuario --> Proyecto : consulta
+  Notificacion --> Usuario : destinatario
+  Proyecto *-- Etapa : contiene
+}
+
+note bottom
+  **Principio de Sustitución de Liskov (LSP)**
+  
+  Las subclases pueden sustituir a sus clases base sin alterar
+  el correcto funcionamiento del programa:
+  
+  ✓ Precondiciones no más fuertes en subclases
+  ✓ Postcondiciones no más débiles en subclases  
+  ✓ Invariantes preservadas en la jerarquía
+  ✓ Sin excepciones nuevas no contempladas en la base
+  ✓ Comportamiento consistente y predecible
+  
+  **Beneficios:**
+  - Polimorfismo seguro
+  - Código más confiable
+  - Extensibilidad sin sorpresas
+  - Jerarquías coherentes
+end note
+
+@enduml
