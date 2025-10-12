@@ -13,10 +13,8 @@ class Etapa {
   - nombre: String
   - estado: String
   - responsableEtapa: IExtractorNombre
-  - comentarios: List<IAgregarObjeto>
-  - adjuntos: List<IAgregarObjeto>
-  + agregarAdjunto()
-  + agregarComentario()
+  - comentarios y adjuntos: List<IAgregarObjeto>
+  + agregarComentarioYAdjunto()
   + actualizarResponsable()
   + actualizarEstado()
 }

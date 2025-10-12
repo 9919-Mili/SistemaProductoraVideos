@@ -10,7 +10,7 @@ Para solucionarlo se aplicara el Principio DIP para crear abstracciones de las c
 
 El boceto actual contiene la clase Etapa, que depende de las clases Usuario, Adjunto y Comentario para actualizar los atributos de la clase, por lo cual esta completamente acoplada al buscar extraer información de tres clases concretas diferentes directamente.
 
-Se usara el Principio DIP para crear abstracciones encargadas de obtener la información de los atributos de clase para reemplazar las dependencias de para actualizar los atributos de la clase Etapa.
+Se usara el Principio DIP para crear abstracciones encargadas de obtener la información de los atributos de clase para reemplazar las dependencias de para actualizar/reemplazar los atributos de la clase Etapa.
 
 ## Explicación de Clases Abstractas e Interfaces
 
@@ -32,4 +32,4 @@ Las interfaces introducidas son:
 La interfaz provee el método obtenerNombre() para acceder al atributo "nombre" de la clase Usuario y responder a los métodos "actualizarResponsable()" y "actualizarAutor()" de las clases dependientes.
 
 - "IAgregarObjeto", del cual depende la clase Etapa, y se extiende a la clases Comentario y Adjunto.   
-La interfaz provee el método agregarObjeto() para crear un objeto correspondiente de las clases Comentario o Adjunto, el cual pasara directamente a formar parte de la lista correspondiente entre los atributos "comentarios" o "adjuntos" de la Etapa.
+La interfaz provee el método agregarObjeto() para crear un objeto correspondiente de las clases Comentario o Adjunto, el cual pasara directamente a formar parte de la lista del atributo "comentarios y adjuntos" de la clase Etapa.
