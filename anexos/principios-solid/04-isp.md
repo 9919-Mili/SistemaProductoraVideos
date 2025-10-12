@@ -12,7 +12,7 @@ Se usará el Principio ISP para crear interfaces especializadas que agrupen mét
 
 ### Explicación de Interfaces 
 
-Una iterfaz es un contrato que define un conjunto de metodos que una clase debe implementar. Te indica que puede hacer, sin detallar como lo hace. 
+Una interfaz es un contrato que define un conjunto de metodos que una clase debe implementar. Te indica que puede hacer, sin detallar como lo hace. 
 
 ### Estructura de Clases
 [(../diagramas/01-diagrama-clases/01-solid-04-isp.puml)](../diagramas/01-diagrama-clases/01-solid-04-isp.puml)
