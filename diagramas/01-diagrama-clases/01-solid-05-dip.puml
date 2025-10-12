@@ -20,10 +20,12 @@ class Etapa {
 }
 
 class Usuario  {
+  - tipo: String
   - nombre: String
   - rol: String
 }
 class Comentario  {
+  - tipo: String
   - texto: String
   - fecha: Date
   - autor: IExtractorNombre
@@ -32,6 +34,7 @@ class Comentario  {
 }
 
 class Adjunto  {
+  - tipo: String
   - url: String
   - descripcion: String
   + agregarAdjunto()
