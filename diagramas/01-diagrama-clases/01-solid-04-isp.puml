@@ -1,56 +1,42 @@
-@startUML diagrama isp 
-class Sistema {
-        -proyectos: List<Proyecto>
-        -usuarios: List<Usuario>
-        -notificacion: String
-        +crear_proyecto: datos
-        +gestionar_proyectos: List
-        +gestionar_usuario: void
-        +notificar_usuarios: void
-        +generar_reporte: string
-        +autenticar: string
+@startUML Segregacion de Interfaces (ISP)
+
+
+interface IUsuario {
+        +autenticar(datos): string
+        +validarDatos(): boolean 
+        +recibirNotificacion(): String
 }
-class Proyecto {
-        -nombre: string
-        -fecha_inicio: date
-        -fecha_entrega: date
-        -etapas: List
-        -archivos: List
-        +agregar_etapa: void
-        +listar_etapas(): List
-        +consultar_
-        fecha_inicio(): date
-        +consultar_fecha_entrega(): date
-        +validar_datos(): bool
-        +vincular_archivo: void
-        +obtener_archivos(): List
+
+interface IAdministrable{
+        +gestionarProyectos(): void
+        +gestionarUsuarios(): void
+}
+
+interface IComunicacion {
+        +enviarMensaje():String
+        +registrarFechas(): boolean
+        
+}
+
+interface IArchivo {
+        +subirArchivo(): void
+        +permitirAcceso(): void
+
         }
 
-class Etapa {
-        -nombre: strig
-        -estado: string
-        -responsable: Usuario
-        -notificaciones: List
-        +actualizar_estado: void
-        +asignar_responsable: void
-        +recibir_notificacion: void
-        +consultar_avance() 
-        +validar_datos()
-        }
-  class Usuario {
-        -nombre: string
-        -rol: strig
-        -notificaciones: List
-        +autenticar
-        +recibir_notificacion
-        +aprobar_entregable
-        +consultar_avance() 
-        +contratar_proyecto
-        +validar_datos() 
-        +brindar_informacion
-        }
-Sistema --|> Proyecto
-Sistema --|> Usuario
-Proyecto --|> Etapa
-Etapa --|> Usuario
+interface IEstadistica {
+        +generarReportes(): String
+}
+
+Usuario ===> IUsuario 
+Usuario===> IEstadistica
+Sistema ===> IAdministrable
+Sistema ===> IComunicacion
+Sistema ===> IArchivo
+Notificacion ===> IComunicacion
+Adjunto ===> IArchivo
+Estadistica ===> IEstadistica
+
+
+
 @endUML
