@@ -18,4 +18,6 @@ Una iterfaz es un contrato que define un conjunto de metodos que una clase debe 
 [(../diagramas/01-diagrama-clases/01-solid-04-isp.puml)](../diagramas/01-diagrama-clases/01-solid-04-isp.puml)
 
 ###s Justifacion tecnica
+Las clases del sistema tenia muchos metodos innecesarios, lo que generaba acoplamiento. Se aplico el Principio Solid ISP par separar las interfaces grandes en otras pequeñas y especificas. De esta forma cada clase va a implementar solo los metodos que necesite, esto reduce los metodos, mejora la cohesion y el mantenimiento del sistema. 
+Este diseño ahora va a permitir agregar nuevas funciones sin que se modifiquen las clases existentes. 
 

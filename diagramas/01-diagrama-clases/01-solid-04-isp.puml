@@ -26,6 +26,7 @@ interface IArchivo {
 
 interface IEstadistica {
         +generarReportes(): String
+        +consultarEstadisticas(): void
 }
 
 Usuario ===> IUsuario 
