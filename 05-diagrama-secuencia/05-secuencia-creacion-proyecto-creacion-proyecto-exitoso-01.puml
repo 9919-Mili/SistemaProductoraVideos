@@ -14,10 +14,13 @@ activate baseDeDatos
 baseDeDatos -> sistemaDeNotificacion: Confirmacion creacion de proyecto
 activate sistemaDeNotificacion
 sistemaDeNotificacion --> baseDeDatos: envia un mensaje
-deactivate baseDeDatos 
+deactivate sistemaDeNotificacion
 baseDeDatos --> sistemaDeValidacion: confirma validacion
+deactivate baseDeDatos
 sistemaDeValidacion --> interfazWeb: permitir acceso
+deactivate sistemaDeValidacion
 interfazWeb --> productoraGeneral: muestra panel del sistema
+deactivate interfazWeb
 
 alt Creacion exitosa
     productoraGeneral --> interfazWeb: creacion exitosa
@@ -34,9 +37,10 @@ activate sistemaDeValidacion
 sistemaDeValidacion -> baseDeDatos: Permisos confirmados 
 activate baseDeDatos
 baseDeDatos -> sistemaDeNotificacion: Proyeccto guardado
-deactivate sistemaDeNotificacion
 interfazWeb --> productoraGeneral: datos recibidos
+deactivate sistemaDeValidacion
 sistemaDeValidacion --> interfazWeb: permisos confirmados 
+deactivate interfazWeb
 
 productoraGeneral -> interfazWeb: Confirmar creacion 
 activate interfazWeb
@@ -46,9 +50,9 @@ sistemaDeValidacion -> baseDeDatos: Autorizar almacenamiento
 activate baseDeDatos
 baseDeDatos -> sistemaDeNotificacion: Registro completo
 baseDeDatos -->sistemaDeValidacion: autorizacion recibida
+deactivate  baseDeDatos
 interfazWeb -->productoraGeneral: mostrar confirmacion exitosa
-sistemaDeNotificacion --> baseDeDatos: notifica los reponsables asignados
-deactivate sistemaDeNotificacion
+sistemaDeValidacion--> interfazWeb:notifica los reponsables asignados
 
 
 @enduml
