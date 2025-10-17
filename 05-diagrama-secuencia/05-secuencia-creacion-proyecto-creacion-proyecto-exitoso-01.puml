@@ -1,0 +1,59 @@
+@startuml creacion proyecto exitoso 
+actor productoraGeneral
+participant interfazWeb
+participant sistemaDeValidacion
+participant baseDeDatos
+participant sistemaDeNotificacion
+
+productoraGeneral -> interfazWeb: Seleccionar opcion crear proyecto
+activate interfazWeb
+interfazWeb -> sistemaDeValidacion: Valida datos 
+activate sistemaDeValidacion
+sistemaDeValidacion -> baseDeDatos: datos validados
+activate baseDeDatos 
+baseDeDatos -> sistemaDeNotificacion: Confirmacion creacion de proyecto
+activate sistemaDeNotificacion
+sistemaDeNotificacion --> baseDeDatos: envia un mensaje
+deactivate baseDeDatos 
+baseDeDatos --> sistemaDeValidacion: confirma validacion
+sistemaDeValidacion --> interfazWeb: permitir acceso
+interfazWeb --> productoraGeneral: muestra panel del sistema
+
+alt Creacion exitosa
+    productoraGeneral --> interfazWeb: creacion exitosa
+else Creacion erronea
+    productoraGeneral --> interfazWeb: Creacion erronea
+    end
+
+
+
+productoraGeneral -> interfazWeb: Ingresar datos del proyecto
+activate interfazWeb
+interfazWeb -> sistemaDeValidacion: Verificar permisos 
+activate sistemaDeValidacion
+sistemaDeValidacion -> baseDeDatos: Permisos confirmados 
+activate baseDeDatos
+baseDeDatos -> sistemaDeNotificacion: Proyeccto guardado
+deactivate sistemaDeNotificacion
+interfazWeb --> productoraGeneral: datos recibidos
+sistemaDeValidacion --> interfazWeb: permisos confirmados 
+
+productoraGeneral -> interfazWeb: Confirmar creacion 
+activate interfazWeb
+interfazWeb -> sistemaDeValidacion: solicitar guardado
+activate sistemaDeValidacion
+sistemaDeValidacion -> baseDeDatos: Autorizar almacenamiento 
+activate baseDeDatos
+baseDeDatos -> sistemaDeNotificacion: Registro completo
+baseDeDatos -->sistemaDeValidacion: autorizacion recibida
+interfazWeb -->productoraGeneral: mostrar confirmacion exitosa
+sistemaDeNotificacion --> baseDeDatos: notifica los reponsables asignados
+deactivate sistemaDeNotificacion
+
+
+@enduml
+
+
+
+
+
