@@ -2,275 +2,171 @@
 
 ## Propósito y Tipo del Principio SOLID
 
-El Principio de Sustitución de Liskov (Liskov Substitution Principle) establece que **los objetos de una clase derivada deben poder sustituir a los objetos de su clase base sin alterar el correcto funcionamiento del programa**. En otras palabras, si S es un subtipo de T, entonces los objetos de tipo T pueden ser reemplazados por objetos de tipo S sin que esto rompa la lógica del sistema.
+El Principio de Sustitución de Liskov (Liskov Substitution Principle) establece que los objetos de una subclase deben poder sustituir a los de su superclase sin alterar el comportamiento correcto del sistema.
 
-Este principio es fundamental porque:
+En el diseño orientado a objetos, esto implica que las subclases deben respetar el mismo contrato que define la clase base, asegurando que la jerarquía sea coherente y predecible.
 
-- Garantiza que las jerarquías de herencia sean correctas y coherentes
-- Previene comportamientos inesperados al usar polimorfismo
-- Asegura que las subclases respeten el contrato definido por la superclase
-- Facilita la extensibilidad y mantenibilidad del código
-- Permite el uso seguro de polimorfismo en tiempo de ejecución
+### Este principio es esencial porque:
 
-Cuando LSP se viola, el código que usa una clase base no puede confiar en que las subclases se comporten correctamente, lo que genera código frágil con validaciones de tipo y comportamientos condicionales basados en la clase concreta.
+- Garantiza jerarquías de herencia correctas y estables.
+- Evita comportamientos inesperados al usar polimorfismo.
+- Permite que el sistema crezca sin romper su estructura.
+- Mejora la mantenibilidad y extensibilidad del software.
+
+Cuando se viola LSP, el código que usa una clase base ya no puede confiar en que las subclases se comporten correctamente, lo que genera validaciones adicionales y comportamientos condicionales no deseados.
+
+---
 
 ## Motivación
 
-En el sistema de gestión de proyectos de la productora de videos, existen varias oportunidades para aplicar herencia, pero es crucial que estas jerarquías respeten LSP para evitar comportamientos inesperados.
+En el sistema de gestión de proyectos audiovisuales del diseño de diagramas de clases inicial, hay múltiples jerarquías posibles: `Notificacion`, `Usuario`, `Proyecto`, entre otras.
 
-### Caso 1: Jerarquía de Notificaciones
+Para mantener un diseño limpio y predecible, estas jerarquías deben cumplir LSP, garantizando que una subclase siempre pueda reemplazar a su clase base sin alterar el funcionamiento del sistema.
 
-**Problema identificado:** En el diseño inicial, existe una única clase `Notificacion` que maneja todos los tipos de envío (email, WhatsApp, SMS). Si implementáramos esto con herencia de forma incorrecta, podríamos violar LSP.
+---
 
-**Ejemplo de violación de LSP:**
-```java
-class Notificacion {
-    public void enviar() {
-        // Envía por email por defecto
-        enviarPorEmail();
-    }
-}
+## Caso 1: Jerarquía de Notificaciones
 
-class NotificacionWhatsApp extends Notificacion {
-    @Override
-    public void enviar() {
-        if (!usuarioTieneWhatsApp()) {
-            throw new UnsupportedOperationException("Usuario sin WhatsApp");
-        }
-        enviarPorWhatsApp();
-    }
-}
-```
+### Problema identificado:
+La clase `Notificacion` maneja distintos tipos de comunicación (email, SMS, interna). Si cada tipo se implementa con comportamientos incompatibles, se rompe LSP.
 
-**¿Por qué viola LSP?** Porque el código que espera una `Notificacion` asume que `enviar()` siempre funcionará, pero `NotificacionWhatsApp` puede lanzar una excepción que la clase base no contempla. Esto rompe el contrato y obliga al código cliente a validar el tipo concreto antes de usar el método.
+### Ejemplo de violación conceptual:
+Una subclase `NotificacionSMS` que solo funcione si el destinatario tiene número cargado y, en caso contrario, genere un error.
 
-**Consecuencias:**
-- El código debe validar qué tipo de notificación es antes de enviar
-- Se pierde la ventaja del polimorfismo
-- Genera código acoplado y difícil de mantener
+### Consecuencias:
 
-### Caso 2: Jerarquía de Usuarios por Rol
+- Se necesitarían verificaciones del tipo de notificación antes de enviar.
+- Se pierde el polimorfismo y se multiplica la lógica condicional.
+- El código se vuelve más frágil y dependiente de los detalles de implementación.
 
-**Problema identificado:** Los usuarios tienen diferentes roles (Productora General, Responsable de Etapa, Cliente), y cada rol tiene permisos y comportamientos específicos.
+### Diseño correcto:
+Cada tipo de notificación (`NotificacionEmail`, `NotificacionInterna`, `NotificacionSMS`) debe respetar el método `enviar()` sin generar errores inesperados. Si un envío no es posible, simplemente no se realiza, pero no se rompe el contrato.
 
-**Ejemplo de violación de LSP:**
-```java
-class Usuario {
-    public void crearProyecto() {
-        // Cualquier usuario puede crear proyectos
-    }
-}
+---
 
-class Cliente extends Usuario {
-    @Override
-    public void crearProyecto() {
-        throw new PermissionDeniedException("Los clientes no pueden crear proyectos");
-    }
-}
-```
+## Caso 2: Jerarquía de Usuarios por Rol
 
-**¿Por qué viola LSP?** Porque el método `crearProyecto()` está disponible en la clase base `Usuario`, pero la subclase `Cliente` lo rechaza. Esto significa que no se puede sustituir un `Usuario` por un `Cliente` de forma segura.
+### Problema identificado:
+La clase `Usuario` podría extenderse en diferentes roles: `ResponsableGeneral`, `ResponsableEtapa`, `Cliente`.
 
-**Impacto en el sistema:**
-- El código debe verificar el rol antes de llamar métodos
-- Se generan excepciones en tiempo de ejecución
-- La jerarquía de clases no refleja la realidad del dominio
+Una mala implementación sería eliminar o restringir métodos como `autenticar()` o `gestionarProyectos()` en alguna subclase.
 
-### Caso 3: Jerarquía de Proyectos por Tipo
+### Diseño correcto:
+Cada subclase define cómo responde a los métodos heredados, pero no si los tiene o no. Por ejemplo, `ResponsableEtapa` puede tener permisos limitados, pero sigue respondiendo al mismo contrato que `Usuario`.
 
-**Escenario real:** En una productora de videos, existen diferentes tipos de proyectos (Comerciales, Documentales, Institucionales), cada uno con características específicas pero compartiendo una estructura común.
+---
 
-**Diseño correcto con LSP:** Todos los tipos de proyecto deben poder ser tratados como `Proyecto` sin comportamientos inesperados. Si el sistema espera calcular el costo de un proyecto, TODOS los tipos deben poder calcularlo, aunque el algoritmo interno sea diferente.
+## Caso 3: Jerarquía de Proyectos por Tipo
+
+### Escenario:
+`Proyecto` es la clase base. Subclases posibles: `ProyectoComercial`, `ProyectoDocumental`, `ProyectoInstitucional`.
+
+### Violación típica:
+Redefinir `consultarProyectosActivos()` para devolver un formato diferente o requerir parámetros adicionales.
+
+### Diseño correcto:
+Todas las subclases deben mantener la estructura y comportamiento del contrato definido por `Proyecto`.
+
+---
 
 ## Explicación de Herencia
 
 ### ¿Qué es la Herencia?
 
-La herencia es un mecanismo de la programación orientada a objetos que permite crear nuevas clases (subclases o clases derivadas) basadas en clases existentes (superclases o clases base). La subclase hereda los atributos y métodos de la superclase y puede:
+La herencia permite crear nuevas clases basadas en otras, reutilizando atributos y comportamientos comunes. Las subclases pueden:
 
-- **Heredar comportamiento:** Usar los métodos de la superclase sin cambios
-- **Especializar comportamiento:** Sobrescribir métodos para proporcionar implementaciones específicas
-- **Extender comportamiento:** Agregar nuevos métodos y atributos
+- Heredar comportamiento sin modificarlo.
+- Especializar métodos para un caso particular.
+- Extender con nuevos atributos o funcionalidades.
 
-### Relación "ES-UN" (IS-A)
+### Relación “ES-UN” (IS-A)
 
-La herencia representa una relación "ES-UN":
-- Un `Cliente` **ES-UN** `Usuario`
-- Una `NotificacionEmail` **ES-UNA** `Notificacion`
-- Un `ProyectoComercial` **ES-UN** `Proyecto`
+- Una `NotificacionEmail` es una `Notificacion`.
+- Un `ResponsableEtapa` es un `Usuario`.
+- Un `ProyectoComercial` es un `Proyecto`.
 
-### Aplicación de Herencia con LSP en el Sistema
+Mientras estas relaciones sean verdaderas sin contradicciones, el modelo respeta LSP.
 
-Para que la herencia respete LSP, debemos garantizar:
+---
 
-1. **Precondiciones no más fuertes:** Las subclases no pueden exigir más requisitos que la superclase
-2. **Postcondiciones no más débiles:** Las subclases deben garantizar al menos lo mismo que la superclase
-3. **Invariantes preservadas:** Las reglas que se cumplen en la superclase deben cumplirse en las subclases
-4. **Métodos no pueden lanzar excepciones nuevas:** Las subclases no pueden lanzar excepciones que la superclase no contempla
+## Aplicación de LSP en el Sistema
 
-**Ejemplo correcto en el sistema:**
+Para cumplir con LSP:
 
-```java
-abstract class Notificacion {
-    protected String mensaje;
-    protected Usuario destinatario;
-    
-    // Método template que define el flujo
-    public final void enviar() {
-        if (validarDestinatario()) {
-            realizarEnvio();
-            registrarEnvio();
-        }
-    }
-    
-    // Métodos abstractos que cada subclase implementa
-    protected abstract boolean validarDestinatario();
-    protected abstract void realizarEnvio();
-}
+- **Precondiciones no más estrictas**: las subclases no deben exigir más que la clase base.
+- **Postcondiciones no más débiles**: deben garantizar los mismos resultados esperados.
+- **Invariantes preservadas**: las reglas del modelo se mantienen en todas las subclases.
+- **Coherencia del contrato**: ningún método cambia su propósito o tipo de resultado.
 
-class NotificacionEmail extends Notificacion {
-    @Override
-    protected boolean validarDestinatario() {
-        return destinatario.tieneEmail();
-    }
-    
-    @Override
-    protected void realizarEnvio() {
-        // Lógica específica de email
-    }
-}
-```
+### Ejemplo:
+El método `enviar()` de `Notificacion` define el flujo general. Cada subclase lo implementa garantizando que el envío se realice o se registre correctamente.
 
-Este diseño respeta LSP porque cualquier código que use `Notificacion` puede usar `NotificacionEmail` sin cambios en su lógica.
+---
 
 ## Estructura de Clases
 
-![Diagrama LSP](../../diagramas/01-diagrama-clases/01-solid-03-lsp.png)
+![Diagrama de clases que aplica LSP](SistemaProductoraVideos\diagramas\01-diagrama-clases\01-solid-03-lsp.png)
 
-[Ver diagrama en detalle](../../diagramas/01-diagrama-clases/01-solid-03-lsp.puml)
+---
 
 ## Justificación Técnica
 
 ### Jerarquía 1: Sistema de Notificaciones (Cumple LSP)
 
-**Clase base abstracta: `Notificacion`**
-- Define el contrato común para todas las notificaciones
-- Método `enviar()` garantiza que siempre intenta enviar (no lanza excepciones inesperadas)
-- Método `validarDisponibilidad()` permite a cada subclase determinar si puede enviar
+- **Clase base**: `Notificacion`
+- **Atributos**: `mensaje`, `fechaEnvio`, `tipo`
+- **Método principal**: `enviar()`
+- **Subclases**:
+  - `NotificacionEmail`
+  - `NotificacionInterna`
+  - `NotificacionSMS`
 
-**Subclases concretas:**
+**Cumplimiento**:
 
-1. **`NotificacionEmail`**
-   - Implementa `validarDisponibilidad()`: verifica que el destinatario tenga email
-   - Implementa `realizarEnvio()`: usa protocolo SMTP
-   - **Respeta LSP:** Puede sustituir a `Notificacion` sin problemas
+- Todas comparten el método `enviar()` con el mismo contrato.
+- Si un envío no es posible, se maneja internamente.
+- El sistema puede tratarlas indistintamente como `Notificacion`.
 
-2. **`NotificacionWhatsApp`**
-   - Implementa `validarDisponibilidad()`: verifica que el destinatario tenga WhatsApp configurado
-   - Implementa `realizarEnvio()`: usa API de WhatsApp
-   - **Respeta LSP:** Si el usuario no tiene WhatsApp, simplemente no envía, pero no rompe el contrato
-
-3. **`NotificacionSMS`**
-   - Implementa `validarDisponibilidad()`: verifica que el destinatario tenga teléfono
-   - Implementa `realizarEnvio()`: usa gateway de SMS
-   - **Respeta LSP:** Comportamiento consistente con la clase base
-
-**Por qué cumple LSP:**
-- Todas las subclases respetan el contrato de `Notificacion`
-- El método `enviar()` funciona igual para todas (polimorfismo seguro)
-- No lanzan excepciones que la clase base no contempla
-- El código cliente puede usar cualquier tipo de notificación sin conocer la implementación específica
+---
 
 ### Jerarquía 2: Usuarios por Rol (Cumple LSP)
 
-**Clase base abstracta: `Usuario`**
-- Define atributos comunes: nombre, email, contraseña
-- Método abstracto `puedeCrearProyecto()`: cada rol define sus permisos
-- Método abstracto `puedeActualizarEtapa()`: cada rol define sus permisos
+- **Clase base**: `Usuario`
+- **Atributos**: `nombre`, `rol`
+- **Métodos**: `autenticar()`
+- **Subclases**:
+  - `ResponsableGeneral`
+  - `ResponsableEtapa`
+  - `Cliente`
 
-**Subclases concretas:**
+**Cumplimiento**:
 
-1. **`ProductoraGeneral`**
-   - `puedeCrearProyecto()`: retorna `true`
-   - `puedeActualizarEtapa()`: retorna `true` (para cualquier etapa)
-   - Métodos adicionales: `generarReportes()`, `asignarResponsables()`
+- Todas las subclases mantienen el método `autenticar()`.
+- Los permisos se gestionan mediante composición o validaciones.
+- El sistema puede usar cualquier tipo de `Usuario`.
 
-2. **`ResponsableEtapa`**
-   - `puedeCrearProyecto()`: retorna `false`
-   - `puedeActualizarEtapa()`: retorna `true` solo para etapas asignadas
-   - Métodos adicionales: `completarEtapa()`, `cargarEntregables()`
-
-3. **`Cliente`**
-   - `puedeCrearProyecto()`: retorna `false`
-   - `puedeActualizarEtapa()`: retorna `false`
-   - Métodos adicionales: `consultarEstadoProyecto()`, `descargarEntregables()`
-
-**Por qué cumple LSP:**
-- Ninguna subclase lanza excepciones donde la base no lo hace
-- Los métodos de consulta de permisos retornan booleanos, no rechazan operaciones
-- La lógica de negocio consulta permisos ANTES de ejecutar acciones
-- Cualquier código que use `Usuario` puede usar cualquier subclase de forma segura
+---
 
 ### Jerarquía 3: Proyectos por Tipo (Cumple LSP)
 
-**Clase base: `Proyecto`**
-- Atributos comunes: nombre, fechas, responsable, etapas
-- Método `calcularCosto()`: define lógica base de cálculo
-- Método `validarEtapas()`: valida estructura de etapas
+- **Clase base**: `Proyecto`
+- **Atributos**: `nombre`, `tipo`, `fechaInicio`, `fechaFin`, `responsableGeneral`
+- **Métodos**: `crearProyecto()`, `consultarProyectosActivos()`
+- **Subclases**:
+  - `ProyectoComercial`
+  - `ProyectoDocumental`
+  - `ProyectoInstitucional`
 
-**Subclases concretas:**
+**Cumplimiento**:
 
-1. **`ProyectoComercial`**
-   - Sobrescribe `calcularCosto()`: aplica tarifas comerciales premium
-   - Atributos adicionales: cliente corporativo, presupuesto publicitario
-   - **Respeta LSP:** El cálculo siempre retorna un valor válido
+- Todas las subclases conservan los mismos métodos.
+- Los resultados son coherentes con la clase base.
+- El sistema puede procesar proyectos sin distinguir su tipo.
 
-2. **`ProyectoDocumental`**
-   - Sobrescribe `calcularCosto()`: aplica tarifas de producción documental
-   - Atributos adicionales: temática, duración estimada
-   - **Respeta LSP:** El cálculo siempre retorna un valor válido
+---
 
-3. **`ProyectoInstitucional`**
-   - Sobrescribe `calcularCosto()`: aplica tarifas institucionales con descuento
-   - Atributos adicionales: institución, propósito educativo
-   - **Respeta LSP:** El cálculo siempre retorna un valor válido
+## Relaciones en el Diagrama
 
-**Por qué cumple LSP:**
-- Todas las subclases pueden calcular costo (comportamiento esperado)
-- El método `calcularCosto()` siempre retorna un número válido
-- Las precondiciones son las mismas para todas las subclases
-- El código que procesa proyectos no necesita saber el tipo concreto
-
-### Relaciones en el Diagrama
-
-**Herencia (flecha con triángulo vacío):**
-- Indica relación "ES-UN"
-- La subclase hereda estructura y comportamiento de la superclase
-- Permite polimorfismo
-
-**Métodos abstractos:**
-- Marcados con *cursiva* en UML
-- Obligan a las subclases a proporcionar implementación
-- Garantizan que todas las subclases cumplan el contrato
-
-**Clases abstractas:**
-- Marcadas con <<abstract>> o nombre en *cursiva*
-- No se pueden instanciar directamente
-- Definen contratos para las subclases
-
-## Beneficios de Aplicar LSP
-
-### Polimorfismo Seguro
-El código puede trabajar con la clase base sin preocuparse por el tipo concreto, sabiendo que cualquier subclase funcionará correctamente.
-
-### Extensibilidad
-Podemos agregar nuevos tipos de notificaciones, usuarios o proyectos sin modificar el código existente que los usa.
-
-### Mantenibilidad
-Las jerarquías claras y correctas son más fáciles de entender y mantener.
-
-### Testabilidad
-Podemos probar el comportamiento general con la clase base y comportamientos específicos con cada subclase.
-
-### Confiabilidad
-El sistema se comporta de forma predecible sin sorpresas en tiempo de ejecución.
+- **Herencia** (flecha con triángulo vacío): representa la relación “ES-UN”.
+- **Métodos comunes**: se heredan y pueden ser extendidos o especializados.
+- **Clases abstractas** (si las hubiera): definen contratos comunes que las subclases deben cumplir.
