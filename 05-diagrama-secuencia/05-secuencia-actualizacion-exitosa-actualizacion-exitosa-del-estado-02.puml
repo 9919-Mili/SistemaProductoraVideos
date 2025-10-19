@@ -20,4 +20,4 @@ Controlador --> interfazDelSistema: confirmacion
 deactivate servicioDeEtapa
 interfazDelSistema --> responsableDeEtapa: muestra mensaje de exito 
 deactivate Controlador
-@enduml
+@endum
