@@ -1,4 +1,4 @@
-@startuml Diagrama_Actividades_Consultar_Proyectos_Activos
+@startuml Diagrama_Actividades_Consultar_Estadisticas
 title Diagrama de Actividades - Caso de Uso 04: Consultar Estadisticas
 |Productora General/Responsable de Etapa|
 |Usuario/Cliente|
