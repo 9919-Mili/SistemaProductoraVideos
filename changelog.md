@@ -7,7 +7,11 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
+
 ### Changed
+
+- [feature/espec-escenarios-casos-uso-add-escenario-1]  Modifique diagramasUML.md, anexos.md y README.md   
+PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
 ---
 

@@ -8,7 +8,13 @@
 ----
 Este repositorio tiene el objetivo de aplicar el diseño orientado a objetos sobre el sistema de una pequeña productora audiovisual para digitalizar la gestión de sus proyectos de video.  
 
-Se entregaran los requisitos funcionales y no funcionales, tarjetas CRC, actores, casos de uso con sus respectivos diagramas, escenarios de los casos de uso y posibles clases del sistema, asi como mejoras a las mismas mediante la aplicación de los principios SOLID, acorde a la información proporcionada por el cliente.
+Se entregaran Indices para anexos, diagramas UML y Herammientas Agile, de los cuales cada uno contendra
+
+- Anexos, una introducción al diseño que se aplica para el proyecto con requisitos funcionales y no funcionales, casos de uso y un boceto para las clases del sistema, asi como el método en que se aplicaron mejoras al mismo mediante la aplicación de los principios SOLID.
+
+- Diagramas UML, diagramas que representan cada caso de uso, sus posibles escenarios, actividades y secuencias y un boceto para las clases del sistema, asi como las mejoras al mismo mediante la aplicación de los principios SOLID.
+
+- Herramientas Agile, que contiene tarjetas CRC.
 
 ### Integrantes:
 ---
