@@ -7,6 +7,9 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
+ - [feature/feature/esp-dip-add-anexo-dip]  Agregado de diagramas de actividad en formato PUML y PNG, y diagramas_de_actividades.md
+ PR: [#75](https://github.com/9919-Mili/SistemaProductoraVideos/pull/75) - @igvcalefato (Especialista  en  Diagramas  de  Actividades  -  Casos  de  Uso  3,  4  y  5)
+
 ### Changed
 
 ---
