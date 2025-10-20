@@ -3,8 +3,15 @@
 Este archivo se actualiza con cada Pull Request para registrar avances y correcciones.
 
 ---
-
 ## [Unreleased]
+
+### Added
+
+### Changed
+
+---
+
+## [Release Primer Examen Parcial] - 2025-10-02
 
 ### Added
 
@@ -23,8 +30,6 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
  - [feature/feature/esp-dip-add-anexo-dip]  Agregado de diagramas y explicación DIP   
  PR: [#64](https://github.com/9919-Mili/SistemaProductoraVideos/pull/64) - @igvcalefato (Especialista en Inversión de Dependencias (DIP))
 
-### Changed
-
 ---
 
 ## [Release Actividad Obligatoria N°2] - 2025-09-22
@@ -39,8 +44,6 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 - [feature/modelador-diag-casos-uso-update-use-case-1]  Cree Diagramas de Casos de Uso, el indice y los exporte como PNG   
  PR: [#36](https://github.com/9919-Mili/SistemaProductoraVideos/pull/36) - @zikoloogo (Moderador de Diagramas de Casos de Uso)
-
-- [feature/esp-extension-lsp-add-anexo-lsp] Cree un diagrama UML y  documente los principios LSP
 
 ### Changed
 
@@ -76,4 +79,6 @@ PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvca
 - Para cada PR, simplemente agregar una línea breve en la sección correspondiente a su cambio (Added, Changed, Fixed).
 - No es necesario escribir párrados, sólo una frase corta + link a PR y responsable con rol.
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
+
 - Mantener el orden y formato para facilitar el seguimiento.
+

@@ -50,9 +50,9 @@ La clase `Etapa` gestionaba tres aspectos diferentes:
 
 ## Estructura de Clases
 
-![Diagrama SRP](/SistemaProductoraVideos/anexos/principios-solid/01-solid-01-srp.png)
+![Diagrama SRP](/SistemaProductoraVideos/diagramas/01-diagrama-clases/01-solid-01-srp.png)
 
-[Ver diagrama en detalle](/SistemaProductoraVideos/anexos/principios-solid/01-solid-01-srp.puml)
+[Ver diagrama en detalle](/SistemaProductoraVideos/diagramas/01-diagrama-clases/01-solid-01-srp.puml)
 
 ## Justificación Técnica
 
