@@ -1,0 +1,79 @@
+@startuml 01-boceto-inicial-ocp
+
+class Proyecto {
+  - nombre: String
+  - tipo: String
+  - fechaInicio: Date
+  - fechaFin: Date
+  - responsableGeneral: Usuario
+  - etapas: List<Etapa>
+  + crearProyecto()
+  + consultarProyectosActivos()
+  + notificarCambio()
+}
+
+class Etapa {
+  - nombre: String
+  - estado: String
+  - responsableEtapa: Usuario
+  - comentarios: List<Comentario>
+  - adjuntos: List<Adjunto>
+  - tareas: List<Tarea>
+  + actualizarEstado()
+  + notificarCambio()
+}
+
+class Tarea {
+  - tipo : String
+  - descripcion: String
+  - fechaAsignacion: Date
+  - responsableTarea: Usuario
+  + asignarTarea()
+  + notificarAsignacion()
+}
+
+abstract class Notificacion {
+  - contactos: List<String>
+  - mensaje: String
+  - fechaEnvio: Date
+  + detectarContacto()
+  + notificarContacto()
+}
+
+class NotificacionEmail {
+  - contactos: List<String>
+  - mensaje: String
+  - fechaEnvio: Date
+  + detectarContacto()
+  + notificarContacto()
+}
+
+class NotificacionWhatsApp {
+  - contactos: List<String>
+  - mensaje: String
+  - fechaEnvio: Date
+  + detectarContacto()
+  + notificarContacto()
+}
+
+class Usuario {
+  - nombre: String
+  - rol: String
+  - contactosANotificar: List<String>
+  + autenticar()
+  + registrarContacto()
+}
+
+
+Proyecto -down-> Etapa
+Etapa -down-> Tarea
+Tarea -left-> Usuario : responsableTarea
+Proyecto -down-> Usuario : responsableGeneral
+Etapa -down-> Usuario : responsableEtapa
+Proyecto -down-> Notificacion
+Etapa -right-> Notificacion
+Tarea -up-> Notificacion
+NotificacionEmail .up.|> Notificacion
+NotificacionWhatsApp .up.|> Notificacion
+
+@enduml

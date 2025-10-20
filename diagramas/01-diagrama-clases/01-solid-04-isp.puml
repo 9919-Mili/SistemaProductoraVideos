@@ -1,0 +1,44 @@
+@startUML Segregacion de Interfaces (ISP)
+
+
+interface IUsuario {
+        +autenticar(datos): string
+        +validarDatos(): boolean 
+        +recibirNotificacion(): String
+}
+
+interface IAdministrable{
+        +gestionarProyectos(): void
+        +gestionarUsuarios(): void
+        +registrarFechas(): boolean
+}
+
+interface IComunicacion {
+        +enviarMensaje():String
+
+        
+}
+
+interface IArchivo {
+        +subirArchivo(): void
+        +permitirAcceso(): void
+
+        }
+
+interface IEstadistica {
+        +generarReportes(): String
+        +consultarEstadisticas(): void
+}
+
+Usuario ===> IUsuario 
+Usuario===> IEstadistica
+Sistema ===> IAdministrable
+Sistema ===> IComunicacion
+Sistema ===> IArchivo
+Notificacion ===> IComunicacion
+Adjunto ===> IArchivo
+Estadistica ===> IEstadistica
+
+
+
+@endUML
