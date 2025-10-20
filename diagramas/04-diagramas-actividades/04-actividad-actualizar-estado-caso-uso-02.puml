@@ -1,0 +1,35 @@
+@startuml ActualizarEstado
+
+|Responsable de Etapa|
+start
+:Acceder al sistema;
+:Seleccionar proyecto correspondiente;
+:Seleccionar etapa asignada;
+:Indicar nuevo estado (pendiente, en curso, pausado, finalizado);
+:Revisar información ingresada;
+if (¿Confirmar cambio de estado?) then (Sí)
+  :Confirmar cambio de estado;
+else (No)
+  :Cancelar actualización;
+  stop
+endif
+
+|Sistema|
+:Validar que la etapa exista y esté asociada a proyecto activo;
+if (¿Etapa válida y asociada?) then (Sí)
+  :Registrar responsable que actualiza, estado anterior y fecha/hora;
+  :Guardar actualización del estado;
+  :Enviar notificación del cambio de estado;
+  |Cliente|
+  :Recibir notificación sobre el estado actualizado;
+  :Visualizar información actualizada del proyecto;
+  |Responsable de Etapa|
+  :Visualiza confirmación de actualización;
+else (No)
+  :Mostrar error "Etapa inexistente o no asociada a proyecto activo";
+  |Responsable de Etapa|
+  :Visualiza mensaje de error;
+endif
+
+stop
+@enduml
