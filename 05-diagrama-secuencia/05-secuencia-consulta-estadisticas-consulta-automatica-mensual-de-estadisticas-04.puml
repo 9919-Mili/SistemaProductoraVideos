@@ -1,0 +1,38 @@
+@startuml
+
+actor sistema
+participant sistemaReportes
+participant controlador
+participant moduloEstadistico
+participant baseDeDatos
+
+sistema -> sistemaReportes: detecta inicio de nuevo mes
+sistemaReportes -> controlador: solicita datos del mes anterior 
+controlador -> moduloEstadistico: recopila proyectos entregados 
+moduloEstadistico -> baseDeDatos: consulta proyectos del mes
+baseDeDatos --> moduloEstadistico: datos de proyectos
+moduloEstadistico --> controlador: datos recopilados 
+controlador --> sistemaReportes: datos procesados
+sistemaReportes --> sistema: tarea ejecutada
+
+
+sistema -> sistemaReportes: activa generacion de reporte
+sistemaReportes -> controlador: procesa y genera reporte 
+controlador -> moduloEstadistico: genera graficos y tablas 
+moduloEstadistico -> baseDeDatos: obtiene duracion y tipos 
+baseDeDatos --> moduloEstadistico: informacion de duracion
+moduloEstadistico --> controlador: graficos generados 
+controlador --> sistemaReportes: reportes estadisticos listo 
+sistemaReportes --> sistema: reporte disponible en modulo
+
+
+sistema -> sistemaReportes: programa el envio automatico 
+sistemaReportes -> controlador: envia por mail
+controlador -> moduloEstadistico: prepara archivos pdf 
+moduloEstadistico -> baseDeDatos: almacena reporte generado 
+baseDeDatos --> moduloEstadistico: confirmacion almacenamiento
+moduloEstadistico --> controlador: archivo preparado 
+controlador --> sistemaReportes: mail enviado a responsable 
+sistemaReportes --> sistema: notificacion enviada 
+
+@enduml

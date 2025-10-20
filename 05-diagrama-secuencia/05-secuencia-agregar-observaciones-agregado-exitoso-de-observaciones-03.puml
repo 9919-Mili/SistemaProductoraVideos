@@ -1,0 +1,36 @@
+@startuml
+actor usuarioAutorizado
+participant interfazSistema
+participant controlador
+participant servicioComentario
+participant baseDeDatos
+
+usuarioAutorizado -> interfazSistema: accede al sistema
+interfazSistema -> controlador: valida permiso sobre la etapa
+controlador -> servicioComentario: verifica etapa seleccionada
+servicioComentario -> baseDeDatos: consulta datos de la etapa
+baseDeDatos --> servicioComentario: confirmacion de datos
+servicioComentario --> controlador: etapa verificada
+controlador --> interfazSistema: permisos confirmados
+interfazSistema --> usuarioAutorizado: muestra panel 
+
+usuarioAutorizado -> interfazSistema: selecciona etapa del proyecto
+interfazSistema -> controlador: presenta formulario web 
+controlador -> servicioComentario: valida campos del comentario 
+servicioComentario -> baseDeDatos: guarda comentarios y detalles 
+baseDeDatos --> servicioComentario: confirmacion guardado
+servicioComentario --> controlador: campos validados 
+controlador --> interfazSistema: formulario preparado
+interfazSistema --> usuarioAutorizado: envia notificacion 
+
+usuarioAutorizado-> interfazSistema: escribe y confirma observacion 
+interfazSistema -> controlador: envia comentario ingresado
+controlador -> servicioComentario: registra observaciones en etapa
+servicioComentario -> baseDeDatos: actualiza historial de etapas 
+baseDeDatos --> servicioComentario: confirmacion historial actualizado 
+servicioComentario --> controlador: observacion registrada 
+controlador --> interfazSistema: operacion exitosa 
+interfazSistema --> usuarioAutorizado: visualiza observacion en historial 
+
+
+@enduml

@@ -1,0 +1,45 @@
+@startuml actualizacion exitosa del estado
+actor responsableDeEtapa
+participant interfazDelSistema
+participant Controlador
+participant servicioDeEtapa
+participant baseDeDatos
+
+
+responsableDeEtapa -> interfazDelSistema: Accede al sistema
+activate interfazDelSistema 
+interfazDelSistema -> Controlador: Valida Permisos de usuario
+activate Controlador
+Controlador -> servicioDeEtapa: Verifica estado actual
+activate servicioDeEtapa
+servicioDeEtapa -> baseDeDatos: Consulta etapa 
+activate baseDeDatos
+baseDeDatos --> servicioDeEtapa: Confirmacion consulta
+servicioDeEtapa --> Controlador: Estado verificado
+Controlador --> interfazDelSistema: Permisos validados
+interfazDelSistema --> responsableDeEtapa: Muestra panel actualizado
+
+responsableDeEtapa -> interfazDelSistema: seleccionar proyecto 
+interfazDelSistema -> Controlador: solicita datos de la etapa
+activate Controlador
+Controlador -> servicioDeEtapa: actualiza servicio de etapa 
+activate servicioDeEtapa
+servicioDeEtapa -> baseDeDatos: guardar nuevo estado 
+activate baseDeDatos
+baseDeDatos --> servicioDeEtapa: confirmacion de guardado
+deactivate baseDeDatos
+servicioDeEtapa --> Controlador: estado actualizado correctamente
+Controlador --> interfazDelSistema: Permisos validados 
+deactivate servicioDeEtapa
+interfazDelSistema --> responsableDeEtapa: Notifica cambio de estado
+deactivate Controlador
+
+responsableDeEtapa -> interfazDelSistema: selecciona etapa y nuevo estado 
+interfazDelSistema -> Controlador: envia peticion 
+Controlador -> servicioDeEtapa: ejecuta actualizacion 
+servicioDeEtapa -> baseDeDatos: registra cambio
+baseDeDatos --> servicioDeEtapa: confirma registro
+servicioDeEtapa --> Controlador: actualizacion completada 
+Controlador --> interfazDelSistema: operacion exitosa
+interfazDelSistema --> responsableDeEtapa: envia confirmacion por mail
+@endum

@@ -1,0 +1,42 @@
+@startuml
+
+actor usuarioAutorizado
+participant interfazSistema
+participant controlador
+participant servicioProyectos
+participant baseDeDatos
+
+
+usuarioAutorizado -> interfazSistema: accede al sistema
+interfazSistema -> controlador: valida permisos del usuario
+controlador -> servicioProyectos: solicita proyectos activos 
+servicioProyectos -> baseDeDatos: consulta estado de proyectos
+baseDeDatos --> servicioProyectos: lista de proyectos 
+servicioProyectos --> controlador: proyecto en curso 
+controlador --> interfazSistema: permisos validados 
+interfazSistema --> usuarioAutorizado: muestra listado 
+
+usuarioAutorizado -> interfazSistema: selecciona proyectos activos
+interfazSistema -> controlador: lista proyectos en curso
+controlador -> servicioProyectos: consulta detalles y responsables 
+servicioProyectos -> baseDeDatos: obtiene informacion detallada 
+baseDeDatos --> servicioProyectos: detalles y cumplimiento 
+servicioProyectos --> controlador: informacion actualizada 
+controlador --> interfazSistema: visualizacion de panel de control 
+interfazSistema --> usuarioAutorizado: acceso a panel de detalles 
+
+usuarioAutorizado -> interfazSistema: filtra por responsable 
+interfazSistema -> controlador: aplica filtros 
+controlador -> servicioProyectos: obtiene observaciones registradas
+servicioProyectos -> baseDeDatos: obtiene historial de observaciones 
+baseDeDatos --> servicioProyectos: observaciones asociadas 
+servicioProyectos --> controlador: observaciones disponibles 
+controlador --> interfazSistema: datos filtrados listos 
+interfazSistema --> usuarioAutorizado: integrado al formulario 
+
+
+
+
+
+@enduml
+
