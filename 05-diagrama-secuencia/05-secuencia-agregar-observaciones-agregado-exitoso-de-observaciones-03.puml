@@ -6,31 +6,54 @@ participant servicioComentario
 participant baseDeDatos
 
 usuarioAutorizado -> interfazSistema: accede al sistema
+activate interfazSistema
 interfazSistema -> controlador: valida permiso sobre la etapa
+activate controlador
 controlador -> servicioComentario: verifica etapa seleccionada
+activate servicioComentario
 servicioComentario -> baseDeDatos: consulta datos de la etapa
+activate baseDeDatos
 baseDeDatos --> servicioComentario: confirmacion de datos
+deactivate baseDeDatos
 servicioComentario --> controlador: etapa verificada
+deactivate servicioComentario
 controlador --> interfazSistema: permisos confirmados
+deactivate controlador
 interfazSistema --> usuarioAutorizado: muestra panel 
+deactivate interfazSistema
 
 usuarioAutorizado -> interfazSistema: selecciona etapa del proyecto
+activate interfazSistema
 interfazSistema -> controlador: presenta formulario web 
+activate controlador
 controlador -> servicioComentario: valida campos del comentario 
+activate servicioComentario
 servicioComentario -> baseDeDatos: guarda comentarios y detalles 
+activate baseDeDatos
 baseDeDatos --> servicioComentario: confirmacion guardado
+deactivate baseDeDatos
 servicioComentario --> controlador: campos validados 
+deactivate servicioComentario
 controlador --> interfazSistema: formulario preparado
+deactivate controlador
 interfazSistema --> usuarioAutorizado: envia notificacion 
+deactivate interfazSistema
 
 usuarioAutorizado-> interfazSistema: escribe y confirma observacion 
+activate interfazSistema
 interfazSistema -> controlador: envia comentario ingresado
+activate controlador
 controlador -> servicioComentario: registra observaciones en etapa
+activate servicioComentario
 servicioComentario -> baseDeDatos: actualiza historial de etapas 
-baseDeDatos --> servicioComentario: confirmacion historial actualizado 
+activate baseDeDatos
+baseDeDatos --> servicioComentario: confirmacion historial actualizado
+deactivate baseDeDatos 
 servicioComentario --> controlador: observacion registrada 
+deactivate servicioComentario
 controlador --> interfazSistema: operacion exitosa 
+deactivate controlador
 interfazSistema --> usuarioAutorizado: visualiza observacion en historial 
-
+deactivate interfazSistema
 
 @enduml

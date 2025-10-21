@@ -8,31 +8,55 @@ participant baseDeDatos
 
 
 usuarioAutorizado -> interfazSistema: accede al sistema
+activate interfazSistema
 interfazSistema -> controlador: valida permisos del usuario
+activate controlador
 controlador -> servicioProyectos: solicita proyectos activos 
+activate servicioProyectos
 servicioProyectos -> baseDeDatos: consulta estado de proyectos
+activate baseDeDatos
 baseDeDatos --> servicioProyectos: lista de proyectos 
+deactivate baseDeDatos
 servicioProyectos --> controlador: proyecto en curso 
+deactivate servicioProyectos
 controlador --> interfazSistema: permisos validados 
+deactivate controlador
 interfazSistema --> usuarioAutorizado: muestra listado 
+deactivate interfazSistema
 
 usuarioAutorizado -> interfazSistema: selecciona proyectos activos
+activate interfazSistema
 interfazSistema -> controlador: lista proyectos en curso
+activate controlador
 controlador -> servicioProyectos: consulta detalles y responsables 
+activate servicioProyectos
 servicioProyectos -> baseDeDatos: obtiene informacion detallada 
+activate baseDeDatos
 baseDeDatos --> servicioProyectos: detalles y cumplimiento 
+deactivate baseDeDatos
 servicioProyectos --> controlador: informacion actualizada 
+deactivate servicioProyectos
 controlador --> interfazSistema: visualizacion de panel de control 
+deactivate controlador
 interfazSistema --> usuarioAutorizado: acceso a panel de detalles 
+deactivate interfazSistema
 
 usuarioAutorizado -> interfazSistema: filtra por responsable 
+activate interfazSistema
 interfazSistema -> controlador: aplica filtros 
+activate controlador
 controlador -> servicioProyectos: obtiene observaciones registradas
-servicioProyectos -> baseDeDatos: obtiene historial de observaciones 
+activate servicioProyectos
+servicioProyectos -> baseDeDatos: obtiene historial de observaciones
+activate baseDeDatos 
 baseDeDatos --> servicioProyectos: observaciones asociadas 
+deactivate baseDeDatos
 servicioProyectos --> controlador: observaciones disponibles 
+deactivate servicioProyectos
 controlador --> interfazSistema: datos filtrados listos 
+deactivate controlador
 interfazSistema --> usuarioAutorizado: integrado al formulario 
+deactivate interfazSistema
 
 
 

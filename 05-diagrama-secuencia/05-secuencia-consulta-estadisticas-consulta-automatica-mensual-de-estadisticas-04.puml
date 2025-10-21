@@ -7,32 +7,56 @@ participant moduloEstadistico
 participant baseDeDatos
 
 sistema -> sistemaReportes: detecta inicio de nuevo mes
+activate sistemaReportes
 sistemaReportes -> controlador: solicita datos del mes anterior 
+activate controlador
 controlador -> moduloEstadistico: recopila proyectos entregados 
+activate moduloEstadistico
 moduloEstadistico -> baseDeDatos: consulta proyectos del mes
+activate baseDeDatos
 baseDeDatos --> moduloEstadistico: datos de proyectos
+deactivate baseDeDatos
 moduloEstadistico --> controlador: datos recopilados 
+deactivate moduloEstadistico
 controlador --> sistemaReportes: datos procesados
+deactivate controlador
 sistemaReportes --> sistema: tarea ejecutada
+deactivate sistemaReportes
 
 
 sistema -> sistemaReportes: activa generacion de reporte
+activate sistemaReportes
 sistemaReportes -> controlador: procesa y genera reporte 
+activate controlador
 controlador -> moduloEstadistico: genera graficos y tablas 
-moduloEstadistico -> baseDeDatos: obtiene duracion y tipos 
+activate moduloEstadistico
+moduloEstadistico -> baseDeDatos: obtiene duracion y tipos
+activate baseDeDatos 
 baseDeDatos --> moduloEstadistico: informacion de duracion
+deactivate baseDeDatos
 moduloEstadistico --> controlador: graficos generados 
-controlador --> sistemaReportes: reportes estadisticos listo 
+deactivate moduloEstadistico
+controlador --> sistemaReportes: reportes estadisticos listo
+deactivate controlador 
 sistemaReportes --> sistema: reporte disponible en modulo
+deactivate sistemaReportes
 
 
 sistema -> sistemaReportes: programa el envio automatico 
+activate sistemaReportes
 sistemaReportes -> controlador: envia por mail
+activate controlador
 controlador -> moduloEstadistico: prepara archivos pdf 
+activate moduloEstadistico
 moduloEstadistico -> baseDeDatos: almacena reporte generado 
+activate baseDeDatos
 baseDeDatos --> moduloEstadistico: confirmacion almacenamiento
+deactivate baseDeDatos
 moduloEstadistico --> controlador: archivo preparado 
+deactivate moduloEstadistico
 controlador --> sistemaReportes: mail enviado a responsable 
+deactivate controlador
 sistemaReportes --> sistema: notificacion enviada 
+deactivate sistemaReportes
 
 @enduml

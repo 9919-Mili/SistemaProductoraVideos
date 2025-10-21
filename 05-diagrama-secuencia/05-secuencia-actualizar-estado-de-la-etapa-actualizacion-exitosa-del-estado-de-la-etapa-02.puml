@@ -15,11 +15,16 @@ activate servicioDeEtapa
 servicioDeEtapa -> baseDeDatos: Consulta etapa 
 activate baseDeDatos
 baseDeDatos --> servicioDeEtapa: Confirmacion consulta
+deactivate baseDeDatos
 servicioDeEtapa --> Controlador: Estado verificado
+deactivate servicioDeEtapa
 Controlador --> interfazDelSistema: Permisos validados
+deactivate Controlador
 interfazDelSistema --> responsableDeEtapa: Muestra panel actualizado
+deactivate interfazDelSistema
 
 responsableDeEtapa -> interfazDelSistema: seleccionar proyecto 
+activate interfazDelSistema
 interfazDelSistema -> Controlador: solicita datos de la etapa
 activate Controlador
 Controlador -> servicioDeEtapa: actualiza servicio de etapa 
@@ -29,17 +34,26 @@ activate baseDeDatos
 baseDeDatos --> servicioDeEtapa: confirmacion de guardado
 deactivate baseDeDatos
 servicioDeEtapa --> Controlador: estado actualizado correctamente
-Controlador --> interfazDelSistema: Permisos validados 
 deactivate servicioDeEtapa
-interfazDelSistema --> responsableDeEtapa: Notifica cambio de estado
+Controlador --> interfazDelSistema: Permisos validados 
 deactivate Controlador
+interfazDelSistema --> responsableDeEtapa: Notifica cambio de estado
+deactivate interfazDelSistema
 
 responsableDeEtapa -> interfazDelSistema: selecciona etapa y nuevo estado 
+activate interfazDelSistema
 interfazDelSistema -> Controlador: envia peticion 
+activate Controlador
 Controlador -> servicioDeEtapa: ejecuta actualizacion 
+activate servicioDeEtapa
 servicioDeEtapa -> baseDeDatos: registra cambio
+activate baseDeDatos
 baseDeDatos --> servicioDeEtapa: confirma registro
-servicioDeEtapa --> Controlador: actualizacion completada 
+deactivate baseDeDatos
+servicioDeEtapa --> Controlador: actualizacion completada
+deactivate servicioDeEtapa 
 Controlador --> interfazDelSistema: operacion exitosa
+deactivate Controlador
 interfazDelSistema --> responsableDeEtapa: envia confirmacion por mail
+deactivate interfazDelSistema
 @endum

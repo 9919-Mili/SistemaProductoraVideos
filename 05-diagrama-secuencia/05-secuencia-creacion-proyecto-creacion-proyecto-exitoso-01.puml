@@ -37,10 +37,15 @@ activate sistemaDeValidacion
 sistemaDeValidacion -> baseDeDatos: Permisos confirmados 
 activate baseDeDatos
 baseDeDatos -> sistemaDeNotificacion: Proyeccto guardado
+activate sistemaDeNotificacion
+sistemaDeNotificacion --> baseDeDatos: guardado exitoso 
+deactivate sistemaDeNotificacion
+baseDeDatos --> sistemaDeValidacion: permisos aprobados 
+deactivate baseDeDatos
 interfazWeb --> productoraGeneral: datos recibidos
-deactivate sistemaDeValidacion
-sistemaDeValidacion --> interfazWeb: permisos confirmados 
 deactivate interfazWeb
+sistemaDeValidacion --> interfazWeb: permisos confirmados 
+deactivate sistemaDeValidacion
 
 productoraGeneral -> interfazWeb: Confirmar creacion 
 activate interfazWeb
@@ -49,6 +54,7 @@ activate sistemaDeValidacion
 sistemaDeValidacion -> baseDeDatos: Autorizar almacenamiento 
 activate baseDeDatos
 baseDeDatos -> sistemaDeNotificacion: Registro completo
+activate sistemaDeNotificacion
 baseDeDatos -->sistemaDeValidacion: autorizacion recibida
 deactivate  baseDeDatos
 interfazWeb -->productoraGeneral: mostrar confirmacion exitosa
