@@ -6,57 +6,59 @@ participant controlador
 participant moduloEstadistico
 participant baseDeDatos
 
-sistema -> sistemaReportes: detecta inicio de nuevo mes
+sistema -> sistemaReportes: detectaInicio (nuevoMes)
 activate sistemaReportes
-sistemaReportes -> controlador: solicita datos del mes anterior 
+sistemaReportes -> controlador: solicitaDatos (mesAnterior) 
 activate controlador
-controlador -> moduloEstadistico: recopila proyectos entregados 
+controlador -> moduloEstadistico: recopilaProyectos (entregados) 
 activate moduloEstadistico
-moduloEstadistico -> baseDeDatos: consulta proyectos del mes
+moduloEstadistico -> baseDeDatos: consultaProyectos (delMes)
 activate baseDeDatos
-baseDeDatos --> moduloEstadistico: datos de proyectos
+baseDeDatos --> moduloEstadistico: datosDeProyectos
 deactivate baseDeDatos
-moduloEstadistico --> controlador: datos recopilados 
+moduloEstadistico --> controlador: datosRcopilados 
 deactivate moduloEstadistico
-controlador --> sistemaReportes: datos procesados
+controlador --> sistemaReportes: datosProcesados
 deactivate controlador
-sistemaReportes --> sistema: tarea ejecutada
+sistemaReportes --> sistema: tareaEecutada
 deactivate sistemaReportes
 
 
-sistema -> sistemaReportes: activa generacion de reporte
+sistema -> sistemaReportes: activaGeneracionDeReporte
 activate sistemaReportes
-sistemaReportes -> controlador: procesa y genera reporte 
+sistemaReportes -> controlador: procesaYGeneraReporte 
 activate controlador
-controlador -> moduloEstadistico: genera graficos y tablas 
+controlador -> moduloEstadistico: generaGraficos (yTablas) 
 activate moduloEstadistico
-moduloEstadistico -> baseDeDatos: obtiene duracion y tipos
+moduloEstadistico -> baseDeDatos: obtieneDuracion (yTipos)
 activate baseDeDatos 
-baseDeDatos --> moduloEstadistico: informacion de duracion
+baseDeDatos --> moduloEstadistico: informacionDeDuracion
 deactivate baseDeDatos
-moduloEstadistico --> controlador: graficos generados 
+moduloEstadistico --> controlador: graficosGenerados 
 deactivate moduloEstadistico
-controlador --> sistemaReportes: reportes estadisticos listo
+controlador --> sistemaReportes: reportesEstadisticosListo
 deactivate controlador 
-sistemaReportes --> sistema: reporte disponible en modulo
+sistemaReportes --> sistema: reporteDisponible (enModulo)
 deactivate sistemaReportes
 
 
-sistema -> sistemaReportes: programa el envio automatico 
+sistema -> sistemaReportes: programaElenvioAutomatico 
 activate sistemaReportes
-sistemaReportes -> controlador: envia por mail
+sistemaReportes -> controlador: enviaPorMail
 activate controlador
-controlador -> moduloEstadistico: prepara archivos pdf 
+controlador -> moduloEstadistico: preparaArchivos (pdf,Excel) 
 activate moduloEstadistico
-moduloEstadistico -> baseDeDatos: almacena reporte generado 
+moduloEstadistico -> baseDeDatos: almacenaReporteGenerado 
 activate baseDeDatos
-baseDeDatos --> moduloEstadistico: confirmacion almacenamiento
+baseDeDatos --> moduloEstadistico: confirmacionAlmacenamiento
 deactivate baseDeDatos
-moduloEstadistico --> controlador: archivo preparado 
+moduloEstadistico --> controlador: archivoPreparado 
 deactivate moduloEstadistico
-controlador --> sistemaReportes: mail enviado a responsable 
+controlador --> sistemaReportes: mailEnviadoAResponsable 
 deactivate controlador
-sistemaReportes --> sistema: notificacion enviada 
+sistemaReportes --> sistema: notificacionEnviada 
 deactivate sistemaReportes
+
+destroy sistemaReportes
 
 @enduml

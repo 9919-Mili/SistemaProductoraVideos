@@ -5,60 +5,62 @@ participant sistemaDeValidacion
 participant baseDeDatos
 participant sistemaDeNotificacion
 
-productoraGeneral -> interfazWeb: Seleccionar opcion crear proyecto
+productoraGeneral -> interfazWeb: seleccionarOpcion (crearProyecto)
 activate interfazWeb
-interfazWeb -> sistemaDeValidacion: Valida datos 
+interfazWeb -> sistemaDeValidacion: validaDatos 
 activate sistemaDeValidacion
-sistemaDeValidacion -> baseDeDatos: datos validados
+sistemaDeValidacion -> baseDeDatos: datosValidados
 activate baseDeDatos 
-baseDeDatos -> sistemaDeNotificacion: Confirmacion creacion de proyecto
+baseDeDatos -> sistemaDeNotificacion: Confirmacion (creacionDeProyecto)
 activate sistemaDeNotificacion
-sistemaDeNotificacion --> baseDeDatos: envia un mensaje
+sistemaDeNotificacion --> baseDeDatos: enviaMensaje
 deactivate sistemaDeNotificacion
-baseDeDatos --> sistemaDeValidacion: confirma validacion
+baseDeDatos --> sistemaDeValidacion: confirmaValidacion
 deactivate baseDeDatos
-sistemaDeValidacion --> interfazWeb: permitir acceso
+sistemaDeValidacion --> interfazWeb: permitirAcceso
 deactivate sistemaDeValidacion
-interfazWeb --> productoraGeneral: muestra panel del sistema
+interfazWeb --> productoraGeneral: muestraPanel (delSistema)
 deactivate interfazWeb
 
-alt Creacion exitosa
-    productoraGeneral --> interfazWeb: creacion exitosa
+alt creacionExitosa
+    productoraGeneral --> interfazWeb: creacionExitosa
 else Creacion erronea
-    productoraGeneral --> interfazWeb: Creacion erronea
+    productoraGeneral --> interfazWeb: creacionErronea
     end
 
 
 
-productoraGeneral -> interfazWeb: Ingresar datos del proyecto
+productoraGeneral -> interfazWeb: ingresarDatos (delProyecto)
 activate interfazWeb
-interfazWeb -> sistemaDeValidacion: Verificar permisos 
+interfazWeb -> sistemaDeValidacion: verificarPermisos 
 activate sistemaDeValidacion
-sistemaDeValidacion -> baseDeDatos: Permisos confirmados 
+sistemaDeValidacion -> baseDeDatos: permisosCnfirmados 
 activate baseDeDatos
-baseDeDatos -> sistemaDeNotificacion: Proyeccto guardado
+baseDeDatos -> sistemaDeNotificacion: proyecctoGuardado
 activate sistemaDeNotificacion
-sistemaDeNotificacion --> baseDeDatos: guardado exitoso 
+sistemaDeNotificacion --> baseDeDatos: guardadoExitoso 
 deactivate sistemaDeNotificacion
-baseDeDatos --> sistemaDeValidacion: permisos aprobados 
+baseDeDatos --> sistemaDeValidacion: permisosAprobados 
 deactivate baseDeDatos
-interfazWeb --> productoraGeneral: datos recibidos
+interfazWeb --> productoraGeneral: datosRecibidos
 deactivate interfazWeb
-sistemaDeValidacion --> interfazWeb: permisos confirmados 
+sistemaDeValidacion --> interfazWeb: permisosConfirmados 
 deactivate sistemaDeValidacion
 
-productoraGeneral -> interfazWeb: Confirmar creacion 
+productoraGeneral -> interfazWeb: confirmarCreacion 
 activate interfazWeb
-interfazWeb -> sistemaDeValidacion: solicitar guardado
+interfazWeb -> sistemaDeValidacion: solicitarGuardado
 activate sistemaDeValidacion
-sistemaDeValidacion -> baseDeDatos: Autorizar almacenamiento 
+sistemaDeValidacion -> baseDeDatos: autorizarAlmacenamiento 
 activate baseDeDatos
-baseDeDatos -> sistemaDeNotificacion: Registro completo
+baseDeDatos -> sistemaDeNotificacion: registroCompleto
 activate sistemaDeNotificacion
-baseDeDatos -->sistemaDeValidacion: autorizacion recibida
+baseDeDatos -->sistemaDeValidacion: autorizacionRecibida
 deactivate  baseDeDatos
-interfazWeb -->productoraGeneral: mostrar confirmacion exitosa
-sistemaDeValidacion--> interfazWeb:notifica los reponsables asignados
+interfazWeb -->productoraGeneral: mostrarConfirmacionExitosa
+sistemaDeValidacion--> interfazWeb: notificaALosReponsablesAsignados
+
+destroy sistemaDeNotificacion
 
 
 @enduml

@@ -7,57 +7,59 @@ participant servicioProyectos
 participant baseDeDatos
 
 
-usuarioAutorizado -> interfazSistema: accede al sistema
+usuarioAutorizado -> interfazSistema: accedeAlSistema
 activate interfazSistema
-interfazSistema -> controlador: valida permisos del usuario
+interfazSistema -> controlador: validaPermisos (delUsuario)
 activate controlador
-controlador -> servicioProyectos: solicita proyectos activos 
+controlador -> servicioProyectos: solicitaProyectos (activos) 
 activate servicioProyectos
-servicioProyectos -> baseDeDatos: consulta estado de proyectos
+servicioProyectos -> baseDeDatos: consultaEstado (deProyectos)
 activate baseDeDatos
-baseDeDatos --> servicioProyectos: lista de proyectos 
+baseDeDatos --> servicioProyectos: listaDeProyectos 
 deactivate baseDeDatos
-servicioProyectos --> controlador: proyecto en curso 
+servicioProyectos --> controlador: proyectoEnCurso 
 deactivate servicioProyectos
-controlador --> interfazSistema: permisos validados 
+controlador --> interfazSistema: permisosValidados 
 deactivate controlador
-interfazSistema --> usuarioAutorizado: muestra listado 
+interfazSistema --> usuarioAutorizado: muestraListado 
 deactivate interfazSistema
 
-usuarioAutorizado -> interfazSistema: selecciona proyectos activos
+usuarioAutorizado -> interfazSistema: seleccionaProyectos (activos)
 activate interfazSistema
-interfazSistema -> controlador: lista proyectos en curso
+interfazSistema -> controlador: listaProyectos (enCurso)
 activate controlador
-controlador -> servicioProyectos: consulta detalles y responsables 
+controlador -> servicioProyectos: consultaDetallesYResponsables 
 activate servicioProyectos
-servicioProyectos -> baseDeDatos: obtiene informacion detallada 
+servicioProyectos -> baseDeDatos: obtieneInformacionDetallada 
 activate baseDeDatos
-baseDeDatos --> servicioProyectos: detalles y cumplimiento 
+baseDeDatos --> servicioProyectos: detallesYCumplimiento 
 deactivate baseDeDatos
-servicioProyectos --> controlador: informacion actualizada 
+servicioProyectos --> controlador: informacionActualizada 
 deactivate servicioProyectos
-controlador --> interfazSistema: visualizacion de panel de control 
+controlador --> interfazSistema: visualizacionDePanelDeControl 
 deactivate controlador
-interfazSistema --> usuarioAutorizado: acceso a panel de detalles 
+interfazSistema --> usuarioAutorizado: accesoAPanelDeDetalles 
 deactivate interfazSistema
 
-usuarioAutorizado -> interfazSistema: filtra por responsable 
+usuarioAutorizado -> interfazSistema: filtraPorResponsable 
 activate interfazSistema
-interfazSistema -> controlador: aplica filtros 
+interfazSistema -> controlador: aplicaFiltros 
 activate controlador
-controlador -> servicioProyectos: obtiene observaciones registradas
+controlador -> servicioProyectos: obtieneObservacionesRegistradas
 activate servicioProyectos
-servicioProyectos -> baseDeDatos: obtiene historial de observaciones
+servicioProyectos -> baseDeDatos: obtieneHistorialDeObservaciones
 activate baseDeDatos 
-baseDeDatos --> servicioProyectos: observaciones asociadas 
+baseDeDatos --> servicioProyectos: observacionesAsociadas 
 deactivate baseDeDatos
-servicioProyectos --> controlador: observaciones disponibles 
+servicioProyectos --> controlador: observacionesDisponibles 
 deactivate servicioProyectos
-controlador --> interfazSistema: datos filtrados listos 
+controlador --> interfazSistema: datosFiltrados (listos) 
 deactivate controlador
-interfazSistema --> usuarioAutorizado: integrado al formulario 
+interfazSistema --> usuarioAutorizado: integradoAlFormulario 
 deactivate interfazSistema
 
+
+destroy interfazSistema
 
 
 

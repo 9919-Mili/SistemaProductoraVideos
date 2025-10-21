@@ -6,54 +6,56 @@ participant servicioDeEtapa
 participant baseDeDatos
 
 
-responsableDeEtapa -> interfazDelSistema: Accede al sistema
+responsableDeEtapa -> interfazDelSistema: accedeAlSistema
 activate interfazDelSistema 
-interfazDelSistema -> Controlador: Valida Permisos de usuario
+interfazDelSistema -> Controlador: validaPermisos (deUsuario)
 activate Controlador
-Controlador -> servicioDeEtapa: Verifica estado actual
+Controlador -> servicioDeEtapa: verificaEstado (actual)
 activate servicioDeEtapa
-servicioDeEtapa -> baseDeDatos: Consulta etapa 
+servicioDeEtapa -> baseDeDatos: consultaEtapa 
 activate baseDeDatos
-baseDeDatos --> servicioDeEtapa: Confirmacion consulta
+baseDeDatos --> servicioDeEtapa: confirmacionConsulta
 deactivate baseDeDatos
-servicioDeEtapa --> Controlador: Estado verificado
+servicioDeEtapa --> Controlador: estadoVerificado
 deactivate servicioDeEtapa
-Controlador --> interfazDelSistema: Permisos validados
+Controlador --> interfazDelSistema: permisosValidados
 deactivate Controlador
-interfazDelSistema --> responsableDeEtapa: Muestra panel actualizado
+interfazDelSistema --> responsableDeEtapa: muestraPanel (actualizado)
 deactivate interfazDelSistema
 
-responsableDeEtapa -> interfazDelSistema: seleccionar proyecto 
+responsableDeEtapa -> interfazDelSistema: seleccionarProyecto 
 activate interfazDelSistema
-interfazDelSistema -> Controlador: solicita datos de la etapa
+interfazDelSistema -> Controlador: solicitaDatos (deEtapa)
 activate Controlador
-Controlador -> servicioDeEtapa: actualiza servicio de etapa 
+Controlador -> servicioDeEtapa: actualizaServicio (deEtapa) 
 activate servicioDeEtapa
-servicioDeEtapa -> baseDeDatos: guardar nuevo estado 
+servicioDeEtapa -> baseDeDatos: guardarNuevo (estado) 
 activate baseDeDatos
-baseDeDatos --> servicioDeEtapa: confirmacion de guardado
+baseDeDatos --> servicioDeEtapa: confirmacionDeguardado
 deactivate baseDeDatos
-servicioDeEtapa --> Controlador: estado actualizado correctamente
+servicioDeEtapa --> Controlador: estadoActualizadoCorrectamente
 deactivate servicioDeEtapa
-Controlador --> interfazDelSistema: Permisos validados 
+Controlador --> interfazDelSistema: permisosValidados 
 deactivate Controlador
-interfazDelSistema --> responsableDeEtapa: Notifica cambio de estado
+interfazDelSistema --> responsableDeEtapa: notificaCambioDeEstado
 deactivate interfazDelSistema
 
-responsableDeEtapa -> interfazDelSistema: selecciona etapa y nuevo estado 
+responsableDeEtapa -> interfazDelSistema: seleccionaEtapa (yNuevoEstado) 
 activate interfazDelSistema
-interfazDelSistema -> Controlador: envia peticion 
+interfazDelSistema -> Controlador: enviaPeticion 
 activate Controlador
-Controlador -> servicioDeEtapa: ejecuta actualizacion 
+Controlador -> servicioDeEtapa: ejecutaCctualizacion 
 activate servicioDeEtapa
-servicioDeEtapa -> baseDeDatos: registra cambio
+servicioDeEtapa -> baseDeDatos: registraCambio
 activate baseDeDatos
-baseDeDatos --> servicioDeEtapa: confirma registro
+baseDeDatos --> servicioDeEtapa: confirmaRegistro
 deactivate baseDeDatos
-servicioDeEtapa --> Controlador: actualizacion completada
+servicioDeEtapa --> Controlador: actualizacionCompletada
 deactivate servicioDeEtapa 
-Controlador --> interfazDelSistema: operacion exitosa
+Controlador --> interfazDelSistema: operacionExitosa
 deactivate Controlador
-interfazDelSistema --> responsableDeEtapa: envia confirmacion por mail
+interfazDelSistema --> responsableDeEtapa: enviaConfirmacion (porMail)
 deactivate interfazDelSistema
+
+destroy interfazDelSistema
 @endum

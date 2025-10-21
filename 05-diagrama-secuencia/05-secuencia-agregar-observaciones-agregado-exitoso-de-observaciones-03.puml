@@ -5,55 +5,57 @@ participant controlador
 participant servicioComentario
 participant baseDeDatos
 
-usuarioAutorizado -> interfazSistema: accede al sistema
+usuarioAutorizado -> interfazSistema: accedeAlSistema
 activate interfazSistema
-interfazSistema -> controlador: valida permiso sobre la etapa
+interfazSistema -> controlador: validaPermiso (sobreLaEtapa)
 activate controlador
-controlador -> servicioComentario: verifica etapa seleccionada
+controlador -> servicioComentario: verificaEtapaSeleccionada
 activate servicioComentario
-servicioComentario -> baseDeDatos: consulta datos de la etapa
+servicioComentario -> baseDeDatos: consultaDatos (deEtapa)
 activate baseDeDatos
-baseDeDatos --> servicioComentario: confirmacion de datos
+baseDeDatos --> servicioComentario: confirmacionDeDatos
 deactivate baseDeDatos
-servicioComentario --> controlador: etapa verificada
+servicioComentario --> controlador: etapaVerificada
 deactivate servicioComentario
-controlador --> interfazSistema: permisos confirmados
+controlador --> interfazSistema: permisosConfirmados
 deactivate controlador
-interfazSistema --> usuarioAutorizado: muestra panel 
+interfazSistema --> usuarioAutorizado: muestraPanel 
 deactivate interfazSistema
 
-usuarioAutorizado -> interfazSistema: selecciona etapa del proyecto
+usuarioAutorizado -> interfazSistema: seleccionaEtapa (delProyecto)
 activate interfazSistema
-interfazSistema -> controlador: presenta formulario web 
+interfazSistema -> controlador: presentaFormulario (web) 
 activate controlador
-controlador -> servicioComentario: valida campos del comentario 
+controlador -> servicioComentario: validaCampos (delComentario) 
 activate servicioComentario
-servicioComentario -> baseDeDatos: guarda comentarios y detalles 
+servicioComentario -> baseDeDatos: guardaComentariosYDetalles 
 activate baseDeDatos
-baseDeDatos --> servicioComentario: confirmacion guardado
+baseDeDatos --> servicioComentario: confirmacionGuardado
 deactivate baseDeDatos
-servicioComentario --> controlador: campos validados 
+servicioComentario --> controlador: camposvalidados 
 deactivate servicioComentario
-controlador --> interfazSistema: formulario preparado
+controlador --> interfazSistema: formularioPreparado
 deactivate controlador
-interfazSistema --> usuarioAutorizado: envia notificacion 
+interfazSistema --> usuarioAutorizado: enviaNotificacion 
 deactivate interfazSistema
 
-usuarioAutorizado-> interfazSistema: escribe y confirma observacion 
+usuarioAutorizado-> interfazSistema: escribeYConfirmaBbservacion 
 activate interfazSistema
-interfazSistema -> controlador: envia comentario ingresado
+interfazSistema -> controlador: enviaComentarioIngresado
 activate controlador
-controlador -> servicioComentario: registra observaciones en etapa
+controlador -> servicioComentario: registraBbservaciones (enEtapa)
 activate servicioComentario
-servicioComentario -> baseDeDatos: actualiza historial de etapas 
+servicioComentario -> baseDeDatos: actualizaHistorial (deEtapas) 
 activate baseDeDatos
-baseDeDatos --> servicioComentario: confirmacion historial actualizado
+baseDeDatos --> servicioComentario: confirmacionHistorial (actualizado)
 deactivate baseDeDatos 
-servicioComentario --> controlador: observacion registrada 
+servicioComentario --> controlador: observacionRegistrada 
 deactivate servicioComentario
-controlador --> interfazSistema: operacion exitosa 
+controlador --> interfazSistema: operacionExitosa 
 deactivate controlador
-interfazSistema --> usuarioAutorizado: visualiza observacion en historial 
+interfazSistema --> usuarioAutorizado: visualizaObservacion (enHistorial)
 deactivate interfazSistema
+
+destroy interfazSistema
 
 @enduml
