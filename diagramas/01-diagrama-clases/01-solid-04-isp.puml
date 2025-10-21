@@ -10,11 +10,12 @@ interface IUsuario {
 interface IAdministrable{
         +gestionarProyectos(): void
         +gestionarUsuarios(): void
+        +registrarFechas(): boolean
 }
 
 interface IComunicacion {
         +enviarMensaje():String
-        +registrarFechas(): boolean
+
         
 }
 

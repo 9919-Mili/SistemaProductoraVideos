@@ -1,0 +1,37 @@
+@startuml CrearProyecto
+
+|Productora General|
+start
+:Inicia sesión en el sistema;
+:Selecciona la opción "Crear Proyecto";
+:Completa los campos obligatorios (nombre, tipo, fechas, responsables);
+if (¿Campos completos?) then (Sí)
+  :Revisa la información ingresada;
+  :Confirma la creación del proyecto;
+else (No)
+  |Sistema|
+  :Mostrar errores de validación;
+  |Productora General|
+  :Corrige los campos faltantes;
+  :Completa los campos obligatorios;
+endif
+
+|Sistema|
+:Validar campos obligatorios, fechas y responsables;
+if (¿Datos válidos?) then (Sí)
+  :Registrar creador y fecha/hora de creación;
+  :Guardar la información del nuevo proyecto;
+  :Enviar notificación de confirmación al cliente;
+  |Cliente|
+  :Recibir notificación de nuevo proyecto creado;
+  :Visualizar detalles básicos del proyecto;
+  |Productora General|
+  :Visualiza mensaje de confirmación en pantalla;
+else (No)
+  :Mostrar mensaje de error específico;
+  |Productora General|
+  :Visualiza mensaje de error;
+endif
+
+stop
+@enduml

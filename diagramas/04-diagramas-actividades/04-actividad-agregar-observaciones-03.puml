@@ -1,0 +1,81 @@
+@startuml Diagrama_Actividades_Agregar_Observaciones
+title Diagrama de Actividades - Caso de Uso 03: Agregar Obsrvaciones
+|Usuario/Cliente|
+|Sistema|
+|Recursos|
+|Servicio de Notificación|
+|Usuario/Cliente|
+start
+|Usuario/Cliente|
+:Abrir aplicación;
+
+|Sistema|
+  :Autenticar usuario;
+  :Mostrar pantalla de Proyectos;
+  
+  |Usuario/Cliente| 
+  :Selecionar Proyecto;
+
+|Sistema|
+  :Mostrar detalles Proyecto;
+
+  |Usuario/Cliente| 
+  :Seleccionar una Etapa;
+
+
+|Sistema|
+  :Mostrar detalles de Etapa;
+  :Mostrar Panel de Observaciones;
+
+  |Usuario/Cliente|
+  :Seleccionar "Agregar" en el
+    Panel de Observaciones;
+
+|Sistema|
+  :Mostrar campo para agregar
+         nueva Observación;
+
+|Usuario/Cliente|
+  :Escribir comentario;
+  if (Notificar Usuario/s?) then (si)
+  :Escribir mención a Usuario/s 
+            en el comentario;
+  else (no)
+  endif
+  :Seleccionar "Guardar";
+
+  |Sistema|
+  :Almacenar Observacion 
+     asociada a la etapa;
+  if (Usuario/s Mencionado/s?) then (si)
+  :Consultar dirección de
+   Usuario/s a notificar;
+
+|Recursos|
+  :Sincronizar datos;
+
+  |Sistema|
+  :Generar mensaje de Notificación;
+  :Enviar datos al servicio
+            de Notificacion;
+
+|Servicio de Notificación|
+  :Recibir datos de dirección y mensaje;
+  :Procesar datos de dirección y mensaje;
+  :Enviar Notificación/es;
+
+|Usuario/Cliente|
+else (no)
+endif
+
+|Sistema|
+:  Mostrar cambios en el
+ Panel de Observaciones;
+
+|Usuario/Cliente|
+:Vizualizar nueva Observación;
+:Cerrar vista de Etapa;
+:Cerrar vista de Proyecto;
+stop
+
+@enduml

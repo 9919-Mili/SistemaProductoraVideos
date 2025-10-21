@@ -7,12 +7,21 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
-##  [Release Actividad Obligatoria N°3] - 2025-10-20
+-  [feature/esp-secuencia-add-diagrama-secuencia-1] Agregue diagramas de secuencias en PNG y PUML   
+PR: [#80](https://github.com/9919-Mili/SistemaProductoraVideos/pull/80) - @9919-Mili (Especialista en Digramas de Secuencia)
 
--  [feature/esp-secuencia-add-diagrama-secuencia-1] Agregue diagramas de secuencias en PNG y PUML. 
--  PR: [#80] (https://github.com/9919-Mili/SistemaProductoraVideos/pull/80#issue-3534465979) - @9919-Mili (Especialista en Digramas de Secuencia)
+ - [feature/feature/esp-actividades-1-2-add-diagrama-actividad-1]  Agregado de diagramas de actividad en formato PUML y PNG, y diagramas_de_actividades.md   
+ PR: [#79](https://github.com/9919-Mili/SistemaProductoraVideos/pull/79) - @zikoloogo (Especialista  en  Diagramas  de  Actividades  -  Casos de Uso 1 y 2)
+ 
+- [feature/feature/esp-dip-add-anexo-dip]  Agregado de diagramas de actividad en formato PUML y PNG, y diagramas_de_actividades.md   
+ PR: [#75](https://github.com/9919-Mili/SistemaProductoraVideos/pull/75) - @igvcalefato (Especialista  en  Diagramas  de  Actividades  -  Casos  de  Uso  3,  4  y  5)
 
 ### Changed
+
+- [feature/espec-escenarios-casos-uso-add-escenario-1]  Modifique diagramasUML.md, anexos.md y README.md   
+PR: [#76](https://github.com/9919-Mili/SistemaProductoraVideos/pull/76) - @igvcalefato (Documentador y Coordinador de Repositorio)
+
+---
 
 ## [Release Primer Examen Parcial] - 2025-10-02
 
