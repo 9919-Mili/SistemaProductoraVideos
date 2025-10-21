@@ -7,6 +7,9 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
+ - [feature/feature/esp-actividades-1-2-add-diagrama-actividad-1]  Agregado de diagramas de actividad en formato PUML y PNG, y diagramas_de_actividades.md
+ PR: [#76](https://github.com/9919-Mili/SistemaProductoraVideos/pull/76) - @zikoloogo (Especialista  en  Diagramas  de  Actividades  -  Casos de Uso 1 y 2)
+
 ### Changed
 
 ---
