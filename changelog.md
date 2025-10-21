@@ -5,6 +5,10 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ---
 ## [Unreleased]
 
+---
+
+## [Release Actividad Obligatoria N°3] - 2025-10-20
+
 ### Added
 
 -  [feature/esp-secuencia-add-diagrama-secuencia-1] Agregue diagramas de secuencias en PNG y PUML   
@@ -93,6 +97,7 @@ PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvca
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 
 - Mantener el orden y formato para facilitar el seguimiento.
+
 
 
 
