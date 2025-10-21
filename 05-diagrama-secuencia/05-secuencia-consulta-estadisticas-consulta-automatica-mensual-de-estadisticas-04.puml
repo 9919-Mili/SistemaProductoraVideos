@@ -1,0 +1,64 @@
+@startuml
+
+actor sistema
+participant sistemaReportes
+participant controlador
+participant moduloEstadistico
+participant baseDeDatos
+
+sistema -> sistemaReportes: detectaInicio (nuevoMes)
+activate sistemaReportes
+sistemaReportes -> controlador: solicitaDatos (mesAnterior) 
+activate controlador
+controlador -> moduloEstadistico: recopilaProyectos (entregados) 
+activate moduloEstadistico
+moduloEstadistico -> baseDeDatos: consultaProyectos (delMes)
+activate baseDeDatos
+baseDeDatos --> moduloEstadistico: datosDeProyectos
+deactivate baseDeDatos
+moduloEstadistico --> controlador: datosRcopilados 
+deactivate moduloEstadistico
+controlador --> sistemaReportes: datosProcesados
+deactivate controlador
+sistemaReportes --> sistema: tareaEecutada
+deactivate sistemaReportes
+
+
+sistema -> sistemaReportes: activaGeneracionDeReporte
+activate sistemaReportes
+sistemaReportes -> controlador: procesaYGeneraReporte 
+activate controlador
+controlador -> moduloEstadistico: generaGraficos (yTablas) 
+activate moduloEstadistico
+moduloEstadistico -> baseDeDatos: obtieneDuracion (yTipos)
+activate baseDeDatos 
+baseDeDatos --> moduloEstadistico: informacionDeDuracion
+deactivate baseDeDatos
+moduloEstadistico --> controlador: graficosGenerados 
+deactivate moduloEstadistico
+controlador --> sistemaReportes: reportesEstadisticosListo
+deactivate controlador 
+sistemaReportes --> sistema: reporteDisponible (enModulo)
+deactivate sistemaReportes
+
+
+sistema -> sistemaReportes: programaElenvioAutomatico 
+activate sistemaReportes
+sistemaReportes -> controlador: enviaPorMail
+activate controlador
+controlador -> moduloEstadistico: preparaArchivos (pdf,Excel) 
+activate moduloEstadistico
+moduloEstadistico -> baseDeDatos: almacenaReporteGenerado 
+activate baseDeDatos
+baseDeDatos --> moduloEstadistico: confirmacionAlmacenamiento
+deactivate baseDeDatos
+moduloEstadistico --> controlador: archivoPreparado 
+deactivate moduloEstadistico
+controlador --> sistemaReportes: mailEnviadoAResponsable 
+deactivate controlador
+sistemaReportes --> sistema: notificacionEnviada 
+deactivate sistemaReportes
+
+destroy sistemaReportes
+
+@enduml

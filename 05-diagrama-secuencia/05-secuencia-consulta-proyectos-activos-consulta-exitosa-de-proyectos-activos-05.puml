@@ -1,0 +1,68 @@
+@startuml
+
+actor usuarioAutorizado
+participant interfazSistema
+participant controlador
+participant servicioProyectos
+participant baseDeDatos
+
+
+usuarioAutorizado -> interfazSistema: accedeAlSistema
+activate interfazSistema
+interfazSistema -> controlador: validaPermisos (delUsuario)
+activate controlador
+controlador -> servicioProyectos: solicitaProyectos (activos) 
+activate servicioProyectos
+servicioProyectos -> baseDeDatos: consultaEstado (deProyectos)
+activate baseDeDatos
+baseDeDatos --> servicioProyectos: listaDeProyectos 
+deactivate baseDeDatos
+servicioProyectos --> controlador: proyectoEnCurso 
+deactivate servicioProyectos
+controlador --> interfazSistema: permisosValidados 
+deactivate controlador
+interfazSistema --> usuarioAutorizado: muestraListado 
+deactivate interfazSistema
+
+usuarioAutorizado -> interfazSistema: seleccionaProyectos (activos)
+activate interfazSistema
+interfazSistema -> controlador: listaProyectos (enCurso)
+activate controlador
+controlador -> servicioProyectos: consultaDetallesYResponsables 
+activate servicioProyectos
+servicioProyectos -> baseDeDatos: obtieneInformacionDetallada 
+activate baseDeDatos
+baseDeDatos --> servicioProyectos: detallesYCumplimiento 
+deactivate baseDeDatos
+servicioProyectos --> controlador: informacionActualizada 
+deactivate servicioProyectos
+controlador --> interfazSistema: visualizacionDePanelDeControl 
+deactivate controlador
+interfazSistema --> usuarioAutorizado: accesoAPanelDeDetalles 
+deactivate interfazSistema
+
+usuarioAutorizado -> interfazSistema: filtraPorResponsable 
+activate interfazSistema
+interfazSistema -> controlador: aplicaFiltros 
+activate controlador
+controlador -> servicioProyectos: obtieneObservacionesRegistradas
+activate servicioProyectos
+servicioProyectos -> baseDeDatos: obtieneHistorialDeObservaciones
+activate baseDeDatos 
+baseDeDatos --> servicioProyectos: observacionesAsociadas 
+deactivate baseDeDatos
+servicioProyectos --> controlador: observacionesDisponibles 
+deactivate servicioProyectos
+controlador --> interfazSistema: datosFiltrados (listos) 
+deactivate controlador
+interfazSistema --> usuarioAutorizado: integradoAlFormulario 
+deactivate interfazSistema
+
+
+destroy interfazSistema
+
+
+
+
+@enduml
+
