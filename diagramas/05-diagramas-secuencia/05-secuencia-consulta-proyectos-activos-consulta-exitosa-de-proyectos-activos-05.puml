@@ -1,4 +1,4 @@
-@startuml
+@startuml consulta exitosa de proyectos activos
 
 actor usuarioAutorizado
 participant interfazSistema

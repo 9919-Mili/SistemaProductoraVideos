@@ -1,4 +1,4 @@
-@startuml
+@startuml consulta automatica mensual de estadisticas 
 
 actor sistema
 participant sistemaReportes
