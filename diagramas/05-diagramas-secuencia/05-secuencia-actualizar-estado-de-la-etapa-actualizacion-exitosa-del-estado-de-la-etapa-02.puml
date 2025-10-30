@@ -1,4 +1,5 @@
-@startuml actualizacion exitosa del estado
+@startuml 
+title actualizacion exitosa del estado
 actor responsableDeEtapa
 participant interfazDelSistema
 participant Controlador

@@ -1,5 +1,5 @@
-@startuml consulta automatica mensual de estadisticas 
-
+@startuml 
+title consulta automatica mensual de estadisticas 
 actor sistema
 participant sistemaReportes
 participant controlador

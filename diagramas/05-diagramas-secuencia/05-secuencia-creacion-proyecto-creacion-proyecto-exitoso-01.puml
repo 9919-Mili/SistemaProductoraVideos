@@ -1,4 +1,5 @@
-@startuml creacion proyecto exitoso 
+@startuml 
+title creacion proyecto exitoso 
 actor productoraGeneral
 participant interfazWeb
 participant sistemaDeValidacion

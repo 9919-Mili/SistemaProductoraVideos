@@ -1,4 +1,5 @@
-@startuml agregado exitoso de observaciones 
+@startuml 
+title agregado exitoso de observaciones 
 actor usuarioAutorizado
 participant interfazSistema
 participant controlador
