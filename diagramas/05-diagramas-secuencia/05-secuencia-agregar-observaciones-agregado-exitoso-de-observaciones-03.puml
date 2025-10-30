@@ -49,13 +49,13 @@ controlador -> servicioComentario: registraBbservaciones (enEtapa)
 activate servicioComentario
 servicioComentario -> baseDeDatos: actualizaHistorial (deEtapas) 
 activate baseDeDatos
-baseDeDatos --> servicioComentario: confirmacionHistorial (actualizado)
+baseDeDatos --> servicioComentario: confirmacionHistorialActualizado
 deactivate baseDeDatos 
 servicioComentario --> controlador: observacionRegistrada 
 deactivate servicioComentario
 controlador --> interfazSistema: operacionExitosa 
 deactivate controlador
-interfazSistema --> usuarioAutorizado: visualizaObservacion (enHistorial)
+interfazSistema --> usuarioAutorizado: visualizaObservacion 
 deactivate interfazSistema
 
 destroy interfazSistema

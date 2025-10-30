@@ -22,7 +22,7 @@ servicioDeEtapa --> Controlador: estadoVerificado
 deactivate servicioDeEtapa
 Controlador --> interfazDelSistema: permisosValidados
 deactivate Controlador
-interfazDelSistema --> responsableDeEtapa: muestraPanel (actualizado)
+interfazDelSistema --> responsableDeEtapa: muestraPanelActualizado
 deactivate interfazDelSistema
 
 responsableDeEtapa -> interfazDelSistema: seleccionarProyecto 
@@ -56,7 +56,7 @@ servicioDeEtapa --> Controlador: actualizacionCompletada
 deactivate servicioDeEtapa 
 Controlador --> interfazDelSistema: operacionExitosa
 deactivate Controlador
-interfazDelSistema --> responsableDeEtapa: enviaConfirmacion (porMail)
+interfazDelSistema --> responsableDeEtapa: enviaConfirmacion 
 deactivate interfazDelSistema
 
 destroy interfazDelSistema

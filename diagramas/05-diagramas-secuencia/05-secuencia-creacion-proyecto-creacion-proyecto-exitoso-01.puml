@@ -20,7 +20,7 @@ baseDeDatos --> sistemaDeValidacion: confirmaValidacion
 deactivate baseDeDatos
 sistemaDeValidacion --> interfazWeb: permitirAcceso
 deactivate sistemaDeValidacion
-interfazWeb --> productoraGeneral: muestraPanel (delSistema)
+interfazWeb --> productoraGeneral: muestraPanel 
 deactivate interfazWeb
 
 alt creacionExitosa

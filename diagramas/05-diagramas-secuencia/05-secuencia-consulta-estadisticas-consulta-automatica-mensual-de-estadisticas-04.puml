@@ -38,7 +38,7 @@ moduloEstadistico --> controlador: graficosGenerados
 deactivate moduloEstadistico
 controlador --> sistemaReportes: reportesEstadisticosListo
 deactivate controlador 
-sistemaReportes --> sistema: reporteDisponible (enModulo)
+sistemaReportes --> sistema: reporteDisponible
 deactivate sistemaReportes
 
 

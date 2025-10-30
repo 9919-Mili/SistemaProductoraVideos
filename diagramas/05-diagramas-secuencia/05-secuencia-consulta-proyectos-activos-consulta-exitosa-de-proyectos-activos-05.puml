@@ -54,8 +54,7 @@ baseDeDatos --> servicioProyectos: observacionesAsociadas
 deactivate baseDeDatos
 servicioProyectos --> controlador: observacionesDisponibles 
 deactivate servicioProyectos
-controlador --> interfazSistema: datosFiltrados (listos) 
-deactivate controlador
+controlador --> interfazSistema: datosFiltrados 
 interfazSistema --> usuarioAutorizado: integradoAlFormulario 
 deactivate interfazSistema
 
