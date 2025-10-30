@@ -1,10 +1,10 @@
 @startuml 
 title creacion proyecto exitoso 
 actor productoraGeneral
-participant interfazWeb
-participant sistemaDeValidacion
-participant baseDeDatos
-participant sistemaDeNotificacion
+participant interfazWeb as interfazWeb
+participant sistemaDeValidacion as sistemaDeValidacion
+participant baseDeDatos as baseDeDatos
+participant sistemaDeNotificacion:notificador as sistemaDeNotificacion
 
 productoraGeneral -> interfazWeb: seleccionarOpcion (crearProyecto)
 activate interfazWeb

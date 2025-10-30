@@ -1,10 +1,11 @@
 @startuml 
 title actualizacion exitosa del estado
+
 actor responsableDeEtapa
-participant interfazDelSistema
-participant Controlador
+participant interfazDelSistema as interfazDelSistema
+participant Controlador as Controlador
 participant servicioDeEtapa
-participant baseDeDatos
+participant baseDeDatos as baseDeDatos
 
 
 responsableDeEtapa -> interfazDelSistema: accedeAlSistema

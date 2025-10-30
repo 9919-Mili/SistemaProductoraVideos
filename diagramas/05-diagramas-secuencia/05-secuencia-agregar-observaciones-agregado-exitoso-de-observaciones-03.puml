@@ -1,10 +1,11 @@
 @startuml 
 title agregado exitoso de observaciones 
+
 actor usuarioAutorizado
-participant interfazSistema
-participant controlador
-participant servicioComentario
-participant baseDeDatos
+participant interfazSistema as interfazSistema
+participant controlador as controlador
+participant servicioComentario:comentador as servicioComentario
+participant baseDeDatos as baseDeDatos
 
 usuarioAutorizado -> interfazSistema: accedeAlSistema
 activate interfazSistema

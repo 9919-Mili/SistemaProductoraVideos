@@ -2,10 +2,10 @@
 title consulta exitosa de proyectos activos
 
 actor usuarioAutorizado
-participant interfazSistema
-participant controlador
-participant servicioProyectos
-participant baseDeDatos
+participant interfazSistema as interfazSistema
+participant controlador as controlador
+participant servicioProyectos as servicioProyectos
+participant baseDeDatos as baseDeDatos
 
 
 usuarioAutorizado -> interfazSistema: accedeAlSistema
