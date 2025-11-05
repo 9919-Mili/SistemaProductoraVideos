@@ -1,5 +1,6 @@
 @startuml 
 title creacion proyecto exitoso 
+
 actor productoraGeneral
 participant interfazWeb as interfazWeb
 participant sistemaDeValidacion as sistemaDeValidacion

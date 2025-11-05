@@ -1,5 +1,6 @@
 @startuml 
 title consulta automatica mensual de estadisticas 
+
 actor sistema
 participant sistemaReportes:reportes as sistemaReportes
 participant controlador as controlador
