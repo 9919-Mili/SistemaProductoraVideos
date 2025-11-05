@@ -4,7 +4,7 @@ title agregado exitoso de observaciones
 actor usuarioAutorizado
 participant interfazSistema as interfazSistema
 participant controlador as controlador
-participant servicioComentario:comentador as servicioComentario
+participant servicioComentario as servicioComentario
 participant baseDeDatos as baseDeDatos
 
 usuarioAutorizado -> interfazSistema: accedeAlSistema
@@ -53,11 +53,11 @@ baseDeDatos --> servicioComentario: confirmacionHistorialActualizado
 deactivate baseDeDatos 
 servicioComentario --> controlador: observacionRegistrada 
 deactivate servicioComentario
+destroy servicioComentario
 controlador --> interfazSistema: operacionExitosa 
 deactivate controlador
 interfazSistema --> usuarioAutorizado: visualizaObservacion 
 deactivate interfazSistema
 
-destroy interfazSistema
 
 @enduml

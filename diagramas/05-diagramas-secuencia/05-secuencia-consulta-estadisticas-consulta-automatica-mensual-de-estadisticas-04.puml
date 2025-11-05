@@ -2,7 +2,7 @@
 title consulta automatica mensual de estadisticas 
 
 actor sistema
-participant sistemaReportes:reportes as sistemaReportes
+participant sistemaReportes as sistemaReportes
 participant controlador as controlador
 participant moduloEstadistico as moduloEstadistico
 participant baseDeDatos as baseDeDatos

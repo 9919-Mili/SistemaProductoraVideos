@@ -54,10 +54,10 @@ baseDeDatos --> servicioDeEtapa: confirmaRegistro
 deactivate baseDeDatos
 servicioDeEtapa --> Controlador: actualizacionCompletada
 deactivate servicioDeEtapa 
+destroy servicioDeEtapa
 Controlador --> interfazDelSistema: operacionExitosa
 deactivate Controlador
 interfazDelSistema --> responsableDeEtapa: enviaConfirmacion 
 deactivate interfazDelSistema
 
-destroy interfazDelSistema
 @endum

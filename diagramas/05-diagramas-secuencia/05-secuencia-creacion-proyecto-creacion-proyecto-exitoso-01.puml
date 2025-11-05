@@ -5,7 +5,7 @@ actor productoraGeneral
 participant interfazWeb as interfazWeb
 participant sistemaDeValidacion as sistemaDeValidacion
 participant baseDeDatos as baseDeDatos
-participant sistemaDeNotificacion:notificador as sistemaDeNotificacion
+participant sistemaDeNotificacion as sistemaDeNotificacion
 
 productoraGeneral -> interfazWeb: seleccionarOpcion (crearProyecto)
 activate interfazWeb
@@ -55,7 +55,7 @@ interfazWeb -> sistemaDeValidacion: solicitarGuardado
 activate sistemaDeValidacion
 sistemaDeValidacion -> baseDeDatos: autorizarAlmacenamiento 
 activate baseDeDatos
-baseDeDatos -> sistemaDeNotificacion: registroCompleto
+baseDeDatos -x sistemaDeNotificacion: registroCompleto
 activate sistemaDeNotificacion
 baseDeDatos -->sistemaDeValidacion: autorizacionRecibida
 deactivate  baseDeDatos
