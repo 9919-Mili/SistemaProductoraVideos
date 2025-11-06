@@ -13,11 +13,14 @@ start
 if (¿Usuario autenticado?) then (no)
   :Mostrar pantalla de login;
 
+fork
 |Usuario/Cliente|
   :Ingresar credenciales;
-
+fork again
 |Sistema|
 :Validar credenciales;
+endfork
+
 while (Credenciales válidas?) is (no)
   :Mostrar error de login;
 |Usuario/Cliente|
@@ -27,8 +30,10 @@ endif
 
 |Sistema|
   :Autenticar usuario;
+  note
+  Este paso se repite hasta que los datos sean correctos
+  endnote
   :Mostrar pantalla de Estadisticas;
-  
 
 if (Permisos para crear Reporte?) then (no)
   |Usuario/Cliente| 
@@ -41,10 +46,18 @@ if (Permisos para crear Reporte?) then (no)
   :Aplicar filtros;
 
 |Sistema|
+fork
   :Recopilacion de datos filtrados;
-
+  :Sincronización de datos;
+floating note right: Datos de las Estadisticas provenientes de las fuentes que cumplen los filtros seleccionados
+  :Confirmar recepción datos;
 |Recursos|
-  :Sincronizar datos;
+  fork again
+  :Recepción de pedido de datos;
+  :Sincronización de datos;
+  :Recibir confirmación de recepción de datos;
+|Sistema|
+end fork
   
 |Sistema|
   :Generar Reporte de Estadisticas;
@@ -63,12 +76,16 @@ endif
 |Usuario/Cliente|
 if (Descargar Reporte?) then (si)
   :Seleccionar opción "Descargar Reporte";
-
+fork
+|Usuario/Cliente|
+  :Guardar Reporte Localmente;
+fork again
   |Sistema| 
   :Procesar descarga del Reporte;
+|Usuario/Cliente|
+  endfork
 
-  |Usuario/Cliente|
-  :Reporte Guardado Localmente;
+  :Reporte Guardado;
   else (no)
 endif
 

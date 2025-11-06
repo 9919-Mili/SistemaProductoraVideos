@@ -24,8 +24,11 @@ start
 
 
 |Sistema|
+fork
   :Mostrar detalles de Etapa;
+fork again
   :Mostrar Panel de Observaciones;
+endfork
 
   |Usuario/Cliente|
   :Seleccionar "Agregar" en el
@@ -51,8 +54,19 @@ start
   :Consultar dirección de
    Usuario/s a notificar;
 
+|Sistema|
+fork
+  :Recopilacion de datos filtrados;
+  :Sincronización de datos;
+floating note right: Datos de direccion registrados de los Usuarios a donde enviar la notifiación
+  :Confirmar recepción datos;
 |Recursos|
-  :Sincronizar datos;
+  fork again
+  :Recepción de pedido de datos;
+  :Sincronización de datos;
+  :Recibir confirmación de recepción de datos;
+|Sistema|
+end fork
 
   |Sistema|
   :Generar mensaje de Notificación;
@@ -60,8 +74,12 @@ start
             de Notificacion;
 
 |Servicio de Notificación|
-  :Recibir datos de dirección y mensaje;
-  :Procesar datos de dirección y mensaje;
+fork
+  :Recibir datos;
+  floating note right: Datos de dirección y mensaje de notificación
+fork again
+  :Procesar datos;
+endfork
   :Enviar Notificación/es;
 
 |Usuario/Cliente|
