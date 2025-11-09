@@ -38,7 +38,7 @@
 | Clase | Método | Tipo (C/L/A/E) | Parámetros (nombre: tipo) | Retorno | Actividad asociada |
 |--------|---------|----------------|----------------------------|----------|--------------------|
 | Proyecto | `crearProyecto(nombre: string, descripcion: string)` | C | `nombre: string`, `descripcion: string` | `Proyecto` | Crear nuevo proyecto |
-| Usuario | `buscarUsuario(idUsuario: int)` | L | `idUsuario: int` | `Usuario` | Crear nuevo proyecto |
+| Usuario | `gestionarUsuarios(idUsuario: int)` | L | `idUsuario: int` | `Usuario` | Crear nuevo proyecto |
 | Proyecto | `buscarEtapas(descripcion: string)` | L | `descripcion: string` | `Proyecto` | Definir etapas |
 | Etapa | `crearEtapas(idProyecto: int, descripcion: string)` | C | `idProyecto: int`, `descripcion: string` | `Etapa` | Definir etapas |
 | Proyecto | `asignarResponsable (idEtapa: int, idUsuario: int)` | L | `proyectoId: int`, `archivo: File` | `int` | Nombrar responsable etapa |
@@ -61,12 +61,12 @@
 
 | Elemento | Artefacto vinculado | Archivo / Referencia URL | Descripción de la relación |
 |-----------|--------------------|-----------------------|-----------------------------|
-| `crearProyecto()` | Tarjeta CRC – Proyecto | [`herramientas-agile/tarjetas-crc/crc-proyecto.md`]() | Figura como responsabilidad “Registrar nuevo proyecto”. |
-| `crearProyecto()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-crear-proyecto.puml`]() | Aparece como mensaje enviado desde el actor “Productor” al objeto `Proyecto`. |
-| `crearProyecto()` | Diagrama de Actividad – CU1 | [`diagramas/04-diagramas-actividades/04-actividad-crear-proyecto.puml`]() | Acción “Registrar nuevo proyecto” coincide con la operación **C**. |
-| `asignarResponsable()` | Tarjeta CRC – Proyecto | [`crc-proyecto.md`]() | Declarado como método dentro de las responsabilidades del proyecto. |
-| `subirArchivo()` | Diagrama de Secuencia – CU1 | [`05-secuencia-crear-proyecto.puml`]() | Se muestra como mensaje entre `Usuario` y `ArchivoMultimedia`. |
-| `enviarNotificacion()` | Diagrama de Actividad – CU1 | [`04-actividad-crear-proyecto.puml`] | Acción final del flujo que notifica al responsable. |
+| `crearProyecto()` | Tarjeta CRC – Proyecto | [`herramientas-agile/tarjetas-crc/crc-02-tarjeta-crc-proyecto.md`]() | Figura como responsabilidad “Crear proyecto”. |
+| `crearProyecto()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-creacion-proyecto-creacion-proyecto-exitoso-01.puml`]() | Aparece como mensaje enviado desde el actor “Productor” al objeto |`interfazWeb`. |
+| `crearProyecto()` | Diagrama de Actividad – CU1 | [`diagramas/04-diagramas-actividades/04-actividad-crear-proyecto-caso-uso-01.puml`]() | Acción “Seleccionar la opcion regristrar proyecto” coincide con la operación **C**. |
+| `gestionarUsuarios()` | Tarjeta CRC – Sistema | [`herramientas-agile/tarjetas-crc/01-tarjeta-crc-sistema.md`]() | Figura como responsabilidad "gestionarUsuarios" |
+| `gestionarUsuarios()` | Diagrama de Secuencia – CU1 | [`05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05.puml`]() | Se muestra como mensaje entre `interfazWeb` y `controlador`. |
+| `gestionarUsuarios)` | Diagrama de Actividad – CU1 | [`04-actividad-consultar-proyectos-activos-05.puml`] | autenticar usuario. |
 
 ---
 
