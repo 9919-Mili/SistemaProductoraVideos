@@ -66,7 +66,7 @@
 | `crearProyecto()` | Diagrama de Actividad – CU1 | [`diagramas/04-diagramas-actividades/04-actividad-crear-proyecto-caso-uso-01.puml`]() | Acción “Seleccionar la opcion regristrar proyecto” coincide con la operación **C**. |
 | `gestionarUsuarios()` | Tarjeta CRC – Sistema | [`herramientas-agile/tarjetas-crc/01-tarjeta-crc-sistema.md`]() | Figura como responsabilidad "gestionarUsuarios" |
 | `gestionarUsuarios()` | Diagrama de Secuencia – CU1 | [`05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05.puml`]() | Se muestra como mensaje entre `interfazWeb` y `controlador`. |
-| `gestionarUsuarios)` | Diagrama de Actividad – CU1 | [`04-actividad-consultar-proyectos-activos-05.puml`] | autenticar usuario. |
+| `gestionarUsuarios)` | Diagrama de Actividad – CU1|[`04-actividad-consultar-proyectos-activos-05.puml`] | autenticar usuario. |
 
 ---
 
