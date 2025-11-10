@@ -44,9 +44,9 @@
 | Proyecto | `asignarResponsable (idEtapa: int, idUsuario: int)` | L | `proyectoId: int`, `archivo: File` | `int` | Nombrar responsable etapa |
 | Etapa | `actualizarEtapas(idEtapas: int, descripcion: string)` | A | `idEtapa: int, idescripcion: string` | `etapa` | Nombrar responsable etapa |
 | Usuario | `listarEtapas(idEtapas: int)` | L | `idEtapa: int, idescripcion: string` | `etapa` | Nombrar responsable etapa |
-| Proyecto | `aagregarObservaciones (idProyecto: int, descripcion: string)` | A | `idProyecto: int, descripcion: string)` | `int` | Agregar observaciones iniciales|
-| Proyecto | `validar (idProyectProyectoo: int)` | L | `idProyecto: int)` | `int` | Validar informacion del proyecto|
-| Proyecto | `regstrarFechas (idProyecto: int, fechaInicio: date, fechaFin:date)` | L | `idProyecto: int, fechaInicio: date, fechaFin:date` | `int` | Ingresar fechas |
+| Proyecto | `agregarObservaciones (idProyecto: int, descripcion: string)` | A | `idProyecto: int, descripcion: string)` | `int` | Agregar observaciones iniciales|
+| Proyecto | `validarInformacion (idProyectProyectoo: int)` | L | `idProyecto: int)` | `int` | Validar informacion del proyecto|
+| Proyecto | `registrarFechas (idProyecto: int, fechaInicio: date, fechaFin:date)` | L | `idProyecto: int, fechaInicio: date, fechaFin:date` | `int` | Ingresar fechas |
 | Proyecto | `buscarCliente` | L |  |  | Asociar clientes |
 | Notificacion | `crearNotificacion(idDestinatario: int, mensaje: string)` | C | dDestinatario: int, mensaje: string |  | Asociar clientes |
 
@@ -69,15 +69,44 @@
 | `gestionarUsuarios()` | Diagrama de Secuencia – CU1 | [`05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05.puml`]() | Se muestra como mensaje entre `interfazWeb` y `controlador`. |
 | `gestionarUsuarios)` | Diagrama de Actividad – CU1|[`diagramas/04-diagramas-actividades/04-actividad-consultar-estadisticas-04.puml`] () | accion "autenticar usuario" coincide con la operacion **L**.|
 
-| `buscarEtapas()` | Tarjeta CRC – Sistema | [`herramientas-agile/tarjetas-crc/02-tarjeta-crc-proyecto.md`]() | Figura como responsabilidad "gestionarEtapas" |
-| `buscarEtapas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
-| `buscarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/04-actividad-actualizar-estado-caso-uso-02.puml`] () | accion "seleccionar etapa asignada" coincide con la operacion **L**.|
+| `crearEtapas()` | Tarjeta CRC – Sistema | []() | "" |
+| `crearEtapas()` | Diagrama de Secuencia – CU1 | [``]() | |
+| `crearEtapas()` | Diagrama de Actividad – CU1|[] () | |
 
-| `crearEtapas()` | Tarjeta CRC – Sistema | [`herramientas-agile/tarjetas-crc/02-tarjeta-crc-proyecto.md`]() | Figura como responsabilidad "gestionarEtapas" |
-| `crearEtapas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
-| `crearEtapas()` | Diagrama de Actividad – CU1|[`diagramas/04-actividad-actualizar-estado-caso-uso-02.puml`] () | accion "seleccionar etapa asignada" coincide con la operacion **L**.|
+| `AsignarResponsables()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Asignar responsable etapa" |
+| `AsignarResponsables()` | Diagrama de Secuencia – CU1 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | |
+| `AsignarResponsables()` | Diagrama de Actividad – CU1|[] () | |
 
+| `actualizarEtapas()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Actualizar Estado" |
+| `actualizarEtapas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `controlador` y `baseDeDatos`. |
+| `actualizarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/04-actividad-actualizar-estado-caso-uso-02.puml`] () | accion "confirmar cambio de estado" **A**.|
+
+| `listarEtapas()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Consultar en que etapa estan trabajando" |
+| `listarEtapas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
+| `listarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/04-actividad-agregar-observaciones-03.puml`] () | accion "Mostrar detalles de etapas" **L**.|
+
+| `agregarObservaciones()` | Tarjeta CRC – Comentario | [`herramientas-agile/tarjetas-crc/08-tarjeta-crc-comentario.md`]() | Figura como responsabilidad "Agregar comentario" |
+| `agregarObservaciones()` | Diagrama de Secuencia – CU1 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `servicioComentario` y `baseDeDatos`. |
+| `agregarObservaciones()` | Diagrama de Actividad – CU1|[`04-actividad-agregar-observaciones-03.puml`] () | accion "Escribir comentario" **A**.|
+
+| `validarInformacion()` | Tarjeta CRC – Usuario | [`herramientas-agile/tarjetas-crc/004-tarjeta-crc-usuario.md`]() | Figura como responsabilidad "Validar datos" |
+| `validarInformacion()` | Diagrama de Secuencia – CU1 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `controlador` y `servicioDeComentario`. |
+| `validarInformacion()` | Diagrama de Actividad – CU1|[`04-actividad-consultar-proyectos-activos-05.puml`] () | accion "Validar credenciales" **L**.|
+
+| `registrarFechas()` | Tarjeta CRC – Comentario | [`herramientas-agile/tarjetas-crc/08-tarjeta-crc-comentario.md`]() | Figura como responsabilidad "Registrar fechas de cambios" |
+| `registrarFechas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapas` y `baseDeDatos`. |
+| `registrarFechas()` | Diagrama de Actividad – CU1|[`04-actividad-actualizar-estado-caso-uso-02.puml`] () | accion "Registrar responsable que actualiza estado anterior, fecha/hora" **L**.|
+
+| `buscarCliente()` | Tarjeta CRC –  | [``]() | Figura como responsabilidad "" |
+| `buscarCliente()` | Diagrama de Secuencia – CU1 | [``]() | Se muestra como mensaje entre `` y ``. |
+| `buscarCliente()` | Diagrama de Actividad – CU1|[``] () | accion "" ****.|
+
+| `crearNotificacion()` | Tarjeta CRC – Notificacion | [`herramientas-agile/tarjetas-crc/005-tarjeta-crc-notificacion.md`]() | Figura como responsabilidad "Generar mensaje de retraso" |
+| `crearNotificacion()` | Diagrama de Secuencia – CU1 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `interfazSistema` y `usuarioAutorizado`. |
+| `crearNotificacion()` | Diagrama de Actividad – CU1|[`04-actividad-agregar-observaciones-03.puml`] () | accion "Generar mensaje de notificacion" **C**.|
 ---
+
+
 
 ## 4) Issues e inconsistencias detectadas
 
@@ -85,10 +114,16 @@
 
 | URL | Descripción de la inconsistencia | Artefacto relacionado | Acción correctiva | Estado |
 |----|----------------------------------|------------------------|-------------------|:------:|
-| [#82](https://github.com/9919-Mili/SistemaProductoraVideos/issues/82) | `crearEtapa()` no figura en la CRC de Etapa | Tarjeta CRC – Etapa | Agregar responsabilidad y actualizar CRC | Pendiente |
-| [#46](https://github.com/tu-org/tu-repo/issues/46) | Acción “Notificar creación” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `Notificación` | Pendiente |
-| [#46](https://github.com/tu-org/tu-repo/issues/45)| Método `subirArchivo()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Resuelto |
+| [#82](https://github.com/9919-Mili/SistemaProductoraVideos/issues/82) | `crearEtapa()` no figura en la CRC de Etapa | Tarjeta CRC – Etapa | Agregue responsabilidad y actualice CRC | Resuelto |
+| [#82](https://github.com/tu-org/tu-repo/issues/46) | Acción “Notificar creación” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `servicioDeEtapas` | Pendiente |
+| [#82](https://github.com/tu-org/tu-repo/issues/45)| Método `CrearEtapa()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente |
 
+| [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#) | `AsignarResponsables()` Accion "Asignar responsable de etapas" no aparece en el diagrama de secuencias - CU1 | Incorporar mensaje | Pendiente |
+| [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#)| Método `asignarResponsables()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente |
+
+| [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) | `buscarCliente()` no figura en la CRC de Proyecto | Tarjeta CRC – Proyecto | Agregue responsabilidad y actualice CRC | Pendiente |
+| [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) | Acción “buscarCliente” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `baseDeDatos` | Pendiente |
+| [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84)| Método `CrearEtapa()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente 
 **Estados posibles:** Abierto / Pendiente / Resuelto
 
 ---
