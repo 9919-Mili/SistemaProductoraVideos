@@ -110,7 +110,7 @@
 | [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#) | `AsignarResponsables()` Accion "Asignar responsable de etapas" no aparece en el diagrama de secuencias - CU1 | Incorporar mensaje | Pendiente |
 | [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#)| Método `asignarResponsables()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente |
 | [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) | `buscarCliente()` no figura en la CRC de Proyecto | Tarjeta CRC – Proyecto | Agregue responsabilidad y actualice CRC | Pendiente |
-| [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) | Acción “buscarCliente” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `baseDeDatos` | Pendiente |
+| [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) | Acción “buscarCliente” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `baseDeDatos` | Resuelto |
 | [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84)| Método `CrearEtapa()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente 
 **Estados posibles:** Abierto / Pendiente / Resuelto
 

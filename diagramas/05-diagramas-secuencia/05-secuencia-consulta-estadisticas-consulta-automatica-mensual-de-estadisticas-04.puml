@@ -2,10 +2,10 @@
 title consulta automatica mensual de estadisticas 
 
 actor sistema
-participant sistemaReportes as sistemaReportes
-participant controlador as controlador
-participant moduloEstadistico as moduloEstadistico
-participant baseDeDatos as baseDeDatos
+participant "sistemaReportes : sistema" as sistemaReportes
+participant "controlador : registrador" as controlador
+participant "moduloEstadistico : estadisticas" as moduloEstadistico
+participant "baseDeDatos : servidorLocal" as baseDeDatos
 
 sistema -> sistemaReportes: detectaInicio (nuevoMes)
 activate sistemaReportes

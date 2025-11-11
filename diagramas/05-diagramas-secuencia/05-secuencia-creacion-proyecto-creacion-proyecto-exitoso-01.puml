@@ -2,10 +2,10 @@
 title creacion proyecto exitoso 
 
 actor productoraGeneral
-participant interfazWeb as interfazWeb
-participant sistemaDeValidacion as sistemaDeValidacion
-participant baseDeDatos as baseDeDatos
-participant sistemaDeNotificacion as sistemaDeNotificacion
+participant "interfazWeb : interfaz" as interfazWeb
+participant "sistemaDeValidacion : sistema" as sistemaDeValidacion
+participant "baseDeDatos : servidorLocal" as baseDeDatos
+participant "sistemaDeNotificacion : notificador" as sistemaDeNotificacion
 
 productoraGeneral -> interfazWeb: seleccionarOpcion (crearProyecto)
 activate interfazWeb
@@ -36,9 +36,9 @@ productoraGeneral -> interfazWeb: ingresarDatos (delProyecto)
 activate interfazWeb
 interfazWeb -> sistemaDeValidacion: verificarPermisos 
 activate sistemaDeValidacion
-sistemaDeValidacion -> baseDeDatos: permisosCnfirmados 
+sistemaDeValidacion -> baseDeDatos: permisosConfirmados 
 activate baseDeDatos
-baseDeDatos -> sistemaDeNotificacion: proyecctoGuardado
+baseDeDatos -> sistemaDeNotificacion: proyectoGuardado
 activate sistemaDeNotificacion
 sistemaDeNotificacion --> baseDeDatos: guardadoExitoso 
 deactivate sistemaDeNotificacion

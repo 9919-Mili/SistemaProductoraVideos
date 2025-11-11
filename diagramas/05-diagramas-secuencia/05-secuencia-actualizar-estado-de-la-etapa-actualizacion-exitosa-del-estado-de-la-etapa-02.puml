@@ -2,10 +2,10 @@
 title actualizacion exitosa del estado
 
 actor responsableDeEtapa
-participant interfazDelSistema as interfazDelSistema
-participant Controlador as Controlador
-participant servicioDeEtapa
-participant baseDeDatos as baseDeDatos
+participant "interfazDelSistema : sistema" as interfazDelSistema
+participant "Controlador : registrador" as Controlador
+participant "servicioDeEtapa : servicio" as servicioDeEtapa
+participant "baseDeDatos : servidorLocal" as baseDeDatos
 
 
 responsableDeEtapa -> interfazDelSistema: accedeAlSistema
