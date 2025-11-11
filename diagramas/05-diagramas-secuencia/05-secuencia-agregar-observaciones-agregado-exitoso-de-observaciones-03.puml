@@ -41,11 +41,11 @@ deactivate controlador
 interfazSistema --> usuarioAutorizado: enviaNotificacion 
 deactivate interfazSistema
 
-usuarioAutorizado-> interfazSistema: escribeYConfirmaBbservacion 
+usuarioAutorizado-> interfazSistema: escribeYConfirmaObservacion 
 activate interfazSistema
 interfazSistema -> controlador: enviaComentarioIngresado
 activate controlador
-controlador -> servicioComentario: registraBbservaciones (enEtapa)
+controlador -> servicioComentario: registraObservaciones (enEtapa)
 activate servicioComentario
 servicioComentario -> baseDeDatos: actualizaHistorial (deEtapas) 
 activate baseDeDatos
