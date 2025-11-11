@@ -48,7 +48,7 @@
 | Proyecto | `validarInformacion (idProyectProyectoo: int)` | L | `idProyecto: int)` | `int` | Validar informacion del proyecto|
 | Proyecto | `registrarFechas (idProyecto: int, fechaInicio: date, fechaFin:date)` | L | `idProyecto: int, fechaInicio: date, fechaFin:date` | `int` | Ingresar fechas |
 | Proyecto | `buscarCliente` | L |  |  | Asociar clientes |
-| Notificacion | `crearNotificacion(idDestinatario: int, mensaje: string)` | C | dDestinatario: int, mensaje: string |  | Asociar clientes |
+| Notificacion | `crearNotificacion(idDestinatario: int, mensaje: string)` | C | `idDestinatario: int, mensaje: string` |  | Asociar clientes |
 
 
 
@@ -89,8 +89,8 @@
 | `registrarFechas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapas` y `baseDeDatos`. |
 | `registrarFechas()` | Diagrama de Actividad – CU1|[`04-actividad-actualizar-estado-caso-uso-02.puml`] () | accion "Registrar responsable que actualiza estado anterior, fecha/hora" **L**.|
 | `buscarCliente()` | Tarjeta CRC –  | [``]() | Figura como responsabilidad "" |
-| `buscarCliente()` | Diagrama de Secuencia – CU1 | [``]() | Se muestra como mensaje entre `` y ``. |
-| `buscarCliente()` | Diagrama de Actividad – CU1|[``] () | accion "" ****.|
+| `buscarCliente()` | Diagrama de Secuencia – CU1 | []() | Se muestra como mensaje entre `` y ``. |
+| `buscarCliente()` | Diagrama de Actividad – CU1|[] () | accion  ****.|
 | `crearNotificacion()` | Tarjeta CRC – Notificacion | [`herramientas-agile/tarjetas-crc/005-tarjeta-crc-notificacion.md`]() | Figura como responsabilidad "Generar mensaje de retraso" |
 | `crearNotificacion()` | Diagrama de Secuencia – CU1 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `interfazSistema` y `usuarioAutorizado`. |
 | `crearNotificacion()` | Diagrama de Actividad – CU1|[`04-actividad-agregar-observaciones-03.puml`] () | accion "Generar mensaje de notificacion" **C**.|
