@@ -107,11 +107,11 @@
 | [#82](https://github.com/9919-Mili/SistemaProductoraVideos/issues/82) | `crearEtapa()` no figura en la CRC de Etapa | Tarjeta CRC – Etapa | Agregue responsabilidad y actualice CRC | Resuelto |
 | [#82](https://github.com/9919-Mili/SistemaProductoraVideos/issues/82) | Acción “Notificar cambio” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `responsableEtapa` | Resuelto |
 | [#82](https://github.com/9919-Mili/SistemaProductoraVideos/issues/82)| Método `CrearEtapa()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Abierto |
-| [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#) | `AsignarResponsables()` Accion "Asignar responsable de etapas" no aparece en el diagrama de secuencias - CU1 | Incorporar mensaje | Pendiente |
-| [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#)| Método `asignarResponsables()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente |
-| [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) | `buscarCliente()` no figura en la CRC de Proyecto | Tarjeta CRC – Proyecto | Agregue responsabilidad y actualice CRC | Pendiente |
+| [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#) | `AsignarResponsables()` Accion "Asignar responsable de etapas" no aparece en el diagrama de secuencias - CU1 | Incorporar mensaje | Resuelto |
+| [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#)| Método `asignarResponsables()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Resuelto |
+| [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) | `buscarCliente()` no figura en la CRC de Proyecto | Tarjeta CRC – Proyecto | Agregue responsabilidad y actualice CRC | Resuelto |
 | [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) | Acción “buscarCliente” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `baseDeDatos` | Resuelto |
-| [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84)| Método `CrearEtapa()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente 
+| [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84)| Método `CrearEtapa()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Abierto
 
 **Estados posibles:** Abierto / Pendiente / Resuelto
 
