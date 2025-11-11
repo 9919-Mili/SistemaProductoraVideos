@@ -105,8 +105,8 @@
 | URL | Descripción de la inconsistencia | Artefacto relacionado | Acción correctiva | Estado |
 |----|----------------------------------|------------------------|-------------------|:------:|
 | [#82](https://github.com/9919-Mili/SistemaProductoraVideos/issues/82) | `crearEtapa()` no figura en la CRC de Etapa | Tarjeta CRC – Etapa | Agregue responsabilidad y actualice CRC | Resuelto |
-| [#82](https://github.com/tu-org/tu-repo/issues/46) | Acción “Notificar creación” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `servicioDeEtapas` | Pendiente |
-| [#82](https://github.com/tu-org/tu-repo/issues/45)| Método `CrearEtapa()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente |
+| [#82](https://github.com/9919-Mili/SistemaProductoraVideos/issues/82) | Acción “Notificar creación” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `servicioDeEtapas` | Resuelto |
+| [#82](https://github.com/9919-Mili/SistemaProductoraVideos/issues/82)| Método `CrearEtapa()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente |
 | [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#) | `AsignarResponsables()` Accion "Asignar responsable de etapas" no aparece en el diagrama de secuencias - CU1 | Incorporar mensaje | Pendiente |
 | [#83](https://github.com/9919-Mili/SistemaProductoraVideos/issues/83#)| Método `asignarResponsables()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Pendiente |
 | [#84](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) | `buscarCliente()` no figura en la CRC de Proyecto | Tarjeta CRC – Proyecto | Agregue responsabilidad y actualice CRC | Pendiente |
