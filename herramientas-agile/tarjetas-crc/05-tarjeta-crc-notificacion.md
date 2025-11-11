@@ -8,3 +8,4 @@
 | Avisar cuando se complete la etapa | Usuario | Soy el mecanismo de comunicación que notifica al usuario sobre la finalizacion del trabajo | etapa | 
 | Registrar fecha de envio | Sistema | Tengo que notificar al sistema cuando fue enviado el trabajo | fecha de envio |
 | Generar mensaje de retraso | Sistema | Tengo que generar el contenido de un mensaje de aviso por demoras | mensaje  |
+| Notificar siguiente estado | Sistema | Tengo que notificar los cambios de etapas | mensaje  |
