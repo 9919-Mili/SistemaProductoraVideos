@@ -1,0 +1,99 @@
+@startuml Diagrama_Actividades_Agregar_Observaciones
+title Diagrama de Actividades - Caso de Uso 03: Agregar Obsrvaciones
+|Usuario/Cliente|
+|Sistema|
+|Recursos|
+|Servicio de Notificación|
+|Usuario/Cliente|
+start
+|Usuario/Cliente|
+:Abrir aplicación;
+
+|Sistema|
+  :Autenticar usuario;
+  :Mostrar pantalla de Proyectos;
+  
+  |Usuario/Cliente| 
+  :Selecionar Proyecto;
+
+|Sistema|
+  :Mostrar detalles Proyecto;
+
+  |Usuario/Cliente| 
+  :Seleccionar una Etapa;
+
+
+|Sistema|
+fork
+  :Mostrar detalles de Etapa;
+fork again
+  :Mostrar Panel de Observaciones;
+endfork
+
+  |Usuario/Cliente|
+  :Seleccionar "Agregar" en el
+    Panel de Observaciones;
+
+|Sistema|
+  :Mostrar campo para agregar
+         nueva Observación;
+
+|Usuario/Cliente|
+  :Escribir comentario;
+  if (Notificar Usuario/s?) then (si)
+  :Escribir mención a Usuario/s 
+            en el comentario;
+  else (no)
+  endif
+  :Seleccionar "Guardar";
+
+  |Sistema|
+  :Almacenar Observacion 
+     asociada a la etapa;
+  if (Usuario/s Mencionado/s?) then (si)
+  :Consultar dirección de
+   Usuario/s a notificar;
+
+|Sistema|
+fork
+  :Recopilacion de datos filtrados;
+  :Sincronización de datos;
+floating note right: Datos de direccion registrados de los Usuarios a donde enviar la notifiación
+  :Confirmar recepción datos;
+|Recursos|
+  fork again
+  :Recepción de pedido de datos;
+  :Sincronización de datos;
+  :Recibir confirmación de recepción de datos;
+|Sistema|
+end fork
+
+  |Sistema|
+  :Generar mensaje de Notificación;
+  :Enviar datos al servicio
+            de Notificacion;
+
+|Servicio de Notificación|
+fork
+  :Recibir datos;
+  floating note right: Datos de dirección y mensaje de notificación
+fork again
+  :Procesar datos;
+endfork
+  :Enviar Notificación/es;
+
+|Usuario/Cliente|
+else (no)
+endif
+
+|Sistema|
+:  Mostrar cambios en el
+ Panel de Observaciones;
+
+|Usuario/Cliente|
+:Vizualizar nueva Observación;
+:Cerrar vista de Etapa;
+:Cerrar vista de Proyecto;
+stop
+
+@enduml

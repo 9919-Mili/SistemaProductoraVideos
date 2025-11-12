@@ -1,0 +1,99 @@
+@startuml Diagrama_Actividades_Consultar_Estadisticas
+title Diagrama de Actividades - Caso de Uso 04: Consultar Estadisticas
+|Productora General/Responsable de Etapa|
+|Usuario/Cliente|
+|Sistema|
+|Recursos|
+|Usuario/Cliente|
+start
+:Abrir aplicación;
+:Seleccionar "Estadisticas";
+
+|Sistema|
+if (¿Usuario autenticado?) then (no)
+  :Mostrar pantalla de login;
+
+fork
+|Usuario/Cliente|
+  :Ingresar credenciales;
+fork again
+|Sistema|
+:Validar credenciales;
+endfork
+
+while (Credenciales válidas?) is (no)
+  :Mostrar error de login;
+|Usuario/Cliente|
+  :Modificar credenciales ingresadas;
+endwhile (sí)
+endif
+
+|Sistema|
+  :Autenticar usuario;
+  note
+  Este paso se repite hasta que los datos sean correctos
+  endnote
+  :Mostrar pantalla de Estadisticas;
+
+if (Permisos para crear Reporte?) then (no)
+  |Usuario/Cliente| 
+  :Seleccionar un Reporte Existente;
+  |Productora General/Responsable de Etapa|
+  else (si)
+  if (Crear un Nuevo Reporte?) then (si)
+  :Seleccionar la consulta "Crear Nuevo Reporte";
+  :Seleccionar filtro;
+  :Aplicar filtros;
+
+|Sistema|
+fork
+  :Recopilacion de datos filtrados;
+  :Sincronización de datos;
+floating note right: Datos de las Estadisticas provenientes de las fuentes que cumplen los filtros seleccionados
+  :Confirmar recepción datos;
+|Recursos|
+  fork again
+  :Recepción de pedido de datos;
+  :Sincronización de datos;
+  :Recibir confirmación de recepción de datos;
+|Sistema|
+end fork
+  
+|Sistema|
+  :Generar Reporte de Estadisticas;
+  :Almacenar Reporte de Estadisticas;
+  :Notificar Usuario creador de consulta;
+
+  |Productora General/Responsable de Etapa|
+  else (no)
+  :Seleccionar un Reporte Existente;
+  endif
+endif 
+
+|Sistema|
+  :Mostrar Reporte al usuario;
+
+|Usuario/Cliente|
+if (Descargar Reporte?) then (si)
+  :Seleccionar opción "Descargar Reporte";
+fork
+|Usuario/Cliente|
+  :Guardar Reporte Localmente;
+fork again
+  |Sistema| 
+  :Procesar descarga del Reporte;
+|Usuario/Cliente|
+  endfork
+
+  :Reporte Guardado;
+  else (no)
+endif
+
+if (Consultar Reporte Localmente?) then (si)
+else(no)
+  :Consultar Reporte de Estadisticas;
+  endif
+  :Cerrar vista de Estadisticas;
+stop
+
+@enduml

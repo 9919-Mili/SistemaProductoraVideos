@@ -1,0 +1,69 @@
+@startuml 
+title consulta exitosa de proyectos activos
+
+actor usuarioAutorizado
+participant "interfazSistema : sistema" as interfazSistema
+participant "controlador : registrador" as controlador
+participant "servicioProyectos : servicio" as servicioProyectos
+participant "baseDeDatos : servidorLocal" as baseDeDatos
+
+
+usuarioAutorizado -> interfazSistema: accedeAlSistema
+activate interfazSistema
+interfazSistema -> controlador: validaPermisos (delUsuario)
+activate controlador
+controlador -> servicioProyectos: buscarClienteYsolicitaProyectos (activos) 
+activate servicioProyectos
+servicioProyectos -> baseDeDatos: consultaEstado (deProyectos)
+activate baseDeDatos
+baseDeDatos --> servicioProyectos: listaDeProyectos 
+deactivate baseDeDatos
+servicioProyectos --> controlador: proyectoEnCurso 
+deactivate servicioProyectos
+controlador --> interfazSistema: permisosValidados 
+deactivate controlador
+interfazSistema --> usuarioAutorizado: muestraListado 
+deactivate interfazSistema
+
+usuarioAutorizado -> interfazSistema: seleccionaProyectos (activos)
+activate interfazSistema
+interfazSistema -> controlador: listaProyectos (enCurso)
+activate controlador
+controlador -> servicioProyectos: consultaDetallesYResponsables 
+activate servicioProyectos
+servicioProyectos -> baseDeDatos: obtieneInformacionDetallada 
+activate baseDeDatos
+baseDeDatos --> servicioProyectos: detallesYCumplimiento 
+deactivate baseDeDatos
+servicioProyectos --> controlador: informacionActualizada 
+deactivate servicioProyectos
+controlador --> interfazSistema: visualizacionDePanelDeControl 
+deactivate controlador
+interfazSistema --> usuarioAutorizado: accesoAPanelDeDetalles 
+deactivate interfazSistema
+
+usuarioAutorizado -> interfazSistema: asignarResponsableYfiltra 
+activate interfazSistema
+interfazSistema -> controlador: aplicaFiltros 
+activate controlador
+controlador -> servicioProyectos: obtieneObservacionesRegistradas
+activate servicioProyectos
+servicioProyectos -> baseDeDatos: obtieneHistorialDeObservaciones
+activate baseDeDatos 
+baseDeDatos --> servicioProyectos: observacionesAsociadas 
+deactivate baseDeDatos
+servicioProyectos --> controlador: observacionesDisponibles 
+deactivate servicioProyectos
+destroy servicioProyectos
+controlador --> interfazSistema: datosFiltrados 
+interfazSistema --> usuarioAutorizado: integradoAlFormulario 
+deactivate interfazSistema
+
+
+
+
+
+
+
+@enduml
+

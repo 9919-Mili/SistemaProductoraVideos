@@ -1,0 +1,65 @@
+@startuml 
+title actualizacion exitosa del estado
+
+actor responsableDeEtapa
+participant "interfazDelSistema : sistema" as interfazDelSistema
+participant "Controlador : registrador" as Controlador
+participant "servicioDeEtapa : servicio" as servicioDeEtapa
+participant "baseDeDatos : servidorLocal" as baseDeDatos
+
+
+responsableDeEtapa -> interfazDelSistema: accedeAlSistema
+activate interfazDelSistema 
+interfazDelSistema -> Controlador: validaPermisos (deUsuario)
+activate Controlador
+Controlador -> servicioDeEtapa: crearEtapaYverificaEstado (actual)
+activate servicioDeEtapa
+servicioDeEtapa -> baseDeDatos: consultaEtapa 
+activate baseDeDatos
+baseDeDatos --> servicioDeEtapa: confirmacionConsulta
+deactivate baseDeDatos
+servicioDeEtapa --> Controlador: etapaCreadaYestadoVerificado
+deactivate servicioDeEtapa
+Controlador --> interfazDelSistema: permisosValidados
+deactivate Controlador
+interfazDelSistema --> responsableDeEtapa: muestraPanelActualizado
+deactivate interfazDelSistema
+
+responsableDeEtapa -> interfazDelSistema: seleccionarProyecto 
+activate interfazDelSistema
+interfazDelSistema -> Controlador: solicitaDatos (deEtapa)
+activate Controlador
+Controlador -> servicioDeEtapa: actualizaServicio (deEtapa) 
+activate servicioDeEtapa
+servicioDeEtapa -> baseDeDatos: guardarNuevo (estado) 
+activate baseDeDatos
+baseDeDatos --> servicioDeEtapa: confirmacionDeguardado
+deactivate baseDeDatos
+servicioDeEtapa --> Controlador: estadoActualizadoCorrectamente
+deactivate servicioDeEtapa
+Controlador --> interfazDelSistema: permisosValidados 
+deactivate Controlador
+interfazDelSistema --> responsableDeEtapa: notificaCambioDeEstado
+deactivate interfazDelSistema
+
+responsableDeEtapa -> interfazDelSistema: seleccionaEtapa (yNuevoEstado) 
+activate interfazDelSistema
+interfazDelSistema -> Controlador: enviaPeticion 
+activate Controlador
+Controlador -> servicioDeEtapa: ejecutaCctualizacion 
+activate servicioDeEtapa
+servicioDeEtapa -> baseDeDatos: registraCambio
+activate baseDeDatos
+baseDeDatos --> servicioDeEtapa: confirmaRegistro
+deactivate baseDeDatos
+servicioDeEtapa --> Controlador: actualizacionCompletada
+deactivate servicioDeEtapa 
+destroy servicioDeEtapa
+Controlador --> interfazDelSistema: operacionExitosa
+deactivate Controlador
+interfazDelSistema --> responsableDeEtapa: enviaConfirmacion 
+deactivate interfazDelSistema
+
+@endum
+
+

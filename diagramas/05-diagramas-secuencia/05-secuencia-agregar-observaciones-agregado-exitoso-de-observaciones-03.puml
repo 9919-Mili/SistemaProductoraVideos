@@ -1,0 +1,63 @@
+@startuml 
+title agregado exitoso de observaciones 
+
+actor usuarioAutorizado
+participant "interfazSistema: conexion" as interfazSistema
+participant "controlador : registrador" as controlador
+participant "servicioComentario: comentador" as servicioComentario
+participant "baseDeDatos : servidorLocal" as baseDeDatos
+
+usuarioAutorizado -> interfazSistema: accedeAlSistema
+activate interfazSistema
+interfazSistema -> controlador: validaPermiso (sobreLaEtapa)
+activate controlador
+controlador -> servicioComentario: verificaEtapaSeleccionada
+activate servicioComentario
+servicioComentario -> baseDeDatos: consultaDatos (deEtapa)
+activate baseDeDatos
+baseDeDatos --> servicioComentario: confirmacionDeDatos
+deactivate baseDeDatos
+servicioComentario --> controlador: etapaVerificada
+deactivate servicioComentario
+controlador --> interfazSistema: permisosConfirmados
+deactivate controlador
+interfazSistema --> usuarioAutorizado: muestraPanel 
+deactivate interfazSistema
+
+usuarioAutorizado -> interfazSistema: seleccionaEtapa (delProyecto)
+activate interfazSistema
+interfazSistema -> controlador: presentaFormulario (web) 
+activate controlador
+controlador -> servicioComentario: validaCampos (delComentario) 
+activate servicioComentario
+servicioComentario -> baseDeDatos: guardaComentariosYDetalles 
+activate baseDeDatos
+baseDeDatos --> servicioComentario: confirmacionGuardado
+deactivate baseDeDatos
+servicioComentario --> controlador: camposvalidados 
+deactivate servicioComentario
+controlador --> interfazSistema: formularioPreparado
+deactivate controlador
+interfazSistema --> usuarioAutorizado: enviaNotificacion 
+deactivate interfazSistema
+
+usuarioAutorizado-> interfazSistema: escribeYConfirmaObservacion 
+activate interfazSistema
+interfazSistema -> controlador: enviaComentarioIngresado
+activate controlador
+controlador -> servicioComentario: registraObservaciones (enEtapa)
+activate servicioComentario
+servicioComentario -> baseDeDatos: actualizaHistorial (deEtapas) 
+activate baseDeDatos
+baseDeDatos --> servicioComentario: confirmacionHistorialActualizado
+deactivate baseDeDatos 
+servicioComentario --> controlador: observacionRegistrada 
+deactivate servicioComentario
+destroy servicioComentario
+controlador --> interfazSistema: operacionExitosa 
+deactivate controlador
+interfazSistema --> usuarioAutorizado: visualizaObservacion 
+deactivate interfazSistema
+
+
+@enduml

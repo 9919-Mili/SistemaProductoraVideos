@@ -1,0 +1,73 @@
+@startuml 
+title creacion proyecto exitoso 
+
+actor productoraGeneral
+participant "interfazWeb : interfaz" as interfazWeb
+participant "sistemaDeValidacion : sistema" as sistemaDeValidacion
+participant "baseDeDatos : servidorLocal" as baseDeDatos
+participant "sistemaDeNotificacion : notificador" as sistemaDeNotificacion
+
+productoraGeneral -> interfazWeb: seleccionarOpcion (crearProyecto)
+activate interfazWeb
+interfazWeb -> sistemaDeValidacion: validaDatos 
+activate sistemaDeValidacion
+sistemaDeValidacion -> baseDeDatos: datosValidados
+activate baseDeDatos 
+baseDeDatos -> sistemaDeNotificacion: Confirmacion (creacionDeProyecto)
+activate sistemaDeNotificacion
+sistemaDeNotificacion --> baseDeDatos: enviaMensaje
+deactivate sistemaDeNotificacion
+baseDeDatos --> sistemaDeValidacion: confirmaValidacion
+deactivate baseDeDatos
+sistemaDeValidacion --> interfazWeb: permitirAcceso
+deactivate sistemaDeValidacion
+interfazWeb --> productoraGeneral: muestraPanel 
+deactivate interfazWeb
+
+alt creacionExitosa
+    productoraGeneral --> interfazWeb: creacionExitosa
+else Creacion erronea
+    productoraGeneral --> interfazWeb: creacionErronea
+    end
+
+
+
+productoraGeneral -> interfazWeb: ingresarDatos (delProyecto)
+activate interfazWeb
+interfazWeb -> sistemaDeValidacion: verificarPermisos 
+activate sistemaDeValidacion
+sistemaDeValidacion -> baseDeDatos: permisosConfirmados 
+activate baseDeDatos
+baseDeDatos -> sistemaDeNotificacion: proyectoGuardado
+activate sistemaDeNotificacion
+sistemaDeNotificacion --> baseDeDatos: guardadoExitoso 
+deactivate sistemaDeNotificacion
+baseDeDatos --> sistemaDeValidacion: permisosAprobados 
+deactivate baseDeDatos
+interfazWeb --> productoraGeneral: datosRecibidos
+deactivate interfazWeb
+sistemaDeValidacion --> interfazWeb: permisosConfirmados 
+deactivate sistemaDeValidacion
+
+productoraGeneral -> interfazWeb: confirmarCreacion 
+activate interfazWeb
+interfazWeb -> sistemaDeValidacion: solicitarGuardado
+activate sistemaDeValidacion
+sistemaDeValidacion -> baseDeDatos: autorizarAlmacenamiento 
+activate baseDeDatos
+baseDeDatos -x sistemaDeNotificacion: registroCompleto
+activate sistemaDeNotificacion
+baseDeDatos -->sistemaDeValidacion: autorizacionRecibida
+deactivate  baseDeDatos
+interfazWeb -->productoraGeneral: mostrarConfirmacionExitosa
+sistemaDeValidacion--> interfazWeb: notificaALosReponsablesAsignados
+
+destroy sistemaDeNotificacion
+
+
+@enduml
+
+
+
+
+

@@ -1,0 +1,50 @@
+@startuml CrearProyecto
+
+title Diagrama de Actividad - Caso de Uso 1: Crear Proyecto
+
+|Productora General|
+start
+:Inicia sesión en el sistema;
+:Selecciona la opción "Crear Proyecto";
+note right
+Debe completar los campos:
+- Nombre
+- Tipo
+- Fechas
+- Responsables
+end note
+
+repeat
+  :Completa los campos obligatorios;
+  :Revisa la información ingresada;
+  :Confirma la creación del proyecto;
+  |Sistema|
+  :Validar campos obligatorios, fechas y responsables;
+  if (¿Datos válidos?) then (No)
+  note
+  Este paso se repite hasta que los datos sean correctos
+  end note
+    :Mostrar errores de validación;
+    |Productora General|
+    :Corrige los campos faltantes;
+  endif
+repeat while (¿Datos válidos?) is (No)
+
+|Sistema|
+fork
+  :Registrar creador y fecha/hora de creación;
+fork again
+  :Guardar la información del nuevo proyecto;
+end fork
+
+:Enviar notificación de confirmación al cliente;
+
+|Cliente|
+:Recibir notificación de nuevo proyecto creado;
+:Visualizar detalles básicos del proyecto;
+
+|Productora General|
+:Visualiza mensaje de confirmación en pantalla;
+
+stop
+@enduml
