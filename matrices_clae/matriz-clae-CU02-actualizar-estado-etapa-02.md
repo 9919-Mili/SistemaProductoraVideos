@@ -87,7 +87,7 @@
 
 | URL | Descripción de la inconsistencia | Artefacto relacionado | Acción correctiva | Estado |
 |----|----------------------------------|------------------------|-------------------|:------:|
-| [#85](https://github.com/9919-Mili/SistemaProductoraVideos/issues/85) | `notificarSigueinteEtapa()` no figura en la CRC de Notificacion | Tarjeta CRC – Notificacion | Agregar responsabilidad y actualizar CRC | Resuelto |
+| [#85](https://github.com/9919-Mili/SistemaProductoraVideos/issues/85) | `notificarSiguenteEtapa()` no figura en la CRC de Notificacion | Tarjeta CRC – Notificacion | Agregar responsabilidad y actualizar CRC | Resuelto |
 
 
 **Estados posibles:** Abierto / Pendiente / Resuelto
