@@ -2,17 +2,17 @@
 title consulta exitosa de proyectos activos
 
 actor usuarioAutorizado
-participant interfazSistema as interfazSistema
-participant controlador as controlador
-participant servicioProyectos as servicioProyectos
-participant baseDeDatos as baseDeDatos
+participant "interfazSistema : sistema" as interfazSistema
+participant "controlador : registrador" as controlador
+participant "servicioProyectos : servicio" as servicioProyectos
+participant "baseDeDatos : servidorLocal" as baseDeDatos
 
 
 usuarioAutorizado -> interfazSistema: accedeAlSistema
 activate interfazSistema
 interfazSistema -> controlador: validaPermisos (delUsuario)
 activate controlador
-controlador -> servicioProyectos: solicitaProyectos (activos) 
+controlador -> servicioProyectos: buscarClienteYsolicitaProyectos (activos) 
 activate servicioProyectos
 servicioProyectos -> baseDeDatos: consultaEstado (deProyectos)
 activate baseDeDatos
@@ -42,7 +42,7 @@ deactivate controlador
 interfazSistema --> usuarioAutorizado: accesoAPanelDeDetalles 
 deactivate interfazSistema
 
-usuarioAutorizado -> interfazSistema: filtraPorResponsable 
+usuarioAutorizado -> interfazSistema: asignarResponsableYfiltra 
 activate interfazSistema
 interfazSistema -> controlador: aplicaFiltros 
 activate controlador

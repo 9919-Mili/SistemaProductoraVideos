@@ -2,10 +2,10 @@
 title agregado exitoso de observaciones 
 
 actor usuarioAutorizado
-participant interfazSistema as interfazSistema
-participant controlador as controlador
-participant servicioComentario as servicioComentario
-participant baseDeDatos as baseDeDatos
+participant "interfazSistema: conexion" as interfazSistema
+participant "controlador : registrador" as controlador
+participant "servicioComentario: comentador" as servicioComentario
+participant "baseDeDatos : servidorLocal" as baseDeDatos
 
 usuarioAutorizado -> interfazSistema: accedeAlSistema
 activate interfazSistema
@@ -41,11 +41,11 @@ deactivate controlador
 interfazSistema --> usuarioAutorizado: enviaNotificacion 
 deactivate interfazSistema
 
-usuarioAutorizado-> interfazSistema: escribeYConfirmaBbservacion 
+usuarioAutorizado-> interfazSistema: escribeYConfirmaObservacion 
 activate interfazSistema
 interfazSistema -> controlador: enviaComentarioIngresado
 activate controlador
-controlador -> servicioComentario: registraBbservaciones (enEtapa)
+controlador -> servicioComentario: registraObservaciones (enEtapa)
 activate servicioComentario
 servicioComentario -> baseDeDatos: actualizaHistorial (deEtapas) 
 activate baseDeDatos
