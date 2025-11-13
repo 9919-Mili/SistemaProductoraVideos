@@ -1,7 +1,7 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Etapa | | |
-| **Superclase:** | N/A | | |
+| **Superclase:** | Proyecto | | |
 | **Subclase:** | N/A | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | Registrar su estado actual | Proyecto | Represento un paso concreto y secuencial y soy responsable de saber quién me está trabajando y cuándo debo terminar | estado |
