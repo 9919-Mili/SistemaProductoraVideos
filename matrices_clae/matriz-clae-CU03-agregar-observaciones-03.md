@@ -39,10 +39,10 @@
 | Clase | Método | Tipo (C/L/A/E) | Parámetros (nombre: tipo) | Retorno | Actividad asociada |
 |--------|---------|----------------|----------------------------|----------|--------------------|
 | Proyecto | `listarProyecto(nombre: string, fechaInicio: date)` | L | `nombre: string`, `fechaInicio: date` | `Proyecto` | Listar proyecto |
-| Etapa | `crearEtapa(proyectoId: int, nombre: string)` | C | `proyectoId: int`, `nombre: string` | `Etapa` | Agregar etapa inicial |
-| Proyecto | `asignarResponsable(id: int, usuarioId: int)` | A | `id: int`, `usuarioId: int` | `bool` | Asignar responsable |
-| ArchivoMultimedia | `subirArchivo(proyectoId: int, archivo: File)` | C | `proyectoId: int`, `archivo: File` | `bool` | Adjuntar archivos |
-| Notificación | `enviarNotificacion(proyectoId: int, mensaje: string)` | C | `proyectoId: int`, `mensaje: string` | `bool` | Notificar creación |
+| Etapa | `listarEtapa(proyectoId: int, nombre: string)` | L | `proyectoId: int`, `nombre: string` | `Etapa` | Listar etapa del proyecto |
+| Usuario | `seleccionarUsuario(id: int, usuarioId: int)` | L | `id: int`, `usuarioId: int` | `Usuario` | Buscar usuario |
+| Observaciones | `crearComentario(proyectoId: int, etapaId: int, comentario: date)` | C | `proyectoId: int, etapaId: int, comentario: string` | `Observaciones` | Crear comentarios sobre observaciones |
+| Notificación | `crearNotificacion(proyectoId: int, mensaje: string)` | C | `proyectoId: int`, `mensaje: string` | `Notificacion` | Enviar notificacion |
 
 ---
 
@@ -53,13 +53,21 @@
 
 | Elemento | Artefacto vinculado | Archivo / Referencia URL | Descripción de la relación |
 |-----------|--------------------|-----------------------|-----------------------------|
-| `crearProyecto()` | Tarjeta CRC – Proyecto | [`herramientas-agile/tarjetas-crc/crc-proyecto.md`]() | Figura como responsabilidad “Registrar nuevo proyecto”. |
-| `crearProyecto()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-crear-proyecto.puml`]() | Aparece como mensaje enviado desde el actor “Productor” al objeto `Proyecto`. |
-| `crearProyecto()` | Diagrama de Actividad – CU1 | [`diagramas/04-diagramas-actividades/04-actividad-crear-proyecto.puml`]() | Acción “Registrar nuevo proyecto” coincide con la operación **C**. |
-| `asignarResponsable()` | Tarjeta CRC – Proyecto | [`crc-proyecto.md`]() | Declarado como método dentro de las responsabilidades del proyecto. |
-| `subirArchivo()` | Diagrama de Secuencia – CU1 | [`05-secuencia-crear-proyecto.puml`]() | Se muestra como mensaje entre `Usuario` y `ArchivoMultimedia`. |
-| `enviarNotificacion()` | Diagrama de Actividad – CU1 | [`04-actividad-crear-proyecto.puml`] | Acción final del flujo que notifica al responsable. |
-
+| `listarProyecto()` | Tarjeta CRC – Sistema | [`herramientas-agile/tarjetas-crc/01-tarjeta-crc-sistema.md`]() | Figura como responsabilidad “Gestionar proyectos”. |
+| `listarProyecto()` | Diagrama de Secuencia – CU3 | [`diagramas/05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05`] | Aparece como mensaje enviado dessde `Controlador` al objeto `servicioProyecto`. |
+| `listarProyecto()` | Diagrama de Actividad – CU3 | [`diagramas/04-actividad-actualizar-estado-caso-uso-02.puml`]() | "Seleccionar proyecto correspondiente” coincide con la operación **L**. |
+| `listarEtapa()` | Tarjeta CRC – Proyecto | [`02-tarjeta-crc-proyecto.md`]() | Figura como responsabilid "Gestionar etapas". |
+| `listarEtapa()` | Diagrama de Secuencia – CU3 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`] | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
+| `listarEtapa()` | Diagrama de Actividad – CU3 | [`04-actividad-agregar-observaciones-03.puml`] | "Seleccionar una etapa" coincide con la operacion **L**. |
+| `seleccionarUsuario()` | Tarjeta CRC – Sistema | [`01-tarjeta-crc-sistema.md`] | Figura como responsabilid "Gestionar usuarios". |
+| `seleccionarUsuario()` | Diagrama de Secuencia – CU3 | [`05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05`] | Se muestra como mensaje entre `usuarioAutorizado` y `controlador`. |
+| `seleccionarUsuario()` | Diagrama de Actividad – CU3 | [`04-actividad-consultar-proyectos-activos-05`] | "Autenticar usuario" coincide con la operacion **L**. |
+| `crearComentario()` | Tarjeta CRC – Comentario | [`08-tarjeta-crc-comentario.md`] | Figura como responsabilid "Agregar comentario". |
+| `crearComentario()` | Diagrama de Secuencia – CU3 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03`] | Se muestra como mensaje entre `usuarioAutorizado` y `interfazSistema`. |
+| `crearComentario()` | Diagrama de Actividad – CU3 | [`04-actividad-agregar-observaciones-03`] | "Escribir comentario" coincide con la operacion **C**. |
+| `crearNotificacion()` | Tarjeta CRC – Notificacion | [`05-tarjeta-crc-notificacion.md`] | Figura como responsabilid "Enviar aviso al usuario". |
+| `crearNotificacion()` | Diagrama de Secuencia – CU3 | [`05-secuencia-consulta-estadisticas-consulta-automatica-mensual-de-estadisticas-04.`] | Se muestra como mensaje entre `controlador` y `sistema`. |
+| `crearNotificacion()` | Diagrama de Actividad – CU3 | [`04-actividad-actualizar-estado-caso-uso-02`] | "Enviar notificacion de cambio de estado" coincide con la operacion **C**. |
 ---
 
 ## 4) Issues e inconsistencias detectadas
@@ -68,9 +76,9 @@
 
 | URL | Descripción de la inconsistencia | Artefacto relacionado | Acción correctiva | Estado |
 |----|----------------------------------|------------------------|-------------------|:------:|
-| [#45](https://github.com/tu-org/tu-repo/issues/45) | `crearEtapa()` no figura en la CRC de Etapa | Tarjeta CRC – Etapa | Agregar responsabilidad y actualizar CRC | Pendiente |
-| [#46](https://github.com/tu-org/tu-repo/issues/46) | Acción “Notificar creación” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU1 | Incorporar mensaje a `Notificación` | Pendiente |
-| [#46](https://github.com/tu-org/tu-repo/issues/45)| Método `subirArchivo()` sin tipo de retorno en diagrama de clases | Diagrama de Clases | Agregar tipo `bool` en puml | Resuelto |
+
+| [#89](https://github.com/9919-Mili/SistemaProductoraVideos/issues/89) | Acción “seleccionarUsuario” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU3 | Incorporar mensaje a `usuarioAutorizado` |Resuelto |
+
 
 **Estados posibles:** Abierto / Pendiente / Resuelto
 
