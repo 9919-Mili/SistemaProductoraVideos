@@ -1,7 +1,7 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Usuario | | |
-| **Superclase:** | | | |
+| **Superclase:** | N/A | | |
 | **Subclase:** | | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | Autenticarse  | Sistema | Tengo que demostrar quien soy | Nombre, rol |

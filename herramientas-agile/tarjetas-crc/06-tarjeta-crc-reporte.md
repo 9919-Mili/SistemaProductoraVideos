@@ -1,6 +1,6 @@
 |  |  |  |  |
 |---|---|---|---|
-| **Nombre de la Clase:** | Estadistica | | |
+| **Nombre de la Clase:** | Reporte | | |
 | **Superclase:** | N/A| | |
 | **Subclase:** | N/A| | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |

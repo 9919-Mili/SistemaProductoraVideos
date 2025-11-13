@@ -5,6 +5,11 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ---
 ## [Unreleased]
 
+### Added
+
+-  [feature/esp-diagrama-clases-add-diagrama-refinado] Agregue diagramas de clases version final en PNG y PUML   
+PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @igvcalefato (Especialista en Digramas de Secuencia)
+
 ---
 
 ## [Release Actividad Obligatoria N°3] - 2025-10-20
