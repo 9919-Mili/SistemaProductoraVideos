@@ -66,7 +66,7 @@
 | `crearProyecto()` | Diagrama de Actividad – CU1 |[`diagramas/04-diagramas-actividades/04-actividad-crear-proyecto-caso-uso-01.puml`]() | Acción “Seleccionar la opcion regristrar proyecto” coincide con la operación **C**. |
 | `gestionarUsuarios()` | Tarjeta CRC – Sistema | [`herramientas-agile/tarjetas-crc/01-tarjeta-crc-sistema.md`]() | Figura como responsabilidad "gestionarUsuarios" |
 | `gestionarUsuarios()` | Diagrama de Secuencia – CU1 | [`05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05.puml`]() | Se muestra como mensaje entre `interfazWeb` y `controlador`. |
-| `gestionarUsuarios()` | Diagrama de Actividad – CU1|[`diagramas/04-diagramas-actividades/04-actividad-consultar-estadisticas-04.puml`] | accion "autenticar usuario" coincide con la operacion **L**.|
+| `gestionarUsuarios()` | Diagrama de Actividad – CU1|[`diagramas/04-diagramas-actividades/04-actividad-consultar-estadisticas-04.puml`]() | accion "autenticar usuario" coincide con la operacion **L**.|
 | `crearEtapas()` | Tarjeta CRC – Sistema | []() |  |
 | `crearEtapas()` | Diagrama de Secuencia – CU1 | []() | |
 | `crearEtapas()` | Diagrama de Actividad – CU1| | |
@@ -75,7 +75,7 @@
 | `AsignarResponsables()` | Diagrama de Actividad – CU1| | |
 | `actualizarEtapas()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Actualizar Estado" |
 | `actualizarEtapas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `controlador` y `baseDeDatos`. |
-| `actualizarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/04-actividad-actualizar-estado-caso-uso-02.puml`]| accion "confirmar cambio de estado" **A**.|
+| `actualizarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/04-actividad-actualizar-estado-caso-uso-02.puml`]() | accion "confirmar cambio de estado" **A**.|
 | `listarEtapas()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Consultar en que etapa estan trabajando" |
 | `listarEtapas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
 | `listarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/04-actividad-agregar-observaciones-03.puml`]() | accion "Mostrar detalles de etapas" **L**.|
