@@ -3,7 +3,12 @@
 Este archivo se actualiza con cada Pull Request para registrar avances y correcciones.
 
 ---
+
 ## [Unreleased]
+
+---
+
+## [Release Actividad Obligatoria N°4] - 2025-11-12
 
 ### Added
 
@@ -13,8 +18,8 @@ PR: [#97](https://github.com/9919-Mili/SistemaProductoraVideos/pull/97) - @igvca
 - [feature/doc-coord-repo-update-md]  Estructura de carpetas y nuevos/modificados indices  
  PR: [#95](https://github.com/9919-Mili/SistemaProductoraVideos/pull/95) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
-### Changed
 ---
+
 ## [Release Entregable N°4] - 2025-11-10
 
 ### Added
