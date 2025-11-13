@@ -54,20 +54,20 @@
 | Elemento | Artefacto vinculado | Archivo / Referencia URL | Descripción de la relación |
 |-----------|--------------------|-----------------------|-----------------------------|
 | `listarProyecto()` | Tarjeta CRC – Sistema | [`herramientas-agile/tarjetas-crc/01-tarjeta-crc-sistema.md`]() | Figura como responsabilidad “Gestionar proyectos”. |
-| `listarProyecto()` | Diagrama de Secuencia – CU3 | [`diagramas/05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05`] | Aparece como mensaje enviado dessde `Controlador` al objeto `servicioProyecto`. |
+| `listarProyecto()` | Diagrama de Secuencia – CU3 | [`diagramas/05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05`]() | Aparece como mensaje enviado dessde `Controlador` al objeto `servicioProyecto`. |
 | `listarProyecto()` | Diagrama de Actividad – CU3 | [`diagramas/04-actividad-actualizar-estado-caso-uso-02.puml`]() | "Seleccionar proyecto correspondiente” coincide con la operación **L**. |
 | `listarEtapa()` | Tarjeta CRC – Proyecto | [`02-tarjeta-crc-proyecto.md`]() | Figura como responsabilid "Gestionar etapas". |
-| `listarEtapa()` | Diagrama de Secuencia – CU3 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`] | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
-| `listarEtapa()` | Diagrama de Actividad – CU3 | [`04-actividad-agregar-observaciones-03.puml`] | "Seleccionar una etapa" coincide con la operacion **L**. |
-| `seleccionarUsuario()` | Tarjeta CRC – Sistema | [`01-tarjeta-crc-sistema.md`] | Figura como responsabilid "Gestionar usuarios". |
-| `seleccionarUsuario()` | Diagrama de Secuencia – CU3 | [`05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05`] | Se muestra como mensaje entre `usuarioAutorizado` y `controlador`. |
-| `seleccionarUsuario()` | Diagrama de Actividad – CU3 | [`04-actividad-consultar-proyectos-activos-05`] | "Autenticar usuario" coincide con la operacion **L**. |
-| `crearComentario()` | Tarjeta CRC – Comentario | [`08-tarjeta-crc-comentario.md`] | Figura como responsabilid "Agregar comentario". |
-| `crearComentario()` | Diagrama de Secuencia – CU3 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03`] | Se muestra como mensaje entre `usuarioAutorizado` y `interfazSistema`. |
-| `crearComentario()` | Diagrama de Actividad – CU3 | [`04-actividad-agregar-observaciones-03`] | "Escribir comentario" coincide con la operacion **C**. |
-| `crearNotificacion()` | Tarjeta CRC – Notificacion | [`05-tarjeta-crc-notificacion.md`] | Figura como responsabilid "Enviar aviso al usuario". |
-| `crearNotificacion()` | Diagrama de Secuencia – CU3 | [`05-secuencia-consulta-estadisticas-consulta-automatica-mensual-de-estadisticas-04.`] | Se muestra como mensaje entre `controlador` y `sistema`. |
-| `crearNotificacion()` | Diagrama de Actividad – CU3 | [`04-actividad-actualizar-estado-caso-uso-02`] | "Enviar notificacion de cambio de estado" coincide con la operacion **C**. |
+| `listarEtapa()` | Diagrama de Secuencia – CU3 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
+| `listarEtapa()` | Diagrama de Actividad – CU3 | [`04-actividad-agregar-observaciones-03.puml`]() | "Seleccionar una etapa" coincide con la operacion **L**. |
+| `seleccionarUsuario()` | Tarjeta CRC – Sistema | [`01-tarjeta-crc-sistema.md`]() | Figura como responsabilid "Gestionar usuarios". |
+| `seleccionarUsuario()` | Diagrama de Secuencia – CU3 | [`05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05`]() | Se muestra como mensaje entre `usuarioAutorizado` y `controlador`. |
+| `seleccionarUsuario()` | Diagrama de Actividad – CU3 | [`04-actividad-consultar-proyectos-activos-05`]() | "Autenticar usuario" coincide con la operacion **L**. |
+| `crearComentario()` | Tarjeta CRC – Comentario | [`08-tarjeta-crc-comentario.md`]() | Figura como responsabilid "Agregar comentario". |
+| `crearComentario()` | Diagrama de Secuencia – CU3 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03`]() | Se muestra como mensaje entre `usuarioAutorizado` y `interfazSistema`. |
+| `crearComentario()` | Diagrama de Actividad – CU3 | [`04-actividad-agregar-observaciones-03`]() | "Escribir comentario" coincide con la operacion **C**. |
+| `crearNotificacion()` | Tarjeta CRC – Notificacion | [`05-tarjeta-crc-notificacion.md`]() | Figura como responsabilid "Enviar aviso al usuario". |
+| `crearNotificacion()` | Diagrama de Secuencia – CU3 | [`05-secuencia-consulta-estadisticas-consulta-automatica-mensual-de-estadisticas-04.`]() | Se muestra como mensaje entre `controlador` y `sistema`. |
+| `crearNotificacion()` | Diagrama de Actividad – CU3 | [`04-actividad-actualizar-estado-caso-uso-02`]() | "Enviar notificacion de cambio de estado" coincide con la operacion **C**. |
 ---
 
 ## 4) Issues e inconsistencias detectadas
@@ -76,7 +76,6 @@
 
 | URL | Descripción de la inconsistencia | Artefacto relacionado | Acción correctiva | Estado |
 |----|----------------------------------|------------------------|-------------------|:------:|
-
 | [#89](https://github.com/9919-Mili/SistemaProductoraVideos/issues/89) | Acción “seleccionarUsuario” no aparece en el diagrama de secuencia | Diagrama de Secuencia – CU3 | Incorporar mensaje a `usuarioAutorizado` |Resuelto |
 
 
