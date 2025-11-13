@@ -12,23 +12,17 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
--  [feature/esp-diagrama-clases-add-diagrama-refinado] Agregue diagramas de clases version final en PNG y PUML   
-PR: [#97](https://github.com/9919-Mili/SistemaProductoraVideos/pull/97) - @igvcalefato (Especialista en Digramas de Secuencia)
+- [feature/esp-matrices-clae-add-casos-uso-4-5]  Agregue matrices CLAE (CRUD) para los Casos de Uso 4 “Agregar Observaciones” y 5 “Consultar Estadísticas”, con métodos, relaciones y tabla de issues.  
+PR: [#93](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5 + Análisis JAD)
+
+- [feature/esp-jad-add-analisis]  Agregue el anasilis JAD   
+PR: [#92](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5 + Análisis JAD) 
 
 - [feature/doc-coord-repo-update-md]  Estructura de carpetas y nuevos/modificados indices  
  PR: [#95](https://github.com/9919-Mili/SistemaProductoraVideos/pull/95) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
----
-
-## [Release Entregable N°4] - 2025-11-10
-
-### Added
-
-- [feature/esp-matrices-clae-add-casos-uso-4-5]  Agregue matrices CLAE (CRUD) para los Casos de Uso 4 “Agregar Observaciones” y 5 “Consultar Estadísticas”, con métodos, relaciones y tabla de issues.  
-PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5)
-
-- [feature/esp-jad-add-analisis]  Agregue el anasilis JAD.  
-PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5)
+ -  [feature/esp-diagrama-clases-add-diagrama-refinado] Agregue diagramas de clases version final en PNG y PUML   
+PR: [#97](https://github.com/9919-Mili/SistemaProductoraVideos/pull/97) - @igvcalefato (Especialista en Digramas de Secuencia)
 
 ## [Release Actividad Obligatoria N°3] - 2025-10-20
 
