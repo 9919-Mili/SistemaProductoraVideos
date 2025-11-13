@@ -1,7 +1,7 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Etapa | | |
-| **Superclase:** | Proyecto | | |
+| **Superclase:** | N/A | | |
 | **Subclase:** | N/A | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | Crear etapa| Proyecto | Represento la creacion de etapas de un proyecto | estado |

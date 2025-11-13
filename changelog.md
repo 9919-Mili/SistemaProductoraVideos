@@ -7,8 +7,11 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
+-  [feature/esp-diagrama-clases-add-diagrama-refinado] Agregue diagramas de clases version final en PNG y PUML   
+PR: [#97](https://github.com/9919-Mili/SistemaProductoraVideos/pull/97) - @igvcalefato (Especialista en Digramas de Secuencia)
+
 - [feature/doc-coord-repo-update-md]  Estructura de carpetas y nuevos/modificados indices  
- PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @igvcalefato (Documentador y Coordinador de Repositorio)
+ PR: [#95](https://github.com/9919-Mili/SistemaProductoraVideos/pull/95) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
 ### Changed
 ---
