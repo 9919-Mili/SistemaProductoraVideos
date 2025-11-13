@@ -6,6 +6,15 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ## [Unreleased]
 
 ---
+## [Release Entregable N°4] - 2025-11-10
+
+### Added
+
+- [feature/esp-matrices-clae-add-casos-uso-4-5]  Agregue matrices CLAE (CRUD) para los Casos de Uso 4 “Agregar Observaciones” y 5 “Consultar Estadísticas”, con métodos, relaciones y tabla de issues.  
+PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5)
+
+- [feature/esp-jad-add-analisis]  Agregue el anasilis JAD.  
+PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5)
 
 ## [Release Actividad Obligatoria N°3] - 2025-10-20
 
