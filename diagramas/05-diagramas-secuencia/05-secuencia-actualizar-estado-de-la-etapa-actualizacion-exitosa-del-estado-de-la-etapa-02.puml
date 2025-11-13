@@ -1,26 +1,28 @@
-@startuml actualizacion exitosa del estado
+@startuml 
+title actualizacion exitosa del estado
+
 actor responsableDeEtapa
-participant interfazDelSistema
-participant Controlador
-participant servicioDeEtapa
-participant baseDeDatos
+participant "interfazDelSistema : sistema" as interfazDelSistema
+participant "Controlador : registrador" as Controlador
+participant "servicioDeEtapa : servicio" as servicioDeEtapa
+participant "baseDeDatos : servidorLocal" as baseDeDatos
 
 
 responsableDeEtapa -> interfazDelSistema: accedeAlSistema
 activate interfazDelSistema 
 interfazDelSistema -> Controlador: validaPermisos (deUsuario)
 activate Controlador
-Controlador -> servicioDeEtapa: verificaEstado (actual)
+Controlador -> servicioDeEtapa: crearEtapaYverificaEstado (actual)
 activate servicioDeEtapa
 servicioDeEtapa -> baseDeDatos: consultaEtapa 
 activate baseDeDatos
 baseDeDatos --> servicioDeEtapa: confirmacionConsulta
 deactivate baseDeDatos
-servicioDeEtapa --> Controlador: estadoVerificado
+servicioDeEtapa --> Controlador: etapaCreadaYestadoVerificado
 deactivate servicioDeEtapa
 Controlador --> interfazDelSistema: permisosValidados
 deactivate Controlador
-interfazDelSistema --> responsableDeEtapa: muestraPanel (actualizado)
+interfazDelSistema --> responsableDeEtapa: muestraPanelActualizado
 deactivate interfazDelSistema
 
 responsableDeEtapa -> interfazDelSistema: seleccionarProyecto 
@@ -52,10 +54,12 @@ baseDeDatos --> servicioDeEtapa: confirmaRegistro
 deactivate baseDeDatos
 servicioDeEtapa --> Controlador: actualizacionCompletada
 deactivate servicioDeEtapa 
+destroy servicioDeEtapa
 Controlador --> interfazDelSistema: operacionExitosa
 deactivate Controlador
-interfazDelSistema --> responsableDeEtapa: enviaConfirmacion (porMail)
+interfazDelSistema --> responsableDeEtapa: enviaConfirmacion 
 deactivate interfazDelSistema
 
-destroy interfazDelSistema
 @endum
+
+

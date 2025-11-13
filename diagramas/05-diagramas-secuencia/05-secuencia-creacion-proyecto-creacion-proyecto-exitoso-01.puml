@@ -1,9 +1,11 @@
-@startuml creacion proyecto exitoso 
+@startuml 
+title creacion proyecto exitoso 
+
 actor productoraGeneral
-participant interfazWeb
-participant sistemaDeValidacion
-participant baseDeDatos
-participant sistemaDeNotificacion
+participant "interfazWeb : interfaz" as interfazWeb
+participant "sistemaDeValidacion : sistema" as sistemaDeValidacion
+participant "baseDeDatos : servidorLocal" as baseDeDatos
+participant "sistemaDeNotificacion : notificador" as sistemaDeNotificacion
 
 productoraGeneral -> interfazWeb: seleccionarOpcion (crearProyecto)
 activate interfazWeb
@@ -19,7 +21,7 @@ baseDeDatos --> sistemaDeValidacion: confirmaValidacion
 deactivate baseDeDatos
 sistemaDeValidacion --> interfazWeb: permitirAcceso
 deactivate sistemaDeValidacion
-interfazWeb --> productoraGeneral: muestraPanel (delSistema)
+interfazWeb --> productoraGeneral: muestraPanel 
 deactivate interfazWeb
 
 alt creacionExitosa
@@ -34,9 +36,9 @@ productoraGeneral -> interfazWeb: ingresarDatos (delProyecto)
 activate interfazWeb
 interfazWeb -> sistemaDeValidacion: verificarPermisos 
 activate sistemaDeValidacion
-sistemaDeValidacion -> baseDeDatos: permisosCnfirmados 
+sistemaDeValidacion -> baseDeDatos: permisosConfirmados 
 activate baseDeDatos
-baseDeDatos -> sistemaDeNotificacion: proyecctoGuardado
+baseDeDatos -> sistemaDeNotificacion: proyectoGuardado
 activate sistemaDeNotificacion
 sistemaDeNotificacion --> baseDeDatos: guardadoExitoso 
 deactivate sistemaDeNotificacion
@@ -53,7 +55,7 @@ interfazWeb -> sistemaDeValidacion: solicitarGuardado
 activate sistemaDeValidacion
 sistemaDeValidacion -> baseDeDatos: autorizarAlmacenamiento 
 activate baseDeDatos
-baseDeDatos -> sistemaDeNotificacion: registroCompleto
+baseDeDatos -x sistemaDeNotificacion: registroCompleto
 activate sistemaDeNotificacion
 baseDeDatos -->sistemaDeValidacion: autorizacionRecibida
 deactivate  baseDeDatos

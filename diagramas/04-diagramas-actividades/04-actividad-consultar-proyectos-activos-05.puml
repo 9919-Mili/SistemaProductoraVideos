@@ -9,11 +9,16 @@ start
 if (¿Usuario autenticado?) then (no)
   :Mostrar pantalla de login;
 
+fork
 |Usuario/Cliente|
   :Ingresar credenciales;
-
+fork again
 |Sistema|
 :Validar credenciales;
+  note
+  Este paso se repite hasta que los datos sean correctos
+  endnote
+endfork
 while (Credenciales válidas?) is (no)
   :Mostrar error de login;
 |Usuario/Cliente|
@@ -24,10 +29,33 @@ endif
 |Sistema|
   :Autenticar usuario;
   :Recuperar lista de proyectos activos;
+|Sistema|
+fork
+  :Recopilacion de datos;
+  :Sincronización de datos;
+floating note right:  Datos de los Proyectos registrados en Estado "Activo"
+  :Confirmar recepción datos;
+|Recursos|
+  fork again
+  :Recepción de pedido de datos;
+  :Sincronización de datos;
+  :Recibir confirmación de recepción de datos;
+|Sistema|
+end fork
 
-  |Recursos|
-  :Sincronizar datos;
-
+  |Sistema|
+fork
+  :Recopilacion de datos filtrados;
+  :Sincronización de datos;
+floating note right: Datos de las Estadisticas provenientes de las fuentes que cumplen los filtros seleccionados
+  :Confirmar recepción datos;
+|Recursos|
+  fork again
+  :Recepción de pedido de datos;
+  :Sincronización de datos;
+  :Recibir confirmación de recepción de datos;
+|Sistema|
+end fork
 |Sistema|
 if (¿Hay proyectos activos?) then (no)
   :Mostrar mensaje "No hay proyectos activos";
@@ -49,10 +77,15 @@ endif
 :Seleccionar proyecto para ver detalles;
 
 |Sistema|
+fork
 :Mostrar detalles del proyecto (estado, responsables, cumplimiento);
+fork again
 :Mostrar historial y tareas relacionadas;
+endfork
+
+|Usuario/Cliente|
 :Cerrar vista del Proyecto;
-endif 
+endif
 
 |Usuario/Cliente|
   :Cerrar vista de Proyecto/s Activos;

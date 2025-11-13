@@ -5,15 +5,19 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 ---
 ## [Unreleased]
 
+---
+
+## [Release Actividad Obligatoria N°3] - 2025-10-20
+
 ### Added
 
 -  [feature/esp-secuencia-add-diagrama-secuencia-1] Agregue diagramas de secuencias en PNG y PUML   
 PR: [#80](https://github.com/9919-Mili/SistemaProductoraVideos/pull/80) - @9919-Mili (Especialista en Digramas de Secuencia)
 
- - [feature/feature/esp-actividades-1-2-add-diagrama-actividad-1]  Agregado de diagramas de actividad en formato PUML y PNG, y diagramas_de_actividades.md   
+ - [feature/esp-actividades-1-2-add-diagrama-actividad-1]  Agregado de diagramas de actividad en formato PUML y PNG, y diagramas_de_actividades.md   
  PR: [#79](https://github.com/9919-Mili/SistemaProductoraVideos/pull/79) - @zikoloogo (Especialista  en  Diagramas  de  Actividades  -  Casos de Uso 1 y 2)
  
-- [feature/feature/esp-dip-add-anexo-dip]  Agregado de diagramas de actividad en formato PUML y PNG, y diagramas_de_actividades.md   
+- [feature/esp-dip-add-anexo-dip]  Agregado de diagramas de actividad en formato PUML y PNG, y diagramas_de_actividades.md   
  PR: [#75](https://github.com/9919-Mili/SistemaProductoraVideos/pull/75) - @igvcalefato (Especialista  en  Diagramas  de  Actividades  -  Casos  de  Uso  3,  4  y  5)
 
 ### Changed
@@ -93,6 +97,7 @@ PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvca
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 
 - Mantener el orden y formato para facilitar el seguimiento.
+
 
 
 

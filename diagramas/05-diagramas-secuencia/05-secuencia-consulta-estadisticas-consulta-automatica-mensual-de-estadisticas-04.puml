@@ -1,10 +1,11 @@
-@startuml
+@startuml 
+title consulta automatica mensual de estadisticas 
 
 actor sistema
-participant sistemaReportes
-participant controlador
-participant moduloEstadistico
-participant baseDeDatos
+participant "sistemaReportes : sistema" as sistemaReportes
+participant "controlador : registrador" as controlador
+participant "moduloEstadistico : estadisticas" as moduloEstadistico
+participant "baseDeDatos : servidorLocal" as baseDeDatos
 
 sistema -> sistemaReportes: detectaInicio (nuevoMes)
 activate sistemaReportes
@@ -38,7 +39,7 @@ moduloEstadistico --> controlador: graficosGenerados
 deactivate moduloEstadistico
 controlador --> sistemaReportes: reportesEstadisticosListo
 deactivate controlador 
-sistemaReportes --> sistema: reporteDisponible (enModulo)
+sistemaReportes --> sistema: reporteDisponible
 deactivate sistemaReportes
 
 

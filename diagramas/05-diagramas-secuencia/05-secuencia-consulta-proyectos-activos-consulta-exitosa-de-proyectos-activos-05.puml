@@ -1,17 +1,18 @@
-@startuml
+@startuml 
+title consulta exitosa de proyectos activos
 
 actor usuarioAutorizado
-participant interfazSistema
-participant controlador
-participant servicioProyectos
-participant baseDeDatos
+participant "interfazSistema : sistema" as interfazSistema
+participant "controlador : registrador" as controlador
+participant "servicioProyectos : servicio" as servicioProyectos
+participant "baseDeDatos : servidorLocal" as baseDeDatos
 
 
 usuarioAutorizado -> interfazSistema: accedeAlSistema
 activate interfazSistema
 interfazSistema -> controlador: validaPermisos (delUsuario)
 activate controlador
-controlador -> servicioProyectos: solicitaProyectos (activos) 
+controlador -> servicioProyectos: buscarClienteYsolicitaProyectos (activos) 
 activate servicioProyectos
 servicioProyectos -> baseDeDatos: consultaEstado (deProyectos)
 activate baseDeDatos
@@ -41,7 +42,7 @@ deactivate controlador
 interfazSistema --> usuarioAutorizado: accesoAPanelDeDetalles 
 deactivate interfazSistema
 
-usuarioAutorizado -> interfazSistema: filtraPorResponsable 
+usuarioAutorizado -> interfazSistema: asignarResponsableYfiltra 
 activate interfazSistema
 interfazSistema -> controlador: aplicaFiltros 
 activate controlador
@@ -53,13 +54,13 @@ baseDeDatos --> servicioProyectos: observacionesAsociadas
 deactivate baseDeDatos
 servicioProyectos --> controlador: observacionesDisponibles 
 deactivate servicioProyectos
-controlador --> interfazSistema: datosFiltrados (listos) 
-deactivate controlador
+destroy servicioProyectos
+controlador --> interfazSistema: datosFiltrados 
 interfazSistema --> usuarioAutorizado: integradoAlFormulario 
 deactivate interfazSistema
 
 
-destroy interfazSistema
+
 
 
 

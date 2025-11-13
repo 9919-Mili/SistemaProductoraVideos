@@ -1,37 +1,50 @@
 @startuml CrearProyecto
 
+title Diagrama de Actividad - Caso de Uso 1: Crear Proyecto
+
 |Productora General|
 start
 :Inicia sesión en el sistema;
 :Selecciona la opción "Crear Proyecto";
-:Completa los campos obligatorios (nombre, tipo, fechas, responsables);
-if (¿Campos completos?) then (Sí)
+note right
+Debe completar los campos:
+- Nombre
+- Tipo
+- Fechas
+- Responsables
+end note
+
+repeat
+  :Completa los campos obligatorios;
   :Revisa la información ingresada;
   :Confirma la creación del proyecto;
-else (No)
   |Sistema|
-  :Mostrar errores de validación;
-  |Productora General|
-  :Corrige los campos faltantes;
-  :Completa los campos obligatorios;
-endif
+  :Validar campos obligatorios, fechas y responsables;
+  if (¿Datos válidos?) then (No)
+  note
+  Este paso se repite hasta que los datos sean correctos
+  end note
+    :Mostrar errores de validación;
+    |Productora General|
+    :Corrige los campos faltantes;
+  endif
+repeat while (¿Datos válidos?) is (No)
 
 |Sistema|
-:Validar campos obligatorios, fechas y responsables;
-if (¿Datos válidos?) then (Sí)
+fork
   :Registrar creador y fecha/hora de creación;
+fork again
   :Guardar la información del nuevo proyecto;
-  :Enviar notificación de confirmación al cliente;
-  |Cliente|
-  :Recibir notificación de nuevo proyecto creado;
-  :Visualizar detalles básicos del proyecto;
-  |Productora General|
-  :Visualiza mensaje de confirmación en pantalla;
-else (No)
-  :Mostrar mensaje de error específico;
-  |Productora General|
-  :Visualiza mensaje de error;
-endif
+end fork
+
+:Enviar notificación de confirmación al cliente;
+
+|Cliente|
+:Recibir notificación de nuevo proyecto creado;
+:Visualizar detalles básicos del proyecto;
+
+|Productora General|
+:Visualiza mensaje de confirmación en pantalla;
 
 stop
 @enduml
