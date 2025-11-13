@@ -1,7 +1,7 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Adjunto | | |
-| **Superclase:** | Archivo | | |
+| **Superclase:** | N/A | | |
 | **Subclase:** | N/A| | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | Vincular recursos | Etapa | establesco una relacion entre diferentes archivos | nombre de url |

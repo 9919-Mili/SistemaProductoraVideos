@@ -1,7 +1,7 @@
 |  |  |  |  |
 |---|---|---|---|
 | **Nombre de la Clase:** | Proyecto | | |
-| **Superclase:** | Sistema | |
+| **Superclase:** | N/A | |
 | **Subclase:** | N/A | | |
 | **Responsabilidades** | **Colaboradores** | **Pensamiento del objeto** | **Propiedad** |
 | crear proyecto | Proyecto | Coordinar un nuevo trabajo solicitado por el cliente | proyecto |  
