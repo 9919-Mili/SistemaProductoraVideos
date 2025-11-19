@@ -1,0 +1,98 @@
+@startuml 01-diagrama-refinado
+
+' Diagrama de clases refinado
+
+class Sistema {
+	+ gestionarProyectos(): void
+	+ gestionarUsuarios(): void
+	+ gestionarReportes(): void
+	+ notificarUsuarios(notificacion: Notificacion): void
+	+ accesoAutenticado(usuario: Usuario): bool
+}
+
+class Proyecto {
+	- nombre: string
+	- tipo: string
+	- fechaInicio: Date
+	- fechaFin: Date
+	- responsableGeneral: Usuario
+	- etapas: List<Etapa>
+	+ crearProyecto(nombre: string, tipo: string, fechaInicio: Date, fechaFin: Date, responsable: Usuario): Proyecto
+	+ consultarProyectosActivos(): List<Proyecto>
+	+ asignarResponsable(responsable: Usuario): void
+	+ gestionarEtapas(): void
+	+ consultarFechaInicio(): Date
+	+ consultarFechaEntrega(): Date
+}
+
+class Etapa {
+	- nombre: string
+	- estado: string
+	- responsableEtapa: Usuario
+	- comentarios: List<Comentario>
+	- adjuntos: List<Adjunto>
+	+ actualizarEstado(nuevoEstado: string): void
+	+ asignarResponsable(usuario: Usuario): void
+	+ agregarComentario(texto: string, autor: Usuario): Comentario
+	+ agregarAdjunto(url: string, descripcion: string, nombreArchivo: string): Adjunto
+}
+
+class Comentario {
+	- texto: string
+	- fecha: Date
+	- autor: Usuario
+	+ editarComentario(texto: string): Comentario
+}
+
+class Adjunto {
+	- url: string
+	- descripcion: string
+	- nombreArchivo: string
+	+ vincularRecurso(url: string, descripcion: string, nombreArchivo: string): Adjunto
+}
+
+class Notificacion {
+	- mensaje: string
+	- fechaEnvio: Date
+	- tipo: string
+	- destinatario: Usuario
+	+ prepararNotificacion(mensaje: string, fechaEnvio: Date, tipo: string, destinatario: Usuario): void
+	+ enviarNotificación(destinatario: Usuario): void
+}
+
+class Reporte {
+	- nombre: string
+	- estadisticas: string
+	- tipoEstadisticas: string
+	- periodoInicio: Date
+	- periodoFin: Date
+	+ generarReporte(nombre: string, estadisticas: string, tipoEstadisticas: string, periodoInicio: Date, periodoFin: Date): Reporte
+	+ consultarEstadisticas(): void
+	+ descargarReporte(): void
+}
+
+class Usuario {
+	- nombre: string
+	- rol: string
+	- credenciales: string
+	- proyectos: List<Proyecto>
+	- notificaciones: List<Notificacion>
+	+ autenticar(credenciales: string): bool
+	+ consultarProyectosAsignados(): List<Proyecto>
+	+ recibirNotificacion(notificacion: Notificacion): void
+}
+
+' Relaciones y multiplicidades
+Proyecto "1" *-- "0..*" Etapa : etapas
+Etapa "1" o-- "0..*" Comentario : comentarios
+Etapa "1" o-- "0..*" Adjunto : adjuntos
+Proyecto "1" --> "1" Usuario : responsableGeneral
+Etapa "0..1" --> "1" Usuario : responsableEtapa
+Comentario "1" --> "1" Usuario : autor
+Sistema "1" --> "0..*" Proyecto
+Sistema "1" --> "0..*" Usuario
+Sistema "1" --> "0..*" Reporte
+Sistema "1" --> "0..*" Notificacion
+
+
+@enduml
