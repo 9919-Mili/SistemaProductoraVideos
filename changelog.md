@@ -12,7 +12,7 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 - [feature/esp-matrices-clae-add-casos-uso-1-2-3]  Agregue matrices CLAE (CRUD) para los Casos de Uso 1 “Creacion de Proyecto”, Caso de Uso 2 “Actualizar estado etapa” y Caso de Uso 3 "Agregar observaciones" con métodos, relaciones y tabla de issues.  
-PR: [#94](https://github.com/9919-Mili/SistemaProductoraVideos/pull/94) - @9919-Mili (Especialista en Matrices CLAE – Casos de Uso 1,2 y 3)
+PR: [#98](https://github.com/9919-Mili/SistemaProductoraVideos/pull/98) - @9919-Mili (Especialista en Matrices CLAE – Casos de Uso 1,2 y 3)
 
 - [feature/esp-matrices-clae-add-casos-uso-4-5]  Agregue matrices CLAE (CRUD) para los Casos de Uso 4 “Agregar Observaciones” y 5 “Consultar Estadísticas”, con métodos, relaciones y tabla de issues.  
 PR: [#93](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5 + Análisis JAD)
@@ -121,6 +121,7 @@ PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvca
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 
 - Mantener el orden y formato para facilitar el seguimiento.
+
 
 
 
