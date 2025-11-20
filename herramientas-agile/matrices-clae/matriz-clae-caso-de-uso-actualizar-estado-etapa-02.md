@@ -33,13 +33,13 @@
 
 
 
-| Actividad / Clase | Proyecto | Etapa | Usuario | ArchivoMultimedia | Notificación | ... |
+| Actividad / Clase | Proyecto | Etapa | Usuario | Notificación | 
 |--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
-| Seleccionar etapa asignada | C |   | L |   |   |  |
-| Elegir nuestro estado | L | C |   |   |   |  |
-| Agregar comentario | A | L | L |   |   |  |
-| Validar cambio de estado | L |   |   | C |   |  |
-| Verificar permisos | L |   |   |   | C |  |
+| Seleccionar etapa asignada | L |   |  |   |   |  |
+| Elegir nuestro estado | L | L | L |   |   |  |
+| Agregar comentario |  | L |  |   |   |  |
+| Validar cambio de estado |  |   | A |  |   |  |
+| Verificar permisos | L | L | L  |   |  |  |
 | Validar transicion de estado |  | L |   |  |  
 | Validar requisitos del estado |  | L |  | |  
 | Actualizar estado de etapa | | A |   |  |  
