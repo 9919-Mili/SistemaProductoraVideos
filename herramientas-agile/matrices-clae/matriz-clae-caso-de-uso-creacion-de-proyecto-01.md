@@ -77,7 +77,6 @@
 | `actualizarEtapas()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `controlador` y `baseDeDatos`. |
 | `actualizarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/05-diagramas-secuencia/05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | accion "confirmar cambio de estado" **A**.|
 | `listarEtapas()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Consultar en que etapa estan trabajando" |
-<<<<<<< HEAD
 | `listarEtapas()` | Diagrama de Secuencia – CU1 | [`ddiagramas/05-diagramas-secuencia/05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
 | `listarEtapas()` | Diagrama de Actividad – CU1|[`ddiagramas/05-diagramas-secuencia/05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | accion "Mostrar detalles de etapas" **L**.|
 | `agregarObservaciones()` | Tarjeta CRC – Observacion | [`herramientas-agile/tarjetas-crc/08-tarjeta-crc-observacion.md`]() | Figura como responsabilidad "Agregar comentario" |
@@ -91,7 +90,6 @@
 | `registrarFechas()` | Diagrama de Actividad – CU1|[`diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.puml`]() | accion "Registrar responsable que actualiza estado anterior, fecha/hora" **L**.|
 | `buscarCliente()` | Tarjeta CRC – Proyecto | [`herramientas-agile/tarjetas-crc/02-tarjeta-crc-proyecto.md`]() | Figura como responsabilidad "buscar cliente"|
 | `buscarCliente()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05.png`]() | Se muestra como mensaje entre `controlador` y `servicioProyectos` |
-=======
 | `listarEtapas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
 | `listarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/04-actividad-agregar-observaciones-03.puml`]() | accion "Mostrar detalles de etapas" **L**.|
 | `agregarObservaciones()` | Tarjeta CRC – Observacion | [`herramientas-agile/tarjetas-crc/08-tarjeta-crc-observacion.md`]() | Figura como responsabilidad "Agregar observacion" |
@@ -105,7 +103,6 @@
 | `registrarFechas()` | Diagrama de Actividad – CU1|[`04-actividad-actualizar-estado-caso-uso-02.puml`]() | accion "Registrar responsable que actualiza estado anterior, fecha/hora" **L**.|
 | `buscarCliente()` | Tarjeta CRC –  | | Figura como responsabilidad |
 | `buscarCliente()` | Diagrama de Secuencia – CU1 |  | |
->>>>>>> 0d26d044dd1024afe7abdd105068a242cf8be96c
 | `buscarCliente()` | Diagrama de Actividad – CU1|||
 | `crearNotificacion()` | Tarjeta CRC – Notificacion | [`herramientas-agile/tarjetas-crc/05-tarjeta-crc-notificacion.md`]() | Figura como responsabilidad "Generar mensaje de retraso" |
 | `crearNotificacion()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `interfazSistema` y `usuarioAutorizado`. |

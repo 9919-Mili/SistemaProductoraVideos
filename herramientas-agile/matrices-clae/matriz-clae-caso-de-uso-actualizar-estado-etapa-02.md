@@ -15,7 +15,6 @@
 
 | Actividad / Clase | Proyecto | Etapa | Usuario |  Notificación | 
 |--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
-<<<<<<< HEAD
 | Seleccionar proyecto | L |   |  |   | 
 | Seleccionar etapa asiganada | L | L | L |   |   
 | Elegir nuevo estado |  | L |  |  |  
@@ -29,21 +28,6 @@
 | Enviar notificacion | L | L | L |  C |  
 | Identificar siguiente resposable | L | L | A |   |  
 | Notificar siguiente etapa |  | L | L |  C |  
-=======
-| Seleccionar proyecto | L |   |  |   |   |  |
-| Seleccionar etapa asiganada | L | L | L |   |   |  |
-| Elegir nuevo estado |  | L |  |  |   |  |
-| Agregar Observacion |  | L |  |  |  |  |
-| Validar cambio de estado |  | A |   |  |  |  |
-| Verificar permisos | L | L | L |  |   | |
-| Validar transicion de estado |  | L |   |  |  |  |
-| Validar requisitos del estado |  | L |  | |  |  |
-| Actualizar estado de etapa | | A |   |  |  |  |
-| Confirmar actualizacion |  | L |  | |   |  |
-| Enviar notificacion | L | L | L |   |  | C |
-| Identificar siguiente resposable | L | L | A |   |  |  |
-| Notificar siguiente etapa |  | L | L |   |  | C |
->>>>>>> 0d26d044dd1024afe7abdd105068a242cf8be96c
 
 
 > **Leyenda:**  

@@ -54,7 +54,6 @@
 | Elemento | Artefacto vinculado | Archivo / Referencia URL | Descripción de la relación |
 |-----------|--------------------|-----------------------|-----------------------------|
 | `listarProyecto()` | Tarjeta CRC – Sistema | [`herramientas-agile/tarjetas-crc/01-tarjeta-crc-sistema.md`]() | Figura como responsabilidad “Gestionar proyectos”. |
-<<<<<<< HEAD
 | `listarProyecto()` | Diagrama de Secuencia – CU3 | [`diagramas/05-diagramas-secuencia/05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05.puml`]() | Aparece como mensaje enviado dessde `Controlador` al objeto `servicioProyecto`. |
 | `listarProyecto()` | Diagrama de Actividad – CU3 | [`diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.png`]() | "Seleccionar proyecto correspondiente” coincide con la operación **L**. |
 | `listarEtapa()` | Tarjeta CRC – Proyecto | [`herramientas-agile/tarjetas-crc/02-tarjeta-crc-proyecto.md`]() | Figura como responsabilid "Gestionar etapas". |
@@ -69,7 +68,6 @@
 | `crearNotificacion()` | Tarjeta CRC – Notificacion | [`herramientas-agile/tarjetas-crc/05-tarjeta-crc-notificacion.md`]() | Figura como responsabilid "Enviar aviso al usuario". |
 | `crearNotificacion()` | Diagrama de Secuencia – CU3 | [`diagramas/05-diagramas-secuencia/05-secuencia-consulta-estadisticas-consulta-automatica-mensual-de-estadisticas-04.puml.`]() | Se muestra como mensaje entre `controlador` y `sistema`. |
 | `crearNotificacion()` | Diagrama de Actividad – CU3 | [`diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.puml`]() | "Enviar notificacion de cambio de estado" coincide con la operacion **C**. |
-=======
 | `listarProyecto()` | Diagrama de Secuencia – CU3 | [`diagramas/05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05`]() | Aparece como mensaje enviado dessde `Controlador` al objeto `servicioProyecto`. |
 | `listarProyecto()` | Diagrama de Actividad – CU3 | [`diagramas/04-actividad-actualizar-estado-caso-uso-02.puml`]() | "Seleccionar proyecto correspondiente” coincide con la operación **L**. |
 | `listarEtapa()` | Tarjeta CRC – Proyecto | [`02-tarjeta-crc-proyecto.md`]() | Figura como responsabilid "Gestionar etapas". |
@@ -84,7 +82,6 @@
 | `crearNotificacion()` | Tarjeta CRC – Notificacion | [`05-tarjeta-crc-notificacion.md`]() | Figura como responsabilid "Enviar aviso al usuario". |
 | `crearNotificacion()` | Diagrama de Secuencia – CU3 | [`05-secuencia-consulta-estadisticas-consulta-automatica-mensual-de-estadisticas-04.`]() | Se muestra como mensaje entre `controlador` y `sistema`. |
 | `crearNotificacion()` | Diagrama de Actividad – CU3 | [`04-actividad-actualizar-estado-caso-uso-02`]() | "Enviar notificacion de cambio de estado" coincide con la operacion **C**. |
->>>>>>> 0d26d044dd1024afe7abdd105068a242cf8be96c
 ---
 
 ## 4) Issues e inconsistencias detectadas
