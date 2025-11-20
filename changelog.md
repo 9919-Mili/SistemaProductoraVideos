@@ -26,6 +26,11 @@ PR: [#92](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloo
  -  [feature/esp-diagrama-clases-add-diagrama-refinado] Agregue diagramas de clases version final en PNG y PUML   
 PR: [#97](https://github.com/9919-Mili/SistemaProductoraVideos/pull/97) - @igvcalefato (Especialista en Digramas de Secuencia)
 
+### Fixed
+
+- [feature/esp-matrices-clae-add-casos-uso-1-2-3]  Inconsistencias detectadas y solucionadas de en las matrices CLAE
+PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @9919-Mili (Especialista en Matrices CLAE – Casos de Uso 1,2 y 3)
+
 ## [Release Actividad Obligatoria N°3] - 2025-10-20
 
 ### Added
