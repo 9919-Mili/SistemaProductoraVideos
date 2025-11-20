@@ -15,7 +15,6 @@
 
 | Actividad / Clase | Proyecto | Etapa | Usuario |  Notificación | |
 |--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
-
 | Seleccionar proyecto | L |   |  |   | 
 | Seleccionar etapa asiganada | L | L | L |   |   
 | Elegir nuevo estado |  | L |  |  |  
@@ -30,23 +29,6 @@
 | Identificar siguiente resposable | L | L | A |   |  
 | Notificar siguiente etapa |  | L | L |  C |  
 
-
-
-
-| Actividad / Clase | Proyecto | Etapa | Usuario | Notificación | 
-|--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
-| Seleccionar etapa asignada | L |   |  |   |   |  |
-| Elegir nuestro estado | L | L | L |   |   |  |
-| Agregar comentario |  | L |  |   |   |  |
-| Validar cambio de estado |  |   | A |  |   |  |
-| Verificar permisos | L | L | L  |   |  |  |
-| Validar transicion de estado |  | L |   |  |  
-| Validar requisitos del estado |  | L |  | |  
-| Actualizar estado de etapa | | A |   |  |  
-| Confirmar actualizacion |  | L |  | |   
-| Enviar notificacion | L | L | L |  C |  
-| Identificar siguiente resposable | L | L | A |   |  
-| Notificar siguiente etapa |  | L | L |  C | 
 
 > **Leyenda:**  
 > **C**: Crear – **L**: Leer/Listar – **A**: Actualizar – **E**: Eliminar  
