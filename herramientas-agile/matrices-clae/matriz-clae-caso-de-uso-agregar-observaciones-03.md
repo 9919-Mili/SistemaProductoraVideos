@@ -14,7 +14,7 @@
 > - Si no aplica, dejar la celda vacía.  
 
 | Actividad / Clase | Proyecto | Etapa | Usuario | Observaciones | Notificación |
-|--|:--:|:--:|:--:|:--:|:--:|--:|
+|:--|:--|:--|:--|:--|:--|
 | Seleccionar proyecto | L || L |||  
 | Verificar permisos | L || L |||  
 | Seleccionar etapa | L | L ||||  
@@ -24,6 +24,7 @@
 | Elegir tipo de observacion | L ||| A ||  
 | Confirmar observacion | L | L || A  ||  
 | Enviar notificaciones ||| L || C |  
+
 
 > **Leyenda:**  
 > **C**: Crear – **L**: Leer/Listar – **A**: Actualizar – **E**: Eliminar  

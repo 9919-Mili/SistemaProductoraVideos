@@ -14,7 +14,7 @@
 > - Si no aplica, dejar la celda vacía.  
 
 | Actividad / Clase | Proyecto | Etapa | Usuario | Cliente | TipoDeProyecto | Notificación | FechaProyecto |
-|--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
+|:--|:--|:--|:--|:--|:--|:--|:--|
 | Crear proyecto | C |   | L |   |   |  | |
 | Definir etapas | L | C |   |   |   |  | |
 | Nombrar responsable etapa | L | A | L |   |  |  | |
