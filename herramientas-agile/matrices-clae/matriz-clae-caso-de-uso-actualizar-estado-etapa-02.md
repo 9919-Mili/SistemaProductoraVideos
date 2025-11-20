@@ -29,7 +29,6 @@
 | Identificar siguiente resposable | L | L | A |   |  
 | Notificar siguiente etapa |  | L | L |  C |  
 
-
 > **Leyenda:**  
 > **C**: Crear – **L**: Leer/Listar – **A**: Actualizar – **E**: Eliminar  
 

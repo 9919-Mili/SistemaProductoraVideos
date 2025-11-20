@@ -25,7 +25,6 @@
 | Confirmar observacion | L | L |   | A  |  |  
 | Enviar notificaciones | |   |  L |   | C |  
 
-
 > **Leyenda:**  
 > **C**: Crear – **L**: Leer/Listar – **A**: Actualizar – **E**: Eliminar  
 
