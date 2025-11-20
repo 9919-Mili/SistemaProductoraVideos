@@ -41,13 +41,13 @@ class Proyecto {
     - clientes: List<Cliente>
     + crearProyecto(nombre: string, tipo: string, fechaInicio: Date, fechaFin: Date, responsable: Usuario): Proyecto
     + consultarProyectosActivos(): List<Proyecto>
-    + asignarResponsable(nombre: string, responsable: Usuario): bool
+    + asignarResponsable(responsable: Usuario): Usuario
     + gestionarEtapas(): void
     + consultarFechaInicio(): Date
     + consultarFechaEntrega(): Date
-    + agregarObservaciones(nombre: string, descripcion: string): int
-    + registrarFechas(nombre: string, fechaInicio: Date, fechaFin: Date): bool
-    + buscarCliente(nombre: string): Cliente
+    + agregarObservaciones(nombre: string, descripcion: string): Observacion
+    + registrarFechas(fechaInicio: Date, fechaFin: Date): bool
+    + buscarCliente(nombre: string): string
 }
 
 class Etapa {
@@ -67,8 +67,8 @@ class Observacion {
     - texto: string
     - fecha: Date
     - autor: Usuario
-    + crearObservacion(nombreEtapa: Etapa, nombreUsuario: Usuario, texto: string): Observacion
-    + actualizarObservacion(nombreEtapa: Etapa, texto: string): bool
+    + crearObservacion(nombreEtapaContenedora: string, nombreObservacion: string, nombreUsuario: Usuario, texto: string): Observacion
+    + actualizarObservacion(nombreEtapaContenedora: string, nombreObservacion: string, texto: string): bool
     + editarObservacion(texto: string): Observacion
 }
 
@@ -87,7 +87,7 @@ class Notificacion {
     - destinatario: Usuario
     + prepararNotificacion(mensaje: string, fechaEnvio: Date, tipo: string, destinatario: Usuario): void
     + enviarNotificacion(destinatario: Usuario): bool
-    + enviarNotificacionResponsable(nombreEtapa: string, mensaje: string): bool
+    + enviarNotificacionResponsable(nombreEtapa: string, destinatario: Usuario, mensaje: string): bool
 }
 
 class Reporte {
