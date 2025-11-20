@@ -1,7 +1,7 @@
 # Matriz CLAE (CRUD) – [Crear proyecto]
 
 **Proyecto:** Sistema de Gestión de Proyectos Audiovisuales  
-**Caso de Uso:** [CU1 - Crear proyecto]  
+**Caso de Uso:** [CU1 - Crear proyecto ]  
 
 ---
 
@@ -13,17 +13,17 @@
 > - **Celdas:** Letras **C**, **L**, **A**, **E** según la operación que se realiza sobre la clase.  
 > - Si no aplica, dejar la celda vacía.  
 
-| Actividad / clase | Proyecto | Etapa | Usuario | Cliente | TipoDeProyecto | Notificación | FechaProyecto |
+| Actividad / Clase | Proyecto | Etapa | Usuario | Cliente | TipoDeProyecto | Notificación | FechaProyecto |
 |--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
-| Crear proyecto | C |   | L |   |   |  |  |   |
-| Definir Etapas | L | C |   |   |   |  |  |   |
-| Nombrar responsable etapa | L | A | L |   |   |  |   |   |
-| Definir tipo de proyecto | A |   |   |  | L |  | |   |
-| Agregar observaciones iniciales | A |   |   |   |  |  |  |   |
-| Validar informacion del proyecto | L |  L | L |   | A | L |  |   |
-| Ingresar fechas (inico/fin) | L |  |  |   |  | C |   |   |
-| Asociar clientes | A |   |   | L  |  |  |  |   |
-| Enviar notificaciones| L | L |   |   |  | C | |  
+| Crear proyecto | C |   | L |   |   |  | |
+| Definir etapas | L | C |   |   |   |  | |
+| Nombrar responsable etapa | L | A | L |   |  |  | |
+| Definir tipo de proyecto | A |   |   |  | L |  | |
+| Agregar observaciones iniciales | A |   |   |   |  |  | |
+| Validar informacion del proyecto| L | L | L |  | A | L | |
+| Ingresar fechas (inicio/fin) | L |   |   |   | C |  | |
+| Asociar cliente | A |   |   | L |   |  | |
+| Enviar notificacion | L | L |   |   |  | C | |
 
 > **Leyenda:**  
 > **C**: Crear – **L**: Leer/Listar – **A**: Actualizar – **E**: Eliminar  
