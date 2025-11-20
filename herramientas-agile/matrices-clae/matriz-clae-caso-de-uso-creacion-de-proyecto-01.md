@@ -79,13 +79,13 @@
 | `listarEtapas()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Consultar en que etapa estan trabajando" |
 | `listarEtapas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
 | `listarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/04-actividad-agregar-observaciones-03.puml`]() | accion "Mostrar detalles de etapas" **L**.|
-| `agregarObservaciones()` | Tarjeta CRC – Comentario | [`herramientas-agile/tarjetas-crc/08-tarjeta-crc-comentario.md`]() | Figura como responsabilidad "Agregar comentario" |
-| `agregarObservaciones()` | Diagrama de Secuencia – CU1 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `servicioComentario` y `baseDeDatos`. |
-| `agregarObservaciones()` | Diagrama de Actividad – CU1|[`04-actividad-agregar-observaciones-03.puml`]() | accion "Escribir comentario" **A**.|
+| `agregarObservaciones()` | Tarjeta CRC – Observacion | [`herramientas-agile/tarjetas-crc/08-tarjeta-crc-observacion.md`]() | Figura como responsabilidad "Agregar observacion" |
+| `agregarObservaciones()` | Diagrama de Secuencia – CU1 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `servicioObservacion` y `baseDeDatos`. |
+| `agregarObservaciones()` | Diagrama de Actividad – CU1|[`04-actividad-agregar-observaciones-03.puml`]() | accion "Escribir observacion" **A**.|
 | `validarInformacion()` | Tarjeta CRC – Usuario | [`herramientas-agile/tarjetas-crc/004-tarjeta-crc-usuario.md`]() | Figura como responsabilidad "Validar datos" |
-| `validarInformacion()` | Diagrama de Secuencia – CU1 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `controlador` y `servicioDeComentario`. |
+| `validarInformacion()` | Diagrama de Secuencia – CU1 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `controlador` y `servicioDeObservacion`. |
 | `validarInformacion()` | Diagrama de Actividad – CU1|[`04-actividad-consultar-proyectos-activos-05.puml`]() | accion "Validar credenciales" **L**.|
-| `registrarFechas()` | Tarjeta CRC – Comentario | [`herramientas-agile/tarjetas-crc/08-tarjeta-crc-comentario.md`]() | Figura como responsabilidad "Registrar fechas de cambios" |
+| `registrarFechas()` | Tarjeta CRC – Observacion | [`herramientas-agile/tarjetas-crc/08-tarjeta-crc-observacion.md`]() | Figura como responsabilidad "Registrar fechas de cambios" |
 | `registrarFechas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapas` y `baseDeDatos`. |
 | `registrarFechas()` | Diagrama de Actividad – CU1|[`04-actividad-actualizar-estado-caso-uso-02.puml`]() | accion "Registrar responsable que actualiza estado anterior, fecha/hora" **L**.|
 | `buscarCliente()` | Tarjeta CRC –  | | Figura como responsabilidad |

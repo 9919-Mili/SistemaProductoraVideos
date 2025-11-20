@@ -13,7 +13,7 @@ rectangle "Agregar Observaciones" {
     usecase "Seleccionar Proyecto" as UC1a
     usecase "Seleccionar Etapa" as UC1b
     usecase "Elegir Tipo de Observación" as UC1c
-    usecase "Escribir Comentario" as UC1d
+    usecase "Escribir Observación" as UC1d
     usecase "Adjuntar Archivos" as UC1e
     usecase "Mencionar Usuarios" as UC1f
     

@@ -20,7 +20,7 @@
 | Seleccionar etapa | L | L |  |   |   |  
 | Mencionar usuario |  |   | L |  |   |  
 | Adjuntar archivos | L |   |   |   |  |  
-| Escribir comentario | L | L |   | C |  | 
+| Escribir Observacion | L | L |   | C |  | 
 | Elegir tipo de observacion | L |   |   | A |  |  
 | Confirmar observacion | L | L |   | A  |  |  
 | Enviar notificaciones | |   |  L |   | C |  
@@ -41,7 +41,7 @@
 | Proyecto | `listarProyecto(nombre: string, fechaInicio: date)` | L | `nombre: string`, `fechaInicio: date` | `Proyecto` | Listar proyecto |
 | Etapa | `listarEtapa(proyectoId: int, nombre: string)` | L | `proyectoId: int`, `nombre: string` | `Etapa` | Listar etapa del proyecto |
 | Usuario | `seleccionarUsuario(id: int, usuarioId: int)` | L | `id: int`, `usuarioId: int` | `Usuario` | Buscar usuario |
-| Observaciones | `crearComentario(proyectoId: int, etapaId: int, comentario: date)` | C | `proyectoId: int, etapaId: int, comentario: string` | `Observaciones` | Crear comentarios sobre observaciones |
+| Observaciones | `crearObservacion(proyectoId: int, etapaId: int, observacion: date)` | C | `proyectoId: int, etapaId: int, observacion: string` | `Observaciones` | Crear una observacion |
 | Notificación | `crearNotificacion(proyectoId: int, mensaje: string)` | C | `proyectoId: int`, `mensaje: string` | `Notificacion` | Enviar notificacion |
 
 ---
@@ -62,9 +62,9 @@
 | `seleccionarUsuario()` | Tarjeta CRC – Sistema | [`01-tarjeta-crc-sistema.md`]() | Figura como responsabilid "Gestionar usuarios". |
 | `seleccionarUsuario()` | Diagrama de Secuencia – CU3 | [`05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05`]() | Se muestra como mensaje entre `usuarioAutorizado` y `controlador`. |
 | `seleccionarUsuario()` | Diagrama de Actividad – CU3 | [`04-actividad-consultar-proyectos-activos-05`]() | "Autenticar usuario" coincide con la operacion **L**. |
-| `crearComentario()` | Tarjeta CRC – Comentario | [`08-tarjeta-crc-comentario.md`]() | Figura como responsabilid "Agregar comentario". |
-| `crearComentario()` | Diagrama de Secuencia – CU3 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03`]() | Se muestra como mensaje entre `usuarioAutorizado` y `interfazSistema`. |
-| `crearComentario()` | Diagrama de Actividad – CU3 | [`04-actividad-agregar-observaciones-03`]() | "Escribir comentario" coincide con la operacion **C**. |
+| `crearObservacion()` | Tarjeta CRC – Observacion | [`08-tarjeta-crc-observacion.md`]() | Figura como responsabilid "Agregar observacion". |
+| `crearObservacion()` | Diagrama de Secuencia – CU3 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03`]() | Se muestra como mensaje entre `usuarioAutorizado` y `interfazSistema`. |
+| `crearObservacion()` | Diagrama de Actividad – CU3 | [`04-actividad-agregar-observaciones-03`]() | "Escribir observacion" coincide con la operacion **C**. |
 | `crearNotificacion()` | Tarjeta CRC – Notificacion | [`05-tarjeta-crc-notificacion.md`]() | Figura como responsabilid "Enviar aviso al usuario". |
 | `crearNotificacion()` | Diagrama de Secuencia – CU3 | [`05-secuencia-consulta-estadisticas-consulta-automatica-mensual-de-estadisticas-04.`]() | Se muestra como mensaje entre `controlador` y `sistema`. |
 | `crearNotificacion()` | Diagrama de Actividad – CU3 | [`04-actividad-actualizar-estado-caso-uso-02`]() | "Enviar notificacion de cambio de estado" coincide con la operacion **C**. |

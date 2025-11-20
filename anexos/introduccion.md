@@ -22,7 +22,7 @@ La encapsulación es el principio que consiste en ocultar las características d
 - La abstracción: se abstrajeron los archivos audio, imagen y pdf que dieron los clientes para extraer lo mas esencial tanto de los requisitos del proyecto, las clases de uso y principalmente en el diagrama "01-boceto-inicial" de clases, con cada una que se les definieron atributos y métodos.   
 - El polimorfismo: se podría aplicar a subclases de la clase Estadistica, entre estas pueden variar para clasificar subclases que correspondan a distintos tipos de datos como "tipo: int" para una estadistica númerica de cantidad de proyectos o "tipo: String" para los tipos de cliente.   
 - La herencia: se puede usar la clase Adjunto como ejemplo, esta puede contener subclases referentes a archivos de cada pagina como Vimeo o Drive, estas clases heredarian atributos como "url" y el método de "vincularRecurso()".
-- Encapsulación: la clase Etapa que esta directamente relacionada con las clases Usuario, Adjunto y Comentario no es modificada directamente cuando se utiliza cualquier método de esas otras clases, como "agregarComentario()", sino que esta encapsulada para que solo sea modificada una vez se utiliza el método "actualizarEstado()".
+- Encapsulación: la clase Etapa que esta directamente relacionada con las clases Usuario, Adjunto y Observacion no es modificada directamente cuando se utiliza cualquier método de esas otras clases, como "agregarObservacion()", sino que esta encapsulada para que solo sea modificada una vez se utiliza el método "actualizarEstado()".
 
 ## Requisistos iniciales del sistema
 
@@ -37,7 +37,7 @@ La encapsulación es el principio que consiste en ocultar las características d
 1. El sistema debe ser completamente accesible y funcional vía web desde cualquier navegador moderno en dispositivos de escritorio y móviles, asegurando que el 99% de sus funcionalidades estén disponibles y sean usables en ambas plataformas
 2. Un nuevo usuario, sin entrenamiento formal previo, debe ser capaz de realizar las acciones básicas de carga y actualización de un proyecto (nombre, etapas, responsable, estado) en menos de 5 minutos, utilizando una interfaz simple e intuitiva. 
 3. Las principales vistas del sistema, como el "tablero de control" o el "panel general" de proyectos, deben cargar completamente en menos de 3 segundos bajo una carga de 20 proyectos activos y 10 usuarios concurrentes. Esto es fundamental para que el equipo pueda ver en qué estado está cada uno de un vistazo y para evitar la pérdida de tiempo. 
-4.  El sistema debe garantizar que el 100% de la información ingresada (proyectos, etapas, enlaces, comentarios, etc.) se mantenga persistente y sea recuperable en todo momento tras cualquier recarga de la página o reinicio del sistema
+4.  El sistema debe garantizar que el 100% de la información ingresada (proyectos, etapas, enlaces, observaciones, etc.) se mantenga persistente y sea recuperable en todo momento tras cualquier recarga de la página o reinicio del sistema
 5. El sistema debe ser capaz de soportar la gestión simultánea de al menos 50 proyectos activos y 20 usuarios concurrentes sin que el tiempo de respuesta de las acciones clave exceda los 5 segundos.
 
 ## Casos de uso:
@@ -75,14 +75,14 @@ La encapsulación es el principio que consiste en ocultar las características d
 
 ### Agregar Observaciones
 **Actor(es):** Productora General / Laura González, Responsable de la Etapa, Asistente de Producción / Carla Paredes  
-**Descripción breve:** Agregar comentarios generales o internos.  
+**Descripción breve:** Agregar observaciones generales o internas.  
 **Flujo principal de eventos:**
 1. El usuario accede al sistema.  
 2. Selecciona el proyecto y la etapa correspondiente.  
-3. Escribe el comentario en el campo de observaciones.  
+3. Escribe la observacion en el campo de observaciones.  
 4. Añade detalles adicionales si corresponde.  
 5. Revisa la observación.  
-6. Confirma y guarda el comentario.  
+6. Confirma y guarda la observacion.  
 7. El sistema registra la observación y envía notificación.  
 **Precondiciones:** El usuario debe estar autenticado.  
 **Postcondiciones:** La observación queda asociada al proyecto/etapa.  

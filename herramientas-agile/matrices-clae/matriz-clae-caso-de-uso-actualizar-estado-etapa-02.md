@@ -18,7 +18,7 @@
 | Seleccionar proyecto | L |   |  |   |   |  |
 | Seleccionar etapa asiganada | L | L | L |   |   |  |
 | Elegir nuevo estado |  | L |  |  |   |  |
-| Agregar comentario |  | L |  |  |  |  |
+| Agregar Observacion |  | L |  |  |  |  |
 | Validar cambio de estado |  | A |   |  |  |  |
 | Verificar permisos | L | L | L |  |   | |
 | Validar transicion de estado |  | L |   |  |  |  |
