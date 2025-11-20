@@ -14,6 +14,7 @@
 > - Si no aplica, dejar la celda vacía.  
 
 | Actividad / Clase | Proyecto | Etapa | Usuario |  Notificación | |
+
 |--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
 | Seleccionar proyecto | L |   |  |   | 
 | Seleccionar etapa asiganada | L | L | L |   |   
