@@ -15,23 +15,15 @@
 
 | Actividad / Clase | Proyecto | Etapa | Usuario | Observaciones | Notificación |
 |--|:--:|:--:|:--:|:--:|:--:|--:|
-| Seleccionar proyecto | L |   | L |   |   |  
-| Verificar permisos | L |  | L |   |   |  
-| Seleccionar etapa | L | L |  |   |   |  
-| Mencionar usuario |  |   | L |  |   |  
-| Adjuntar archivos | L |   |   |   |  |  
-| Escribir Observacion | L | L |   | C |  | 
-| Elegir tipo de observacion | L |   |   | A |  |  
-| Confirmar observacion | L | L |   | A  |  |  
-| Enviar notificaciones | |   |  L |   | C |  
-
-| Actividad / Clase | Proyecto | Etapa | Usuario | Observaciones | Notificación |
-|--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
-| Registrar nuevo proyecto | C |   | L |   |   |  |
-| Agregar etapa inicial | L | C |   |   |   |  |
-| Asignar responsable | A | L | L |   |   |  |
-| Adjuntar archivos | L |   |   | C |   |  |
-| Notificar creación | L |   |   |   | C |  |
+| Seleccionar proyecto | L || L |||  
+| Verificar permisos | L || L |||  
+| Seleccionar etapa | L | L ||||  
+| Mencionar usuario ||| L |||  
+| Adjuntar archivos | L |||||  
+| Escribir Observacion | L | L || C || 
+| Elegir tipo de observacion | L ||| A ||  
+| Confirmar observacion | L | L || A  ||  
+| Enviar notificaciones ||| L || C |  
 
 > **Leyenda:**  
 > **C**: Crear – **L**: Leer/Listar – **A**: Actualizar – **E**: Eliminar  
