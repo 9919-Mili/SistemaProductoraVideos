@@ -13,8 +13,23 @@
 > - **Celdas:** Letras **C**, **L**, **A**, **E** según la operación que se realiza sobre la clase.  
 > - Si no aplica, dejar la celda vacía.  
 
-| Actividad / Clase | Proyecto | Etapa | Usuario | ArchivoMultimedia | Notificación | ... |
+| Actividad / Clase | Proyecto | Etapa | Usuario |  Notificación | 
 |--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
+<<<<<<< HEAD
+| Seleccionar proyecto | L |   |  |   | 
+| Seleccionar etapa asiganada | L | L | L |   |   
+| Elegir nuevo estado |  | L |  |  |  
+| Agregar comentario |  | L |  |  | 
+| Validar cambio de estado |  | A |   |  |  
+| Verificar permisos | L | L | L |  |   
+| Validar transicion de estado |  | L |   |  |  
+| Validar requisitos del estado |  | L |  | |  
+| Actualizar estado de etapa | | A |   |  |  
+| Confirmar actualizacion |  | L |  | |   
+| Enviar notificacion | L | L | L |  C |  
+| Identificar siguiente resposable | L | L | A |   |  
+| Notificar siguiente etapa |  | L | L |  C |  
+=======
 | Seleccionar proyecto | L |   |  |   |   |  |
 | Seleccionar etapa asiganada | L | L | L |   |   |  |
 | Elegir nuevo estado |  | L |  |  |   |  |
@@ -28,6 +43,7 @@
 | Enviar notificacion | L | L | L |   |  | C |
 | Identificar siguiente resposable | L | L | A |   |  |  |
 | Notificar siguiente etapa |  | L | L |   |  | C |
+>>>>>>> 0d26d044dd1024afe7abdd105068a242cf8be96c
 
 
 > **Leyenda:**  
@@ -58,24 +74,24 @@
 
 | Elemento | Artefacto vinculado | Archivo / Referencia URL | Descripción de la relación |
 |-----------|--------------------|-----------------------|-----------------------------|
-| `gestionarProyecto()` | Tarjeta CRC – Proyecto | [`herramientas-agile/tarjetas-crc/01-tarjeta-crc-sistema.md`]() | Figura como responsabilidad “Gestionar proyectos”. |
-| `gestionarProyecto()` | Diagrama de Secuencia – CU2 | [`diagramas/05-diagramas-secuencia/05-secuencia-crear-proyecto.puml`]() | Aparece como mensaje enviado desde el actor `interfazSistema` al objeto `controlador`. |
-| `gestionarProyecto()` | Diagrama de Actividad – CU2 | [`diagramas/04-actividad-actualizar-estado-caso-uso-02.puml`]() | Acción “Seleccionar proyecto correspondiente” coincide con la operación **L**. |
-| `listarEtapas()` | Tarjeta CRC – Proyecto| [`02-tarjeta-crc-proyecto.md`]() | Declarado como método dentro de las responsabilidades del proyecto. |
+| `gestionarProyecto()` | Tarjeta CRC – Proyecto | [`herramientas-agile/tarjetas-crc/02-tarjeta-crc-proyecto.md`]() | Figura como responsabilidad “Gestionar proyectos”. |
+| `gestionarProyecto()` | Diagrama de Secuencia – CU2 | [`diagramas/05-diagramas-secuencia/05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05.png`]() | Aparece como mensaje enviado desde el actor `interfazSistema` al objeto `controlador`. |
+| `gestionarProyecto()` | Diagrama de Actividad – CU2 | [`diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.png`]() | Acción “Seleccionar proyecto correspondiente” coincide con la operación **L**. |
+| `listarEtapas()` | Tarjeta CRC – Proyecto| [`herramientas-agile/tarjetas-crc/02-tarjeta-crc-proyecto.md`]() | Declarado como método dentro de las responsabilidades del proyecto. |
 | `listarEtapas()` | Diagrama de Secuencia – CU2 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `servicioEtapa` y `baseDeDatos`. |
 | `listarEtapas()` | Diagrama de Actividad – CU1 | [`04-actividad-actualizar-estado-caso-uso-02.puml`]() | Acción "Seleccionar etapa asignada" coincide con la operación **L** |
 | `actualizarEstado()` | Tarjeta CRC – Proyecto| [`02-tarjeta-crc-proyecto.md`]() | Declarado como método dentro de las responsabilidades del proyecto. |
-| `actualizarEstado()` | Diagrama de Secuencia – CU2 | [`05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `servicioEtapa` y `baseDeDatos`. |
+| `actualizarEstado()` | Diagrama de Secuencia – CU2 | [`diagramas/05-diagramas-secuencia/05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | Se muestra como mensaje entre `servicioEtapa` y `baseDeDatos`. |
 | `actualizarEstado()` | Diagrama de Actividad – CU1 |[`04-actividad-actualizar-estado-caso-uso-02.puml`]() | Acción "Seleccionar etapa asignada" coincide con la operación **A** |
 | `gestionarUsuario()` | Tarjeta CRC – Sistema| [`01-tarjeta-crc-sistema.md`]() | Declarado como método dentro de las responsabilidades del sistema. |
 | `gestionarUsuario()` | Diagrama de Secuencia – CU2 | [`05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05.puml`]() | Se muestra como mensaje entre `usuarioAutorizado` y `interfazSistema`. |
-| `gestionarUsuario()` | Diagrama de Actividad – CU1| [`04-actividad-consultar-estadisticas-04.puml`]() | Acción "Autenticar usuario" coincide con la operación **L** |
-| `enviarNotificacion()` | Tarjeta CRC – Notificacion| [`05-tarjeta-crc-notificacion.md`]() | Declarado como método dentro de las responsabilidades de notificacion. |
-| `enviarNotificacion()` | Diagrama de Secuencia – CU2 | [`05-secuencia-creacion-proyecto-creacion-proyecto-exitoso-01.puml`]() | Se muestra como mensaje entre `sistemaValidacion` y `interfazWeb`. |
-| `enviarNotificacion()` | Diagrama de Actividad – CU2 | [`04-actividad-actualizar-estado-caso-uso-02.puml`]() | Acción "enviar notificacion de cambio de estado" coincide con la operación **C** |
-| `notificarSigueinteEtapa()` | Tarjeta CRC – Notificacion| [`05-tarjeta-crc-notificacion.md`]() | Declarado como método dentro de las responsabilidades de Notificacion. |
-| `notificarSigueinteEtapa()` | Diagrama de Secuencia – CU2 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02`]() | Se muestra como mensaje entre `interfazDelsistema` y `responsableEtapa`. |
-| `notificarSigueinteEtapa()` | Diagrama de Actividad – CU2|  [`04-actividad-actualizar-estado-caso-uso-02.puml`]() | Acción "Enviar notificacion cambio de estado" coincide con la operación **C** |
+| `gestionarUsuario()` | Diagrama de Actividad – CU2| [`diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.png`]() | Acción "Autenticar usuario" coincide con la operación **L** |
+| `enviarNotificacion()` | Tarjeta CRC – Notificacion| [`herramientas-agile/tarjetas-crc/05-tarjeta-crc-notificacion.md`]() | Declarado como método dentro de las responsabilidades de notificacion. |
+| `enviarNotificacion()` | Diagrama de Secuencia – CU2 | [`diagramas/05-diagramas-secuencia/05-secuencia-creacion-proyecto-creacion-proyecto-exitoso-01.puml`]() | Se muestra como mensaje entre `sistemaValidacion` y `interfazWeb`. |
+| `enviarNotificacion()` | Diagrama de Actividad – CU2 | [`diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.png`]() | Acción "enviar notificacion de cambio de estado" coincide con la operación **C** |
+| `notificarSigueinteEtapa()` | Tarjeta CRC – Notificacion| [`herramientas-agile/tarjetas-crc/05-tarjeta-crc-notificacion.md`]() | Declarado como método dentro de las responsabilidades de Notificacion. |
+| `notificarSigueinteEtapa()` | Diagrama de Secuencia – CU2 | [`diagramas/05-diagramas-secuencia/05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `interfazDelsistema` y `responsableEtapa`. |
+| `notificarSigueinteEtapa()` | Diagrama de Actividad – CU2|  [`diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.png`]() | Acción "Enviar notificacion cambio de estado" coincide con la operación **C** |
 
 
 
