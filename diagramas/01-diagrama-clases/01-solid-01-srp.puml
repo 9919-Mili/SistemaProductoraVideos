@@ -99,14 +99,14 @@ package "Refactorización 3: Clase Etapa" {
   class "Etapa (ANTES)" as EtapaAntes <<violación SRP>> {
     - nombre: String
     - estado: String
-    - comentarios: List<Comentario>
+    - observaciones: List<Observacion>
     - adjuntos: List<Adjunto>
     + actualizarEstado()
   }
   
   note right of EtapaAntes
     Gestiona su estado
-    + comentarios + adjuntos
+    + observaciones + adjuntos
     3 responsabilidades
   end note
   
@@ -121,11 +121,11 @@ package "Refactorización 3: Clase Etapa" {
     + calcularProgreso()
   }
   
-  class GestorComentarios {
-    - comentarios: List<Comentario>
-    + agregarComentario(comentario: Comentario)
-    + eliminarComentario(id: int)
-    + buscarComentarios(): List<Comentario>
+  class GestorObservaciones {
+    - observaciones: List<Observacion>
+    + agregarObservacion(observacion: Observacion)
+    + eliminarObservacion(id: int)
+    + buscarObservaciones(): List<Observacion>
   }
   
   class GestorAdjuntos {
@@ -136,7 +136,7 @@ package "Refactorización 3: Clase Etapa" {
     + validarFormato(archivo: File)
   }
   
-  class Comentario {
+  class Observacion {
     - texto: String
     - fecha: Date
     - autor: Usuario
@@ -149,12 +149,12 @@ package "Refactorización 3: Clase Etapa" {
   }
   
   EtapaAntes .down.> Etapa : <<refactorizado a>>
-  EtapaAntes .down.> GestorComentarios : <<refactorizado a>>
+  EtapaAntes .down.> GestorObservaciones : <<refactorizado a>>
   EtapaAntes .down.> GestorAdjuntos : <<refactorizado a>>
   
-  Etapa *-- GestorComentarios : compone
+  Etapa *-- GestorObservaciones : compone
   Etapa *-- GestorAdjuntos : compone
-  GestorComentarios --> Comentario : gestiona
+  GestorObservaciones --> Observacion : gestiona
   GestorAdjuntos --> Adjunto : gestiona
 }
 

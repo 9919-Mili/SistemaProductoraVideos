@@ -4,21 +4,21 @@ title agregado exitoso de observaciones
 actor usuarioAutorizado
 participant "interfazSistema: conexion" as interfazSistema
 participant "controlador : registrador" as controlador
-participant "servicioComentario: comentador" as servicioComentario
+participant "servicioObservacion: comentador" as servicioObservacion
 participant "baseDeDatos : servidorLocal" as baseDeDatos
 
 usuarioAutorizado -> interfazSistema: accedeAlSistema
 activate interfazSistema
 interfazSistema -> controlador: validaPermiso (sobreLaEtapa)
 activate controlador
-controlador -> servicioComentario: verificaEtapaSeleccionada
-activate servicioComentario
-servicioComentario -> baseDeDatos: consultaDatos (deEtapa)
+controlador -> servicioObservacion: verificaEtapaSeleccionada
+activate servicioObservacion
+servicioObservacion -> baseDeDatos: consultaDatos (deEtapa)
 activate baseDeDatos
-baseDeDatos --> servicioComentario: confirmacionDeDatos
+baseDeDatos --> servicioObservacion: confirmacionDeDatos
 deactivate baseDeDatos
-servicioComentario --> controlador: etapaVerificada
-deactivate servicioComentario
+servicioObservacion --> controlador: etapaVerificada
+deactivate servicioObservacion
 controlador --> interfazSistema: permisosConfirmados
 deactivate controlador
 interfazSistema --> usuarioAutorizado: muestraPanel 
@@ -28,14 +28,14 @@ usuarioAutorizado -> interfazSistema: seleccionaEtapa (delProyecto)
 activate interfazSistema
 interfazSistema -> controlador: presentaFormulario (web) 
 activate controlador
-controlador -> servicioComentario: validaCampos (delComentario) 
-activate servicioComentario
-servicioComentario -> baseDeDatos: guardaComentariosYDetalles 
+controlador -> servicioObservacion: validaCampos (delaObservacion) 
+activate servicioObservacion
+servicioObservacion -> baseDeDatos: guardaObservacionYDetalles 
 activate baseDeDatos
-baseDeDatos --> servicioComentario: confirmacionGuardado
+baseDeDatos --> servicioObservacion: confirmacionGuardado
 deactivate baseDeDatos
-servicioComentario --> controlador: camposvalidados 
-deactivate servicioComentario
+servicioObservacion --> controlador: camposvalidados 
+deactivate servicioObservacion
 controlador --> interfazSistema: formularioPreparado
 deactivate controlador
 interfazSistema --> usuarioAutorizado: enviaNotificacion 
@@ -43,17 +43,17 @@ deactivate interfazSistema
 
 usuarioAutorizado-> interfazSistema: escribeYConfirmaObservacion 
 activate interfazSistema
-interfazSistema -> controlador: enviaComentarioIngresado
+interfazSistema -> controlador: enviaObservacionIngresado
 activate controlador
-controlador -> servicioComentario: registraObservaciones (enEtapa)
-activate servicioComentario
-servicioComentario -> baseDeDatos: actualizaHistorial (deEtapas) 
+controlador -> servicioObservacion: registraObservaciones (enEtapa)
+activate servicioObservacion
+servicioObservacion -> baseDeDatos: actualizaHistorial (deEtapas) 
 activate baseDeDatos
-baseDeDatos --> servicioComentario: confirmacionHistorialActualizado
+baseDeDatos --> servicioObservacion: confirmacionHistorialActualizado
 deactivate baseDeDatos 
-servicioComentario --> controlador: observacionRegistrada 
-deactivate servicioComentario
-destroy servicioComentario
+servicioObservacion --> controlador: observacionRegistrada 
+deactivate servicioObservacion
+destroy servicioObservacion
 controlador --> interfazSistema: operacionExitosa 
 deactivate controlador
 interfazSistema --> usuarioAutorizado: visualizaObservacion 

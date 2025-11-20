@@ -39,10 +39,10 @@ endfork
          nueva Observación;
 
 |Usuario/Cliente|
-  :Escribir comentario;
+  :Escribir observacion;
   if (Notificar Usuario/s?) then (si)
   :Escribir mención a Usuario/s 
-            en el comentario;
+            en la observacion;
   else (no)
   endif
   :Seleccionar "Guardar";

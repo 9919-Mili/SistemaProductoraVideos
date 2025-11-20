@@ -6,6 +6,4 @@
 - [Tarjeta CRC 5 - Clase - Notificacion](/herramientas-agile/tarjetas-crc/05-tarjeta-crc-notificacion.md)
 - [Tarjeta CRC 6 - Clase - Estadistica](/herramientas-agile/tarjetas-crc/06-tarjeta-crc-estadistica.md)
 - [Tarjeta CRC 7 - Clase - Adjunto](/herramientas-agile/tarjetas-crc/07-tarjeta-crc-adjunto.md)
-- [Tarjeta CRC 8 - Clase - Comentario](/herramientas-agile/tarjetas-crc/08-tarjeta-crc-comentario.md)
-- [Tarjeta CRC 9 - Clase - Persona](/herramientas-agile/tarjetas-crc/09-tarjeta-crc-persona.md)
-- [Tarjeta CRC 10 - Clase - Cliente](/herramientas-agile/tarjetas-crc/10-tarjeta-crc-cliente.md)
+- [Tarjeta CRC 8 - Clase - Observacion](/herramientas-agile/tarjetas-crc/08-tarjeta-crc-observacion.md)

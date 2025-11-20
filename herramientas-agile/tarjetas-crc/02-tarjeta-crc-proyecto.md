@@ -10,3 +10,4 @@
 | gestionar etapas | Sistema | Tengo que llevar a cabo una serie de pasos para lograr un objetivo | etapas |
 | consultar fecha de inicio | proyecto | Quiero saber la de fecha del inicio del proyecto | fecha de inicio |
 | consultar fecha de entrega  | poryecto  | Quiero saber un rango de fechas de entrega final del proyecto  | fecha final |
+| buscar cliente  | poryecto  | Quiero saber a quien pertenece el proyecto | nombre cliente |

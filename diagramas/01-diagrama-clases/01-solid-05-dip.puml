@@ -13,8 +13,8 @@ class Etapa {
   - nombre: String
   - estado: String
   - responsableEtapa: IExtractorNombre
-  - comentarios y adjuntos: List<IAgregarObjeto>
-  + agregarComentarioYAdjunto()
+  - observaciones y adjuntos: List<IAgregarObjeto>
+  + agregarObservacionYAdjunto()
   + actualizarResponsable()
   + actualizarEstado()
 }
@@ -24,12 +24,12 @@ class Usuario  {
   - nombre: String
   - rol: String
 }
-class Comentario  {
+class Observacion  {
   - tipo: String
   - texto: String
   - fecha: Date
   - autor: IExtractorNombre
-  + agregarComentario()
+  + agregarObservacion()
   + actualizarAutor()
 }
 
@@ -40,7 +40,7 @@ class Adjunto  {
   + agregarAdjunto()
 }
 
-class Comentario implements IAgregarObjeto {
+class Observacion implements IAgregarObjeto {
   + agregarObjeto()
 }
 
@@ -56,8 +56,8 @@ class Usuario implements IExtractorNombre {
   + obtenerNombre()
 }
 
-Etapa --> IAgregarObjeto : comentarios y adjuntos
+Etapa --> IAgregarObjeto : observacion y adjuntos
 Etapa --> IExtractorNombre : responsableEtapa
-Comentario --> IExtractorNombre : autor
+Observacion --> IExtractorNombre : autor
 
 @enduml
