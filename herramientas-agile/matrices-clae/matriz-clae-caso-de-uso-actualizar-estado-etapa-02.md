@@ -29,13 +29,21 @@
 | Identificar siguiente resposable | L | L | A |   |  
 | Notificar siguiente etapa |  | L | L |  C |  
 
-| Actividad / Clase | Proyecto | Etapa | Usuario | ArchivoMultimedia | Notificación | ... |
+| Actividad / Clase | Proyecto | Etapa | Usuario | Notificación |
 |--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
-| Registrar nuevo proyecto | C |   | L |   |   |  |
-| Agregar etapa inicial | L | C |   |   |   |  |
-| Asignar responsable | A | L | L |   |   |  |
-| Adjuntar archivos | L |   |   | C |   |  |
-| Notificar creación | L |   |   |   | C |  |
+| Seleccionar proyecto | L |   |  |   | 
+| Seleccionar etapa asiganada | L | L | L |   |   
+| Elegir nuevo estado |  | L |  |  |  
+| Agregar comentario |  | L |  |  | 
+| Validar cambio de estado |  | A |   |  |  
+| Verificar permisos | L | L | L |  |   
+| Validar transicion de estado |  | L |   |  |  
+| Validar requisitos del estado |  | L |  | |  
+| Actualizar estado de etapa | | A |   |  |  
+| Confirmar actualizacion |  | L |  | |   
+| Enviar notificacion | L | L | L |  C |  
+| Identificar siguiente resposable | L | L | A |   |  
+| Notificar siguiente etapa |  | L | L |  C |  
 
 > **Leyenda:**  
 > **C**: Crear – **L**: Leer/Listar – **A**: Actualizar – **E**: Eliminar  
