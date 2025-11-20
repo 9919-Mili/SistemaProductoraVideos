@@ -13,7 +13,7 @@
 > - **Celdas:** Letras **C**, **L**, **A**, **E** según la operación que se realiza sobre la clase.  
 > - Si no aplica, dejar la celda vacía.  
 
-| Actividad / Clase | Proyecto | Etapa | Usuario |  Notificación | 
+| Actividad / Clase | Proyecto | Etapa | Usuario |  Notificación | |
 |--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
 
 | Seleccionar proyecto | L |   |  |   | 
