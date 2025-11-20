@@ -14,7 +14,7 @@
 > - Si no aplica, dejar la celda vacía.  
 
 | Actividad / Clase | Proyecto | Etapa | Usuario | Observaciones | Notificación |
-|--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
+|--|:--:|:--:|:--:|:--:|:--:|--:|
 | Seleccionar proyecto | L |   | L |   |   |  
 | Verificar permisos | L |  | L |   |   |  
 | Seleccionar etapa | L | L |  |   |   |  
