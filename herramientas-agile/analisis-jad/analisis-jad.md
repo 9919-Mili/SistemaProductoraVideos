@@ -21,16 +21,16 @@ Mínimo 10 registros completos extraídos de la sesión.
 
 | **Pregunta Clave** | **Decisión del Usuario** | **Clases Candidatas** | **Atributos / Métodos / Responsabilidades Detectadas** | **Observaciones** |
 |------------------------------------|--------------------------------------|------------------------|--------------------------------------------------------|------------------|
-| ¿Quién puede agregar una observación en un proyecto activo? | Solo usuarios con rol de *Responsable de Etapa* o *Productor General*. | `Usuario`, `Observacion` | `Usuario.rol`, `Observacion.crear()` | Validar permisos de escritura según tipo de usuario. |
-| ¿Las observaciones deben quedar asociadas a una etapa o al proyecto completo? | A la etapa específica, no al proyecto general. | `Etapa`, `Observacion` | `Observacion.etapaId` | Se ajustará el modelo para mantener trazabilidad. |
+| ¿Quién puede agregar una observación en un proyecto activo? | Solo usuarios con rol de *Responsable de Etapa* o *Productor General*. | `Usuario`, `Observacion` | `Usuario.rol`, `crearObservacion()` | Validar permisos de escritura según tipo de usuario. |
+| ¿Las observaciones deben quedar asociadas a una etapa o al proyecto completo? | A la etapa específica, no al proyecto general. | `Etapa`, `Observacion` | `Etapa.agregarObservacion()` | Se ajustará el modelo para mantener trazabilidad. |
 | ¿Se requiere notificar a alguien cuando se crea una observación? | Sí, al responsable de la etapa correspondiente. | `Notificacion`, `Usuario` | `Notificacion.enviarNotificacionResponsable()` | Confirmar envío automático vía correo. |
-| ¿Qué formato tendrán las observaciones? | Texto plano, sin adjuntos por ahora. | `Observacion` | `Observacion.texto`, `Observacion.fechaCreacion` | Podría evaluarse permitir archivos en una versión posterior. |
+| ¿Qué formato tendrán las observaciones? | Texto plano, sin adjuntos por ahora. | `Observacion` | `Observacion.texto`, `Observacion.fecha` | Podría evaluarse permitir archivos en una versión posterior. |
 | ¿Cada observación puede editarse luego de guardada? | Solo por el usuario que la creó y mientras la etapa esté activa. | `Observacion`, `Etapa`, `Usuario` | `Observacion.actualizarObservacion()` | Añadir restricción lógica de edición. |
-| ¿El sistema debe generar estadísticas de observaciones o entregas? | Principalmente de entregas y duración de proyectos. | `Estadistica`, `Proyecto` | `Estadistica.generarEstadisticas()`, `Proyecto.obtenerDuracionProyecto()` | Se incluirá análisis de cumplimiento por etapa. |
-| ¿Qué tipo de filtros debe tener el módulo de estadísticas? | Por estado, responsable y tipo de proyecto. | `FiltroBusqueda` | `FiltroBusqueda.crearFiltro()` | Confirmado para el CU5. |
-| ¿Quién puede acceder al módulo de estadísticas? | Solo usuarios autenticados con rol *Productor General*. | `Usuario` | `Usuario.autenticarUsuario()` | Se limita la vista a nivel de acceso administrativo. |
+| ¿El sistema debe generar estadísticas de observaciones o entregas? | Principalmente de entregas y duración de proyectos. | `Estadistica`, `Proyecto` | `Proyecto.consultarFechaEntrega()`, `Proyecto.consultarFechaInicio()` | Se incluirá análisis de cumplimiento por etapa. |
+| ¿Qué tipo de filtros debe tener el módulo de estadísticas? | Por estado, responsable y tipo de proyecto. | `FiltroBusqueda` | `Estadistica.generarEstadisticas(filtro)` | Confirmado para el CU5. |
+| ¿Quién puede acceder al módulo de estadísticas? | Solo usuarios autenticados con rol *Productor General*. | `Usuario` | `Usuario.autenticar()` | Se limita la vista a nivel de acceso administrativo. |
 | ¿Los reportes deben descargarse o solo visualizarse? | Ambos: el usuario puede generar y descargar el reporte. | `Reporte`, `Estadistica` | `Reporte.generarReporte()` | El formato será PDF y Excel. |
-| ¿Se almacenan los reportes generados? | Sí, para mantener histórico de consultas. | `Reporte`, `BaseDeDatos` | `Reporte.fechaGeneracion`, `Reporte.pathArchivo` | El controlador los guarda en la base de datos. |
+| ¿Se almacenan los reportes generados? | Sí, para mantener histórico de consultas. | `Reporte`, `BaseDeDatos` | `Reporte.periodoInicio`, `Reporte.periodoFin` | El controlador los guarda en la base de datos. |
 
 ---
 
