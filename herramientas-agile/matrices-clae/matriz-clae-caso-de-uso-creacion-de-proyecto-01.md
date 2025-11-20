@@ -89,7 +89,7 @@
 | `registrarFechas()` | Tarjeta CRC – Observacion | [`herramientas-agile/tarjetas-crc/08-tarjeta-crc-observacion.md`]() | Figura como responsabilidad "Registrar fechas de cambios" |
 | `registrarFechas()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapas` y `baseDeDatos`. |
 | `registrarFechas()` | Diagrama de Actividad – CU1|[`diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.puml`]() | accion "Registrar responsable que actualiza estado anterior, fecha/hora" **L**.|
-| `buscarCliente()` | Tarjeta CRC – Proyecto | [`herramientas-agile/tarjetas-crc/02-tarjeta-crc-proyecto.md`] ()| Figura como responsabilidad "buscar cliente"|
+| `buscarCliente()` | Tarjeta CRC – Proyecto | [`herramientas-agile/tarjetas-crc/02-tarjeta-crc-proyecto.md`]() | Figura como responsabilidad "buscar cliente"|
 | `buscarCliente()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-consulta-proyectos-activos-consulta-exitosa-de-proyectos-activos-05.png`]() | Se muestra como mensaje entre `controlador` y `servicioProyectos` |
 =======
 | `listarEtapas()` | Diagrama de Secuencia – CU1 | [`05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `servicioDeEtapa` y `baseDeDatos`. |
