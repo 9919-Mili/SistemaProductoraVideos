@@ -16,7 +16,6 @@ class Sistema {
 }
 
 class Usuario {
-    - id: int
     - nombre: string
     - rol: string
     - credenciales: string
@@ -28,13 +27,11 @@ class Usuario {
 }
 
 class Cliente {
-    - id: int
     - nombre: string
     - contacto: string
 }
 
 class Proyecto {
-    - id: int
     - nombre: string
     - tipo: string
     - fechaInicio: Date
@@ -44,17 +41,16 @@ class Proyecto {
     - clientes: List<Cliente>
     + crearProyecto(nombre: string, tipo: string, fechaInicio: Date, fechaFin: Date, responsable: Usuario): Proyecto
     + consultarProyectosActivos(): List<Proyecto>
-    + asignarResponsable(etapaId: int, responsable: Usuario): bool
+    + asignarResponsable(nombre: string, responsable: Usuario): bool
     + gestionarEtapas(): void
     + consultarFechaInicio(): Date
     + consultarFechaEntrega(): Date
-    + agregarObservaciones(idProyecto: int, descripcion: string): int
-    + registrarFechas(idProyecto: int, fechaInicio: Date, fechaFin: Date): bool
+    + agregarObservaciones(nombre: string, descripcion: string): int
+    + registrarFechas(nombre: string, fechaInicio: Date, fechaFin: Date): bool
     + buscarCliente(nombre: string): Cliente
 }
 
 class Etapa {
-    - id: int
     - nombre: string
     - estado: string
     - responsableEtapa: Usuario
@@ -64,16 +60,15 @@ class Etapa {
     + asignarResponsable(usuario: Usuario): bool
     + agregarObservacion(texto: string, autor: Usuario): Observacion
     + agregarAdjunto(url: string, descripcion: string, nombreArchivo: string): Adjunto
-    + listarEtapasPorProyecto(proyectoId: int): List<Etapa>
+    + listarEtapasPorProyecto(nombreProyecto: string): List<Etapa>
 }
 
 class Observacion {
-    - id: int
     - texto: string
     - fecha: Date
     - autor: Usuario
-    + crearObservacion(etapaId: int, usuarioId: int, texto: string): Observacion
-    + actualizarObservacion(id: int, texto: string): bool
+    + crearObservacion(nombreEtapa: Etapa, nombreUsuario: Usuario, texto: string): Observacion
+    + actualizarObservacion(nombreEtapa: Etapa, texto: string): bool
     + editarObservacion(texto: string): Observacion
 }
 
@@ -86,18 +81,16 @@ class Adjunto {
 }
 
 class Notificacion {
-    - id: int
     - mensaje: string
     - fechaEnvio: Date
     - tipo: string
     - destinatario: Usuario
     + prepararNotificacion(mensaje: string, fechaEnvio: Date, tipo: string, destinatario: Usuario): void
     + enviarNotificacion(destinatario: Usuario): bool
-    + enviarNotificacionResponsable(etapaId: int, mensaje: string): bool
+    + enviarNotificacionResponsable(nombreEtapa: string, mensaje: string): bool
 }
 
 class Reporte {
-    - id: int
     - nombre: string
     - estadisticas: string
     - tipoEstadisticas: string
@@ -109,7 +102,6 @@ class Reporte {
 }
 
 class Estadistica {
-    - id: int
     - tipo: string
     - valor: string
     + generarEstadisticas(filtro: FiltroBusqueda): List<Estadistica>
