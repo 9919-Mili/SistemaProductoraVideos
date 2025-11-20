@@ -70,9 +70,9 @@
 | `crearEtapas()` | Tarjeta CRC – Etapa| [herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md]() | Figura como responsabilidad "Crear etapa"  |
 | `crearEtapas()` | Diagrama de Secuencia – CU1 | [diagramas/05-diagramas-secuencia/05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.png]() | Se muestra como mensaje entre `interfazDelSistema` y `responsableEtapa`|
 | `crearEtapas()` | Diagrama de Actividad – CU1| | |
-| `AsignarResponsables()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Asignar responsable etapa" |
-| `AsignarResponsables()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | |
-| `AsignarResponsables()` | Diagrama de Actividad – CU1| [diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.png]() | accion "Registrar responsable que actualiza" **A**|
+| `asignarResponsables()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Asignar responsable etapa" |
+| `asignarResponsables()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-agregar-observaciones-agregado-exitoso-de-observaciones-03.puml`]() | |
+| `asignarResponsables()` | Diagrama de Actividad – CU1| [diagramas/04-diagramas-actividades/04-actividad-actualizar-estado-caso-uso-02.png]() | accion "Registrar responsable que actualiza" **A**|
 | `actualizarEtapas()` | Tarjeta CRC – Etapa | [`herramientas-agile/tarjetas-crc/03-tarjeta-crc-etapa.md`]() | Figura como responsabilidad "Actualizar Estado" |
 | `actualizarEtapas()` | Diagrama de Secuencia – CU1 | [`diagramas/05-diagramas-secuencia/05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | Se muestra como mensaje entre `controlador` y `baseDeDatos`. |
 | `actualizarEtapas()` | Diagrama de Actividad – CU1|[`diagramas/05-diagramas-secuencia/05-secuencia-actualizar-estado-de-la-etapa-actualizacion-exitosa-del-estado-de-la-etapa-02.puml`]() | accion "confirmar cambio de estado" **A**.|
