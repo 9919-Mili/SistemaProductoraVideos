@@ -32,6 +32,22 @@
 
 
 
+
+| Actividad / Clase | Proyecto | Etapa | Usuario | ArchivoMultimedia | Notificación | ... |
+|--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
+| Seleccionar etapa asignada | C |   | L |   |   |  |
+| Elegir nuestro estado | L | C |   |   |   |  |
+| Agregar comentario | A | L | L |   |   |  |
+| Validar cambio de estado | L |   |   | C |   |  |
+| Verificar permisos | L |   |   |   | C |  |
+| Validar transicion de estado |  | L |   |  |  
+| Validar requisitos del estado |  | L |  | |  
+| Actualizar estado de etapa | | A |   |  |  
+| Confirmar actualizacion |  | L |  | |   
+| Enviar notificacion | L | L | L |  C |  
+| Identificar siguiente resposable | L | L | A |   |  
+| Notificar siguiente etapa |  | L | L |  C | 
+
 > **Leyenda:**  
 > **C**: Crear – **L**: Leer/Listar – **A**: Actualizar – **E**: Eliminar  
 
