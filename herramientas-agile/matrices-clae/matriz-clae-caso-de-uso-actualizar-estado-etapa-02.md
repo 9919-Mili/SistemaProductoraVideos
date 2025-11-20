@@ -29,6 +29,14 @@
 | Identificar siguiente resposable | L | L | A |   |  
 | Notificar siguiente etapa |  | L | L |  C |  
 
+| Actividad / Clase | Proyecto | Etapa | Usuario | ArchivoMultimedia | Notificación | ... |
+|--------------------|:--------:|:-----:|:-------:|:-----------------:|:-------------:|-----:|
+| Registrar nuevo proyecto | C |   | L |   |   |  |
+| Agregar etapa inicial | L | C |   |   |   |  |
+| Asignar responsable | A | L | L |   |   |  |
+| Adjuntar archivos | L |   |   | C |   |  |
+| Notificar creación | L |   |   |   | C |  |
+
 > **Leyenda:**  
 > **C**: Crear – **L**: Leer/Listar – **A**: Actualizar – **E**: Eliminar  
 
