@@ -12,8 +12,7 @@
 ---
 
 ## 1) Objetivo de la sesión
-Definir responsabilidades, reglas funcionales y restricciones del sistema orientado a objetos, para validar el modelo de clases y el flujo de trabajo representado en los **Casos de Uso 4 – Agregar Observaciones** y **5 – Consultar Estadísticas**.  
-Se busca confirmar la interacción entre las clases `Observacion`, `Notificacion`, `Reporte` y `Estadistica`, además de las relaciones con `Proyecto`, `Etapa` y `Usuario`.
+La sesión tuvo como objetivo definir los aspectos funcionales y estructurales del Sistema de Gestión de Proyectos Audiovisuales. A partir de estos requisitos, se pueden definir numerosos casos de uso centrados en la gestión, configuración, seguimiento y notificación.
 
 ---
 
@@ -39,8 +38,8 @@ Mínimo 10 registros completos extraídos de la sesión.
 
 | **ID** | **Descripción del Issue / Inconsistencia** | **Impacto** | **Estado** | **Link a Issue (GitHub)** |
 |--------|---------------------------------------------|--------------|-------------|-----------------------------------|
-| #84 | No estaba definida la clase `Notificacion` en el modelo inicial. | Alto | Resuelto | [🔗 Issue #84 – Add Notificacion class](https://github.com/tu-org/SistemaProductoraVideos/issues/84) |
-| #85 | Faltaba método `actualizarObservacion()` en clase Observación. | Medio | Resuelto | [🔗 Issue #85 – Update Observacion class methods](https://github.com/tu-org/SistemaProductoraVideos/issues/85) |
+| #84 | No estaba definida la clase `Notificacion` en el modelo inicial. | Alto | Resuelto | [🔗 Issue #84 – Add Notificacion class](https://github.com/9919-Mili/SistemaProductoraVideos/issues/84) |
+| #85 | Faltaba método `actualizarObservacion()` en clase Observación. | Medio | Resuelto | [🔗 Issue #85 – Update Observacion class methods](https://github.com/9919-Mili/SistemaProductoraVideos/issues/85) |
 | #86 | Los filtros de estadísticas no contemplaban rango de fechas. | Medio | Pendiente | [🔗 Issue #86 – Extend FiltroBusqueda entity](https://github.com/tu-org/SistemaProductoraVideos/issues/86) |
 | #87 | No se consideró la persistencia de reportes generados. | Alto | Pendiente | [🔗 Issue #87 – Store generated reports](https://github.com/tu-org/SistemaProductoraVideos/issues/87) |
 | #88 | Reglas de edición de observaciones no reflejadas en el modelo. | Medio | Pendiente | [🔗 Issue #88 – Restrict Observacion edition](https://github.com/tu-org/SistemaProductoraVideos/issues/88) |
