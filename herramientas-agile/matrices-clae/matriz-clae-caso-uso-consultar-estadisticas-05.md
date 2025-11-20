@@ -13,7 +13,7 @@
 > - **Celdas:** Letras **C**, **L**, **A**, **E** según la operación que se realiza sobre la clase.  
 > - Si no aplica, dejar la celda vacía.  
 
-| Actividad / Clase | Proyecto | Estadística | Usuario | Reporte | FiltroBusqueda |
+| Actividad del Caso de Uso | Proyecto | Estadística | Usuario | Reporte | FiltroBusqueda |
 |--------------------|:--------:|:-----------:|:-------:|:--------:|:---------------:|
 | Acceder al sistema |   |   | L |   |   |
 | Seleccionar módulo “Estadísticas” |   |   | L |   |   |
@@ -58,8 +58,6 @@
 
 | URL | Descripción de la inconsistencia | Artefacto relacionado | Acción correctiva | Estado |
 |----|----------------------------------|------------------------|-------------------|:------:|
-| [#81](https://github.com/org/proyecto/issues/81) | `generarEstadisticas()` no tiene implementación clara | Diagrama de Actividad – CU5 | Detallar algoritmo o servicio de backend | Pendiente |
-| [#82](https://github.com/org/proyecto/issues/82) | Falta CRC de Reporte | Tarjeta CRC – Reporte | Crear archivo CRC | Pendiente |
-| [#83](https://github.com/org/proyecto/issues/83) | `crearFiltro()` no figura en clases | Diagrama de Clases | Agregar clase FiltroBusqueda | Resuelto |
+
 
 **Estados posibles:** Abierto / Pendiente / Resuelto

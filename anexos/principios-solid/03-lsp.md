@@ -105,7 +105,7 @@ El método `enviar()` de `Notificacion` define el flujo general. Cada subclase l
 
 ## Estructura de Clases
 
-![Diagrama de clases que aplica LSP](SistemaProductoraVideos\diagramas\01-diagrama-clases\01-solid-03-lsp.png)
+![Diagrama de clases que aplica LSP](/diagramas\01-diagrama-clases\01-solid-03-lsp.png)
 
 ---
 

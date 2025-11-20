@@ -13,7 +13,7 @@
 > - **Celdas:** Letras **C**, **L**, **A**, **E** según la operación que se realiza sobre la clase.  
 > - Si no aplica, dejar la celda vacía.  
 
-| Actividad / Clase | Proyecto | Etapa | Usuario | Observación | Notificación | Reporte |
+| Actividad del Caso de Uso | Proyecto | Etapa | Usuario | Observación | Notificación | Reporte |
 |--------------------|:--------:|:-----:|:-------:|:------------:|:-------------:|:-------:|
 | Seleccionar proyecto activo | L |   | L |   |   |   |
 | Elegir etapa correspondiente | L | L |   |   |   |   |
@@ -59,10 +59,7 @@
 
 | URL | Descripción de la inconsistencia | Artefacto relacionado | Acción correctiva | Estado |
 |------|----------------------------------|------------------------|-------------------|:------:|
-| [#74](https://github.com/org/proyecto/issues/74) | `crearObservacion()` no figura en CRC de Observación | Tarjeta CRC – Observación | Agregar método y actualizar CRC | Resuelto |
-| [#75](https://github.com/org/proyecto/issues/75) | Diagrama de secuencia CU4 no estaba vinculado al flujo de observaciones | Diagrama de Secuencia – CU4 | Integrado el diagrama actualizado (ver sección 3) | Resuelto |
-| [#76](https://github.com/org/proyecto/issues/76) | `enviarNotificacionResponsable()` sin retorno declarado | Diagrama de Clases | Agregar tipo de retorno `bool` | Resuelto |
-| [#77](https://github.com/org/proyecto/issues/77) | Falta vínculo con módulo de Reportes | Módulo de Reportes Estadísticos | Añadido método `actualizarReporteMensual()` | Pendiente |
+
 
 **Estados posibles:** Abierto / Pendiente / Resuelto
 

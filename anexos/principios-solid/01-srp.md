@@ -43,16 +43,16 @@ La clase `Proyecto` mezclaba dos responsabilidades:
 
 La clase `Etapa` gestionaba tres aspectos diferentes:
 - Estado y datos propios de la etapa
-- Colección de comentarios
+- Colección de observaciones
 - Colección de adjuntos
 
-**Problema concreto:** Si necesitamos implementar búsqueda avanzada de comentarios o validación específica para adjuntos, debemos modificar la clase `Etapa`, generando una clase cada vez más compleja y difícil de mantener.
+**Problema concreto:** Si necesitamos implementar búsqueda avanzada de observaciones o validación específica para adjuntos, debemos modificar la clase `Etapa`, generando una clase cada vez más compleja y difícil de mantener.
 
 ## Estructura de Clases
 
-![Diagrama SRP](/SistemaProductoraVideos/diagramas/01-diagrama-clases/01-solid-01-srp.png)
+![Diagrama SRP](/diagramas/01-diagrama-clases/01-solid-01-srp.png)
 
-[Ver diagrama en detalle](/SistemaProductoraVideos/diagramas/01-diagrama-clases/01-solid-01-srp.puml)
+[Ver diagrama en detalle](/diagramas/01-diagrama-clases/01-solid-01-srp.puml)
 
 ## Justificación Técnica
 
@@ -128,7 +128,7 @@ consultarProyectosActivos()  // Responsabilidad de acceso a datos
 Etapa
 
 atributos de etapa
-comentarios: List<Comentario>
+observaciones: List<Observacion>
 adjuntos: List<Adjunto>
 
 
@@ -143,10 +143,10 @@ actualizarEstado()
 - Métodos: actualizarEstado(), validarTransicion(), calcularProgreso()
 - Razón única para cambiar: cambios en la lógica de estados de etapa
 
-**2. `GestorComentarios`**
-- Responsabilidad única: Gestión de comentarios de una etapa
-- Métodos: agregarComentario(), eliminarComentario(), buscarComentarios()
-- Razón única para cambiar: cambios en la lógica de gestión de comentarios
+**2. `GestorObservaciones`**
+- Responsabilidad única: Gestión de observaciones de una etapa
+- Métodos: agregarObservacion(), eliminarObservacion(), buscarObservacion()
+- Razón única para cambiar: cambios en la lógica de gestión de observaciones
 
 **3. `GestorAdjuntos`**
 - Responsabilidad única: Gestión de archivos adjuntos de una etapa
@@ -154,7 +154,7 @@ actualizarEstado()
 - Razón única para cambiar: cambios en la gestión de archivos o validaciones
 
 **Relaciones:** 
-- `Etapa` tiene una relación de composición con `GestorComentarios` y `GestorAdjuntos`
+- `Etapa` tiene una relación de composición con `GestorObservaciones` y `GestorAdjuntos`
 - Cada gestor maneja su propia colección de forma independiente
 
 ## Beneficios de la Refactorización

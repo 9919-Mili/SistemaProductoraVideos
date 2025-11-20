@@ -3,27 +3,33 @@
 Este archivo se actualiza con cada Pull Request para registrar avances y correcciones.
 
 ---
+
 ## [Unreleased]
 
-### Added
+---
 
--  [feature/esp-diagrama-clases-add-diagrama-refinado] Agregue diagramas de clases version final en PNG y PUML   
-PR: [#97](https://github.com/9919-Mili/SistemaProductoraVideos/pull/97) - @igvcalefato (Especialista en Digramas de Secuencia)
+## [Release Actividad Obligatoria N°4] - 2025-11-12
+
+### Added
+- [feature/esp-matrices-clae-add-casos-uso-1-2-3]  Agregue matrices CLAE (CRUD) para los Casos de Uso 1 “Creacion de Proyecto”, Caso de Uso 2 “Actualizar estado etapa” y Caso de Uso 3 "Agregar observaciones" con métodos, relaciones y tabla de issues.  
+PR: [#98](https://github.com/9919-Mili/SistemaProductoraVideos/pull/98) - @9919-Mili (Especialista en Matrices CLAE – Casos de Uso 1,2 y 3)
+
+- [feature/esp-matrices-clae-add-casos-uso-4-5]  Agregue matrices CLAE (CRUD) para los Casos de Uso 4 “Agregar Observaciones” y 5 “Consultar Estadísticas”, con métodos, relaciones y tabla de issues.  
+PR: [#93](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5 + Análisis JAD)
+
+- [feature/esp-jad-add-analisis]  Agregue el anasilis JAD   
+PR: [#92](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5 + Análisis JAD) 
 
 - [feature/doc-coord-repo-update-md]  Estructura de carpetas y nuevos/modificados indices  
  PR: [#95](https://github.com/9919-Mili/SistemaProductoraVideos/pull/95) - @igvcalefato (Documentador y Coordinador de Repositorio)
 
-### Changed
----
-## [Release Entregable N°4] - 2025-11-10
+ -  [feature/esp-diagrama-clases-add-diagrama-refinado] Agregue diagramas de clases version final en PNG y PUML   
+PR: [#97](https://github.com/9919-Mili/SistemaProductoraVideos/pull/97) - @igvcalefato (Especialista en Digramas de Secuencia)
 
-### Added
+### Fixed
 
-- [feature/esp-matrices-clae-add-casos-uso-4-5]  Agregue matrices CLAE (CRUD) para los Casos de Uso 4 “Agregar Observaciones” y 5 “Consultar Estadísticas”, con métodos, relaciones y tabla de issues.  
-PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5)
-
-- [feature/esp-jad-add-analisis]  Agregue el anasilis JAD.  
-PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @zikoloogo (Especialista en Matrices CLAE – Casos de Uso 4 y 5)
+- [feature/esp-matrices-clae-add-casos-uso-1-2-3]  Inconsistencias detectadas y solucionadas de en las matrices CLAE
+PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @9919-Mili (Especialista en Matrices CLAE – Casos de Uso 1,2 y 3)
 
 ## [Release Actividad Obligatoria N°3] - 2025-10-20
 
@@ -115,6 +121,9 @@ PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvca
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 
 - Mantener el orden y formato para facilitar el seguimiento.
+
+
+
 
 
 

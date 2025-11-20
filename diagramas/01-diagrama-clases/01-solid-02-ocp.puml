@@ -16,7 +16,7 @@ class Etapa {
   - nombre: String
   - estado: String
   - responsableEtapa: Usuario
-  - comentarios: List<Comentario>
+  - observaciones: List<Observacion>
   - adjuntos: List<Adjunto>
   - tareas: List<Tarea>
   + actualizarEstado()
