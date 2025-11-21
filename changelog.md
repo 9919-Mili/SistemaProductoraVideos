@@ -10,6 +10,9 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 - [feature/coord-devops-update-docs]  Agregue el indice para los patrones de diseño y actualize README, los indices de diagramas de clase e indices de anexos   
  PR: [#107](https://github.com/9919-Mili/SistemaProductoraVideos/pull/107) - @igvcalefato (Coordinador y DevOps)
+ 
+- [feature/esp-patron-estructural-add-patron-composite]  Agregue los archivos con la aplicación del patrón de diseño estructural 
+ PR: [#106](https://github.com/9919-Mili/SistemaProductoraVideos/pull/106) - @igvcalefato (Especialista en Patrón de Diseño Estructural)
 
 ---
 
@@ -34,7 +37,7 @@ PR: [#97](https://github.com/9919-Mili/SistemaProductoraVideos/pull/97) - @igvca
 
 ### Fixed
 
-- [feature/esp-matrices-clae-add-casos-uso-1-2-3]  Inconsistencias detectadas y solucionadas de en las matrices CLAE   
+- [feature/esp-matrices-clae-add-casos-uso-1-2-3]  Inconsistencias detectadas y solucionadas de en las matrices CLAE
 PR: [#100](https://github.com/9919-Mili/SistemaProductoraVideos/pull/100) - @9919-Mili (Especialista en Matrices CLAE – Casos de Uso 1,2 y 3)
 
 ## [Release Actividad Obligatoria N°3] - 2025-10-20
