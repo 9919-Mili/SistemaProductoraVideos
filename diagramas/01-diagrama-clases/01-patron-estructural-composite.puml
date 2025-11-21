@@ -1,0 +1,75 @@
+@startuml
+title Patrón Estructural: Composite (Sistema Productora Videos)
+
+interface IAgregarObjeto {
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class Observacion {
+  -texto: String
+  -autor: Usuario
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class Adjunto {
+  -url: String
+  -tipo: String
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class PlataformaEnLinea {
+  -url: String
+  -tipo: String
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class ArchivoVisibleEnLinea {
+  -url: String
+  -tipo: String
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class DescargaDeArchivo {
+  -url: String
+  -tipo: String
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class ColeccionObjetos {
+  -hijos: List<IAgregarObjeto>
+  +agregar(obj: IAgregarObjeto): void
+  +eliminar(obj: IAgregarObjeto): void
+  +modificar(): void
+}
+
+class Etapa {
+  -componentes: IAgregarObjeto
+  +agregarComponente(obj: IAgregarObjeto): void
+  +quitarComponente(obj: IAgregarObjeto): void
+  +modificarComponente(obj: IAgregarObjeto): void
+}
+
+IAgregarObjeto <|.. Observacion
+IAgregarObjeto <|.. Adjunto
+IAgregarObjeto <|.. ColeccionObjetos
+Adjunto <|.. PlataformaEnLinea
+Adjunto <|.. ArchivoVisibleEnLinea
+Adjunto <|.. DescargaDeArchivo
+
+
+ColeccionObjetos *-- IAgregarObjeto : hijos
+Etapa *-- IAgregarObjeto : componentes
+
+@enduml
