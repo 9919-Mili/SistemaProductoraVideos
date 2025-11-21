@@ -6,6 +6,11 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ## [Unreleased]
 
+Added
+[feature/esp-patron-creacional-add-patron-factory-method] Agregue archivos .md, .png y .puml realacionados con la rama, cree issues e indices de anexos.
+
+PR: #111 - @9919-Mili (Especialista en Patron de Diseño Creacional)
+
 ---
 
 ## [Release Actividad Obligatoria N°4] - 2025-11-12
@@ -121,6 +126,7 @@ PR: [#29](https://github.com/9919-Mili/SistemaProductoraVideos/pull/29) - @igvca
 - Al hacer la entrega final, copiar todo lo que esta en **[Unreleased]** a una nueva sección con la fecha y nombre de la entrega (release) .
 
 - Mantener el orden y formato para facilitar el seguimiento.
+
 
 
 
