@@ -15,6 +15,11 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
  PR: [#106](https://github.com/9919-Mili/SistemaProductoraVideos/pull/106) - @igvcalefato (Especialista en Patrón de Diseño Estructural)
 
 ---
+### Added
+
+- [feature/esp-patron-comportamiento-add-patron-observer]  Agregue el diagrama de comportamiento y la justificacion.   
+ PR: [#109](https://github.com/9919-Mili/SistemaProductoraVideos/pull/109) - @Zikoloogo (Especialista en Patrón de Diseño de
+Comportamiento)
 
 ## [Release Actividad Obligatoria N°4] - 2025-11-12
 
