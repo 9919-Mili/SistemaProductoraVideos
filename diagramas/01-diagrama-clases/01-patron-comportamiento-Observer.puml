@@ -1,0 +1,64 @@
+@startuml
+
+title Patrón de Comportamiento – Observer aplicado al Sistema Productora de Videos
+
+interface Subject {
+    +agregarObserver(o : Observer)
+    +quitarObserver(o : Observer)
+    +notificar()
+}
+
+interface Observer {
+    +actualizar(subject : Subject)
+}
+
+class Proyecto {
+    -observadores : List<Observer>
+    +agregarObserver(o : Observer)
+    +quitarObserver(o : Observer)
+    +notificar()
+}
+
+class Etapa {
+    -observadores : List<Observer>
+    +agregarObserver(o : Observer)
+    +quitarObserver(o : Observer)
+    +notificar()
+}
+
+class Tarea {
+    -observadores : List<Observer>
+    +agregarObserver(o : Observer)
+    +quitarObserver(o : Observer)
+    +notificar()
+}
+
+class ServicioNotificaciones {
+    +actualizar(subject : Subject)
+}
+
+class ResponsableDelProyecto {
+    +actualizar(subject : Subject)
+}
+
+class Coordinador {
+    +actualizar(subject : Subject)
+}
+
+class DashboardAdministrador {
+    +actualizar(subject : Subject)
+}
+
+Proyecto ..|> Subject
+Etapa ..|> Subject
+Tarea ..|> Subject
+
+ServicioNotificaciones ..|> Observer
+ResponsableDelProyecto ..|> Observer
+Coordinador ..|> Observer
+DashboardAdministrador ..|> Observer
+Proyecto o-- Observer
+Etapa o-- Observer
+Tarea o-- Observer
+
+@enduml
