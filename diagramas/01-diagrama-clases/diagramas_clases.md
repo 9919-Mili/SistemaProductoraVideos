@@ -10,3 +10,7 @@
 
 - [Diagrama de Clase - Version Final](/diagramas/01-diagrama-clases/01-diagrama-clases-final.png)
   
+- [Diagramas de Clase - Patrones de Diseño](/anexos/patrones-diseno/patrones_diseno.md)
+  - [Creacional - factoryMethod](/diagramas/01-diagrama-clases/01-patron-creacional-factoryMethod.png)  
+  - [Estructural - Composite](/diagramas/01-diagrama-clases/01-patron-estructural-composite.png)  
+  - [Comportamiento - Observer](/diagramas/01-diagrama-clases/01-patron-comportamiento-observer.png)  
