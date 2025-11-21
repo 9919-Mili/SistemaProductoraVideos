@@ -97,8 +97,8 @@ Incluye Subjects, Observers y la interfaz común.
 
 ### Diagrama UML
 
-![diagrama Observer](/SistemaProductoraVideos/diagramas/01-diagrama-clases/01-patron-comportamiento-Observer.png)
+![diagrama Observer](/SistemaProductoraVideos/diagramas/01-diagrama-clases/01-patron-comportamiento-observer.png)
 
-[➡ Ver diagrama completo en detalle](/SistemaProductoraVideos/diagramas/01-diagrama-clases/01-patron-comportamiento-Observer.puml)
+[➡ Ver diagrama completo en detalle](/SistemaProductoraVideos/diagramas/01-diagrama-clases/01-patron-comportamiento-observer.puml)
 
 ---
