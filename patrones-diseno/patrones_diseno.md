@@ -1,0 +1,1 @@
+- [Patron de diseño de comportamiento - Observer](/SistemaProductoraVideos/patrones-diseno/patron-de-diseno-de-comportamiento.md)

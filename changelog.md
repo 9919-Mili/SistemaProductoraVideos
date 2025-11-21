@@ -8,14 +8,27 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 Added
 
-[feature/esp-patron-creacional-add-patron-factory-method] Agregue archivos .md, .png y .puml realacionados con la rama, cree issues e indices de anexos.
+- [feature/esp-patron-creacional-add-patron-factory-method] Agregue archivos .md, .png y .puml realacionados con la rama, cree issues e indices de anexos.
 PR: [#111](https://github.com/9919-Mili/SistemaProductoraVideos/pull/11) - @9919-Mili (Especialista en Patron de Diseño Creacional)
+### Added
+
+- [feature/coord-devops-update-docs]  Agregue el indice para los patrones de diseño y actualize README, los indices de diagramas de clase e indices de anexos   
+ PR: [#107](https://github.com/9919-Mili/SistemaProductoraVideos/pull/107) - @igvcalefato (Coordinador y DevOps)
+ 
+- [feature/esp-patron-estructural-add-patron-composite]  Agregue los archivos con la aplicación del patrón de diseño estructural 
+ PR: [#106](https://github.com/9919-Mili/SistemaProductoraVideos/pull/106) - @igvcalefato (Especialista en Patrón de Diseño Estructural)
 
 ---
+### Added
+
+- [feature/esp-patron-comportamiento-add-patron-observer]  Agregue el diagrama de comportamiento y la justificacion.   
+ PR: [#109](https://github.com/9919-Mili/SistemaProductoraVideos/pull/109) - @Zikoloogo (Especialista en Patrón de Diseño de
+Comportamiento)
 
 ## [Release Actividad Obligatoria N°4] - 2025-11-12
 
 ### Added
+
 - [feature/esp-matrices-clae-add-casos-uso-1-2-3]  Agregue matrices CLAE (CRUD) para los Casos de Uso 1 “Creacion de Proyecto”, Caso de Uso 2 “Actualizar estado etapa” y Caso de Uso 3 "Agregar observaciones" con métodos, relaciones y tabla de issues.  
 PR: [#98](https://github.com/9919-Mili/SistemaProductoraVideos/pull/98) - @9919-Mili (Especialista en Matrices CLAE – Casos de Uso 1,2 y 3)
 
@@ -34,7 +47,7 @@ PR: [#97](https://github.com/9919-Mili/SistemaProductoraVideos/pull/97) - @igvca
 ### Fixed
 
 - [feature/esp-matrices-clae-add-casos-uso-1-2-3]  Inconsistencias detectadas y solucionadas de en las matrices CLAE
-PR: [#](https://github.com/9919-Mili/SistemaProductoraVideos/pull/) - @9919-Mili (Especialista en Matrices CLAE – Casos de Uso 1,2 y 3)
+PR: [#100](https://github.com/9919-Mili/SistemaProductoraVideos/pull/100) - @9919-Mili (Especialista en Matrices CLAE – Casos de Uso 1,2 y 3)
 
 ## [Release Actividad Obligatoria N°3] - 2025-10-20
 
