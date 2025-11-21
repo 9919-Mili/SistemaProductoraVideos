@@ -21,9 +21,6 @@ PR: [#111](https://github.com/9919-Mili/SistemaProductoraVideos/pull/11) - @9919
 - [feature/esp-patron-estructural-add-patron-composite]  Agregue los archivos con la aplicación del patrón de diseño estructural 
  PR: [#106](https://github.com/9919-Mili/SistemaProductoraVideos/pull/106) - @igvcalefato (Especialista en Patrón de Diseño Estructural)
 
----
-### Added
-
 - [feature/esp-patron-comportamiento-add-patron-observer]  Agregue el diagrama de comportamiento y la justificacion.   
  PR: [#109](https://github.com/9919-Mili/SistemaProductoraVideos/pull/109) - @Zikoloogo (Especialista en Patrón de Diseño de
 Comportamiento)
