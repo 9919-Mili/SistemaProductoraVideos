@@ -1,0 +1,63 @@
+@startUML
+title Patron Creacional Factory Method - Ejecutado en Notificacion
+
+interface Notificacion {
+   +enviarNotificacion (): void
+   +prepararNotificacion(): bool
+   +enviarNotificacionResponsable():bool
+   }
+
+class emailNotificacion implements Notificacion {
+    - direccionCorreo: String
+    +enviarNotificacion(): void
+    +prepararNotificacion(): bool
+    +enviarNotificacionResponsable(): bool
+}
+
+class smsNotificacion implements Notificacion {
+    - numeroTelefono: String
+    +enviarNotificacion(): void
+    +prepararNotificacion(): bool
+    +enviarNotificacionResponsable(): bool
+}
+
+class notificacionInterna implements Notificacion {
+    - usuarioDestinatario: Usuario
+    +enviarNotificacion(): void
+    +prepararNotificacion(): bool
+    +enviarNotificacionResponsable(): bool
+}
+
+abstract class notificacionCreador {
+    +crearNotificacion(): Notificacion
+    - enviar (): void
+}
+
+class emailNotificacionCreador {
+    +crearNotificacion(): Notificacion
+}
+
+class smsNotificacionCreador {
+    +crearNotificacion(): Notificacion
+}
+
+class notificacionInternaCreador {
+    +crearNotificacion(): Notificacion
+}
+
+
+Notificacion <|... emailNotificacion
+Notificacion <|... smsNotificacion
+Notificacion <|... notificacionInterna
+
+notificacionCreador <|-- emailNotificacionCreador
+notificacionCreador <|-- smsNotificacionCreador
+notificacionCreador <|-- notificacionInternaCreador
+
+
+
+
+
+
+
+@endUML
