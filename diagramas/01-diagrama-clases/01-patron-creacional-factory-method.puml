@@ -25,8 +25,9 @@ class NotificacionInterna  {
 }
 
 abstract class NotificacionCreador {
-    +crearNotificacion(): Notificacion
-    - enviar (): void
+    + enviar(): void 
+    # crearNotificacion(): Notificacion 
+    
 }
 
 class EmailNotificacionCreador {
@@ -49,6 +50,8 @@ Notificacion <|.. NotificacionInterna
 NotificacionCreador <|-- EmailNotificacionCreador
 NotificacionCreador <|-- SmsNotificacionCreador
 NotificacionCreador <|-- NotificacionInternaCreador
+
+NotificacionCreador ..> Notificacion : usa 
 
 
 
