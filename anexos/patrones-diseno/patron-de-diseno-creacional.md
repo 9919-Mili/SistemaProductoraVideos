@@ -11,7 +11,7 @@ Los patrones de diseño creacionales se utilizan para crear objetos de manera fl
 El patrón seleccionado es Factory Method, por que resuelve el problema de la creación de objetos enlazando al cliente a clases concretas. En el caso del sistema de Notificacion, el problema específico era que sin el patrón cada vez que quisiera crear una notificacion tendria que saber exactamente que clase solicitar. 
 
 ### Tipo 
-Factory Method es el seleccionado, por que cada vez que necesitaramos crear una notificación (email, sms u otro medio), tendriamos que conocer exactamente qué clase instanciar. Si añadimos nuevos tipos de notificaciones, el código cliente deberia cambiar.
+Factory Method es el seleccionado, por que cada vez que necesitaramos crear una notificación (mail, sms u otro medio), tendriamos que conocer exactamente qué clase instanciar. Si añadimos nuevos tipos de notificaciones, el código cliente deberia cambiar.
 Factory Method encapsula la lógica de creación en clases especializadas, permitiendo que el código cliente solo dependa de la interfaz Notificacion, no de sus implementaciones concretas.
 En el caso del sistema de notificaciones, proporciona una arquitectura escalable, mantenible y que sigue completamente los principios SOLID OCP. 
 La implementación permite agregar nuevos canales de notificación sin modificar el código existente, lo cual es especialmente valioso en sistemas que evolucionan continuamente.
@@ -88,6 +88,7 @@ EmailNotificacionCreador crea un EmailNotificacion
 SmsNotificacionCreador crea un SmsNotificacion
 NotificacionInternaCreador crea un NotificacionInterna. 
 Por lo que enviar() completa el algoritmo y entrega el comportamiento final al cliente sin que éste conozca los detalles de qué clase concreta se utilizo. 
+
 
 
 Esta estructura permite extender nuevos tipos de notificación sin modificar el creador, encapsular la lógica de creación de objetos, mantener un algoritmo común desacoplado del producto específico y cumplir los principios SOLID. 
