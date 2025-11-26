@@ -26,7 +26,8 @@ Factory Method engloba la lógica de creación de creadores especializados. Cada
 
 # Estructuras de clases 
 
-9919-Mili/SistemaProductoraVideos/diagramas/01-diagrama-clases/01-patron-creacional-factory-method.png 
+![diagrama de clases](/diagramas/01-diagrama-clases/01-patron-creacional-factory-method.png)
+ 
 
 # Justificación Técnica de la Estructura de Clases
 
