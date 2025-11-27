@@ -1,4 +1,4 @@
-@startuml
+@startuml 01-patron-comportamiento-observer
 
 title Patrón de Comportamiento – Observer aplicado al Sistema Productora de Videos
 
@@ -12,26 +12,16 @@ interface Observer {
     +actualizar(subject : Subject)
 }
 
-class Proyecto {
+abstract class ElementoObservable {
     -observadores : List<Observer>
     +agregarObserver(o : Observer)
     +quitarObserver(o : Observer)
     +notificar()
 }
 
-class Etapa {
-    -observadores : List<Observer>
-    +agregarObserver(o : Observer)
-    +quitarObserver(o : Observer)
-    +notificar()
-}
-
-class Tarea {
-    -observadores : List<Observer>
-    +agregarObserver(o : Observer)
-    +quitarObserver(o : Observer)
-    +notificar()
-}
+class Proyecto
+class Etapa
+class Tarea
 
 class ServicioNotificaciones {
     +actualizar(subject : Subject)
@@ -49,16 +39,16 @@ class DashboardAdministrador {
     +actualizar(subject : Subject)
 }
 
-Proyecto ..|> Subject
-Etapa ..|> Subject
-Tarea ..|> Subject
+ElementoObservable ..|> Subject
+Proyecto ..|> ElementoObservable
+Etapa ..|> ElementoObservable
+Tarea ..|> ElementoObservable
 
 ServicioNotificaciones ..|> Observer
 ResponsableDelProyecto ..|> Observer
 Coordinador ..|> Observer
 DashboardAdministrador ..|> Observer
-Proyecto o-- Observer
-Etapa o-- Observer
-Tarea o-- Observer
+
+Subject "1" o-- "*" Observer
 
 @enduml
