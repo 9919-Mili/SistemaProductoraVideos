@@ -1,0 +1,9 @@
+# Anexo - Patrones de Diseño
+
+Los patrones de diseño son soluciones probadas y reutilizables a problemas frecuentes que existen para facilitar la implementación de buenas prácticas comprobadas. Los patrones facilitan la comunicación entre desarrolladores, mejoran la mantenibilidad y promueven diseños más flexibles y desacoplados, que se da en un "formato" de guías que hacen los sistemas orientados a objetos más robustos, comprensibles y fáciles de evolucionar.
+
+- [Patron de Diseño Creacional - factoryMethod](/anexos/patrones-diseno/patron-de-diseno-creacional.md)
+
+- [Patron de Diseño Estructural - Composite](/anexos/patrones-diseno/patron-de-diseno-estructural.md)
+
+- [Patron de Diseño de Comportamiento - Observer](/anexos/patrones-diseno/patron-de-diseno-de-comportamiento.md)

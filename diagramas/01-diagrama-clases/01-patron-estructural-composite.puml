@@ -1,0 +1,73 @@
+@startuml
+title Patrón Estructural: Composite (Sistema Productora Videos)
+
+interface IGestorComponentes {
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class Observacion {
+  -texto: String
+  -autor: Usuario
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class Adjunto {
+  -url: String
+  -tipo: String
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class PlataformaEnLinea {
+  -url: String
+  -tipo: String
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class ArchivoVisibleEnLinea {
+  -url: String
+  -tipo: String
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class DescargaDeArchivo {
+  -url: String
+  -tipo: String
+  +agregar(): void
+  +eliminar(): void
+  +modificar(): void
+}
+
+class ColeccionDeComponentes {
+  -hijos: List<IGestorComponentes>
+  +agregar(obj: IGestorComponentes): void
+  +eliminar(obj: IGestorComponentes): void
+  +modificar(): void
+}
+
+class Etapa {
+  -coleccionDeComponentesAsociados: IGestorComponentes
+  +gestionarComponente(obj: IGestorComponentes): void
+}
+
+IGestorComponentes <|.. Observacion
+IGestorComponentes <|.. Adjunto
+IGestorComponentes <|.. ColeccionDeComponentes
+Adjunto <|.. PlataformaEnLinea
+Adjunto <|.. ArchivoVisibleEnLinea
+Adjunto <|.. DescargaDeArchivo
+
+
+ColeccionDeComponentes *-- IGestorComponentes : hijos
+Etapa *-- IGestorComponentes : coleccionPrincipal
+
+@enduml
