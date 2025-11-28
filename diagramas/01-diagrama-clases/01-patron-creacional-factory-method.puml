@@ -4,55 +4,54 @@ title Patron Creacional Factory Method - Ejecutado en Notificacion
 interface Notificacion {
    +enviarNotificacion (): void
    +prepararNotificacion(): bool
-   +enviarNotificacionResponsable():bool
    }
 
-class emailNotificacion implements Notificacion {
+class EmailNotificacion  {
     - direccionCorreo: String
     +enviarNotificacion(): void
     +prepararNotificacion(): bool
-    +enviarNotificacionResponsable(): bool
 }
 
-class smsNotificacion implements Notificacion {
+class SmsNotificacion  {
     - numeroTelefono: String
     +enviarNotificacion(): void
     +prepararNotificacion(): bool
-    +enviarNotificacionResponsable(): bool
 }
 
-class notificacionInterna implements Notificacion {
+class NotificacionInterna  {
     - usuarioDestinatario: Usuario
     +enviarNotificacion(): void
     +prepararNotificacion(): bool
-    +enviarNotificacionResponsable(): bool
 }
 
-abstract class notificacionCreador {
-    +crearNotificacion(): Notificacion
-    - enviar (): void
+abstract class NotificacionCreador {
+    + enviar(): void 
+    # crearNotificacion(): Notificacion 
+    
 }
 
-class emailNotificacionCreador {
-    +crearNotificacion(): Notificacion
-}
-
-class smsNotificacionCreador {
+class EmailNotificacionCreador {
     +crearNotificacion(): Notificacion
 }
 
-class notificacionInternaCreador {
+class SmsNotificacionCreador {
+    +crearNotificacion(): Notificacion
+}
+
+class NotificacionInternaCreador {
     +crearNotificacion(): Notificacion
 }
 
 
-Notificacion <|... emailNotificacion
-Notificacion <|... smsNotificacion
-Notificacion <|... notificacionInterna
+Notificacion <|.. EmailNotificacion
+Notificacion <|.. SmsNotificacion
+Notificacion <|.. NotificacionInterna
 
-notificacionCreador <|-- emailNotificacionCreador
-notificacionCreador <|-- smsNotificacionCreador
-notificacionCreador <|-- notificacionInternaCreador
+NotificacionCreador <|-- EmailNotificacionCreador
+NotificacionCreador <|-- SmsNotificacionCreador
+NotificacionCreador <|-- NotificacionInternaCreador
+
+NotificacionCreador ..> Notificacion : usa 
 
 
 

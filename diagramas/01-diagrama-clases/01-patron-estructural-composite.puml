@@ -1,7 +1,7 @@
 @startuml
 title Patrón Estructural: Composite (Sistema Productora Videos)
 
-interface IAgregarObjeto {
+interface IGestorComponentes {
   +agregar(): void
   +eliminar(): void
   +modificar(): void
@@ -47,29 +47,27 @@ class DescargaDeArchivo {
   +modificar(): void
 }
 
-class ColeccionObjetos {
-  -hijos: List<IAgregarObjeto>
-  +agregar(obj: IAgregarObjeto): void
-  +eliminar(obj: IAgregarObjeto): void
+class ColeccionDeComponentes {
+  -hijos: List<IGestorComponentes>
+  +agregar(obj: IGestorComponentes): void
+  +eliminar(obj: IGestorComponentes): void
   +modificar(): void
 }
 
 class Etapa {
-  -componentes: IAgregarObjeto
-  +agregarComponente(obj: IAgregarObjeto): void
-  +quitarComponente(obj: IAgregarObjeto): void
-  +modificarComponente(obj: IAgregarObjeto): void
+  -coleccionDeComponentesAsociados: IGestorComponentes
+  +gestionarComponente(obj: IGestorComponentes): void
 }
 
-IAgregarObjeto <|.. Observacion
-IAgregarObjeto <|.. Adjunto
-IAgregarObjeto <|.. ColeccionObjetos
+IGestorComponentes <|.. Observacion
+IGestorComponentes <|.. Adjunto
+IGestorComponentes <|.. ColeccionDeComponentes
 Adjunto <|.. PlataformaEnLinea
 Adjunto <|.. ArchivoVisibleEnLinea
 Adjunto <|.. DescargaDeArchivo
 
 
-ColeccionObjetos *-- IAgregarObjeto : hijos
-Etapa *-- IAgregarObjeto : componentes
+ColeccionDeComponentes *-- IGestorComponentes : hijos
+Etapa *-- IGestorComponentes : coleccionPrincipal
 
 @enduml
