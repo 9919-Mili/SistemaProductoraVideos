@@ -24,7 +24,7 @@ Por lo que generaba problemas de mantenibilidad y escalabilidad por que al agreg
 Se incoporan nuevas clases como: NotificacionInternaCreador(abstracta) con subclases SmsNotificacionCreador, EmailNotificacionCreador y NotificacionCreador. 
 Factory Method engloba la lógica de creación de creadores especializados. Cada creador es responsable de solicitar su tipo específico de notificación. Lo que permite que el código que necesite de Notificacion trabaje con abstracciones, delegando la creación a las subclases. Se elimina el código condicional, se respeta SRP (cada clase tiene una responsabilidad), y se cumple OCP (abierto para extensión, cerrado para modificación).
 
-# Estructuras de clases 
+# Estructuras de Clases
 
 ![diagrama de clases](/diagramas/01-diagrama-clases/01-patron-creacional-factory-method.png)
 
@@ -81,7 +81,8 @@ Relacion: Extienden NotificacionCreador. Producen instancias de las clases concr
 
 Justificación: Permiten variar el tipo de producto sin modificar la lógica general definida en enviar(), cumpliendo así con el Principio SOLID OCP. 
 
-- Explicación 
+#### Explicacion del flujo de creacion del objeto:
+ 
 
 El flujo inicia cuando el cliente solicita enviar() sobre una instancia del creador concreto. enviar() actúa como Template Method, llamando al Factory Method crearNotificacion(), sin conocer la clase concreta que se va a instanciar. Por lo que obtiene un objeto del tipo abstracto Notificacion.
 El Creador depende de la interfaz Notificacion, por lo que puede ejecutar: prepararNotificacion() o enviarNotificacion().
