@@ -12,7 +12,7 @@ Esta parte del diagrama refleja la abstracción en múltiples clases relacionada
 
 ![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-abstraccion-156427.png)
 
-[➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
+[➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.png)
 
 **Clase `Etapa`**
 

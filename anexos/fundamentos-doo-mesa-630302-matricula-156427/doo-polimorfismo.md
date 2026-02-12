@@ -12,7 +12,7 @@ Esta parte del diagrama refleja el polimorfismo de una clase del Sistema Product
 
 ![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-polimorfismo-156427.png)
 
-[➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
+[➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.png)
 
 ---
 **Clases `Archivo` y `Adjunto`**

@@ -12,7 +12,7 @@ Esta parte del diagrama refleja la herencia de una clase del Sistema Productora 
 
 ![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-herencia-156427.png)
 
-[➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
+[➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.png)
 
 ---
 **Clase `Archivo` y `Adjunto`.**
