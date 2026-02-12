@@ -1,6 +1,5 @@
 # Encapsulamiento
 
-
 El encapsulamiento consiste en ocultar los detalles internos de una clase u objeto, exponiendo únicamente una interfaz pública que permite la interacción controlada con sus datos y comportamientos. De este modo, se protege la integridad de los atributos y se evita el acceso o modificación directa desde el exterior, permitiendo que los cambios internos no afecten a quienes utilizan la clase.
 
 El encapsulamiento está estrechamente ligado a varios principios SOLID, ya que al restringir el acceso directo a los datos y obligar a interactuar mediante métodos específicos, se facilita la extensión sin modificar el código existente oculto **(OCP)**, y se promueve la segregación de interfaces **(ISP)** al exponer solo los métodos necesarios. Además, permite invertir dependencias **(DIP)** al delegar el interactuar a abstracciones en lugar de implementaciones concretas.
