@@ -2,15 +2,13 @@
 
 La abstracción consiste en identificar y modelar las características esenciales de un objeto, ignorando los detalles irrelevantes para representar entidades del mundo real mediante clases u objetos, enfocándose solo en los atributos y comportamientos necesarios para que diferentes equipos trabajen con interfaces claras y bien definidas sin necesidad de conocer la implementación interna.
 
-La abstracción está estrechamente ligada a varios principios SOLID, pues al abstraer una clase queda definida en la misma solo las responsabilidad necesarias que deben ser unicas (SRP), cerradas que se necesiten modificaciones, sino en su lugar se extienda (OCP) a a depender de una o varias interfaces con los metodos/funciones necesarios definidos (ISP), asi reemplazando cualquier posible dependencia de una clase concreta.
+La abstracción está estrechamente ligada a varios principios SOLID, pues al abstraer una clase queda definida en la misma solo las responsabilidad necesarias que deben ser unicas **(SRP)** cerradas que se necesiten modificaciones, sino en su lugar se extienda **(OCP)** a a depender de una o varias interfaces con los metodos/funciones necesarios definidos **(ISP)**, asi reemplazando cualquier posible dependencia de una clase concreta **(DIP)**.
 
 La abstracción es la piedra angular de muchos patrones de diseño. Los patrones creacionales como **Factory Method** y **Abstract Factory** utilizan abstracción para desacoplar la creación de objetos de su uso. Los patrones estructurales como **Adapter** y **Facade** aprovechan la abstracción para simplificar interfaces complejas. Los patrones de comportamiento como **Strategy** y **Observer** dependen de abstracciones para permitir cambios dinámicos de comportamiento en tiempo de ejecución.
 
 ## Ejemplo en el proyecto
 
-### Diagrama de Clases Final
-
-El diagrama refleja la abstracción en múltiples clases que relacionadas del Sistema Productora de Vídeos:
+Esta parte del diagrama refleja la abstracción en múltiples clases relacionadas del Sistema Productora de Vídeos:
 
 ![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-abstraccion.png)
 
@@ -50,7 +48,6 @@ La clase `Adjunto` es una abstraccion de un elemento cargado a la nube accesible
 
 ## Ejemplo de Código
 
- Incluir justificación técnica de cómo este fragmento de código cumple el fundamento de asbtraccion.
 
 ```
 class Observacion {  
