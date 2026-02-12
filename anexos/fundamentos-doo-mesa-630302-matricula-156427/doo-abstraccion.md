@@ -10,7 +10,7 @@ La abstracción es la piedra angular de muchos patrones de diseño. Los patrones
 
 Esta parte del diagrama refleja la abstracción en múltiples clases relacionadas del Sistema Productora de Vídeos:
 
-![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-abstraccion.png)
+![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-abstraccion-156427.png)
 
 [➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
 

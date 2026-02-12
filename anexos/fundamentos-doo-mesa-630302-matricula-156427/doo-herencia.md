@@ -8,11 +8,11 @@ La herencia es fundamental en muchos patrones de diseño. Patrones creacionales 
 
 ## Ejemplo en el proyecto
 
-Incluir un diagrama UML que muestra cómo la clase o las clases del proyecto se
-relacionan entre sí al aplicar abstracción. Incluir una imagen incrustada, así como el
-enlace correctamente referenciado para ver el diagrama en detalle. Describe cómo
-el diagrama de las clases seleccionadas refleja la herencia. Incluir justificación técnica de cómo esas clases seleccionadas del proyecto cumplen el fundamento.
+Esta parte del diagrama refleja la herencia de una clase del Sistema Productora de Vídeos:
 
+![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-herencia-156427.png)
+
+[➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
 
 **Clase `Archivo` y `Adjunto`.**
 
@@ -25,11 +25,6 @@ el diagrama de las clases seleccionadas refleja la herencia. Incluir justificaci
 **Justificación técnica:** Esta estructura permite reutilizar el código común en la clase base `Archivo` y evitar duplicidad en las subclases. Si en el futuro se requieren otros tipos de archivos (por ejemplo, ArchivoTemporal o ArchivoExterno), pueden crearse nuevas subclases que hereden de Archivo sin modificar la clase base, cumpliendo así con el principio abierto/cerrado (OCP). Además, la herencia asegura que cualquier instancia de Adjunto pueda ser tratada como un Archivo, respetando el principio de sustitución de Liskov (LSP).
 
 ## Ejemplo de Código
-
-Incluir un fragmento de código que demuestre la implementación de herencia en el
-proyecto (puede ser pseudocódigo o un lenguaje como C#, JavaScript, Python o
-Java, etc.). Incluir justificación técnica de cómo este fragmento de código
-cumple el fundamento
 
 ```
 class Adjunto {

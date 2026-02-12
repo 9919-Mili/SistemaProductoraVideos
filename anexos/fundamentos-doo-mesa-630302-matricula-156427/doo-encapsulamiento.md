@@ -8,8 +8,6 @@ El encapsulamiento es fundamental en muchos patrones de diseño. Patrones creaci
 
 ## Ejemplo en el proyecto
 
-
-
 **Clase `Proyecto`**
 
 `Proyecto` encapsula los datos y operaciones relacionadas con la gestión de un proyecto audiovisual. Los atributos como su nombre y clientes están protegidos y solo pueden ser accedidos o modificados mediante métodos públicos.
@@ -44,7 +42,7 @@ El encapsulamiento es fundamental en muchos patrones de diseño. Patrones creaci
 
 Esta parte del diagrama refleja la encapsulación de unas clases del Sistema Productora de Vídeos:
 
-![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-encapsulacion.png)
+![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-encapsulacion-156427.png)
 
 [➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
 
