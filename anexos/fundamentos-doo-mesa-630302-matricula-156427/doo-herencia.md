@@ -14,6 +14,7 @@ Esta parte del diagrama refleja la herencia de una clase del Sistema Productora 
 
 [➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
 
+---
 **Clase `Archivo` y `Adjunto`.**
 
 `Adjunto` hereda de `Archivo`, lo que significa que adquiere sus atributos y comportamientos básicos, pero puede especializar o extender su funcionalidad según las necesidades del sistema.

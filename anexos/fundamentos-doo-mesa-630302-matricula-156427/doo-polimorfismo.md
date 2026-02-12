@@ -14,7 +14,7 @@ Esta parte del diagrama refleja el polimorfismo de una clase del Sistema Product
 
 [➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
 
-
+---
 **Clases `Archivo` y `Adjunto`**
 
 Gracias a su estructura simple, cualquier objeto que herede de `Archivo` puede ser tratado de manera uniforme por otras clases del sistema, como `Etapa`, que puede manipular listas de archivos de la clase `Adjunto` sin importar su tipo concreto.
