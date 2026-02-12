@@ -22,28 +22,33 @@ Desde el punto de vista de SOLID, este fundamento se relaciona principalmente co
 En el proyecto, la abstracción se implementa a través de las interfaces Subject y Observer:
 Etapa actúa como sujeto que notifica cambios, mientras que clases como ServicioNotificaciones, ResponsableDelProyecto o DashboardAdministrador implementan la interfaz Observer.
 
-Fragmento UML utilizado:
+<!-- ![Abstraccion-Archivo](../../Imagenes/fundamentos-mesa/abstraccion-archivo.png)  
+[Ver diagrama completo](../01-diagrama-clases-final-refinado.puml)
+ -->
+En el diagrama de clases del sistema se define:
 
-<!-- @startuml
+- `Archivo` como clase abstracta.
+- `Adjunto` como clase concreta que hereda de `Archivo`.
 
-interface Subject {
-  + agregarObserver(o: Observer)
-  + notificar()
+### Fragmento de diagrama UML
+
+```plantuml
+@startuml
+
+abstract class Archivo {
+    - ubicacion: string
+    - nombreArchivo: string
 }
 
-interface Observer {
-  + actualizar()
+class Adjunto {
+    - url: string
+    - descripcion: string
+    - nombreArchivo: string
 }
 
-class Etapa
-class ServicioNotificaciones
+Archivo <|-- Adjunto
 
-Etapa ..|> Subject
-ServicioNotificaciones ..|> Observer
-Subject - -> Observer
-
-@enduml -->
-
+@enduml
 
 Justificación técnica
 
