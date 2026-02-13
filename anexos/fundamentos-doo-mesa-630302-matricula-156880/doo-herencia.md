@@ -8,23 +8,23 @@ En este proyecto, la herencia no se utiliza simplemente para reutilizar código,
 
 ## Aplicación en el Modelo
 
-Dentro del Sistema Productora de Videos se define una jerarquía compuesta por:
+Dentro del **Sistema Productora de Videos** se define una jerarquía compuesta por:
 
-- `Archivo` (clase base abstracta)
+- `Archivo` (clase base abstracta)  
 - `Adjunto` (clase derivada)
 
 La clase `Archivo` representa una abstracción general de cualquier recurso almacenado en el sistema. Contiene atributos comunes como:
 
-- `nombreArchivo`
-- `ubicacion`
+- `nombreArchivo`  
+- `ubicacion`  
 
 Al declararse como clase abstracta, establece que no debe instanciarse directamente, sino que funciona como una base para tipos más específicos.
 
 Por otro lado, `Adjunto` extiende a `Archivo`, incorporando comportamiento y atributos propios del contexto de una etapa de proyecto, como:
 
-- `url`
-- `descripcion`
-- Método `vincularRecurso()`
+- `url`  
+- `descripcion`  
+- Método `vincularRecurso()`  
 
 Esto implica que todo `Adjunto` es un `Archivo`, pero no todo `Archivo` necesariamente es un `Adjunto`.
 
@@ -76,5 +76,15 @@ public abstract class Archivo {
 
     public String obtenerUbicacion() {
         return ubicacion;
+    }
+}
+
+public class Adjunto extends Archivo {
+
+    private String url;
+    private String descripcion;
+
+    public void vincularRecurso() {
+        // Lógica para vincular el recurso al sistema
     }
 }
