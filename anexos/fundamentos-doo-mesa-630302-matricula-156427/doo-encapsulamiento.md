@@ -43,13 +43,6 @@ El encapsulamiento es fundamental en muchos patrones de diseño. Patrones creaci
 **Justificación técnica:** El encapsulamiento en Usuario protege la información sensible y asegura que solo se acceda mediante métodos específicos, evitando riesgos de seguridad y errores. Mientras que atributos como notificaciones y pryectos estan abiertos a modificacion mediante metodos externos, asi promueve bajo acoplamiento y facilita la extensión de funcionalidades (OCP).
 
 ## Ejemplo de Código
-
-Esta parte del diagrama refleja la encapsulación de unas clases del Sistema Productora de Vídeos:
-
-![Diagrama de Clases Final](/diagramas/01-diagrama-clases/diagrama-doo-encapsulacion-156427.png)
-
-[➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
-
 ```
 class Proyecto {
     - nombre: string
