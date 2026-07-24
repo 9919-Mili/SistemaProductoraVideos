@@ -8,22 +8,24 @@ En el sistema de gestión de la productora de videos, la abstracción se aplica 
 
 Desde el punto de vista de **SOLID**, este fundamento se relaciona principalmente con:
 
-- **Dependency Inversion Principle (DIP):** las clases del dominio dependen de interfaces (Observer) y no de implementaciones concretas.  
-- **Liskov Substitution Principle (LSP):** cualquier clase que implemente Observer puede sustituirse sin alterar el funcionamiento del sistema.  
-- **Open/Closed Principle (OCP):** permite agregar nuevos observadores sin modificar las clases existentes.  
+- **Dependency Inversion Principle (DIP):** las clases pueden depender de la abstracción **Archivo** en lugar de depender directamente de implementaciones concretas.  
+- **Liskov Substitution Principle (LSP):** es posible incorporar nuevos tipos de archivos mediante nuevas subclases sin modificar la clase base.  
+- **Open/Closed Principle (OCP):** cualquier subclase de **Archivo** puede utilizarse donde se espere un objeto de ese tipo sin alterar el comportamiento del sistema.  
 
-La abstracción es además un elemento central del patrón de comportamiento **Observer**, que desacopla emisores y receptores de eventos mediante contratos abstractos.
+La abstracción también constituye la base de numerosos patrones de diseño orientados a objetos, ya que permite desacoplar el código cliente de las implementaciones concretas y trabajar sobre contratos generales.
 
 ---
 
 ### Ejemplo en el proyecto
 
-En el proyecto, la abstracción se implementa a través de las interfaces **Subject** y **Observer**:  
-La clase **Etapa** actúa como sujeto que notifica cambios, mientras que clases como **ServicioNotificaciones**, **ResponsableDelProyecto** o **DashboardAdministrador** implementan la interfaz Observer.
+En el proyecto la abstracción se representa mediante la clase abstracta **Archivo**, que define la información común de cualquier archivo utilizado dentro del sistema, como su ubicación y nombre.
+
+La clase **Adjunto** hereda de **Archivo**, incorporando los atributos y comportamientos específicos necesarios para representar un archivo asociado a una etapa del proyecto. De esta forma, el resto del sistema puede trabajar con la abstracción **Archivo** sin depender de la implementación concreta de **Adjunto**.
 
 En el diagrama de clases del sistema se define:
 
-- `Archivo` como clase abstracta.  
+
+- `Archivo` como clase abstracta.
 - `Adjunto` como clase concreta que hereda de `Archivo`.
 
 ---
