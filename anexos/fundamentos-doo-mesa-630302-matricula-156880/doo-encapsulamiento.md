@@ -1,114 +1,95 @@
 # Encapsulamiento
 
-El encapsulamiento en este proyecto se aplica como un mecanismo de control del estado interno de las entidades principales del sistema. No se trata únicamente de ocultar atributos, sino de garantizar que cualquier modificación del modelo pase por reglas definidas por la propia clase.
+El encapsulamiento en este proyecto se aplica como un mecanismo de control del estado interno de las entidades principales del sistema. No se trata únicamente de ocultar atributos, sino de garantizar que cualquier modificación del modelo pase por reglas definidas por la propia clase. De esta manera, los detalles internos de implementación permanecen ocultos y el resto del sistema interactúa únicamente a través de una interfaz pública controlada.
 
-En el **Sistema Productora de Videos**, las clases centrales administran información sensible como fechas, responsables, estados y credenciales. Permitir el acceso directo a estos datos generaría inconsistencias, pérdida de control y alto acoplamiento entre clases.
+Este principio no solo protege los atributos de una clase, sino que también permite que cada objeto sea responsable de mantener la consistencia de su propio estado. Gracias al encapsulamiento, las reglas de negocio permanecen centralizadas dentro de la clase correspondiente, evitando modificaciones externas que puedan producir inconsistencias o comportamientos inesperados.
 
 El diseño implementado evita estos problemas restringiendo el acceso directo a los atributos y obligando a interactuar mediante métodos públicos que contienen lógica interna y validaciones.
+Desde el punto de vista de los principios **SOLID**, el encapsulamiento se relaciona principalmente con:
+
+- **Single Responsibility Principle (SRP):** cada clase administra y protege únicamente su propio estado y comportamiento.
+- **Open/Closed Principle (OCP):** la implementación interna puede modificarse sin afectar a las clases que utilizan sus métodos públicos.
+- **Dependency Inversion Principle (DIP):** al ocultar los detalles internos de implementación, las demás clases interactúan únicamente mediante la interfaz pública de cada objeto, reduciendo el acoplamiento entre componentes.
+
+Asimismo, el encapsulamiento constituye un elemento fundamental de los patrones de diseño implementados en el proyecto. En el patrón **Observer**, cada objeto observable administra internamente la colección de observadores y controla cuándo notificar a sus observadores. En **Factory Method**, la creación de objetos queda encapsulada dentro de las clases creadoras, evitando que el resto del sistema conozca los detalles del proceso de instanciación. En **Composite**, cada componente administra su propia estructura interna sin exponer cómo se organizan sus elementos.
 
 ---
 
-## Aplicación en el Modelo
+## Ejemplo en el proyecto
 
-En lugar de permitir que otras clases modifiquen listas o estados directamente, cada entidad controla su propio ciclo de vida y protege su información interna.
+En el sistema de gestión de la productora de videos, el encapsulamiento se observa principalmente en las clases **Proyecto**, **Etapa** y **Usuario**.
 
-### Proyecto como controlador de su estado
+La clase **Proyecto** protege atributos como el responsable general, las fechas del proyecto, las etapas y los clientes asociados. Estos datos únicamente pueden modificarse mediante operaciones específicas como `registrarFechas()`, `asignarResponsable()` o `gestionarEtapas()`, evitando modificaciones directas desde otras clases.
 
-La clase `Proyecto` administra:
+La clase **Etapa** encapsula su estado interno, el responsable asignado, las observaciones y los archivos adjuntos. Cualquier cambio se realiza mediante métodos como `actualizarEstado()`, `agregarObservacion()` y `agregarAdjunto()`, permitiendo validar la información antes de modificar el objeto.
 
-- Fechas  
-- Responsable general  
-- Etapas  
-- Clientes  
+Por su parte, la clase **Usuario** mantiene protegida información sensible como las credenciales y administra internamente las notificaciones y los proyectos asignados mediante métodos públicos como `autenticar()`, `consultarProyectosAsignados()` y `recibirNotificacion()`.
 
-Ninguno de estos elementos puede alterarse directamente desde el exterior.
+### Fragmento del diagrama UML
 
-Por ejemplo:
+![Diagrama Encapsulamiento](/diagramas/01-diagrama-clases/01-doo-encapsulamiento.png)
 
-- Las fechas se registran mediante `registrarFechas()`, lo que permite validar coherencia entre inicio y fin.  
-- El responsable se modifica mediante `asignarResponsable()`.  
-- Las etapas se gestionan a través de métodos específicos y no manipulando la lista directamente.  
+[Ver diagrama en detalle](/diagramas/01-diagrama-clases/01-doo-encapsulamiento.puml)
 
-Si los atributos fueran públicos, cualquier clase podría cambiar fechas sin validación, eliminar etapas arbitrariamente o asignar responsables inconsistentes.  
-El encapsulamiento evita estos escenarios y garantiza la integridad del modelo.
+### Justificación técnica
 
----
+El fragmento seleccionado muestra cómo las clases **Proyecto**, **Etapa** y **Usuario** mantienen sus atributos protegidos y exponen únicamente los métodos necesarios para interactuar con ellos. Ninguna clase externa modifica directamente los datos internos; todas las operaciones pasan por métodos públicos que permiten aplicar validaciones y reglas de negocio antes de actualizar el estado de los objetos.
 
-### Etapa y control del comportamiento
-
-La clase `Etapa` encapsula:
-
-- Su estado  
-- Sus observaciones  
-- Sus adjuntos  
-- Su responsable  
-
-El cambio de estado no se realiza modificando una variable directamente, sino mediante el método `actualizarEstado()`.
-
-Esto permite:
-
-- Validar transiciones de estado.  
-- Mantener coherencia con el proyecto.  
-- Disparar notificaciones en caso de utilizar el patrón Observer.  
-
-Aquí el encapsulamiento no solo protege datos, sino que también controla el comportamiento y las reglas de negocio asociadas.
-
----
-
-### Usuario y protección de información sensible
-
-En la clase `Usuario`, atributos como `credenciales` están completamente protegidos.
-
-La autenticación se realiza mediante el método `autenticar()`, evitando exponer la contraseña o permitir su manipulación externa.
-
-Además:
-
-- Las notificaciones se agregan mediante `recibirNotificacion()`.  
-- Los proyectos asignados se consultan con `consultarProyectosAsignados()`.  
-
-Esto mejora la seguridad del sistema y reduce el acoplamiento entre componentes.
-
----
-
-## Impacto en el Diseño
-
-El encapsulamiento aplicado en el sistema permite:
-
-- Mantener consistencia del modelo.  
-- Reducir dependencias entre clases.  
-- Facilitar el mantenimiento futuro.  
-- Integrar patrones de diseño sin exponer estructuras internas.  
-- Modificar la implementación interna sin afectar a las clases que utilizan estos objetos.  
-
-En este proyecto, el encapsulamiento actúa como un mecanismo de estabilidad del sistema, garantizando que el dominio se mantenga coherente ante futuras modificaciones.
+Este diseño reduce el acoplamiento entre componentes, facilita el mantenimiento del sistema y permite modificar la implementación interna sin afectar a las demás clases que utilizan estas entidades.
 
 ---
 
 ## Ejemplo de Código
 
-```java
-public class Etapa {
+public class Proyecto {
 
-    private String estado;
-    private List<Observacion> observaciones;
+    private String nombre;
+    private String tipo;
+    private Date fechaInicio;
+    private Date fechaFin;
+    private Usuario responsableGeneral;
+    private List<Etapa> etapas;
+    private List<Cliente> clientes;
 
-    public void actualizarEstado(String nuevoEstado) {
-        if (validarTransicion(nuevoEstado)) {
-            this.estado = nuevoEstado;
-            notificarCambios();
-        }
+    public void registrarFechas(Date inicio, Date fin) {
+        // Validación de fechas
     }
 
-    public void agregarObservacion(Observacion obs) {
-        this.observaciones.add(obs);
+    public void asignarResponsable(Usuario responsable) {
+        this.responsableGeneral = responsable;
     }
 
-    private boolean validarTransicion(String nuevoEstado) {
-        // Lógica interna de validación
+    public void gestionarEtapas() {
+        // Administración de etapas
+    }
+}
+
+### Justificación técnica
+
+Este fragmento aplica el principio de encapsulamiento porque todos los atributos permanecen privados y únicamente pueden modificarse mediante métodos públicos definidos por la propia clase. De esta forma, `Proyecto` controla sus reglas de negocio antes de actualizar su estado interno, evitando modificaciones arbitrarias y garantizando la consistencia de la información. Además, futuras modificaciones en la implementación podrán realizarse sin afectar a las clases que utilizan esta entidad.
+
+public class Usuario {
+
+    private String nombre;
+    private String rol;
+    private String credenciales;
+    private List<Proyecto> proyectos;
+    private List<Notificacion> notificaciones;
+
+    public boolean autenticar(String email, String password) {
+        // Validación de credenciales
         return true;
     }
 
-    private void notificarCambios() {
-        // Integración con Observer
+    public List<Proyecto> consultarProyectosAsignados() {
+        return proyectos;
+    }
+
+    public void recibirNotificacion(Notificacion notificacion) {
+        notificaciones.add(notificacion);
     }
 }
+
+### Justificación técnica
+
+La clase `Usuario` encapsula la información personal, las credenciales y las relaciones con otros elementos del sistema. Los atributos permanecen protegidos y solo pueden ser utilizados mediante métodos públicos que controlan su acceso. Esto evita modificaciones indebidas sobre información sensible, reduce el acoplamiento entre clases y permite que la implementación interna evolucione sin afectar al resto del sistema, favoreciendo el mantenimiento, la reutilización y la escalabilidad del software.

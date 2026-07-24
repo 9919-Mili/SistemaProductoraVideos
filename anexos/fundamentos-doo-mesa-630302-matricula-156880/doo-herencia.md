@@ -1,74 +1,43 @@
 # Herencia
 
-La herencia permite modelar relaciones de generalización y especialización dentro de un sistema orientado a objetos. A través de ella, una clase base define características comunes que luego pueden ser reutilizadas y extendidas por clases más específicas.
+La herencia permite modelar relaciones de generalización y especialización dentro del diseño orientado a objetos. Mediante este mecanismo, una clase base define atributos y comportamientos comunes que pueden ser reutilizados y ampliados por clases más específicas, evitando duplicar información y representando correctamente las relaciones existentes dentro del dominio del problema.
 
-En este proyecto, la herencia no se utiliza simplemente para reutilizar código, sino para representar correctamente una relación conceptual del dominio: un archivo genérico y su especialización como archivo adjunto dentro de una etapa del proyecto.
+En el sistema de gestión de la productora de videos, la herencia se utiliza para representar que un **Adjunto** es un tipo particular de **Archivo**. La clase base reúne las características comunes de cualquier archivo utilizado por el sistema, mientras que la clase derivada incorpora la información específica necesaria para asociarlo a una etapa del proyecto.
 
----
+Desde el punto de vista de los principios **SOLID**, la herencia se relaciona principalmente con:
 
-## Aplicación en el Modelo
+- **Open/Closed Principle (OCP):** permite incorporar nuevos tipos de archivos sin modificar la clase base.
+- **Liskov Substitution Principle (LSP):** cualquier objeto de la clase `Adjunto` puede utilizarse donde se espere un objeto de tipo `Archivo`.
+- **Dependency Inversion Principle (DIP):** las clases pueden trabajar sobre la abstracción `Archivo` sin depender de una implementación concreta.
 
-Dentro del **Sistema Productora de Videos** se define una jerarquía compuesta por:
-
-- `Archivo` (clase base abstracta)  
-- `Adjunto` (clase derivada)
-
-La clase `Archivo` representa una abstracción general de cualquier recurso almacenado en el sistema. Contiene atributos comunes como:
-
-- `nombreArchivo`  
-- `ubicacion`  
-
-Al declararse como clase abstracta, establece que no debe instanciarse directamente, sino que funciona como una base para tipos más específicos.
-
-Por otro lado, `Adjunto` extiende a `Archivo`, incorporando comportamiento y atributos propios del contexto de una etapa de proyecto, como:
-
-- `url`  
-- `descripcion`  
-- Método `vincularRecurso()`  
-
-Esto implica que todo `Adjunto` es un `Archivo`, pero no todo `Archivo` necesariamente es un `Adjunto`.
+Asimismo, la herencia constituye un mecanismo ampliamente utilizado por distintos patrones de diseño. En este proyecto sirve como base para mantener una jerarquía clara entre los elementos del dominio y facilita futuras extensiones del sistema sin afectar el código existente.
 
 ---
 
-## Justificación de Diseño
+## Ejemplo en el proyecto
 
-La utilización de herencia en este caso responde a varias decisiones de diseño:
+En el sistema la herencia se representa mediante la clase abstracta **Archivo**, que concentra la información común de cualquier archivo administrado por la aplicación.
 
-1. **Representación correcta del dominio:**  
-   Conceptualmente, un adjunto es un tipo particular de archivo. Modelarlo mediante herencia refleja esta relación "es-un".
+La clase **Adjunto** hereda de **Archivo**, reutilizando sus atributos generales e incorporando información específica como la dirección del recurso y su descripción. Esta relación expresa correctamente que un archivo adjunto es un tipo particular de archivo dentro del sistema.
 
-2. **Reutilización estructural:**  
-   Los atributos comunes no se duplican en cada clase concreta, sino que se definen una sola vez en `Archivo`.
+### Fragmento del diagrama UML
 
-3. **Extensibilidad futura:**  
-   Si en el futuro se necesitara incorporar nuevos tipos como `ArchivoTemporal` o `ArchivoExterno`, podrían agregarse como nuevas subclases sin modificar la clase base.
+![Diagrama Herencia](/diagramas/01-diagrama-clases/01-doo-herencia.png)
 
-4. **Polimorfismo:**  
-   Permite tratar instancias de `Adjunto` como instancias de `Archivo`, facilitando el manejo genérico de archivos en el sistema.
+[Ver diagrama en detalle](/diagramas/01-diagrama-clases/01-doo-herencia.puml)
 
----
+### Justificación técnica
 
-## Relación con Principios de Diseño
-
-La jerarquía respeta principalmente:
-
-- **OCP (Open/Closed Principle):**  
-  Se pueden agregar nuevas especializaciones sin alterar la clase base.
-
-- **LSP (Liskov Substitution Principle):**  
-  Un objeto `Adjunto` puede utilizarse donde se espere un `Archivo`, sin romper el comportamiento del sistema.
-
-Además, al trabajar sobre la abstracción `Archivo`, se favorece un menor acoplamiento entre componentes.
+El diagrama muestra una relación de generalización entre `Archivo` y `Adjunto`. La clase base concentra los atributos compartidos por todos los archivos, mientras que la subclase incorpora únicamente las características propias de un archivo adjunto. Este diseño evita la duplicación de información, facilita la reutilización de la estructura común y permite agregar nuevas especializaciones sin modificar la jerarquía existente.
 
 ---
 
-## Ejemplo de Código Representativo
+## Ejemplo de Código
 
-```java
 public abstract class Archivo {
 
-    protected String nombreArchivo;
     protected String ubicacion;
+    protected String nombreArchivo;
 
     public String obtenerNombre() {
         return nombreArchivo;
@@ -85,6 +54,10 @@ public class Adjunto extends Archivo {
     private String descripcion;
 
     public void vincularRecurso() {
-        // Lógica para vincular el recurso al sistema
+        // Lógica para asociar el archivo a una etapa
     }
 }
+
+### Justificación técnica
+
+Este fragmento aplica el principio de herencia porque `Adjunto` extiende la clase abstracta `Archivo`, reutilizando los atributos y comportamientos comunes definidos en la superclase. De esta manera, la clase derivada incorpora únicamente la información específica que necesita, evitando duplicar código y representando correctamente la relación "es un". Además, esta jerarquía permite incorporar nuevas especializaciones de `Archivo` en el futuro sin modificar la clase base, favoreciendo la extensibilidad y el mantenimiento del sistema.

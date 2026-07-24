@@ -1,58 +1,58 @@
 # Polimorfismo
 
-El polimorfismo permite que distintos objetos relacionados por una jerarquía puedan ser tratados de manera uniforme a través de una misma referencia abstracta, mientras cada uno mantiene su comportamiento específico.
+El polimorfismo permite que distintos objetos relacionados por una misma jerarquía puedan ser utilizados mediante una referencia común, ejecutando el comportamiento correspondiente a su tipo concreto. Gracias a este principio, las clases trabajan sobre abstracciones en lugar de depender de implementaciones específicas, logrando un sistema más flexible y extensible.
 
-En este proyecto, el polimorfismo surge a partir de la jerarquía `Archivo` → `Adjunto`. Gracias a esta relación, el sistema puede trabajar con archivos de manera general sin depender del tipo concreto que se esté utilizando.
+En el sistema de gestión de la productora de videos, el polimorfismo se aplica mediante la jerarquía formada por la clase abstracta **Archivo** y su subclase **Adjunto**. Aunque actualmente solo existe una implementación concreta, cualquier objeto de tipo `Adjunto` puede utilizarse donde el sistema espere un objeto de tipo `Archivo`, permitiendo incorporar nuevos tipos de archivos sin modificar el código existente.
 
----
+Desde el punto de vista de los principios **SOLID**, el polimorfismo se relaciona principalmente con:
 
-## Aplicación en el Modelo
+- **Open/Closed Principle (OCP):** permite incorporar nuevas subclases sin modificar las clases que trabajan con la abstracción.
+- **Liskov Substitution Principle (LSP):** cualquier instancia de `Adjunto` puede sustituir a un objeto `Archivo` sin alterar el comportamiento esperado.
+- **Dependency Inversion Principle (DIP):** las clases pueden depender de la abstracción `Archivo` en lugar de depender de implementaciones concretas.
 
-La clase `Archivo` define una abstracción común para cualquier recurso almacenado en el sistema. Al ser abstracta, establece una base compartida para sus subclases.
-
-`Adjunto` extiende a `Archivo`, especializando su comportamiento y adaptando ciertos atributos al contexto del sistema (por ejemplo, utilizando `url` como forma concreta de ubicación).
-
-Esto permite que otras clases, como `Etapa`, puedan manejar colecciones de tipo `Archivo` sin necesidad de conocer si el objeto concreto es un `Adjunto` u otro tipo derivado.
-
-Ejemplo conceptual de uso:
-
-List<Archivo> archivos;
-
-La clase que utiliza esa lista no necesita conocer el tipo específico del archivo; simplemente opera sobre la abstracción.
+Asimismo, el polimorfismo es utilizado por diversos patrones de diseño. En **Factory Method**, distintos objetos pueden crearse mediante una misma interfaz; en **Observer**, diferentes observadores responden al mismo contrato; y en **Composite**, componentes simples y compuestos pueden tratarse de forma uniforme.
 
 ---
 
-## Manifestación del Polimorfismo
+## Ejemplo en el proyecto
 
-El polimorfismo se manifiesta cuando:
+En el proyecto, el polimorfismo se observa en la relación entre las clases **Archivo** y **Adjunto**.
 
-- Una clase trabaja con referencias del tipo `Archivo`.
-- En tiempo de ejecución, el objeto real es un `Adjunto`.
-- Se invocan métodos definidos en la clase base pero ejecutados según la implementación concreta.
+La clase **Archivo** representa la abstracción común para cualquier archivo utilizado por el sistema, mientras que **Adjunto** constituye una implementación concreta destinada a asociar recursos a las etapas de un proyecto.
 
-De esta forma, se desacopla el uso del objeto de su implementación específica, permitiendo mayor flexibilidad en el diseño.
+Gracias a esta jerarquía, otras clases pueden trabajar con objetos del tipo `Archivo` sin depender de si el objeto concreto es un `Adjunto` u otra especialización que pudiera incorporarse en el futuro.
+
+### Fragmento del diagrama UML
+
+@startuml
+
+abstract class Archivo {
+    - ubicacion: string
+    - nombreArchivo: string
+}
+
+class Adjunto {
+    - url: string
+    - descripcion: string
+    - nombreArchivo: string
+}
+
+Archivo <|-- Adjunto
+
+@enduml
+
+![Diagrama Polimorfismo](/diagramas/01-diagrama-clases/01-doo-polimorfismo.png)
+
+[Ver diagrama en detalle](/diagramas/01-diagrama-clases/01-doo-polimorfismo.puml)
+
+### Justificación técnica
+
+El fragmento seleccionado muestra que **Adjunto** hereda de **Archivo**, permitiendo que cualquier objeto de la subclase sea tratado mediante una referencia de la clase base. De esta forma, el sistema trabaja sobre la abstracción y no sobre implementaciones concretas, reduciendo el acoplamiento y facilitando la incorporación de nuevas especializaciones sin modificar el código existente.
 
 ---
 
-## Beneficios en el Sistema
+## Ejemplo de Código
 
-1. **Flexibilidad:**  
-   Se pueden incorporar nuevos tipos de archivo sin modificar las clases que ya trabajan con `Archivo`.
-
-2. **Extensibilidad:**  
-   Si se agrega una nueva subclase (por ejemplo, `ArchivoTemporal`), el sistema puede integrarla automáticamente donde se utilice la abstracción.
-
-3. **Menor acoplamiento:**  
-   Las clases dependen de la abstracción (`Archivo`) y no de implementaciones concretas (`Adjunto`).
-
-4. **Cumplimiento de principios de diseño:**  
-   Se favorece el principio abierto/cerrado (OCP) y el principio de sustitución de Liskov (LSP), ya que las nuevas implementaciones no requieren modificar código existente y pueden reemplazar correctamente a la clase base.
-
----
-
-## Ejemplo de Código Representativo
-
-```java
 public abstract class Archivo {
 
     protected String nombreArchivo;
@@ -60,6 +60,7 @@ public abstract class Archivo {
 
     public abstract String obtenerUbicacion();
 }
+
 public class Adjunto extends Archivo {
 
     private String url;
@@ -75,23 +76,17 @@ public class Adjunto extends Archivo {
     public String obtenerUbicacion() {
         return url;
     }
-
-    public void vincularRecurso() {
-        // lógica específica para adjuntos
-    }
 }
+
 Archivo archivo = new Adjunto(
     "video_final.mp4",
     "https://drive.com/video",
     "Versión final aprobada"
 );
 
-System.out.println(archivo.obtenerUbicacion()); 
- 
----
+System.out.println(archivo.obtenerUbicacion());
+```
 
-## Conclusión
+### Justificación técnica
 
-El polimorfismo en el sistema se implementa mediante la utilización de la clase abstracta `Archivo` y su especialización en `Adjunto`. Esta estructura permite que el sistema trabaje con archivos de forma genérica, sin depender de implementaciones concretas.
-
-Gracias a este enfoque, el modelo mantiene coherencia conceptual, reduce el acoplamiento entre clases y facilita la incorporación de nuevas especializaciones sin modificar el código existente. De esta manera, el polimorfismo contribuye a la flexibilidad, escalabilidad y mantenibilidad del sistema.
+Este fragmento demuestra el polimorfismo porque la variable `archivo` está declarada como tipo `Archivo`, pero en tiempo de ejecución contiene un objeto de tipo `Adjunto`. Al invocar el método `obtenerUbicacion()`, se ejecuta la implementación correspondiente a la clase concreta. Esto permite que el sistema manipule objetos mediante la abstracción `Archivo`, facilitando la reutilización del código, el mantenimiento y la incorporación de nuevas subclases sin afectar a las clases que ya utilizan esta jerarquía.

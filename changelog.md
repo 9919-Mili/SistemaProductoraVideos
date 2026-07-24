@@ -8,6 +8,15 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ---
 
+## [Release Examen Final][MESA ][N°Matrícula 156880] - 2026-07-27
+
+### Added
+
+- [feature/anexo-fundamentos-doo-156880]  Para el examen final añadi un anexo con una explicacion de cada fundamento de el Diseño Orientado a Objetos, con destino a archivos con una explicación mas detallada de cada fundamento y como se aplico en el proyecto.
+ PR: [#x](https://github.com/9919-Mili/SistemaProductoraVideos/pull/x) - @zikoloogo
+
+---
+
 ## [Release Segundo Examen Parcial] - 2025-11-21
 
 ### Added
