@@ -3,4 +3,4 @@
  - [Anexo - Introducción al Diseño Orientado a Objetos](/anexos/introduccion.md)
  - [Anexo - Principios SOLID](/anexos/principios-solid/principios_solid.md)
  - [Anexo - Patrones de Diseño](/anexos/patrones-diseno/patrones_diseno.md)
-- [Anexo - Fundamentos del Diseño Orientado a Objetos - Mesa N°  - Sebastian Viel](/anexos/fundamentos-doo-mesa--matricula-/%20fundamentos-doo.md)
+ - [Anexo - Fundamentos del Diseño Orientado a Objetos - Mesa N° 645003 - Sebastian Viel](/anexos/fundamentos-doo-mesa-645003-matricula-156880/fundamentos-doo.md)
