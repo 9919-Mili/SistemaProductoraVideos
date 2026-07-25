@@ -20,7 +20,7 @@ La clase Adjunto hereda de Archivo, reutilizando sus atributos generales e incor
 
 ### Fragmento del diagrama UML
 
-![Diagrama Herencia](/diagramas/01-diagrama-clases/01-doo-herencia.png)
+![Diagrama Herencia](/diagramas/01-diagrama-clases/diagrama-doo-herencia-156880.png)
 
 [➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.png)
 

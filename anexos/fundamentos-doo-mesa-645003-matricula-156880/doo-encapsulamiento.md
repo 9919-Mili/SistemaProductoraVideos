@@ -24,7 +24,7 @@ Por su parte, la clase **Usuario** mantiene protegida información sensible como
 
 ### Fragmento del diagrama UML
 
-![Diagrama Encapsulamiento](/diagramas/01-diagrama-clases/01-doo-encapsulamiento.png)
+![Diagrama Encapsulamiento](/diagramas/01-diagrama-clases/diagrama-doo-encapsulamiento-156880.png)
 
 [➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.png)
 

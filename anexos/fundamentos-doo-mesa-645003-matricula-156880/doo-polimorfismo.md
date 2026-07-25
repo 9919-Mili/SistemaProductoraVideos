@@ -39,7 +39,7 @@ Archivo <|-- Adjunto
 
 @enduml
 
-![Diagrama Polimorfismo](/diagramas/01-diagrama-clases/01-doo-polimorfismo.png)
+![Diagrama Polimorfismo](/diagramas/01-diagrama-clases/diagrama-doo-polimorfismo-156880.png)
 
 [➡ Ver diagrama completo en detalle](/diagramas/01-diagrama-clases/01-diagrama-clases-final.png)
 
