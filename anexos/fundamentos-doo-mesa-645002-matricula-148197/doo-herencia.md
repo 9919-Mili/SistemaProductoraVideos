@@ -16,14 +16,14 @@ En patrones de diseño, esta combinación de abstracción + herencia aparece con
 
 ## Ejemplo en el proyecto
 
-Para evidenciar herencia en el proyecto se toma la jerarquía de notificaciones modelada en el diagrama de LSP:
+Para evidenciar herencia en el proyecto se toma un **extracto especifico** de la jerarquia de notificaciones:
 
 - `Notificacion` (abstracta) define comportamiento común.
 - `NotificacionEmail`, `NotificacionWhatsApp` y `NotificacionSMS` extienden esa base y especializan el envío por canal.
 
-![Diagrama UML de herencia (LSP)](/diagramas/01-diagrama-clases/01-solid-03-lsp.png)
+![Diagrama UML de herencia (extracto)](/diagramas/01-diagrama-clases/diagrama-doo-herencia-156427.png)
 
-[Ver diagrama en detalle (PlantUML)](/diagramas/01-diagrama-clases/01-solid-03-lsp.puml)
+[Ver diagrama en detalle](/diagramas/01-diagrama-clases/diagrama-doo-herencia-156427.png)
 
 Este diagrama refleja herencia porque muestra una superclase abstracta con atributos y operaciones comunes, y múltiples subclases que mantienen el contrato pero redefinen comportamiento específico. Desde el punto de vista técnico, cumple el fundamento porque:
 

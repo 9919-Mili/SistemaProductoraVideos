@@ -15,11 +15,11 @@ En patrones de diseño, el encapsulamiento se aplica en **State** (cada estado e
 
 ## Ejemplo en el proyecto
 
-Para evidenciar encapsulamiento en el proyecto, se toma una **seleccion de clases** del diagrama de SRP: `Etapa`, `GestorObservaciones`, `GestorAdjuntos`, `Observacion` y `Adjunto`. En este fragmento, la clase `Etapa` encapsula su estado principal y delega operaciones especificas en gestores cohesionados.
+Para evidenciar encapsulamiento en el proyecto, se toma un **extracto especifico** de clases: `Etapa`, `GestorObservaciones`, `GestorAdjuntos`, `Observacion` y `Adjunto`. En este fragmento, la clase `Etapa` encapsula su estado principal y delega operaciones especificas en gestores cohesionados.
 
-![Diagrama UML de encapsulamiento (clases seleccionadas)](/diagramas/01-diagrama-clases/01-solid-01-srp.png)
+![Diagrama UML de encapsulamiento (extracto)](/diagramas/01-diagrama-clases/diagrama-doo-encapsulamiento-156427.png)
 
-[Ver diagrama en detalle (PlantUML)](/diagramas/01-diagrama-clases/01-solid-01-srp.puml)
+[Ver diagrama en detalle](/diagramas/01-diagrama-clases/diagrama-doo-encapsulamiento-156427.png)
 
 El diagrama refleja encapsulamiento porque separa claramente datos internos de la interfaz publica de uso y organiza responsabilidades para que cada clase controle su propia consistencia. Tecnica y funcionalmente, esto cumple el fundamento porque:
 
