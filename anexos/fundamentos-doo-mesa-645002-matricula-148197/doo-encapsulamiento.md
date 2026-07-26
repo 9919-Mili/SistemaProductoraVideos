@@ -10,19 +10,18 @@ Se relaciona con los principios SOLID de la siguiente manera:
 - **OCP (Open/Closed Principle):** Al ocultar detalles internos, se pueden extender comportamientos sin exponer ni romper el nucleo de datos.
 - **ISP (Interface Segregation Principle):** Se publican interfaces pequeñas con solo las operaciones necesarias, sin obligar a depender de metodos innecesarios.
 
+En patrones de diseño, el encapsulamiento se aplica en **State** (cada estado encapsula reglas de transicion y comportamiento) y en **Facade** (una interfaz simple encapsula la complejidad de varios componentes internos).
+
 
 ## Ejemplo en el proyecto
 
-Para evidenciar encapsulamiento en el proyecto, se toma el diagrama final de clases, donde los atributos estan marcados como privados (`-`) y los metodos publicos (`+`) controlan la interaccion:
+Para evidenciar encapsulamiento en el proyecto, se toma una **seleccion de clases** del diagrama de SRP: `Etapa`, `GestorObservaciones`, `GestorAdjuntos`, `Observacion` y `Adjunto`. En este fragmento, la clase `Etapa` encapsula su estado principal y delega operaciones especificas en gestores cohesionados.
 
-- `Proyecto`, `Etapa`, `Observacion` y `Adjunto` conservan sus datos internos no expuestos directamente.
-- La modificacion de estado se realiza por operaciones del dominio como `actualizarEstado`, `asignarResponsable` o `agregarObservacion`.
+![Diagrama UML de encapsulamiento (clases seleccionadas)](/diagramas/01-diagrama-clases/01-solid-01-srp.png)
 
-![Diagrama UML de encapsulamiento (version final)](/diagramas/01-diagrama-clases/01-diagrama-clases-final.png)
+[Ver diagrama en detalle (PlantUML)](/diagramas/01-diagrama-clases/01-solid-01-srp.puml)
 
-[Ver diagrama en detalle (PlantUML)](/diagramas/01-diagrama-clases/01-diagrama-clases-final.puml)
-
-El diagrama refleja encapsulamiento porque separa claramente datos internos de la interfaz publica de uso. Tecnica y funcionalmente, esto cumple el fundamento porque:
+El diagrama refleja encapsulamiento porque separa claramente datos internos de la interfaz publica de uso y organiza responsabilidades para que cada clase controle su propia consistencia. Tecnica y funcionalmente, esto cumple el fundamento porque:
 
 - Se protege la integridad del objeto al impedir acceso directo a atributos sensibles.
 - La clase valida reglas antes de cambiar su estado interno.

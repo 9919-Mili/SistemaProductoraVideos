@@ -10,6 +10,8 @@ Se relaciona con SOLID de la siguiente manera:
 - **LSP (Liskov Substitution Principle):** Cualquier subtipo debe poder sustituir al tipo base manteniendo comportamiento valido.
 - **DIP (Dependency Inversion Principle):** Los modulos de alto nivel dependen de abstracciones, no de clases concretas.
 
+En patrones de diseño, el polimorfismo es base de **Observer** (multiples observadores reaccionan al mismo evento mediante una interfaz comun) y **Strategy** (distintas estrategias comparten una operacion comun con implementaciones diferentes).
+
 
 ## Ejemplo en el proyecto
 
@@ -23,7 +25,8 @@ Para evidenciar polimorfismo en el proyecto, se toma el diagrama del patron Obse
 [Ver diagrama en detalle (PlantUML)](/diagramas/01-diagrama-clases/01-patron-comportamiento-observer.puml)
 
 Este diagrama refleja polimorfismo porque un mismo mensaje (`actualizar`) se despacha a multiples implementaciones concretas. Tecnica y funcionalmente, cumple el fundamento porque:
-.
+
+- El sujeto maneja colecciones de `Observer`, no tipos concretos.
 - Cada observador redefine su reaccion sin afectar el contrato.
 - Se pueden sumar observadores nuevos sin modificar el flujo de notificacion.
 - El sistema delega comportamiento segun tipo real en tiempo de ejecucion.
