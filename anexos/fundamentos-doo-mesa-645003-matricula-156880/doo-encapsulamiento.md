@@ -12,7 +12,7 @@ Desde el punto de vista de los principios **SOLID**, el encapsulamiento se relac
 
 ---
 
-## Ejemplo en el proyecto
+Ejemplo en el proyecto
 
 En el sistema de gestión de la productora de videos, el encapsulamiento se observa principalmente en las clases **Proyecto**, **Etapa** y **Usuario**.
 
@@ -65,6 +65,7 @@ public class Proyecto {
 
 Este fragmento aplica el principio de encapsulamiento porque los atributos permanecen privados y solo pueden modificarse mediante métodos públicos definidos por la propia clase. De esta manera, Proyecto controla su estado interno y evita modificaciones directas desde otras clases, favoreciendo la consistencia de la información y el mantenimiento del sistema.
 
+```
 public class Usuario {
 
     private String nombre;
@@ -86,6 +87,7 @@ public class Usuario {
         notificaciones.add(notificacion);
     }
 }
+```
 
 ### Justificación técnica
 

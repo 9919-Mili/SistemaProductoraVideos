@@ -1,4 +1,4 @@
-## Abstracción
+# Abstracción
 
 La abstracción consiste en representar los aspectos esenciales de un objeto, ocultando los detalles de su implementación. De esta manera, las clases pueden trabajar sobre conceptos generales sin depender de cómo se implementa cada caso particular.
 
@@ -14,21 +14,22 @@ La utilización de una clase abstracta permite desacoplar el resto del sistema d
 
 ---
 
-### Ejemplo en el proyecto
+## Ejemplo en el proyecto
 
 En el proyecto, la abstracción se representa mediante la clase abstracta Archivo, que define la información común de cualquier archivo utilizado dentro del sistema, como su ubicación y nombre.
 
 La clase Adjunto hereda de Archivo, incorporando la información necesaria para representar un archivo asociado a una etapa del proyecto. De esta forma, el sistema puede trabajar con la abstracción Archivo sin depender de una implementación concreta.
 
-En el diagrama de clases del sistema se define:
+En el fragmento del diagrama también se observan las clases Etapa, Usuario, Observacion y Cliente, que forman parte del modelo del sistema y muestran cómo la abstracción Archivo se integra con el resto de los elementos que participan en la gestión de los proyectos.
 
+En el diagrama de clases del sistema se define:
 
 - `Archivo` como clase abstracta.
 - `Adjunto` como clase concreta que hereda de `Archivo`.
 
 ---
-
-### Fragmento de diagrama UML
+```
+Fragmento de diagrama UML
 
 @startuml
 
@@ -46,6 +47,7 @@ class Adjunto {
 Archivo <|-- Adjunto
 
 @enduml
+```
 
 ![Diagrama de Abstracción](/diagramas/01-diagrama-clases/diagrama-doo-abstraccion-156880.png)
 
@@ -53,16 +55,19 @@ Archivo <|-- Adjunto
 
 ---
 
-# Justificación técnica del diagrama
+### Justificación técnica del diagrama
 
 El diagrama muestra que Archivo es una clase abstracta que reúne las características comunes de los archivos del sistema y sirve como base para las clases derivadas. Adjunto reutiliza esa definición e incorpora la información específica necesaria para representar un archivo asociado a una etapa del proyecto.
+
+El fragmento permite observar cómo esta abstracción se relaciona con otras clases del sistema, como Etapa, Usuario, Observacion y Cliente, integrándose en el modelo general sin perder su función como base de la jerarquía de archivos.
 
 Este diseño favorece la reutilización del código y permite incorporar nuevos tipos de archivos sin modificar la estructura existente.
 
 ---
 
-# Ejemplo de código
+ Ejemplo de código
 
+```
 abstract class Archivo {
 
     protected String ubicacion;
@@ -84,10 +89,10 @@ class Adjunto extends Archivo {
 
 Archivo archivo = new Adjunto();
 archivo.abrir();
-
+```
 ---
 
-# Justificación técnica del código
+### Justificación técnica del código
 
 El fragmento demuestra la aplicación de la abstracción porque el objeto se utiliza mediante el tipo Archivo, mientras que la implementación concreta corresponde a Adjunto. La clase abstracta define el comportamiento común y la clase derivada proporciona su implementación específica.
 

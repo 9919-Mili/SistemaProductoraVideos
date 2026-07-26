@@ -6,12 +6,6 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ## [Unreleased]
 
----
-
-## [Release Examen Final][MESA 645003][N°Matrícula 156880] - 2026-07-27
-
-### Added
-
 - [feature/anexo-fundamentos-doo-156880]  Anexo con una explicacion de cada fundamento del Diseño Orientado a Objetos, con archivos explicando de manera mas detallada de cada fundamento y como se aplica en el proyecto.
  PR: [#115](https://github.com/9919-Mili/SistemaProductoraVideos/pull/115) - @zikoloogo
 
