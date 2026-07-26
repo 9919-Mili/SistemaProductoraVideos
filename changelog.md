@@ -12,6 +12,10 @@ Este archivo se actualiza con cada Pull Request para registrar avances y correcc
 
 ### Added
 
+- [feature/anexo-fundamentos-doo-148197]  Para el examen final agregue un anexo con una explicacion de cada fundamento de el Diseño Orientado a Objetos, ademas añadi diferentes archivos explicando detalladamente cada fundamento y como se aplico en el proyecto.
+ PR: [#116](https://github.com/9919-Mili/SistemaProductoraVideos/pull/116) - @9919-Mili
+
+
 - [feature/anexo-fundamentos-doo-156427]  Para el examen final añadi un anexo con una explicacion de cada fundamento de el Diseño Orientado a Objetos, con destino a archivos con una explicación mas detallada de cada fundamento y como se aplico en el proyecto.
  PR: [#114](https://github.com/9919-Mili/SistemaProductoraVideos/pull/114) - @igvcalefato
 
