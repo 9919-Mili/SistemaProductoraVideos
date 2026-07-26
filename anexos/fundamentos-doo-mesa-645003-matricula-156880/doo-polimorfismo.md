@@ -86,7 +86,7 @@ El diagrama muestra que varias clases implementan la interfaz Observer y compart
 
 ---
 
-Ejemplo de Código
+## Ejemplo de Código
 ```
 interface Observer {
     void actualizar(String evento);

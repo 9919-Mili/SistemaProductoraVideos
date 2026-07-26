@@ -65,7 +65,7 @@ Este diseño favorece la reutilización del código y permite incorporar nuevos 
 
 ---
 
- Ejemplo de código
+## Ejemplo de código
 
 ```
 abstract class Archivo {

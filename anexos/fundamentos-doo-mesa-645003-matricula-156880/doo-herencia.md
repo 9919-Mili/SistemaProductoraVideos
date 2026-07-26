@@ -31,7 +31,7 @@ Este diseño evita la duplicación de información, favorece la reutilización d
 
 ---
 
-Ejemplo de Código
+## Ejemplo de Código
 ```
 public abstract class Archivo {
 

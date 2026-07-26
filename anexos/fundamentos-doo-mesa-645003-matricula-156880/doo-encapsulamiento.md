@@ -12,7 +12,7 @@ Desde el punto de vista de los principios **SOLID**, el encapsulamiento se relac
 
 ---
 
-Ejemplo en el proyecto
+## Ejemplo en el proyecto
 
 En el sistema de gestión de la productora de videos, el encapsulamiento se observa principalmente en las clases **Proyecto**, **Etapa** y **Usuario**.
 
@@ -38,6 +38,7 @@ Además, facilita el mantenimiento del sistema y reduce el acoplamiento entre su
 
 ## Ejemplo de Código
 
+```
 public class Proyecto {
 
     private String nombre;
@@ -60,6 +61,7 @@ public class Proyecto {
         // Administración de etapas
     }
 }
+```
 
 ### Justificación técnica
 
